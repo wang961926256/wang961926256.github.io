@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>page print - wangqj的个人博客</title>
+
+<meta name="description" content="最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
+// 头部添加打印的信息 　&amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt; function preview(oper){ //oper表示打印的区域数  if (oper &amp;lt; 10){ bdhtml=window.document.body.innerHTML; //获取当前页的html代码  sprnstr=&amp;#34;&amp;lt;!--startprint&amp;#34;&#43;oper&#43;&amp;#34;--&amp;gt;&amp;#34;; //设置打印开始区  eprnstr=&amp;#34;&amp;lt;!--endprint&amp;#34;&#43;oper&#43;&amp;#34;--&amp;gt;&amp;#34;; //设置打印结束区  prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)&#43;18); //从开始代码向后取html  prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html  window.document.body.innerHTML=prnhtml; window.print(); //调用window的打印功能  window.document.body.innerHTML=bdhtml; } else { window.print(); } } &amp;lt;/script&amp;gt; 第二步，确定打印区域，用startprint1和endprint1来标识位置。
+// 选择需要打印的div &amp;lt;!--startprint1--&amp;gt; // &amp;lt;!--打印内容开始--&amp;gt; &amp;lt;div &amp;gt; ******打印代码区******** &amp;lt;/div&amp;gt; &amp;lt;!--打印内容结束--&amp;gt; &amp;lt;!--endprint1--&amp;gt; 第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。
+// 表示buffer不受限制 &amp;lt;input type=button name=&amp;#39;button_export&amp;#39; value=&amp;#39;打印&amp;#39; onclick=preview(1) &amp;gt; //1表示只在一个区域使用 2、控件打印页面 利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。 通过以下几步操作完成打印的功能。 （1）导入js文件" /><meta name="keywords"
+  content="Y4er, 信息安全, 网络安全, 红蓝攻防, 渗透测试, bypass, waf, 注入, 黑客, chabug" />
+
+
+<link rel="stylesheet" href="https://wangqj.cn/css/main.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.12/src/css/lightgallery.css">
+
+
+
+<meta property="og:title" content="page print" />
+<meta property="og:description" content="最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
+// 头部添加打印的信息 　&lt;script language=&#34;javascript&#34;&gt; function preview(oper){ //oper表示打印的区域数  if (oper &lt; 10){ bdhtml=window.document.body.innerHTML; //获取当前页的html代码  sprnstr=&#34;&lt;!--startprint&#34;&#43;oper&#43;&#34;--&gt;&#34;; //设置打印开始区  eprnstr=&#34;&lt;!--endprint&#34;&#43;oper&#43;&#34;--&gt;&#34;; //设置打印结束区  prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)&#43;18); //从开始代码向后取html  prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html  window.document.body.innerHTML=prnhtml; window.print(); //调用window的打印功能  window.document.body.innerHTML=bdhtml; } else { window.print(); } } &lt;/script&gt; 第二步，确定打印区域，用startprint1和endprint1来标识位置。
+// 选择需要打印的div &lt;!--startprint1--&gt; // &lt;!--打印内容开始--&gt; &lt;div &gt; ******打印代码区******** &lt;/div&gt; &lt;!--打印内容结束--&gt; &lt;!--endprint1--&gt; 第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。
+// 表示buffer不受限制 &lt;input type=button name=&#39;button_export&#39; value=&#39;打印&#39; onclick=preview(1) &gt; //1表示只在一个区域使用 2、控件打印页面 利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。 通过以下几步操作完成打印的功能。 （1）导入js文件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangqj.cn/posts/page-print/" />
+
+<meta itemprop="name" content="page print">
+<meta itemprop="description" content="最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
+// 头部添加打印的信息 　&lt;script language=&#34;javascript&#34;&gt; function preview(oper){ //oper表示打印的区域数  if (oper &lt; 10){ bdhtml=window.document.body.innerHTML; //获取当前页的html代码  sprnstr=&#34;&lt;!--startprint&#34;&#43;oper&#43;&#34;--&gt;&#34;; //设置打印开始区  eprnstr=&#34;&lt;!--endprint&#34;&#43;oper&#43;&#34;--&gt;&#34;; //设置打印结束区  prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)&#43;18); //从开始代码向后取html  prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html  window.document.body.innerHTML=prnhtml; window.print(); //调用window的打印功能  window.document.body.innerHTML=bdhtml; } else { window.print(); } } &lt;/script&gt; 第二步，确定打印区域，用startprint1和endprint1来标识位置。
+// 选择需要打印的div &lt;!--startprint1--&gt; // &lt;!--打印内容开始--&gt; &lt;div &gt; ******打印代码区******** &lt;/div&gt; &lt;!--打印内容结束--&gt; &lt;!--endprint1--&gt; 第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。
+// 表示buffer不受限制 &lt;input type=button name=&#39;button_export&#39; value=&#39;打印&#39; onclick=preview(1) &gt; //1表示只在一个区域使用 2、控件打印页面 利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。 通过以下几步操作完成打印的功能。 （1）导入js文件">
+
+<meta itemprop="wordCount" content="113">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="page print"/>
+<meta name="twitter:description" content="最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
+// 头部添加打印的信息 　&lt;script language=&#34;javascript&#34;&gt; function preview(oper){ //oper表示打印的区域数  if (oper &lt; 10){ bdhtml=window.document.body.innerHTML; //获取当前页的html代码  sprnstr=&#34;&lt;!--startprint&#34;&#43;oper&#43;&#34;--&gt;&#34;; //设置打印开始区  eprnstr=&#34;&lt;!--endprint&#34;&#43;oper&#43;&#34;--&gt;&#34;; //设置打印结束区  prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)&#43;18); //从开始代码向后取html  prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html  window.document.body.innerHTML=prnhtml; window.print(); //调用window的打印功能  window.document.body.innerHTML=bdhtml; } else { window.print(); } } &lt;/script&gt; 第二步，确定打印区域，用startprint1和endprint1来标识位置。
+// 选择需要打印的div &lt;!--startprint1--&gt; // &lt;!--打印内容开始--&gt; &lt;div &gt; ******打印代码区******** &lt;/div&gt; &lt;!--打印内容结束--&gt; &lt;!--endprint1--&gt; 第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。
+// 表示buffer不受限制 &lt;input type=button name=&#39;button_export&#39; value=&#39;打印&#39; onclick=preview(1) &gt; //1表示只在一个区域使用 2、控件打印页面 利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。 通过以下几步操作完成打印的功能。 （1）导入js文件"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="header-placeholder"></div>
+    
+    <header class="header">
+        <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    
+    <a class="site-title" href="https://wangqj.cn/"></a>
+    
+    <nav class="site-nav">
+        <a class="page-link" href="/">首页</a><a class="page-link" href="/post/">Category</a><a class="page-link" href="/about">About</a><a class="page-link" href="http://www.chabug.org">ChaBug</a>
+    </nav>
+</div>
+    </header>
+
+    
+    <div class="page-content">
+        <div class="wrapper">
+            
+            <div class="col-main">
+                <div class="post">
+    
+    <header class="post-header">
+        <h1 class="post-title">Page Print</h1>
+    </header>
+    <article class="post-content">
+        
+        
+        
+        
+        
+        
+        <p>最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。
+1、 <strong>添加代码打印</strong>
+　　添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。
+　　第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 头部添加打印的信息
+</span><span class="c1"></span>　<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span><span class="o">=</span><span class="s2">&#34;javascript&#34;</span><span class="o">&gt;</span>
+<span class="kd">function</span> <span class="nx">preview</span><span class="p">(</span><span class="nx">oper</span><span class="p">)</span><span class="p">{</span>  <span class="c1">//oper表示打印的区域数
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">oper</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span><span class="p">{</span>
+    <span class="nx">bdhtml</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">;</span>    <span class="c1">//获取当前页的html代码
+</span><span class="c1"></span>    <span class="nx">sprnstr</span><span class="o">=</span><span class="s2">&#34;&lt;!--startprint&#34;</span><span class="o">+</span><span class="nx">oper</span><span class="o">+</span><span class="s2">&#34;--&gt;&#34;</span><span class="p">;</span>       <span class="c1">//设置打印开始区
+</span><span class="c1"></span>    <span class="nx">eprnstr</span><span class="o">=</span><span class="s2">&#34;&lt;!--endprint&#34;</span><span class="o">+</span><span class="nx">oper</span><span class="o">+</span><span class="s2">&#34;--&gt;&#34;</span><span class="p">;</span>         <span class="c1">//设置打印结束区
+</span><span class="c1"></span>    <span class="nx">prnhtml</span><span class="o">=</span><span class="nx">bdhtml</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">bdhtml</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">sprnstr</span><span class="p">)</span><span class="o">+</span><span class="mi">18</span><span class="p">)</span><span class="p">;</span> <span class="c1">//从开始代码向后取html
+</span><span class="c1"></span>    <span class="nx">prnhtml</span><span class="o">=</span><span class="nx">prnhtml</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nx">prnhtml</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">eprnstr</span><span class="p">)</span><span class="p">)</span><span class="p">;</span><span class="c1">//从结束代码向前取html
+</span><span class="c1"></span>    <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">prnhtml</span><span class="p">;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>  <span class="c1">//调用window的打印功能
+</span><span class="c1"></span>    <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">bdhtml</span><span class="p">;</span>
+    <span class="p">}</span> 
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">i</span><span class="err">p</span><span class="err">t</span><span class="err">&gt;</span>
+</code></pre></div><p>第二步，确定打印区域，用startprint1和endprint1来标识位置。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 选择需要打印的div
+</span><span class="c1"></span><span class="c">&lt;!--</span><span class="nx">startprint1</span><span class="o">--</span><span class="o">&gt;</span>   <span class="c1">//
+</span><span class="c1"></span><span class="c">&lt;!--</span><span class="nx">打印内容开始</span><span class="o">--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="o">&gt;</span>
+    <span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="nx">打印代码区</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span><span class="o">*</span>
+<span class="o">&lt;</span><span class="err">/</span><span class="err">d</span><span class="err">i</span><span class="err">v</span><span class="err">&gt;</span>
+<span class="c">&lt;!--</span><span class="nx">打印内容结束</span><span class="o">--</span><span class="o">&gt;</span>
+<span class="c">&lt;!--</span><span class="nx">endprint1</span><span class="o">--</span><span class="o">&gt;</span>
+</code></pre></div><p>第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 表示buffer不受限制
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="nx">button</span> <span class="nx">name</span><span class="o">=</span><span class="s1">&#39;button_export&#39;</span> <span class="nx">value</span><span class="o">=</span><span class="s1">&#39;打印&#39;</span>  <span class="nx">onclick</span><span class="o">=</span><span class="nx">preview</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="c1">//1表示只在一个区域使用
+</span></code></pre></div><p>2、<strong>控件打印页面</strong>
+　　利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。
+　　通过以下几步操作完成打印的功能。
+（1）<strong>导入js文件</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 导入jqprint插件
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;/js/js/jquery.jqprint-0.3.js&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">i</span><span class="err">p</span><span class="err">t</span><span class="err">&gt;</span>
+<span class="c1">//迁移辅助插件jquery-migrate
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;https://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">i</span><span class="err">p</span><span class="err">t</span><span class="err">&gt;</span>
+</code></pre></div><p>　　同时还需要导入jquery-migrate插件，jquery-migrate是迁移插件，有利于解决jQuery版本之间的问题，不用再修改代码。
+（2）<strong>导入css样式</strong>
+　　需要引入两种样式，一种是页面显示的样式，一种是打印的样式，两者需要区别开来，打印样式语句里面需要添加media=&quot;print&quot;来标识，这样就可以打印。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 页面的显示样式
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&#34;stylesheet&#34;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://localhost:8080/js/debug/lib/layer/css/style.css&#34;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text/css&#34;</span> <span class="o">/</span><span class="o">&gt;</span>
+<span class="c1">//引入打印样式
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">link</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;printStyle.css&#34;</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">&#34;stylesheet&#34;</span><span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text/css&#34;</span> <span class="nx">media</span><span class="o">=</span><span class="s2">&#34;print&#34;</span><span class="o">&gt;</span>
+</code></pre></div><p><strong>打印的样式设置</strong>
+设置常用的四个属性： debug、 importCSS、 printContainer和operaSupport，完成不同的打印效果。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 打印的样式
+</span><span class="c1"></span>    <span class="kd">function</span> <span class="nx">printStyle</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#printInfo&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">jqprint</span><span class="p">(</span><span class="p">{</span>  
+            <span class="nx">debug</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span><span class="c1">//显示ifream查看效果            
+</span><span class="c1"></span>            <span class="nx">importCSS</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>   <span class="c1">//引入原页面的样式，先找media=print        
+</span><span class="c1"></span>            <span class="nx">printContainer</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">//表示原选中对象纳入打印中   
+</span><span class="c1"></span>            <span class="nx">operaSupport</span><span class="o">:</span> <span class="kc">false</span> <span class="c1">//若支持opera浏览器，会建立临时打印选项卡     
+</span><span class="c1"></span>        <span class="p">}</span><span class="p">)</span><span class="p">;</span> 
+    <span class="p">}</span>
+</code></pre></div><p><strong>两种方式对比</strong>
+　　第一种页面打印方式，调用的是window自带的打印功能，生成一个新的页面，速度相对会慢一些，第二种方式直接能够弹出打印的窗口，速度比较快，交互性也比较强。</p>
+<p>博客参考：
+【1】https://blog.csdn.net/lm1022/article/details/80225023
+【2】https://blog.csdn.net/xuexiiphone/article/details/76855590</p>
+
+    </article>
+</div>
+            </div>
+            
+            <div class="col-second">
+                <div class="col-box col-box-author">
+    <img class="avatar" src="images/avatar.jpg" alt="wangqj">
+    <div class="col-box-title name">wangqj</div>
+    <p>用心甘情愿的态度 过随遇而安的生活.</p>
+    <p class="contact">
+        <a href="vip_wqj@163.com">Email</a>
+        <a href="https://github.com/wang961926256/wang961926256.github.io">Github</a>
+    </p>
+</div>
+
+<div class="col-box">
+    <div class="col-box-title">Newest Posts</div>
+    <ul class="post-list">
+        
+        <li>
+            <a href="https://wangqj.cn/posts/kettle/" class="post-link">Kettle 数据库迁移</a>
+        </li>
+        
+        <li>
+            <a href="https://wangqj.cn/posts/page-print/" class="post-link">Page Print</a>
+        </li>
+        
+    </ul>
+</div>
+
+<div class="col-box post-toc hide">
+    <div class="col-box-title">TOC</div>
+</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="wrapper">
+    © 2019    <a href="https://wangqj.cn/">wangqj</a>
+</div>
+    </footer>
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js"></script>
+
+<script src="/js/easybook.js"></script>
+
+<script src="/js/lazysizes.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.12/dist/js/lightgallery-all.min.js"></script>
+<script src="/js/figure.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+
+</html>

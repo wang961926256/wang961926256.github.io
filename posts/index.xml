@@ -26,5 +26,17 @@
 博客参考： https://blog.csdn.net/wuzhangweiss/article/details/78408029</description>
     </item>
     
+    <item>
+      <title>page print</title>
+      <link>https://wangqj.cn/posts/page-print/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/posts/page-print/</guid>
+      <description>最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
+// 头部添加打印的信息 　&amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt; function preview(oper){ //oper表示打印的区域数  if (oper &amp;lt; 10){ bdhtml=window.document.body.innerHTML; //获取当前页的html代码  sprnstr=&amp;#34;&amp;lt;!--startprint&amp;#34;+oper+&amp;#34;--&amp;gt;&amp;#34;; //设置打印开始区  eprnstr=&amp;#34;&amp;lt;!--endprint&amp;#34;+oper+&amp;#34;--&amp;gt;&amp;#34;; //设置打印结束区  prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html  prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html  window.document.body.innerHTML=prnhtml; window.print(); //调用window的打印功能  window.document.body.innerHTML=bdhtml; } else { window.print(); } } &amp;lt;/script&amp;gt; 第二步，确定打印区域，用startprint1和endprint1来标识位置。
+// 选择需要打印的div &amp;lt;!--startprint1--&amp;gt; // &amp;lt;!--打印内容开始--&amp;gt; &amp;lt;div &amp;gt; ******打印代码区******** &amp;lt;/div&amp;gt; &amp;lt;!--打印内容结束--&amp;gt; &amp;lt;!--endprint1--&amp;gt; 第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。
+// 表示buffer不受限制 &amp;lt;input type=button name=&amp;#39;button_export&amp;#39; value=&amp;#39;打印&amp;#39; onclick=preview(1) &amp;gt; //1表示只在一个区域使用 2、控件打印页面 利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。 通过以下几步操作完成打印的功能。 （1）导入js文件</description>
+    </item>
+    
   </channel>
 </rss>
