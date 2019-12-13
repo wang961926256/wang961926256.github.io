@@ -38,5 +38,19 @@
 // 表示buffer不受限制 &amp;lt;input type=button name=&amp;#39;button_export&amp;#39; value=&amp;#39;打印&amp;#39; onclick=preview(1) &amp;gt; //1表示只在一个区域使用 2、控件打印页面 利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。 通过以下几步操作完成打印的功能。 （1）导入js文件</description>
     </item>
     
+    <item>
+      <title>powderDesigner 连接本地数据库</title>
+      <link>https://wangqj.cn/posts/powderdesigner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/posts/powderdesigner/</guid>
+      <description>最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
+环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
+第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。
+第二步、新建PM文件 打开软件，点击新建，选择类型，新建PM文件，物理数据模型，可参考下图 第三步、连接信息设置 点击文件file &amp;ndash;&amp;gt; 反转引擎reverse Engineer &amp;ndash;&amp;gt; 数据库Database，配置相应的模型连接信息。 根据数据库类型选择相应的项，这里选择是mysql 5.0 点击configure，设置数据库的连接信息 点击小手，添加配置的连接的详细信息 具体设置信息可以参考以下。设置连接的名称，默认连接文件放的位置，数据库的用户名等信息。 注意：1、选择连接的类型为JDBC；2、DBMS类型为mysql；3、驱动包需要放到jdk的bin目录，并选中。 输入数据库的密码，点击连接。 第四步、导入数据库信息 选择连接的数据库信息，点击数据库&amp;ndash;&amp;gt; 更新数据库模型，如下图所示。 选择建立的连接，这里是mytest.dcp，注意勾选下面的复选框。 点击确定后，展示出来连接上的所有数据库，选择对应的数据库，可以看到库中所有的表，如下图所示。选择一张表，点击确定，就可以开始方向工程的操作，如下图所示。 等待进度条完成，就可以看到工作空间中添加成功该表的信息，如下图所示。 这样就完成了PowerDesigner与mysql数据库的连接，直接选中表可以自动反向生成相应的工程表信息。
+错误的情况及处理 1、连接报错 控制台错误信息：
+SQLSTATE = 01S00 The server time zone value &amp;#39;�й���׼ʱ��&amp;#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.</description>
+    </item>
+    
   </channel>
 </rss>

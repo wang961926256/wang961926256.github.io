@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>powderDesigner 连接本地数据库 - wangqj的个人博客</title>
+
+<meta name="description" content="最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
+环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
+第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。
+第二步、新建PM文件 打开软件，点击新建，选择类型，新建PM文件，物理数据模型，可参考下图 第三步、连接信息设置 点击文件file &amp;ndash;&amp;gt; 反转引擎reverse Engineer &amp;ndash;&amp;gt; 数据库Database，配置相应的模型连接信息。 根据数据库类型选择相应的项，这里选择是mysql 5.0 点击configure，设置数据库的连接信息 点击小手，添加配置的连接的详细信息 具体设置信息可以参考以下。设置连接的名称，默认连接文件放的位置，数据库的用户名等信息。 注意：1、选择连接的类型为JDBC；2、DBMS类型为mysql；3、驱动包需要放到jdk的bin目录，并选中。 输入数据库的密码，点击连接。 第四步、导入数据库信息 选择连接的数据库信息，点击数据库&amp;ndash;&amp;gt; 更新数据库模型，如下图所示。 选择建立的连接，这里是mytest.dcp，注意勾选下面的复选框。 点击确定后，展示出来连接上的所有数据库，选择对应的数据库，可以看到库中所有的表，如下图所示。选择一张表，点击确定，就可以开始方向工程的操作，如下图所示。 等待进度条完成，就可以看到工作空间中添加成功该表的信息，如下图所示。 这样就完成了PowerDesigner与mysql数据库的连接，直接选中表可以自动反向生成相应的工程表信息。
+错误的情况及处理 1、连接报错 控制台错误信息：
+SQLSTATE = 01S00 The server time zone value &amp;#39;�й���׼ʱ��&amp;#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support." /><meta name="keywords"
+  content="Y4er, 信息安全, 网络安全, 红蓝攻防, 渗透测试, bypass, waf, 注入, 黑客, chabug" />
+
+
+<link rel="stylesheet" href="https://wangqj.cn/css/main.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.12/src/css/lightgallery.css">
+
+
+
+<meta property="og:title" content="powderDesigner 连接本地数据库" />
+<meta property="og:description" content="最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
+环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
+第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。
+第二步、新建PM文件 打开软件，点击新建，选择类型，新建PM文件，物理数据模型，可参考下图 第三步、连接信息设置 点击文件file &ndash;&gt; 反转引擎reverse Engineer &ndash;&gt; 数据库Database，配置相应的模型连接信息。 根据数据库类型选择相应的项，这里选择是mysql 5.0 点击configure，设置数据库的连接信息 点击小手，添加配置的连接的详细信息 具体设置信息可以参考以下。设置连接的名称，默认连接文件放的位置，数据库的用户名等信息。 注意：1、选择连接的类型为JDBC；2、DBMS类型为mysql；3、驱动包需要放到jdk的bin目录，并选中。 输入数据库的密码，点击连接。 第四步、导入数据库信息 选择连接的数据库信息，点击数据库&ndash;&gt; 更新数据库模型，如下图所示。 选择建立的连接，这里是mytest.dcp，注意勾选下面的复选框。 点击确定后，展示出来连接上的所有数据库，选择对应的数据库，可以看到库中所有的表，如下图所示。选择一张表，点击确定，就可以开始方向工程的操作，如下图所示。 等待进度条完成，就可以看到工作空间中添加成功该表的信息，如下图所示。 这样就完成了PowerDesigner与mysql数据库的连接，直接选中表可以自动反向生成相应的工程表信息。
+错误的情况及处理 1、连接报错 控制台错误信息：
+SQLSTATE = 01S00 The server time zone value &#39;�й���׼ʱ��&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wangqj.cn/posts/powderdesigner/" />
+
+<meta itemprop="name" content="powderDesigner 连接本地数据库">
+<meta itemprop="description" content="最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
+环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
+第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。
+第二步、新建PM文件 打开软件，点击新建，选择类型，新建PM文件，物理数据模型，可参考下图 第三步、连接信息设置 点击文件file &ndash;&gt; 反转引擎reverse Engineer &ndash;&gt; 数据库Database，配置相应的模型连接信息。 根据数据库类型选择相应的项，这里选择是mysql 5.0 点击configure，设置数据库的连接信息 点击小手，添加配置的连接的详细信息 具体设置信息可以参考以下。设置连接的名称，默认连接文件放的位置，数据库的用户名等信息。 注意：1、选择连接的类型为JDBC；2、DBMS类型为mysql；3、驱动包需要放到jdk的bin目录，并选中。 输入数据库的密码，点击连接。 第四步、导入数据库信息 选择连接的数据库信息，点击数据库&ndash;&gt; 更新数据库模型，如下图所示。 选择建立的连接，这里是mytest.dcp，注意勾选下面的复选框。 点击确定后，展示出来连接上的所有数据库，选择对应的数据库，可以看到库中所有的表，如下图所示。选择一张表，点击确定，就可以开始方向工程的操作，如下图所示。 等待进度条完成，就可以看到工作空间中添加成功该表的信息，如下图所示。 这样就完成了PowerDesigner与mysql数据库的连接，直接选中表可以自动反向生成相应的工程表信息。
+错误的情况及处理 1、连接报错 控制台错误信息：
+SQLSTATE = 01S00 The server time zone value &#39;�й���׼ʱ��&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.">
+
+<meta itemprop="wordCount" content="112">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="powderDesigner 连接本地数据库"/>
+<meta name="twitter:description" content="最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
+环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
+第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。
+第二步、新建PM文件 打开软件，点击新建，选择类型，新建PM文件，物理数据模型，可参考下图 第三步、连接信息设置 点击文件file &ndash;&gt; 反转引擎reverse Engineer &ndash;&gt; 数据库Database，配置相应的模型连接信息。 根据数据库类型选择相应的项，这里选择是mysql 5.0 点击configure，设置数据库的连接信息 点击小手，添加配置的连接的详细信息 具体设置信息可以参考以下。设置连接的名称，默认连接文件放的位置，数据库的用户名等信息。 注意：1、选择连接的类型为JDBC；2、DBMS类型为mysql；3、驱动包需要放到jdk的bin目录，并选中。 输入数据库的密码，点击连接。 第四步、导入数据库信息 选择连接的数据库信息，点击数据库&ndash;&gt; 更新数据库模型，如下图所示。 选择建立的连接，这里是mytest.dcp，注意勾选下面的复选框。 点击确定后，展示出来连接上的所有数据库，选择对应的数据库，可以看到库中所有的表，如下图所示。选择一张表，点击确定，就可以开始方向工程的操作，如下图所示。 等待进度条完成，就可以看到工作空间中添加成功该表的信息，如下图所示。 这样就完成了PowerDesigner与mysql数据库的连接，直接选中表可以自动反向生成相应的工程表信息。
+错误的情况及处理 1、连接报错 控制台错误信息：
+SQLSTATE = 01S00 The server time zone value &#39;�й���׼ʱ��&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="header-placeholder"></div>
+    
+    <header class="header">
+        <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    
+    <a class="site-title" href="https://wangqj.cn/"></a>
+    
+    <nav class="site-nav">
+        <a class="page-link" href="/">首页</a><a class="page-link" href="/post/">博客</a><a class="page-link" href="/about">About</a><a class="page-link" href="/post/">读书</a>
+    </nav>
+</div>
+    </header>
+
+    
+    <div class="page-content">
+        <div class="wrapper">
+            
+            <div class="col-main">
+                <div class="post">
+    
+    <header class="post-header">
+        <h1 class="post-title">PowderDesigner 连接本地数据库</h1>
+    </header>
+    <article class="post-content">
+        
+        
+        
+        
+        
+        
+        <p>     最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。</p>
+<h5 id="heading">环境准备</h5>
+<p><strong>软件</strong>：PowerDesigner 15.6
+<strong>32位jdk</strong>：jdk-8u144-windows-i586
+<strong>驱动包</strong>：mysql-connector-java-8.0.18.jar</p>
+<h5 id="heading1">第一步、软件安装</h5>
+<p>1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。
+2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并<strong>将mysql的驱动包放到jdk安装目录bin</strong>中。</p>
+<h5 id="pm">第二步、新建PM文件</h5>
+<p>打开软件，点击新建，选择类型，新建PM文件，物理数据模型，可参考下图
+<img src="https://img-blog.csdnimg.cn/2019112315483152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h5 id="heading2">第三步、连接信息设置</h5>
+<p>点击文件file &ndash;&gt; 反转引擎reverse Engineer &ndash;&gt; 数据库Database，配置相应的模型连接信息。
+<img src="https://img-blog.csdnimg.cn/201911231552118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+根据数据库类型选择相应的项，这里选择是mysql 5.0
+<img src="https://img-blog.csdnimg.cn/20191123160011870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+点击configure，设置数据库的连接信息
+<img src="https://img-blog.csdnimg.cn/20191123160440999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+点击小手，添加配置的连接的详细信息
+<img src="https://img-blog.csdnimg.cn/20191123160608581.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+具体设置信息可以参考以下。设置连接的名称，默认连接文件放的位置，数据库的用户名等信息。
+<strong>注意</strong>：1、选择连接的类型为JDBC；2、DBMS类型为mysql；3、驱动包需要放到jdk的bin目录，并选中。
+<img src="https://img-blog.csdnimg.cn/20191123222944240.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+输入数据库的密码，点击连接。
+<img src="https://img-blog.csdnimg.cn/20191123235534469.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h5 id="heading3">第四步、导入数据库信息</h5>
+<p>选择连接的数据库信息，点击数据库&ndash;&gt; 更新数据库模型，如下图所示。
+<img src="https://img-blog.csdnimg.cn/20191124001815916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+选择建立的连接，这里是mytest.dcp，注意勾选下面的复选框。
+<img src="https://img-blog.csdnimg.cn/20191124002743417.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+点击确定后，展示出来连接上的所有数据库，选择对应的数据库，可以看到库中所有的表，如下图所示。<img src="https://img-blog.csdnimg.cn/20191124003210888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+选择一张表，点击确定，就可以开始方向工程的操作，如下图所示。
+<img src="https://img-blog.csdnimg.cn/20191124003308707.png" alt="在这里插入图片描述">
+等待进度条完成，就可以看到工作空间中添加成功该表的信息，如下图所示。
+<img src="https://img-blog.csdnimg.cn/20191124003439309.png" alt="在这里插入图片描述">
+这样就完成了PowerDesigner与mysql数据库的连接，直接选中表可以自动反向生成相应的工程表信息。</p>
+<h5 id="heading4">错误的情况及处理</h5>
+<h6 id="1httpsimgblogcsdnimgcn20191123164926444pngxossprocessimagewatermarktypezmfuz3pozw5nagvpdgkshadow10textahr0chm6ly9ibg9nlmnzzg4ubmv0l3uwmtixotazodgsize16colorfffffft70">1、连接报错<img src="https://img-blog.csdnimg.cn/20191123164926444.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></h6>
+<p><strong>控制台错误信息</strong>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">SQLSTATE</span> <span class="o">=</span> <span class="mi">01</span><span class="nx">S00</span>
+<span class="nx">The</span> <span class="nx">server</span> <span class="nx">time</span> <span class="nx">zone</span> <span class="nx">value</span> <span class="s1">&#39;�й���׼ʱ��&#39;</span> <span class="nx">is</span> <span class="nx">unrecognized</span> <span class="nx">or</span> <span class="nx">represents</span> <span class="nx">more</span> <span class="nx">than</span> <span class="nx">one</span> <span class="nx">time</span> <span class="nx">zone</span><span class="p">.</span> <span class="nx">You</span> <span class="nx">must</span> <span class="nx">configure</span> <span class="nx">either</span> <span class="nx">the</span> <span class="nx">server</span> <span class="nx">or</span> <span class="nx">JDBC</span> <span class="nx">driver</span> <span class="p">(</span><span class="nx">via</span> <span class="nx">the</span> <span class="nx">serverTimezone</span> <span class="nx">configuration</span> <span class="nx">property</span><span class="p">)</span> <span class="nx">to</span> <span class="nx">use</span> <span class="nx">a</span> <span class="nx">more</span> <span class="nx">specifc</span> <span class="nx">time</span> <span class="nx">zone</span> <span class="nx">value</span> <span class="k">if</span> <span class="nx">you</span> <span class="nx">want</span> <span class="nx">to</span> <span class="nx">utilize</span> <span class="nx">time</span> <span class="nx">zone</span> <span class="nx">support</span><span class="p">.</span>
+</code></pre></div><p>处理：连接的参数不正确，JDBC连接参数可参考以下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">jdbc</span><span class="o">:</span><span class="nx">mysql</span><span class="o">:</span><span class="c1">//localhost/数据库名称?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
+</span></code></pre></div><h6 id="2jdk">2、jdk版本问题</h6>
+<p><strong>控制台报错信息</strong>：PowerDesigner Could not Initialize JavaVM
+<strong>处理</strong>：这里需要jdk的版本指定为jdk32位的版本，点击工具&ndash;属性
+<img src="https://img-blog.csdnimg.cn/20191123234404495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+将属性选项里面java的环境变量指定到jdk32位目录下，对应的文件下，详细情况见以下所示：<img src="https://img-blog.csdnimg.cn/20191123234748618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="3jdk">3、jdk版本冲突的问题</h6>
+<p>     安装完成jdk32位，需要确定是否安装成功，以本机为例，之前jdk版本为64位，安装32位的jdk可能冲掉了原有的jdk，需要及时还回来，保证原有的程序环境不受影响。操作可以参考博客来源【3】。</p>
+<h5 id="4unable-to-list-the-users">4、unable to list the users</h5>
+<p><strong>原因</strong>：可能是操作中DBMS发生变化，重新配置即可。报错信息如下，
+<img src="https://img-blog.csdnimg.cn/20191124002423277.png" alt="在这里插入图片描述">
+<strong>解决方案</strong>：
+点击database -&gt;change the Target DNMS
+修改DBMS为mysql 的对应版本</p>
+<h5 id="heading5">博客参考</h5>
+<p>【1】https://jingyan.baidu.com/article/86fae3463d02ea3c49121a9d.html。
+【2】https://blog.csdn.net/xb565517830/article/details/80401801
+【3】https://www.cnblogs.com/ysocean/p/7275030.html</p>
+
+    </article>
+</div>
+            </div>
+            
+            <div class="col-second">
+                <div class="col-box col-box-author">
+    <img class="avatar" src="images/wangqj.png" alt="wangqj">
+    <div class="col-box-title name">wangqj</div>
+    <p>用心甘情愿的态度 过随遇而安的生活.</p>
+    <p class="contact">
+        <a href="vip_wqj@163.com">Email</a>
+        <a href="https://github.com/wang961926256/wang961926256.github.io">Github</a>
+    </p>
+</div>
+
+<div class="col-box">
+    <div class="col-box-title">Newest Posts</div>
+    <ul class="post-list">
+        
+        <li>
+            <a href="https://wangqj.cn/posts/kettle/" class="post-link">Kettle 数据库迁移</a>
+        </li>
+        
+        <li>
+            <a href="https://wangqj.cn/posts/page-print/" class="post-link">Page Print</a>
+        </li>
+        
+        <li>
+            <a href="https://wangqj.cn/posts/powderdesigner/" class="post-link">PowderDesigner 连接本地数据库</a>
+        </li>
+        
+    </ul>
+</div>
+
+<div class="col-box post-toc hide">
+    <div class="col-box-title">TOC</div>
+</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="wrapper">
+    © 2019    <a href="https://wangqj.cn/">wangqj</a>
+</div>
+    </footer>
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js"></script>
+
+<script src="/js/easybook.js"></script>
+
+<script src="/js/lazysizes.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.12/dist/js/lightgallery-all.min.js"></script>
+<script src="/js/figure.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+
+</html>
