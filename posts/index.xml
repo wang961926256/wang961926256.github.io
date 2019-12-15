@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on wangqj的个人博客</title>
-    <link>https://wangqj.cn/posts/</link>
-    <description>Recent content in Posts on wangqj的个人博客</description>
+    <title>Posts on 个人博客</title>
+    <link>http://wangqji.cn/posts/</link>
+    <description>Recent content in Posts on 个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="https://wangqj.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://wangqji.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>kettle 数据库迁移</title>
-      <link>https://wangqj.cn/posts/kettle/</link>
+      <link>http://wangqji.cn/posts/kettle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangqj.cn/posts/kettle/</guid>
+      <guid>http://wangqji.cn/posts/kettle/</guid>
       <description>最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
 工具介绍 kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。下面是本机的运行环境： JDK版本： 1.8 spoon版本：pdi-ce-8.2.0 软件的运行需要添加Java的数据库驱动包，在软件lib文件夹下，添加数据库驱动。 mysql-connector-java-5.0.8-bin.jar ojdbc6.jar 打开解压后的文件夹，找到并打开spoon.bat，进入spoon软件的界面。如下图所示。 双击转换，可以新建一个转换，设置操作数据库的控件。首先需要做以下两步。
 第一步 新建DB连接 　DB连接右击，新建DB连接，以当前的需求为例，需要分别建立oracle和mysql两个数据库的连接。 第二步 数据库连接 　配置数据库的连接信息，数据库名称，账号，密码等，可以测试连接是否成功。下面是oracle数据库的连接。 改变编码方式（重要） 更改目标数据的编码方式，统一为utf8编码方式，否则会出现乱码。mysql数据库的连接的选项里，添加characterEncoding 设置编码方式为utf8。 数据的迁移可以分为单表的迁移和多表的迁移，两者的处理过程不同，下面将分别介绍。
@@ -28,10 +28,10 @@
     
     <item>
       <title>page print</title>
-      <link>https://wangqj.cn/posts/page-print/</link>
+      <link>http://wangqji.cn/posts/page-print/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangqj.cn/posts/page-print/</guid>
+      <guid>http://wangqji.cn/posts/page-print/</guid>
       <description>最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
 // 头部添加打印的信息 　&amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt; function preview(oper){ //oper表示打印的区域数  if (oper &amp;lt; 10){ bdhtml=window.document.body.innerHTML; //获取当前页的html代码  sprnstr=&amp;#34;&amp;lt;!--startprint&amp;#34;+oper+&amp;#34;--&amp;gt;&amp;#34;; //设置打印开始区  eprnstr=&amp;#34;&amp;lt;!--endprint&amp;#34;+oper+&amp;#34;--&amp;gt;&amp;#34;; //设置打印结束区  prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html  prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html  window.document.body.innerHTML=prnhtml; window.print(); //调用window的打印功能  window.document.body.innerHTML=bdhtml; } else { window.print(); } } &amp;lt;/script&amp;gt; 第二步，确定打印区域，用startprint1和endprint1来标识位置。
 // 选择需要打印的div &amp;lt;!--startprint1--&amp;gt; // &amp;lt;!--打印内容开始--&amp;gt; &amp;lt;div &amp;gt; ******打印代码区******** &amp;lt;/div&amp;gt; &amp;lt;!--打印内容结束--&amp;gt; &amp;lt;!--endprint1--&amp;gt; 第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。
@@ -40,10 +40,10 @@
     
     <item>
       <title>powderDesigner 连接本地数据库</title>
-      <link>https://wangqj.cn/posts/powderdesigner/</link>
+      <link>http://wangqji.cn/posts/powderdesigner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wangqj.cn/posts/powderdesigner/</guid>
+      <guid>http://wangqji.cn/posts/powderdesigner/</guid>
       <description>最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
 环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
 第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。
