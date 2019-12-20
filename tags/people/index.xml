@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>people on 个人博客</title>
-    <link>http://wangqji.cn/tags/people/</link>
-    <description>Recent content in people on 个人博客</description>
+    <title>people on Kross | Hugo Portfolio Template</title>
+    <link>https://wangqj.cn/tags/people/</link>
+    <description>Recent content in people on Kross | Hugo Portfolio Template</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Sun, 15 Jul 2018 12:21:58 +0600</lastBuildDate>
     
-	<atom:link href="http://wangqji.cn/tags/people/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wangqj.cn/tags/people/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Space Shouldn&#39;t Be the Final Frontier</title>
-      <link>http://wangqji.cn/blog/space-shouldnt-be-the-final-frontier/</link>
+      <link>https://wangqj.cn/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/blog/space-shouldnt-be-the-final-frontier/</link>
       <pubDate>Sun, 15 Jul 2018 12:21:58 +0600</pubDate>
       
-      <guid>http://wangqji.cn/blog/space-shouldnt-be-the-final-frontier/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit expedita, iusto repellendus cumque, officia architecto consequatur illo fuga eum sed ut autem eos voluptas. Nemo, a, rem! Atque quisquam aperiam eaque tenetur autem, soluta itaque omnis. Minus nesciunt, sint, animi illum quo ab voluptate esse delectus unde maiores iure, quasi a suscipit ipsam aliquid voluptatem. Perspiciatis eveniet, pariatur illum aut cum dolor neque consequatur error aliquid facilis in quasi temporibus assumenda tempore, doloremque autem saepe enim nihil.</description>
+      <guid>https://wangqj.cn/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/blog/space-shouldnt-be-the-final-frontier/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit expedita, iusto repellendus cumque, officia architecto consequatur illo fuga eum sed ut autem eos voluptas.</description>
     </item>
     
   </channel>

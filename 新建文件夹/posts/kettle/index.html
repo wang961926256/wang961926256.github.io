@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>Kross | Hugo Portfolio Template</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This is meta description">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.60.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/css/style.min.css" integrity="" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+</div>
+<!-- preloader end -->
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="https://wangqj.cn/"><img src="https://wangqj.cn/images/logo.png" alt="Kross | Hugo Portfolio Template"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://wangqj.cn/"> Home </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/about">About</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/blog">Blog</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/portfolio">Portfolio</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/contact">Contact</a>
+        </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="page-title bg-primary position-relative overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary">kettle 数据库迁移</h1>
+      </div>
+    </div>
+  </div>
+  
+  <img src="/images/illustrations/page-title.svg" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
+  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
+  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">kettle 数据库迁移</h3>
+          <p class="font-secondary">Published on Jan 01, 0001 by <span class="text-primary"></span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <p>最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。</p>
+<h5 id="heading">工具介绍</h5>
+<p><strong>kettle spoon</strong>是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。
+spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。下面是本机的运行环境：
+JDK版本： 1.8
+spoon版本：pdi-ce-8.2.0
+软件的运行需要添加Java的数据库驱动包，在软件lib文件夹下，添加数据库驱动。
+mysql-connector-java-5.0.8-bin.jar
+ojdbc6.jar
+　　打开解压后的文件夹，找到并打开spoon.bat，进入spoon软件的界面。如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190131220046402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　双击转换，可以新建一个转换，设置操作数据库的控件。首先需要做以下两步。</p>
+<h4 id="-db">第一步 新建DB连接</h4>
+<p>　　DB连接右击，新建DB连接，以当前的需求为例，需要分别建立oracle和mysql两个数据库的连接。
+<img src="https://img-blog.csdnimg.cn/2019012819084154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="-">第二步 数据库连接</h4>
+<p>　　配置数据库的连接信息，数据库名称，账号，密码等，可以测试连接是否成功。下面是oracle数据库的连接。
+<img src="https://img-blog.csdnimg.cn/20190128191201270.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+<strong>改变编码方式（重要）</strong>
+　　更改目标数据的编码方式，统一为utf8编码方式，否则会出现乱码。mysql数据库的连接的选项里，添加characterEncoding 设置编码方式为utf8。
+<img src="https://img-blog.csdnimg.cn/2019012819155748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+数据的迁移可以分为单表的迁移和多表的迁移，两者的处理过程不同，下面将分别介绍。</p>
+<h3 id="1-">1 单表迁移</h3>
+<p>　　在核心对象，输入下找到表输入，拖动到工作区，同样在输出下，找到表输出，拖动到工作区。在表输入控件右键，按住shift键添加表输入到表输出的传输线。
+<img src="https://img-blog.csdnimg.cn/20190129111302552.png" alt="在这里插入图片描述">
+　　双击表输入，设置相关的参数。选择数据库连接，这里源数据库是oracle，下面是SQL查询语句，如迁移A1表的数据。
+<img src="https://img-blog.csdnimg.cn/2019012911104323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　在输出表控件上双击，设置参数，数据库连接，这里是mysql数据库，点击浏览并选择需要迁移的目标表a1。
+<img src="https://img-blog.csdnimg.cn/2019012911234414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　点击三角符号&ndash;运行，弹出执行转换的窗口，默认设置，直接点击run，就开始数据的迁移。
+<img src="https://img-blog.csdnimg.cn/20190129112610318.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　下一步提示，文件已经改变，是否保存？选择是，并当前的作业保存在指定的区域。
+<img src="https://img-blog.csdnimg.cn/20190129112714793.png" alt="在这里插入图片描述">
+程序运行，在控制台可以看到打印的日志信息
+<img src="https://img-blog.csdnimg.cn/20190129112824409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+打开mysql数据库，双击查看对应的表，可以发现数据已经迁移过来了，这里需要注意的是设置数据库的编码方式。
+<img src="https://img-blog.csdnimg.cn/20190129113830947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="2-">2 多表迁移</h3>
+<p>单表的数据迁移比较简单，对多张表的批量迁移，需要将需要处理的数据库的表名存储到文件中，如data.txt，注意：一个表名一行，不要有空格。需要在第一行为其起一个别名，如ORCLDATA。
+<img src="https://img-blog.csdnimg.cn/20190129140938400.png" alt="在这里插入图片描述">
+多表数据的批量迁移主要有三个步骤，分别如下所示：</p>
+<h4 id="1">（1）数据输入</h4>
+<p><img src="https://img-blog.csdnimg.cn/20190129141525524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　在输入选项中添加文本文件输入控件，作业选项中添加复制记录到结果控件。本步骤的作用是从文本中读取表的信息，复制到结果集中。
+　　双击文本文件输入，设计相关参数。浏览方式选中文本文件，并添加到当前的目录下，如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190130142722608.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　在字段标签下，添加文本文件中起的别名ORCLDATA，数据类型为String，点击确定即可。
+<img src="https://img-blog.csdnimg.cn/2019013014295164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　最后将其保存为<strong>数据输入.ktr</strong>，<strong>ktr</strong>是kettle的格式文件，可以用spoon直接打开，方便之后的操作。</p>
+<h4 id="2">（2）数据转换</h4>
+<p>　　在表输出选项中分别添加从结果获取记录控件，设置变量控件，再次添加表输入控件和表输出控件，并用数据传输线进行连接，结果如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190130142057219.png" alt="在这里插入图片描述">
+　　双击从结果获取记录控件，设置字段名称，类型等参数。字段名称填写别名ORCLDATA,类型选择String类型。参考如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190130154947813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　双击设置变量，设置字段名称，变量名，变量活动类型，这里将字段名称和变量名设置为一样，也可以不同，变量活动类型选择vaild in the parent job，点击确定。
+<img src="https://img-blog.csdnimg.cn/2019013016023415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　双击表输入，设置参数。选择源数据库，SQL语句，这里是oracle数据库，SQL语句需要填入参数形式的变量名。
+<img src="https://img-blog.csdnimg.cn/2019013121023882.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　同样，双击表输出，设置参数属性。选择目标数据库，目标表使用变量${别名}，提交记录数量，就是每次处理多少条数据。勾选使用批量插入。
+<img src="https://img-blog.csdnimg.cn/20190131215031931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　最后将当前设置保存为<strong>数据转换.ktr</strong>，ktr是kettle的格式文件，可以用spoon直接打开。</p>
+<h4 id="heading1">（３）执行脚本</h4>
+<p>在核心对象下，通用选项下，分别添加Start控件，转换控件1，转换控件2和成功控件，并用传输线连接，结果如下。
+<img src="https://img-blog.csdnimg.cn/20190131225455938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　双击转换1，选择执行文件的路径，这里需要选择的是<strong>数据输入.ktr</strong>文件，自动生成文件相对的路径。设置结果参考下图。
+<img src="https://img-blog.csdnimg.cn/20190131225713130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　同样设置转换1的参数，选中<strong>数据转换.ktr文件</strong>，结果如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190131225943287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+　　注意还需要设置<strong>命名参数</strong>，并勾选两个设置，复制上一步结果到命名参数，将所有参数值传递到子转换，命名参数和流列名都设置为了ORCLDATA。结果如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190131230110436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+完成以上的设置，最后，点击run开始执行数据迁移，根据表中数据的多少决定其执行的快慢，可到数据库中查看数据的导入情况。
+<img src="https://img-blog.csdnimg.cn/20190131231132134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>注</strong>：执行过程中，可能会出现问题，如表结构的字段设置不够，可根据实际的需要调整。若执行出现问题可在下面留言。</p>
+<p>博客参考：
+<a href="https://blog.csdn.net/wuzhangweiss/article/details/78408029">https://blog.csdn.net/wuzhangweiss/article/details/78408029</a></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section section-on-footer" data-background="https://wangqj.cn/images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" method="POST" class="row">
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Type Message Here"></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">steve.fruits@email.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary">&#43;880 2544 658 256</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">125/A, CA Commercial Area, California, USA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light">Powered by <a href="https://themefisher.com/best-hugo-themes">Hugo Themes</a></p>
+  </div>
+</footer>
+
+
+<!-- JS Plugins -->
+
+<script src="https://wangqj.cn/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/slick/slick.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/shuffle/shuffle.min.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wangqj.cn/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'Your ID', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
