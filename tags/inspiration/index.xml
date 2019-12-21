@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>inspiration on Kross | Hugo Portfolio Template</title>
+    <title>inspiration on 王庆健的网络博客</title>
     <link>https://wangqj.cn/tags/inspiration/</link>
-    <description>Recent content in inspiration on Kross | Hugo Portfolio Template</description>
+    <description>Recent content in inspiration on 王庆健的网络博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Jul 2018 12:29:40 +0600</lastBuildDate>
@@ -18,6 +18,17 @@
       
       <guid>https://wangqj.cn/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/blog/a-new-year-a-new-posibility/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit expedita, iusto repellendus cumque, officia architecto consequatur illo fuga eum sed ut autem eos voluptas.</description>
+    </item>
+    
+    <item>
+      <title>kettle 数据库迁移</title>
+      <link>https://wangqj.cn/blog/kettle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/blog/kettle/</guid>
+      <description>最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
+ kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。
+ 工具介绍 本机的运行环境： JDK版本： 1.</description>
     </item>
     
     <item>
