@@ -12,30 +12,25 @@
     
     
     <item>
-      <title>Amazon increase income 1.5 Million</title>
-      <link>https://wangqj.cn/blog/amazon-increase-income/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
+      <title>PowderDesigner连接数据库</title>
+      <link>https://wangqj.cn/blog/powderdesigner/</link>
+      <pubDate>Thu, 12 Dec 2019 12:14:34 +0600</pubDate>
       
-      <guid>https://wangqj.cn/blog/amazon-increase-income/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <guid>https://wangqj.cn/blog/powderdesigner/</guid>
+      <description>PowerDesigner 采用模型驱动方法，将业务与IT结合起来，可帮助部署有效的企业体系架构，并为研发生命周期管理提供强大的分析与设计技术。
+ ​ 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
+环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.</description>
     </item>
     
     <item>
-      <title>Building an Online Audience</title>
-      <link>https://wangqj.cn/blog/building-an-online-audience/</link>
-      <pubDate>Sun, 15 Jul 2018 12:27:38 +0600</pubDate>
+      <title>print page</title>
+      <link>https://wangqj.cn/blog/page-print/</link>
+      <pubDate>Thu, 12 Dec 2019 12:14:34 +0600</pubDate>
       
-      <guid>https://wangqj.cn/blog/building-an-online-audience/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit expedita, iusto repellendus cumque, officia architecto consequatur illo fuga eum sed ut autem eos voluptas.</description>
-    </item>
-    
-    <item>
-      <title>Space Shouldn&#39;t Be the Final Frontier</title>
-      <link>https://wangqj.cn/blog/space-shouldnt-be-the-final-frontier/</link>
-      <pubDate>Sun, 15 Jul 2018 12:21:58 +0600</pubDate>
-      
-      <guid>https://wangqj.cn/blog/space-shouldnt-be-the-final-frontier/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit expedita, iusto repellendus cumque, officia architecto consequatur illo fuga eum sed ut autem eos voluptas.</description>
+      <guid>https://wangqj.cn/blog/page-print/</guid>
+      <description>页面打印 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印
+ 第一种方式、添加代码打印 　添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
+// 头部添加打印的信息 &amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt; function preview(oper){ //oper表示打印的区域数  if (oper &amp;lt; 10){ bdhtml=window.</description>
     </item>
     
     <item>
@@ -47,27 +42,6 @@
       <description>最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
  kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。
  工具介绍 本机的运行环境： JDK版本： 1.</description>
-    </item>
-    
-    <item>
-      <title>page print</title>
-      <link>https://wangqj.cn/blog/page-print/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/blog/page-print/</guid>
-      <description>最近用到了打印页面信息的要求，网上查询资料，获知主要有两种方式：添加打印代码和借助控件实现打印，下面就来看看这两种方式。 1、 添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
-// 头部添加打印的信息 　&amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt; function preview(oper){ //oper表示打印的区域数  if (oper &amp;lt; 10){ bdhtml=window.</description>
-    </item>
-    
-    <item>
-      <title>powderDesigner 连接本地数据库</title>
-      <link>https://wangqj.cn/blog/powderdesigner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/blog/powderdesigner/</guid>
-      <description>最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
-环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.0.18.jar
-第一步、软件安装 1、安装PowerDesigner软件，这里不再说具体安装的过程，基本上都是下一步，一直到最后，具体步骤可以网上查询，或者在博客参考【1】。 2、安装32位jdk。经过网上查看资料和试验发现，连接驱动需要用到的是32位的jdk，这里需要提前进行安装，并将mysql的驱动包放到jdk安装目录bin中。</description>
     </item>
     
   </channel>
