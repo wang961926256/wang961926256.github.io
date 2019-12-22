@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portfolio on 王庆健的网络博客</title>
+    <title>program on 王庆健的网络博客</title>
     <link>https://wangqj.cn/portfolio/</link>
-    <description>Recent content in Portfolio on 王庆健的网络博客</description>
+    <description>Recent content in program on 王庆健的网络博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate>
+    <lastBuildDate>Thu, 12 Dec 2019 12:14:34 +0600</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
