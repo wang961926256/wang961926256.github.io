@@ -132,6 +132,16 @@ private Map&amp;lt;String, Object&amp;gt; getExcelFileType() { Map&amp;lt;String
     </item>
     
     <item>
+      <title>oracle备份</title>
+      <link>https://wangqj.cn/blog/java-excel-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/blog/java-excel-copy/</guid>
+      <description>oracle 是一种重要的关系型数据库，日常工作中需要对其进行备份和恢复。
+ ​	在日常开发中，需要及时对数据库进行备份和还原，以oracle为例，两种数据库的恢复和还原的方法，主要有 impdp 和 imp 两种方式：</description>
+    </item>
+    
+    <item>
       <title>reading</title>
       <link>https://wangqj.cn/about/reading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
