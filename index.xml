@@ -142,6 +142,17 @@ private Map&amp;lt;String, Object&amp;gt; getExcelFileType() { Map&amp;lt;String
     </item>
     
     <item>
+      <title>oracle存储过程</title>
+      <link>https://wangqj.cn/blog/oracle-mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/blog/oracle-mysql/</guid>
+      <description>存储过程 是在大型数据库系统中，一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它。
+ ​	最近有个需求是将oracle版本的存储过程转换为mysql版本的存储过程，专门查询了两种数据库存储过程的差别，这里记录下来，方便之后的查看。
+oracle版本 从user表中查询出name的值，更新到新表new_user 对应的字段。</description>
+    </item>
+    
+    <item>
       <title>reading</title>
       <link>https://wangqj.cn/about/reading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

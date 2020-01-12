@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>王庆健的网络博客</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This is meta description.">
+  <meta name="author" content="wangqj">
+  <meta name="generator" content="Hugo 0.60.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/css/style.min.css" integrity="" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+</div>
+<!-- preloader end -->
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="https://wangqj.cn/"><img src="https://wangqj.cn/images/logo.png" alt="王庆健的网络博客"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://wangqj.cn/"> 首页 </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/blog">博客</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/portfolio">编程</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/about">读书</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/contact">关于</a>
+        </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="page-title bg-primary position-relative overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary">oracle存储过程</h1>
+      </div>
+    </div>
+  </div>
+  
+  <img src="/images/illustrations/page-title.svg" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
+  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
+  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">oracle存储过程</h3>
+          <p class="font-secondary">Published on Jan 01, 0001 by <span class="text-primary">wangqj</span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/images/blog/post-20.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <blockquote>
+<p><strong>存储过程</strong> 是在大型数据库系统中，一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它。</p>
+</blockquote>
+<p>​	最近有个需求是将oracle版本的存储过程转换为mysql版本的存储过程，专门查询了两种数据库存储过程的差别，这里记录下来，方便之后的查看。</p>
+<h6 id="oracle">oracle版本</h6>
+<p>从user表中查询出name的值，更新到新表new_user 对应的字段。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//创建存储过程
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">CREATE</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">REPLACE</span> 
+<span style="color:#a6e22e">PROCEDURE</span> <span style="color:#a6e22e">newdata</span> <span style="color:#a6e22e">AS</span>
+<span style="color:#a6e22e">BEGIN</span>
+<span style="color:#a6e22e">declare</span>
+	  <span style="color:#75715e">//定义变量
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">str_1</span> <span style="color:#a6e22e">varchar2</span>(<span style="color:#ae81ff">4000</span>);
+<span style="color:#a6e22e">begin</span>
+   <span style="color:#75715e">//循环遍历
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">row_aaa</span> <span style="color:#66d9ef">in</span> (<span style="color:#a6e22e">select</span> <span style="color:#a6e22e">id</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">new_user</span> <span style="color:#a6e22e">t</span> ) <span style="color:#a6e22e">loop</span>
+   <span style="color:#75715e">//初始化
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">str_1</span><span style="color:#f92672">:</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>;
+<span style="color:#a6e22e">BEGIN</span>
+<span style="color:#75715e">//buffer不受限制	
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">DBMS_OUTPUT</span>.<span style="color:#a6e22e">ENABLE</span>(<span style="color:#a6e22e">buffer_size</span> =&gt; <span style="color:#66d9ef">null</span>); 
+<span style="color:#75715e">//执行查询语句
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">select</span>  <span style="color:#a6e22e">kk</span> <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">str_1</span> <span style="color:#a6e22e">from</span>
+	(<span style="color:#a6e22e">select</span>  <span style="color:#a6e22e">name</span> <span style="color:#f92672">||</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#a6e22e">KK</span>                           
+	 <span style="color:#a6e22e">from</span>( <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">user</span>
+	<span style="color:#a6e22e">where</span>  <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_id</span> ) <span style="color:#a6e22e">WHERE</span> <span style="color:#a6e22e">ROWNUM</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> ); 
+	<span style="color:#75715e">//打印输出结果
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">dbms_output</span>.<span style="color:#a6e22e">put_line</span>(<span style="color:#a6e22e">str_1</span> );
+	<span style="color:#a6e22e">update</span> <span style="color:#a6e22e">new_user</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_1</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_id</span>;
+<span style="color:#75715e">//抛出异常
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">EXCEPTION</span> <span style="color:#a6e22e">WHEN</span> <span style="color:#a6e22e">NO_DATA_FOUND</span> <span style="color:#a6e22e">THEN</span>
+	<span style="color:#a6e22e">str_21</span> <span style="color:#f92672">:</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+	<span style="color:#a6e22e">update</span> <span style="color:#a6e22e">new_user</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_1</span>  <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_id</span> ;
+<span style="color:#a6e22e">commit</span>;	
+<span style="color:#a6e22e">end</span>;			 
+<span style="color:#a6e22e">END</span>;
+</code></pre></div><h5 id="mysql">mysql版本</h5>
+<p>从user表中查询出name的值，更新到新表new_user 对应的字段。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//创建存储过程
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">DROP</span> <span style="color:#a6e22e">PROCEDURE</span> <span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">EXISTS</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">newdata</span><span style="color:#e6db74">`</span>;				
+<span style="color:#a6e22e">DELIMITER</span> ;;
+<span style="color:#a6e22e">CREATE</span> <span style="color:#a6e22e">PROCEDURE</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">newdata</span><span style="color:#e6db74">`</span>()
+<span style="color:#a6e22e">BEGIN</span>
+	<span style="color:#75715e">//声明变量，用于循环状态的标识
+</span><span style="color:#75715e"></span>	 <span style="color:#a6e22e">DECLARE</span> <span style="color:#a6e22e">done</span> <span style="color:#a6e22e">INT</span> <span style="color:#a6e22e">DEFAULT</span> <span style="color:#a6e22e">FALSE</span>;
+	 <span style="color:#a6e22e">declare</span> <span style="color:#a6e22e">str_1</span> <span style="color:#a6e22e">TEXT</span>;
+	 <span style="color:#a6e22e">declare</span> <span style="color:#a6e22e">new_id</span> <span style="color:#a6e22e">TEXT</span>;
+	 <span style="color:#a6e22e">DECLARE</span> <span style="color:#a6e22e">cur_list</span> <span style="color:#a6e22e">CURSOR</span> <span style="color:#a6e22e">FOR</span> <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">id</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">new_user</span> <span style="color:#a6e22e">t</span>;
+	 <span style="color:#75715e">//抛出异常
+</span><span style="color:#75715e"></span>	 <span style="color:#a6e22e">DECLARE</span> <span style="color:#a6e22e">CONTINUE</span> <span style="color:#a6e22e">HANDLER</span> <span style="color:#a6e22e">FOR</span> <span style="color:#a6e22e">NOT</span> <span style="color:#a6e22e">FOUND</span> <span style="color:#a6e22e">SET</span> <span style="color:#a6e22e">done</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+	 <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">str_1</span> <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>;
+	 <span style="color:#75715e">//打开游标
+</span><span style="color:#75715e"></span>	 <span style="color:#a6e22e">OPEN</span> <span style="color:#a6e22e">cur_list</span>;
+	 <span style="color:#a6e22e">read_loop</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">LOOP</span>
+	 <span style="color:#75715e">//赋值操作
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">FETCH</span> <span style="color:#a6e22e">cur_list</span> <span style="color:#a6e22e">INTO</span> <span style="color:#a6e22e">new_id</span>;
+		<span style="color:#75715e">//控制循环
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">done</span> <span style="color:#a6e22e">THEN</span>
+            <span style="color:#a6e22e">LEAVE</span> <span style="color:#a6e22e">read_loop</span>;
+        <span style="color:#a6e22e">END</span> <span style="color:#a6e22e">IF</span>;		
+			<span style="color:#a6e22e">select</span>  <span style="color:#a6e22e">kk</span> <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">str_1</span> <span style="color:#a6e22e">from</span>
+			(<span style="color:#a6e22e">select</span>  <span style="color:#a6e22e">name</span> <span style="color:#f92672">||</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#a6e22e">KK</span>                           
+	 			<span style="color:#a6e22e">from</span>( <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">user</span>
+				<span style="color:#a6e22e">where</span>  <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_id</span> ) <span style="color:#a6e22e">WHERE</span> <span style="color:#a6e22e">ROWNUM</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> )<span style="color:#a6e22e">dm</span>; 
+
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">str_1</span>  <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">not</span> <span style="color:#66d9ef">null</span> <span style="color:#a6e22e">THEN</span>
+		<span style="color:#a6e22e">update</span> <span style="color:#a6e22e">new_user</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_1</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_id</span>;
+		<span style="color:#a6e22e">commit</span>;			
+<span style="color:#a6e22e">end</span> <span style="color:#66d9ef">if</span>;
+	<span style="color:#75715e">//重置游标 当查询结果为空时，程序继续执行
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">SET</span> <span style="color:#a6e22e">done</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;   
+	<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">str_1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+	 <span style="color:#a6e22e">END</span> <span style="color:#a6e22e">LOOP</span> <span style="color:#a6e22e">read_loop</span>;
+	<span style="color:#a6e22e">CLOSE</span> <span style="color:#a6e22e">cur_list</span> ;
+<span style="color:#a6e22e">END</span> ;;
+<span style="color:#a6e22e">DELIMITER</span>;<span style="color:#f92672">--</span> <span style="color:#a6e22e">游标结束</span>
+<span style="color:#75715e">//调用存储过程
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">CALL</span> <span style="color:#a6e22e">newdata</span>();
+</code></pre></div><p>oracle和mysql在存储过程的语法上有差别，在改写过程中，发现执行的效率也是很大，oracle版本的速度很快，mysql执行的速度差了较多。</p>
+<blockquote>
+<p><strong>oracle与mysql存储过程的区别</strong>
+<strong>1、字符串数据类型</strong>
+<em>oracle</em> ：varchar2类型，
+<em>mysql</em> : varchar类型
+<strong>2、输出结果</strong>
+<em>oracle</em>：dbms_output.put_line(str_1 );
+<em>mysql</em> ：select str_1
+<strong>3、存储过程创建</strong>
+<em>oracle</em> ：create or replace procedure ***
+<em>mysql</em> : drop if exists <code>procedure </code>；
+create procedure  **
+<strong>4、返回值</strong>
+<em>oracle</em>： return
+<em>mysql</em>：returns
+<strong>5、退出</strong>
+<em>oracle</em> ：方法和存储过程都可以使用return
+<em>mysql</em>：存储过程使用LEAVE 退出，方法退出可以使用return</p>
+</blockquote>
+<h5 id="heading">博客来源</h5>
+<p>【1】https://www.cnblogs.com/linyuansun/p/10818753.html</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section section-on-footer" data-background="https://wangqj.cn/images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" method="POST" class="row">
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Type Message Here"></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">vip_wqj@163.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary"></p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">中国·海淀</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light">Powered by <a href="https://themefisher.com/best-hugo-themes">Hugo Themes</a></p>
+  </div>
+</footer>
+
+
+<!-- JS Plugins -->
+
+<script src="https://wangqj.cn/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/slick/slick.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/shuffle/shuffle.min.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wangqj.cn/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'Your ID', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
