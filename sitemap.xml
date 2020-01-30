@@ -7,12 +7,17 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/nginx/</loc>
-    <lastmod>2019-12-22T12:14:34+06:00</lastmod>
+    <loc>https://wangqj.cn/blog/mysql-sqlite/</loc>
+    <lastmod>2020-01-30T12:14:34+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://wangqj.cn/</loc>
+    <lastmod>2020-01-30T12:14:34+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/nginx/</loc>
     <lastmod>2019-12-22T12:14:34+06:00</lastmod>
   </url>
   
@@ -27,12 +32,7 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/oracle-sharre/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/oracle/</loc>
+    <loc>https://wangqj.cn/blog/oracle-share/</loc>
     <lastmod>2019-12-12T12:14:34+06:00</lastmod>
   </url>
   

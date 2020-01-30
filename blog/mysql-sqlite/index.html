@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>王庆健的网络博客</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Navicat数据传输">
+  <meta name="author" content="wangqj">
+  <meta name="generator" content="Hugo 0.60.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/css/style.min.css" integrity="" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+</div>
+<!-- preloader end -->
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="https://wangqj.cn/"><img src="https://wangqj.cn/images/logo.png" alt="王庆健的网络博客"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://wangqj.cn/"> 首页 </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/blog">博客</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/portfolio">编程</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/about">读书</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/contact">关于</a>
+        </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="page-title bg-primary position-relative overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary">mysql到sqlite数据传输</h1>
+      </div>
+    </div>
+  </div>
+  
+  <img src="/images/illustrations/page-title.svg" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
+  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
+  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">mysql到sqlite数据传输</h3>
+          <p class="font-secondary">Published on Jan 30, 2020 by <span class="text-primary">wangqj</span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/images/blog/post-25.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <blockquote>
+<p><strong>mysql和sqlite</strong> 是两种常用的数据库，在日常使用中也是需要进行数据的交换。</p>
+</blockquote>
+<p>在实际的工作中需要将mysql数据库表中的数据同步到sqlite对应的表中，主要有两种方法。第一种是使用Navicat里的数据传输，第二种是使用程序来实现。</p>
+<h5 id="heading">第一种、程序实现</h5>
+<h6 id="1sqlite">1、添加sqlite驱动</h6>
+<p>本项目是通过maven管理，在pom.xml中添加sqlite的驱动包依赖。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">dependency</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">groupId</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">xerial</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">artifactId</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">sqlite</span><span style="color:#f92672">-</span><span style="color:#a6e22e">jdbc</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">version</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">3.19</span><span style="color:#ae81ff">.3</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">v</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+</code></pre></div><h6 id="2">2、复制模板文件</h6>
+<p>运用FileUtils来复制模板pad.db文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">String <span style="color:#a6e22e">padPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;D:\\pad.db&#39;</span>;
+<span style="color:#a6e22e">FileUtils</span>.<span style="color:#a6e22e">copyDirectory</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">File</span>(<span style="color:#a6e22e">padPath</span>),<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">File</span>(<span style="color:#e6db74">&#34;c:\\pad.db&#34;</span>);
+</code></pre></div><h6 id="3sqlite">3、建立sqlite连接</h6>
+<p>从mysql数据库中查询出拼接的字段，传输到sqlite数据库对应的表中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//建立连接
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Class</span>.<span style="color:#a6e22e">forName</span>(<span style="color:#e6db74">&#34;org.sqlite.JDBC&#34;</span>);
+<span style="color:#a6e22e">Connection</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DriverManager</span>.<span style="color:#a6e22e">getConnection</span>(<span style="color:#e6db74">&#34;jdbc:sqlite:padPath&#34;</span> );
+<span style="color:#75715e">//设置为非自动提交
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">setAutoCommit</span>(<span style="color:#66d9ef">false</span>);
+<span style="color:#75715e">//创建连接对象
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Statement</span> <span style="color:#a6e22e">stmt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">createStatement</span>();
+<span style="color:#a6e22e">padSql</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT * FROM user&#34;</span>;
+<span style="color:#75715e">//查询mysql数据库中数据
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">padList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">jdbcOperations</span>.<span style="color:#a6e22e">queryForList</span>(<span style="color:#a6e22e">padSql</span>);
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">padList</span>.<span style="color:#a6e22e">size</span>(); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+		<span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">padList</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">i</span>);
+		<span style="color:#a6e22e">sb</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StringBuilder</span>();
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;INSERT INTO user(&#34;</span>);
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;`id`, `name`, `sex`, `address`&#34;</span>);
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;) VALUES(&#34;</span>);	 
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;id&#34;</span>)).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;,&#34;</span>);
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;name&#34;</span>)).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;,&#34;</span>);
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;sex&#34;</span>)).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;,&#34;</span>);
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;address&#34;</span>)).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&#39;&#34;</span>);
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;)&#34;</span>);
+		<span style="color:#a6e22e">stmt</span>.<span style="color:#a6e22e">addBatch</span>(<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">toString</span>());
+	}
+	<span style="color:#75715e">//批量提交执行
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">stmt</span>.<span style="color:#a6e22e">executeBatch</span>();
+	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">commit</span>();
+	<span style="color:#75715e">//清除stmt1中积攒的参数列表
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">stmt</span>.<span style="color:#a6e22e">clearBatch</span>();
+</code></pre></div><h5 id="navicat">第二种、Navicat的数据传输</h5>
+<p>用Navicat连接mysql和sqlite数据库，可以通过Navicat自带的数据传输来实现数据的转移。</p>
+<h6 id="1--">1、工具 &ndash;&gt; 数据传输</h6>
+<p><img src="https://img-blog.csdnimg.cn/20200130205920708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="21">2、源与目标数据库</h6>
+<p>这里选择源数据为mysql，目标数据库为sqlite
+<img src="https://img-blog.csdnimg.cn/20200130210427477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+设置传输过程中出错继续
+<img src="https://img-blog.csdnimg.cn/20200130211408151.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h5 id="heading1">博客来源</h5>
+<p>【1】https://blog.csdn.net/winteror/article/details/10065047</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section section-on-footer" data-background="https://wangqj.cn/images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" method="POST" class="row">
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Type Message Here"></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">vip_wqj@163.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary"></p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">中国·海淀</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light">Powered by <a href="https://themefisher.com/best-hugo-themes">Hugo Themes</a></p>
+  </div>
+</footer>
+
+
+<!-- JS Plugins -->
+
+<script src="https://wangqj.cn/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/slick/slick.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/shuffle/shuffle.min.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wangqj.cn/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'Your ID', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
