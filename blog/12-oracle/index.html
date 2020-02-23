@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>王庆健的网络博客</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="oracle-mysql">
+  <meta name="author" content="wangqj">
+  <meta name="generator" content="Hugo 0.60.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/css/style.min.css" integrity="" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+</div>
+<!-- preloader end -->
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="https://wangqj.cn/"><img src="https://wangqj.cn/images/logo.png" alt="王庆健的网络博客"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://wangqj.cn/"> 首页 </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/blog">博客</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/portfolio">编程</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/about">读书</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/contact">关于</a>
+        </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="page-title bg-primary position-relative overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary">可重复执行的脚本</h1>
+      </div>
+    </div>
+  </div>
+  
+  <img src="/images/illustrations/page-title.svg" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
+  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
+  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">可重复执行的脚本</h3>
+          <p class="font-secondary">Published on Jan 01, 0001 by <span class="text-primary">wangqj</span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/images/blog/post-13.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <blockquote>
+<p><strong>数据库脚本</strong> 是包含不属于数据库架构定义的Transact-SQL(T-SQL)语句或实用工具（如 SQLCMD）的附加文件。可以将数据库脚本用作部署步骤的一部分（预先部署和后期部署脚本），数据库脚本也可以是存储在数据库项目中的常规管理脚本。。</p>
+</blockquote>
+<p>在家办公的情况下，每位项目成员都在自己本地数据库操作，如何保持数据一致性，让小伙伴能正常使用你的功能，可重复执行的脚本就重要了。这里使用的是存储过程，记录下来，方便备查。</p>
+<h6 id="1">1、创建表</h6>
+<p>在创建脚本方面，oracle与mysql语法上有所区别。以新建人员表为例，下面是两种数据库的建库脚本。
+<strong>oracle 建数据表脚本</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//**建表之前进行判断**
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">DECLARE</span> <span style="color:#a6e22e">num</span> <span style="color:#a6e22e">NUMBER</span> ;
+<span style="color:#a6e22e">BEGIN</span>
+ 	<span style="color:#a6e22e">SELECT</span> <span style="color:#a6e22e">COUNT</span> (<span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">INTO</span> <span style="color:#a6e22e">num</span> <span style="color:#a6e22e">FROM</span> <span style="color:#a6e22e">user_tables</span> <span style="color:#a6e22e">WHERE</span> <span style="color:#a6e22e">TABLE_NAME</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;user&#39;</span> ;
+ <span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">THEN</span>
+ 	<span style="color:#75715e">//判断是否存在
+</span><span style="color:#75715e"></span> 	 <span style="color:#a6e22e">EXECUTE</span> <span style="color:#a6e22e">IMMEDIATE</span> <span style="color:#e6db74">&#39;drop table user cascade constraints&#39;</span> ;
+ <span style="color:#a6e22e">END</span> <span style="color:#a6e22e">IF</span>;
+<span style="color:#a6e22e">END</span>;
+<span style="color:#960050;background-color:#1e0010">/</span>
+<span style="color:#a6e22e">create</span> <span style="color:#a6e22e">table</span> <span style="color:#a6e22e">user</span> 
+(
+   <span style="color:#a6e22e">id</span>      <span style="color:#a6e22e">VARCHAR2</span>(<span style="color:#ae81ff">36</span>)  <span style="color:#a6e22e">not</span> <span style="color:#66d9ef">null</span>,
+   <span style="color:#a6e22e">sex</span>     <span style="color:#a6e22e">VARCHAR2</span>(<span style="color:#ae81ff">2</span>),
+   <span style="color:#a6e22e">name</span>    <span style="color:#a6e22e">VARCHAR2</span>(<span style="color:#ae81ff">100</span>),
+   <span style="color:#a6e22e">age</span>     <span style="color:#a6e22e">NUMBER</span>,
+   <span style="color:#a6e22e">constraint</span> <span style="color:#a6e22e">PK_user</span> <span style="color:#a6e22e">primary</span> <span style="color:#a6e22e">key</span> (<span style="color:#a6e22e">id</span>)
+);
+<span style="color:#a6e22e">comment</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">table</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">is</span> <span style="color:#e6db74">&#39;人员表&#39;</span>;
+<span style="color:#a6e22e">COMMENT</span> <span style="color:#a6e22e">ON</span> <span style="color:#a6e22e">COLUMN</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">id</span> <span style="color:#a6e22e">IS</span> <span style="color:#e6db74">&#39;人员id&#39;</span>;
+<span style="color:#a6e22e">COMMENT</span> <span style="color:#a6e22e">ON</span> <span style="color:#a6e22e">COLUMN</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">sex</span> <span style="color:#a6e22e">IS</span> <span style="color:#e6db74">&#39;性别&#39;</span>;
+<span style="color:#a6e22e">COMMENT</span> <span style="color:#a6e22e">ON</span> <span style="color:#a6e22e">COLUMN</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span> <span style="color:#a6e22e">IS</span> <span style="color:#e6db74">&#39;姓名&#39;</span>;
+<span style="color:#a6e22e">COMMENT</span> <span style="color:#a6e22e">ON</span> <span style="color:#a6e22e">COLUMN</span> <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">age</span> <span style="color:#a6e22e">IS</span> <span style="color:#e6db74">&#39;年龄&#39;</span>;
+<span style="color:#a6e22e">commit</span>;
+</code></pre></div><blockquote>
+<p>注意：在两个DECLARE之间需要用到 <strong>/</strong> 来进行分割，否则可能会报错如下：
+ORA-06550: 第 14 行, 第 1 列:
+PLS-00103: 出现符号 &ldquo;DECLARE&rdquo;
+ORA-06550: 第 22 行, 第 0 列:
+PLS-00103: 出现符号 &ldquo;end-of-file&quot;在需要下列之一时：
+( begin case
+declare end exception exit for goto if loop mod null pragma
+raise return select update while with <!-- raw HTML omitted -->
+<!-- raw HTML omitted --> &lt;a bind va</p>
+</blockquote>
+<p><strong>mysql建表脚本</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//数据表创建前，进行查询，存在则需要删除
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">DROP</span> <span style="color:#a6e22e">TABLE</span> <span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">EXISTS</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">user</span><span style="color:#e6db74">`</span>;
+<span style="color:#75715e">//建表语句
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">CREATE</span> <span style="color:#a6e22e">TABLE</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">user</span><span style="color:#e6db74">`</span> (
+  <span style="color:#e6db74">`</span><span style="color:#e6db74">user_PKID</span><span style="color:#e6db74">`</span> <span style="color:#66d9ef">int</span>(<span style="color:#ae81ff">11</span>)  <span style="color:#a6e22e">UNSIGNED</span> <span style="color:#a6e22e">NOT</span> <span style="color:#a6e22e">NULL</span> <span style="color:#a6e22e">AUTO_INCREMENT</span> <span style="color:#a6e22e">COMMENT</span> <span style="color:#e6db74">&#39;主键ID&#39;</span>,
+  <span style="color:#e6db74">`</span><span style="color:#e6db74">id</span><span style="color:#e6db74">`</span> <span style="color:#a6e22e">varchar</span>(<span style="color:#ae81ff">36</span>) <span style="color:#a6e22e">NOT</span> <span style="color:#a6e22e">NULL</span> <span style="color:#a6e22e">COMMENT</span> <span style="color:#e6db74">&#39;人员id&#39;</span>,
+  <span style="color:#e6db74">`</span><span style="color:#e6db74">sex</span><span style="color:#e6db74">`</span> <span style="color:#a6e22e">varchar</span>(<span style="color:#ae81ff">2</span>) <span style="color:#a6e22e">DEFAULT</span> <span style="color:#a6e22e">NULL</span> <span style="color:#a6e22e">COMMENT</span> <span style="color:#e6db74">&#39;性别&#39;</span>,
+  <span style="color:#e6db74">`</span><span style="color:#e6db74">name</span><span style="color:#e6db74">`</span> <span style="color:#a6e22e">varchar</span>(<span style="color:#ae81ff">100</span>) <span style="color:#a6e22e">DEFAULT</span> <span style="color:#a6e22e">NULL</span> <span style="color:#a6e22e">COMMENT</span> <span style="color:#e6db74">&#39;姓名&#39;</span>,
+  <span style="color:#e6db74">`</span><span style="color:#e6db74">age</span><span style="color:#e6db74">`</span> <span style="color:#66d9ef">int</span>(<span style="color:#ae81ff">10</span>) <span style="color:#a6e22e">DEFAULT</span> <span style="color:#a6e22e">NULL</span> <span style="color:#a6e22e">COMMENT</span> <span style="color:#e6db74">&#39;年龄&#39;</span>,
+  <span style="color:#a6e22e">PRIMARY</span> <span style="color:#a6e22e">KEY</span> (<span style="color:#e6db74">`</span><span style="color:#e6db74">user_PKID</span><span style="color:#e6db74">`</span>),
+  <span style="color:#a6e22e">UNIQUE</span> <span style="color:#a6e22e">KEY</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">uniq_key_user</span><span style="color:#e6db74">`</span> (<span style="color:#e6db74">`</span><span style="color:#e6db74">id</span><span style="color:#e6db74">`</span>) <span style="color:#a6e22e">COMMENT</span> <span style="color:#e6db74">&#39;id:人员id索引&#39;</span>
+) <span style="color:#a6e22e">COMMENT</span> <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;人员表&#39;</span> <span style="color:#a6e22e">ENGINE</span><span style="color:#f92672">=</span><span style="color:#a6e22e">InnoDB</span> <span style="color:#a6e22e">DEFAULT</span> <span style="color:#a6e22e">CHARSET</span><span style="color:#f92672">=</span><span style="color:#a6e22e">utf8mb4</span>;
+</code></pre></div><h6 id="2">2、增加列</h6>
+<p>增加列，可以使用 <strong>alert tabel 表名 add (列名 类型)</strong>
+如 对user表增加姓名列。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//声明columnCount，用于存放查询的结果
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">DECLARE</span> <span style="color:#a6e22e">columnCount</span> <span style="color:#a6e22e">number</span>;   
+<span style="color:#a6e22e">begin</span> 
+	<span style="color:#75715e">//从user_tab_columns 中查询是否存在该列
+</span><span style="color:#75715e"></span>   	<span style="color:#a6e22e">select</span> <span style="color:#a6e22e">count</span>(<span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">columnCount</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">user_tab_columns</span>  <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">table_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">upper</span>(<span style="color:#e6db74">&#39;user&#39;</span>)  <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">column_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">upper</span>(<span style="color:#e6db74">&#39;name&#39;</span>);     
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">columnCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">then</span> 
+	   <span style="color:#a6e22e">EXECUTE</span> <span style="color:#a6e22e">IMMEDIATE</span>
+	   <span style="color:#75715e">//执行表的新增列语句
+</span><span style="color:#75715e"></span>	   <span style="color:#e6db74">&#39;ALTER TABLE user ADD name varchar2(20)&#39;</span>; 
+	<span style="color:#a6e22e">end</span> <span style="color:#66d9ef">if</span>;
+<span style="color:#a6e22e">end</span>;
+<span style="color:#960050;background-color:#1e0010">/</span>
+</code></pre></div><h6 id="3">3、修改列</h6>
+<p>修改列的类型、长度等信息 可以使用 <strong>alert tabel 表名 modify (列名 类型)</strong> ， 如 对user表增加姓名列的长度。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">DECLARE</span> <span style="color:#a6e22e">columnCount</span> <span style="color:#a6e22e">number</span>;   
+<span style="color:#a6e22e">begin</span> 
+   <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">count</span>(<span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">columnCount</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">user_tab_columns</span>  <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">table_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">upper</span>(<span style="color:#e6db74">&#39;user&#39;</span>)  <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">column_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">upper</span>(<span style="color:#e6db74">&#39;name &#39;</span>);     
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">columnCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">then</span> 
+	   <span style="color:#a6e22e">EXECUTE</span> <span style="color:#a6e22e">IMMEDIATE</span>
+	   <span style="color:#e6db74">&#39;ALTER TABLE user MODIFY (name nvarchar2(50))&#39;</span>; 
+	<span style="color:#a6e22e">end</span> <span style="color:#66d9ef">if</span>;
+<span style="color:#a6e22e">end</span>;
+<span style="color:#960050;background-color:#1e0010">/</span>
+</code></pre></div><h6 id="4">4、更新表中数据</h6>
+<p>更新数据前，需要查询表中是否有该数据，不存在进行插入操作，存在进行更新操作。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">DECLARE</span> 
+	<span style="color:#a6e22e">num</span>  <span style="color:#a6e22e">NUMBER</span>; 
+<span style="color:#a6e22e">BEGIN</span>
+		<span style="color:#a6e22e">SELECT</span> <span style="color:#a6e22e">COUNT</span>(<span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">INTO</span> <span style="color:#a6e22e">num</span> <span style="color:#a6e22e">FROM</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">WHERE</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;10235&#39;</span>; 
+	<span style="color:#a6e22e">IF</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">THEN</span>   
+		 <span style="color:#a6e22e">insert</span> <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">user</span>(<span style="color:#a6e22e">id</span>,<span style="color:#a6e22e">name</span>,<span style="color:#a6e22e">age</span>,<span style="color:#a6e22e">sex</span>) <span style="color:#a6e22e">values</span>(<span style="color:#e6db74">&#39;10235&#39;</span> , <span style="color:#e6db74">&#39;jerry&#39;</span>,<span style="color:#e6db74">&#39;18&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span> );  
+	<span style="color:#66d9ef">else</span>    
+		 <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">set</span>  <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tom&#34;</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;10235&#39;</span>;    
+	<span style="color:#a6e22e">END</span> <span style="color:#a6e22e">IF</span>; 
+	<span style="color:#a6e22e">COMMIT</span>; 
+<span style="color:#a6e22e">END</span>; 
+<span style="color:#960050;background-color:#1e0010">/</span>
+</code></pre></div><h6 id="heading">博客参考</h6>
+<p>【1】https://blog.csdn.net/u010590016/article/details/40433695</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section section-on-footer" data-background="https://wangqj.cn/images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" method="POST" class="row">
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Type Message Here"></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">vip_wqj@163.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary"></p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">中国·海淀</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light">Powered by <a href="https://themefisher.com/best-hugo-themes">Hugo Themes</a></p>
+  </div>
+</footer>
+
+
+<!-- JS Plugins -->
+
+<script src="https://wangqj.cn/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/slick/slick.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/shuffle/shuffle.min.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wangqj.cn/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'Your ID', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

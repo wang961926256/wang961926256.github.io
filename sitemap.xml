@@ -3,56 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wangqj.cn/program/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/mysql-sqlite/</loc>
-    <lastmod>2020-01-30T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/</loc>
-    <lastmod>2020-01-30T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/nginx/</loc>
-    <lastmod>2019-12-22T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/java/</loc>
-    <lastmod>2019-12-20T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/contact/</loc>
     <lastmod>2019-12-12T12:14:34+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/oracle-share/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/powderdesigner/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/page-print/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/portfolio/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/blog/putty/</loc>
     <lastmod>2019-12-12T12:14:34+06:00</lastmod>
   </url>
   
@@ -71,7 +27,7 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/ext/</loc>
+    <loc>https://wangqj.cn/blog/00-ext/</loc>
   </url>
   
   <url>
@@ -79,11 +35,19 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/java-excel/</loc>
+    <loc>https://wangqj.cn/blog/01-java-excel/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/kettle/</loc>
+    <loc>https://wangqj.cn/blog/02-java/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/03-kettle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/05-nginx/</loc>
   </url>
   
   <url>
@@ -91,11 +55,31 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/oracle-back/</loc>
+    <loc>https://wangqj.cn/blog/04-mysql-sqlite/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/oracle-mysql/</loc>
+    <loc>https://wangqj.cn/blog/06-oracle-back/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/07-oracle-mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/08-oracle-share/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/10-powderdesigner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/09-page-print/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/11-putty/</loc>
   </url>
   
   <url>
@@ -104,6 +88,14 @@
   
   <url>
     <loc>https://wangqj.cn/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/blog/12-oracle/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/</loc>
   </url>
   
 </urlset>

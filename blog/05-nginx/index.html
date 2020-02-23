@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>王庆健的网络博客</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="linux部署nginx.">
+  <meta name="author" content="wangqj">
+  <meta name="generator" content="Hugo 0.60.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://wangqj.cn/plugins/themify-icons/themify-icons.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://wangqj.cn/css/style.min.css" integrity="" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+</div>
+<!-- preloader end -->
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="https://wangqj.cn/"><img src="https://wangqj.cn/images/logo.png" alt="王庆健的网络博客"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://wangqj.cn/"> 首页 </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/blog">博客</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/portfolio">编程</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/about">读书</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://wangqj.cn/contact">关于</a>
+        </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="page-title bg-primary position-relative overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary">linux部署nginx</h1>
+      </div>
+    </div>
+  </div>
+  
+  <img src="/images/illustrations/page-title.svg" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
+  <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
+  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
+  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
+  <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
+  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">linux部署nginx</h3>
+          <p class="font-secondary">Published on Jan 01, 0001 by <span class="text-primary">wangqj</span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/images/blog/post-6.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <blockquote>
+<p><strong>nginx</strong> 是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行，占有内存少，并发能力强。</p>
+</blockquote>
+<p>最近需要学习一下nginx的知识，首先是安装配置环境，这里记录一下，方便以后的查看。
+本次是在linux的虚拟机（RedHat Linux7）上配置安装nginx服务，在本机上访问和测试。</p>
+<h4 id="heading">第一步、软件下载</h4>
+<p>　　首先登录nginx的网站，下载所需要的安装文件。这里下载的版本是：<strong>nginx-1.6.2.tar.gz</strong> ，下载后的文件放到了usr/software下。软件的下载地址：http://nginx.org/en/download.html<img src="https://img-blog.csdnimg.cn/20190629224751924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="heading1">第二步、安装依赖</h4>
+<p>　　在nginx安装之前需要提前安装相关的依赖，如prec、zlib，输入以下命令，根据提示安装即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">yum</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">pcre</span>   
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">yum</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">pcre</span><span style="color:#f92672">-</span><span style="color:#a6e22e">devel</span>
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">yum</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">zlib</span> 
+<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">yum</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">zlib</span><span style="color:#f92672">-</span><span style="color:#a6e22e">devel</span>
+</code></pre></div><h5 id="heading2">第三步、解压软件</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">tar</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">zxvf</span> <span style="color:#a6e22e">nginx</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.6</span><span style="color:#ae81ff">.2</span>.<span style="color:#a6e22e">tar</span>.<span style="color:#a6e22e">gz</span>
+</code></pre></div><h4 id="heading3">第四步、配置文件</h4>
+<p>首先进入到解压的文件夹下，配置nginx的信息，执行以下命令后会在nginx文件夹下生成四个文件：sbin，html，conf 和 log，存放不同的信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">nginx</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.6</span> <span style="color:#f92672">&amp;&amp;</span>.<span style="color:#f92672">/</span><span style="color:#a6e22e">configure</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">prefix</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">x</span>
+</code></pre></div><blockquote>
+<p>–prefix选项 就是配置安装的路径，将文件配置到指定的路径下，方便管理。</p>
+</blockquote>
+<p>在启动的过程中如果报错：
+<strong>linux下安装nginx运行时提示C compiler gcc is not found</strong>
+<strong>解决方案</strong>：yum -y install gcc gcc-c++ autoconf automake libtool make  install zlib zlib-devel openssl openssl-devel pcre pcre-devel</p>
+<h4 id="heading4">第五步、编译和安装</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">make</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">make</span> <span style="color:#a6e22e">install</span>
+</code></pre></div><h4 id="nginx">第六步、启动nginx</h4>
+<p>进入配置文件sbin中的nginx即可启动。
+<strong>关闭</strong> -s stop <strong>重启</strong> -s reload</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//启动
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;&gt;</span>  <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">x</span>
+</code></pre></div><p>程序没有报错，则说明是nginx启动成功，进行第七步查看进程。</p>
+<h4 id="nginxqi">第七步、查看nginxqi启动进程</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//查看进程命令
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">ps</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">ef</span><span style="color:#f92672">|</span> <span style="color:#a6e22e">grep</span> <span style="color:#a6e22e">nginx</span>
+</code></pre></div><p>控制台则会输出主进程和工作进程的信息，如下图所示。
+<img src="https://img-blog.csdnimg.cn/20190630191330478.png" alt="在这里插入图片描述"></p>
+<h5 id="heading5">第八步、浏览器访问</h5>
+<p>在本地的浏览器上访问 http://192.168.219.129：80，IP为配置的地址，默认的端口是80，查看nginx配置是否成功。
+配置正确的话，页面出现nginx欢迎页面，如下图，如果没有出现，则有可能是虚拟机的防火墙没有关闭。
+<img src="https://img-blog.csdnimg.cn/20190630184338377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+本机安装的版本是<strong>RedHat Linux7</strong>查看和关闭防火墙的方法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//在root权限下  # 下操作
+</span><span style="color:#75715e"></span><span style="color:#75715e">//查看防火墙的状态
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">status</span> <span style="color:#a6e22e">firewalld</span>
+<span style="color:#75715e">//临时关闭防火墙
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">stop</span> <span style="color:#a6e22e">firewalld</span>
+<span style="color:#75715e">//永久关闭防火墙
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">distable</span> <span style="color:#a6e22e">firewalld</span>
+<span style="color:#75715e">//打开防火墙
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">enable</span> <span style="color:#a6e22e">firewalld</span>
+</code></pre></div><p><strong>centos</strong>  查看和关闭防火墙的方法可以参考列出的博客1，写的不错。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//查看防火墙状态
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">iptable</span> <span style="color:#a6e22e">status</span>
+</code></pre></div><p><strong>博客参考</strong>：
+【1】https://blog.csdn.net/lv_shijun/article/details/52453882</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section section-on-footer" data-background="https://wangqj.cn/images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" method="POST" class="row">
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
+            </div>
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Type Message Here"></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">vip_wqj@163.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary"></p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">中国·海淀</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light">Powered by <a href="https://themefisher.com/best-hugo-themes">Hugo Themes</a></p>
+  </div>
+</footer>
+
+
+<!-- JS Plugins -->
+
+<script src="https://wangqj.cn/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/slick/slick.min.js"></script>
+
+<script src="https://wangqj.cn/plugins/shuffle/shuffle.min.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://wangqj.cn/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'Your ID', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

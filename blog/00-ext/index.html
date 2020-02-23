@@ -6,7 +6,7 @@
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description">
+  <meta name="description" content="前端ext框架.">
   <meta name="author" content="wangqj">
   <meta name="generator" content="Hugo 0.60.1" />
 
@@ -80,7 +80,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">motivation</h1>
+        <h1 class="text-white font-tertiary">Ext监听</h1>
       </div>
     </div>
   </div>
@@ -96,64 +96,48 @@
 
 
 
-  
   <section class="section">
     <div class="container">
       <div class="row">
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-4.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/03-kettle/">kettle 数据库迁移</a>
-              </h4>
-              <p class="cars-text">最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
- kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。
- 工具介绍 本机的运行环境： JDK版本： 1.</p>
-              <a href="https://wangqj.cn/blog/03-kettle/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">Ext监听</h3>
+          <p class="font-secondary">Published on Jan 01, 0001 by <span class="text-primary">wangqj</span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/images/blog/post-1.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <blockquote>
+<p><strong>EXT</strong> 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。</p>
+</blockquote>
+<p>​		在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。
+遵循的原则是：<strong>谁创建谁监听，在创建的地方添加监听</strong>。
+下面举例说明一下如何实现监听和触发。
+<strong>第一步</strong>、fireEvent方法添加触发</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// me代表着作用域范围
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">me</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+<span style="color:#75715e">//第一种：往上一级面板传递参数 transData是自定义传递的名称 nodeData表示需要传递的参数
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">fireEvent</span>(<span style="color:#e6db74">&#34;transData&#34;</span>,<span style="color:#a6e22e">nodeData</span>);
+<span style="color:#75715e">//第二种：继续往上传递
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">fireEvent</span>(<span style="color:#e6db74">&#34;transData&#34;</span>,<span style="color:#66d9ef">function</span>(
+ 	<span style="color:#a6e22e">me</span>.<span style="color:#a6e22e">fireEvent</span>(<span style="color:#e6db74">&#34;transToData&#34;</span>,<span style="color:#a6e22e">nodeData</span>);
+	)
+});
+</code></pre></div><p><strong>第二步</strong>、添加监听
+格式为：panel.on(&ldquo;触发的方法&rdquo;，调用的方法，this);</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// me代表着作用域范围 监听transData的方法
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">panel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Ext</span>.<span style="color:#a6e22e">create</span>(<span style="color:#e6db74">&#34;ext.panel&#34;</span>);
+<span style="color:#a6e22e">panel</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#34;transData&#34;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">nodeClick</span>,<span style="color:#66d9ef">this</span>);
+<span style="color:#75715e">//调用触发的方法
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">nodeClick</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">me</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+<span style="color:#a6e22e">Ext</span>.<span style="color:#a6e22e">Msg</span>.<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;提示&#34;</span>,<span style="color:#e6db74">&#34;触发方法添加成功!&#34;</span>);
+},
+</code></pre></div><p>博客参考：
+【1】W3Cschool:https://www.w3cschool.cn/extjs/extjs_overview.html</p>
 
-  
-  <section class="section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">My Clients</h2>
+          </div>
         </div>
       </div>
-      <div class="client-logo-slider d-flex align-items-center">
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-  
-</div>
     </div>
   </section>
-  
 
 
 

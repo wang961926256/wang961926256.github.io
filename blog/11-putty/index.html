@@ -6,7 +6,7 @@
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description">
+  <meta name="description" content="putty">
   <meta name="author" content="wangqj">
   <meta name="generator" content="Hugo 0.60.1" />
 
@@ -80,7 +80,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">motivation</h1>
+        <h1 class="text-white font-tertiary">putty连接数据库</h1>
       </div>
     </div>
   </div>
@@ -96,64 +96,51 @@
 
 
 
-  
   <section class="section">
     <div class="container">
       <div class="row">
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-4.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/03-kettle/">kettle 数据库迁移</a>
-              </h4>
-              <p class="cars-text">最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
- kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。
- 工具介绍 本机的运行环境： JDK版本： 1.</p>
-              <a href="https://wangqj.cn/blog/03-kettle/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-5">putty连接数据库</h3>
+          <p class="font-secondary">Published on Jan 01, 0001 by <span class="text-primary">wangqj</span></p>
+          <div class="content">
+            <img src="https://wangqj.cn/images/blog/post-12.jpg" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
+            <blockquote>
+<p><strong>PuTTY</strong> 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和rlogin客户端。</p>
+</blockquote>
+<p>     目前需求是通过ssh连接linux上的mysql数据库，实现利用kettle来同步数据。由于无法利用Navicat直接连接，这里选用putty软件来进行ssh的连接，从而管理linux。</p>
+<h4 id="heading">第一步、软件准备</h4>
+<p>     首先到官网上下载putty软件，<strong>下载地址</strong>：https://www.putty.org/。
+下面选择的是64bit版本安装。</p>
+<h4 id="heading1">第二步、安装</h4>
+<p>     软件的安装比较常规，选择安装路径，一路next，到最后完成即可，这里不再细说。
+<img src="https://img-blog.csdnimg.cn/20190804202033746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="heading2">第三步、配置连接</h4>
+<h6 id="1">1、配置域名端口</h6>
+<p>     软件安装成功后，点击左侧，SSH&ndash;Tunnels，配置连接域名端口等信息，Source port输入自定义的端口，最好使用未被占用的端口，Destination输入域名+端口号信息，点击Add，则会在蓝色方框内显示配置的信息。
+<img src="https://img-blog.csdnimg.cn/20190804171358772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+<strong>注意</strong>：不要忘记输入端口号。否则就会报错：You need to specify a destiation adress in the form &ldquo;host.name:port&rdquo;
+<img src="https://img-blog.csdnimg.cn/20190804224859407.png" alt="在这里插入图片描述"></p>
+<h6 id="2">2、配置连接数</h6>
+<p>     左侧树，点击Connection，设置允许连接数，根据实际需要填写。这里设置的连接数是3，勾选允许TCP连接的选项。
+<img src="https://img-blog.csdnimg.cn/20190804172049952.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="3">3、设置主机连接</h6>
+<p>     左侧树，点击Sessions，在Host Name 输入主机名或IP地址，默认的端口，在Save Sessions输入别名，保存配置信息，方便下次的使用。点击open即可登录页面。
+<img src="https://img-blog.csdnimg.cn/20190804173753339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+输入账号和密码，即可建立ssh连接，管理linux。<strong>注意不要关闭窗口</strong>。
+<img src="https://img-blog.csdnimg.cn/201908042307413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="4">4、设置主机连接</h6>
+<p>     配置kettle连接（可参考博客1）：主机名称可以填写localhost或者127.0.0.1，端口号填写第一步中自定义的端口，数据库账号和密码根据实际情况填写。
+<img src="https://img-blog.csdnimg.cn/20190804225801348.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+通过以上四步，就可以实现kettle连接linux上的mysql数据库。</p>
+<p><strong>博客参考</strong>：
+【1】https://blog.csdn.net/u012190388/article/details/86679856
+【2】https://jingyan.baidu.com/article/d5a880ebab3f3113f147cc00.html</p>
 
-  
-  <section class="section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">My Clients</h2>
+          </div>
         </div>
       </div>
-      <div class="client-logo-slider d-flex align-items-center">
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-  
-</div>
     </div>
   </section>
-  
 
 
 
