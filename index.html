@@ -326,11 +326,21 @@
         </div>
         
         <div class="col-md-4 mb-4">
-          <div class="card  hover-shadow shadow">
+          <div class="card  active-bg-primary  hover-shadow shadow">
             <div class="card-body text-center px-4 py-5">
               <i class="ti-palette icon mb-5 d-inline-block"></i>
               <h4 class="mb-4">基于SAR监测的水库重要参数计算系统</h4>
               <p>以合成孔径雷达SAR为数据源，采用Java与matlab混合编程，建立水库参数模型，实现对水库参数关系的拟合，动态计算出面积库容等参数,并调用百度地图实现地图上的动态展示。</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card  hover-shadow shadow">
+            <div class="card-body text-center px-4 py-5">
+              <i class="ti-palette icon mb-5 d-inline-block"></i>
+              <h4 class="mb-4">领导展示PAD系统</h4>
+              <p>在平板上展示事业单位人员的各种信息，图表维护。</p>
             </div>
           </div>
         </div>
@@ -375,6 +385,20 @@
         
         <div class="col-lg-4 col-sm-6 mb-4">
           <article class="card shadow">
+            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-15.jpg" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/14-encode/">ifream src 绑定中文PDF时，出现404找不到</a>
+              </h4>
+              <p class="cars-text">encode 浏览器在对url解析时自动进行解码
+ 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。
+var roserForm = Ext.create(&#39;Ext.container.Container&#39;,{ height : 370, id : &#39;roserFromID&#39;, html : &#39;&lt;iframe id=&#34;roserForm&#34; name=&#34;roserForm&#34; src=&#34;&#34; style=&#34;width:100%; height:100%;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;&#39; }); pdf文件名称为非中文时，通过jquery的attr来对src进行绑定，页面的展示是正常的。</p>
+              <a href="https://wangqj.cn/blog/14-encode/" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
             <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-14.jpg" alt="post-thumb">
             <div class="card-body">
               <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/13-aspose/">java Aspose&#43;PDFObject</a>
@@ -383,22 +407,6 @@
  最近系统中想做个页面的展示和下载的功能，正好公司购买了Aspose （收费）软件，简单的实现方案是Aspose + PDFObect 将excel转成pdf，直接使用插件来实现预览和下载。记录下来，方便备查！
 一、excel 转 PDF Aspose 适合办公文档的操作，如excel转pdf，word转pdf，excel数据导出，只需要简单的操作就能够实现功能。以下通过Java中的文件流实现转PDF，调用save方法。</p>
               <a href="https://wangqj.cn/blog/13-aspose/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-2.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/01-java-excel/">Java读取excel</a>
-              </h4>
-              <p class="cars-text">JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。
- ​	最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。
-下面将这个过程记录下来，方便之后的查看。
-第一步、定义一个Map，用于存放excel文件中所有列的信息。 以user表为例，存放其中字段的信息，代码如下，仅供参考。
-private Map&lt;String, Object&gt; getExcelFileType() { Map&lt;String, Object&gt; Map = new HashMap&lt;String, Object&gt;(); JSONObject jsonData = new JSONObject(); jsonData.</p>
-              <a href="https://wangqj.cn/blog/01-java-excel/" class="btn btn-xs btn-primary">Read More</a>
             </div>
           </article>
         </div>
