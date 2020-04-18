@@ -3,23 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wangqj.cn/contact/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/portfolio/</loc>
-    <lastmod>2019-12-12T12:14:34+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/about/</loc>
+    <loc>https://wangqj.cn/program/</loc>
     <lastmod>2019-12-12T12:14:34+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://wangqj.cn/blog/</loc>
     <lastmod>2019-05-12T12:14:34+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/interview/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/reading/reading/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -91,7 +91,7 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/about/reading/</loc>
+    <loc>https://wangqj.cn/reading/</loc>
   </url>
   
   <url>

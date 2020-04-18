@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>program on 王庆健的网络博客</title>
+    <link>https://wangqj.cn/program/</link>
+    <description>Recent content in program on 王庆健的网络博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Dec 2019 12:14:34 +0600</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/program/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
