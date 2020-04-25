@@ -27,6 +27,7 @@
       <guid>https://wangqj.cn/program/reading/</guid>
       <description>读书 旅行 总有一个在路上
 一个人的书单 亦是一个人的人生目录
+得成比目何辞死，愿做鸳鸯不羡仙
 我相信，人生没有白走的路，每一步都算数。人生总有起起落落，总是先苦后甜。喝下三杯酒，一杯敬过往，一杯敬明天，一杯敬自己。
 待你了无牵挂，与我仗剑天涯，一剑一双人，一笛一余生，清风伴晓月，不羡世间人
 海底月是天上月 眼前人是心上人 向来心事看客心 奈何人是剧中人</description>
@@ -43,6 +44,16 @@
 我相信，人生没有白走的路，每一步都算数。人生总有起起落落，总是先苦后甜。喝下三杯酒，一杯敬过往，一杯敬明天，一杯敬自己。
 待你了无牵挂，与我仗剑天涯，一剑一双人，一笛一余生，清风伴晓月，不羡世间人
 海底月是天上月 眼前人是心上人 向来心事看客心 奈何人是剧中人</description>
+    </item>
+    
+    <item>
+      <title>Ext tree 节点的新增和移除</title>
+      <link>https://wangqj.cn/blog/15-exttree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/blog/15-exttree/</guid>
+      <description>ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。
+ 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用 removeChild 和 appendChild方法可以实现增删，这里记录下来，方便备查。 Ext 树创建的js程序代码</description>
     </item>
     
     <item>
