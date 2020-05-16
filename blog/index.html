@@ -286,6 +286,21 @@ oracle版本 从user表中查询出name的值，更新到新表new_user 对应�
         
         <div class="col-lg-4 col-sm-6 mb-4">
           <article class="card shadow">
+            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-18.jpg" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/17-createoracle/">oracle迁移到mysql</a>
+              </h4>
+              <p class="cars-text">oracle和mysql 作为常用的数据库，在实际生产中，两种数据库都具有很广的应用场景。
+ 最近项目使用的数据库需要从oracle转到mysql，开始了程序的迁移，项目用Java开发，主要需要更改的是mybatis的xml文件中的SQL语句。这里记录下来方便以后查看。
+一、创建脚本 1、oracle 以学生表TABLE_NAME 为例，列出几个两者之间的不同。以下是oracle数据库创建脚本
+//判断表是否存在，存在则删除 DECLARE num NUMBER ; BEGIN SELECT COUNT (1) INTO num FROM user_tables WHERE TABLE_NAME = &#39;STUDENT&#39; ; IF num = 1 THEN EXECUTE IMMEDIATE &#39;drop table STUDENT cascade constraints&#39; ; END IF ; END ; / //创建表语句 CREATE TABLE STUDENT (	ID VARCHAR2(36), NAME VARCHAR2(50), AGE NUMBER, SEX VARCHAR2(10) ); //添加注释 comment on table STUDENT is &#39;学生表&#39;; comment on column STUDENT.</p>
+              <a href="https://wangqj.cn/blog/17-createoracle/" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
             <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-11.jpg" alt="post-thumb">
             <div class="card-body">
               <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/10-powderdesigner/">PowderDesigner连接数据库</a>
