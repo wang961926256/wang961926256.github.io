@@ -31,6 +31,17 @@
     </item>
     
     <item>
+      <title>ext-button</title>
+      <link>https://wangqj.cn/blog/18-ext-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/blog/18-ext-button/</guid>
+      <description>ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。
+ 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。
+1、创建按钮 &amp;ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在大括号中即可。</description>
+    </item>
+    
+    <item>
       <title>Ext监听</title>
       <link>https://wangqj.cn/blog/00-ext/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
