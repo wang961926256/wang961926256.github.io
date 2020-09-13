@@ -3,130 +3,302 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wangqj.cn/interview/</loc>
+    <loc>http://balaramadurai.github.io/program/</loc>
+    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/reading/</loc>
+    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/categories/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/hugo-travelify-theme-features/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/ipsum/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/categories/lorem/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/categories/java/</loc>
+    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/migrate-from-jekyll/</loc>
+    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/golang/</loc>
+    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/hugo/</loc>
+    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/linked-post/</loc>
+    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/programming/</loc>
+    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/categories/programming/</loc>
+    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/theme/</loc>
+    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/author/</loc>
+    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/go/</loc>
+    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/go-is-for-lovers/</loc>
+    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/author/test2/</loc>
+    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/hugo-is-for-lovers/</loc>
+    <lastmod>2015-08-03T13:39:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/categories/pseudo/</loc>
+    <lastmod>2015-08-03T13:39:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/author/test1/</loc>
+    <lastmod>2015-08-03T13:39:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/creating-a-new-theme/</loc>
+    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/test1/</loc>
+    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/test2/</loc>
+    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/test3/</loc>
+    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/post/test4/</loc>
+    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/categories/starting/</loc>
+    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/interview/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/program/reading/</loc>
-    <priority>0</priority>
+    <loc>http://balaramadurai.github.io/program/reading/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/reading/reading/</loc>
-    <priority>0</priority>
+    <loc>http://balaramadurai.github.io/reading/reading/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/</loc>
+    <loc>http://balaramadurai.github.io/blog/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/categories/</loc>
+    <loc>http://balaramadurai.github.io/blog/18-excel/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/18-excel/</loc>
+    <loc>http://balaramadurai.github.io/blog/15-exttree/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/15-exttree/</loc>
+    <loc>http://balaramadurai.github.io/blog/19-ext-button-copy/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/18-ext-button/</loc>
+    <loc>http://balaramadurai.github.io/blog/19-ext-button/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/00-ext/</loc>
+    <loc>http://balaramadurai.github.io/post/this-post-has-no-body/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/14-encode/</loc>
+    <loc>http://balaramadurai.github.io/blog/00-ext/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/tags/inspiration/</loc>
+    <loc>http://balaramadurai.github.io/post/00-ext/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/13-aspose/</loc>
+    <loc>http://balaramadurai.github.io/blog/14-encode/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/01-java-excel/</loc>
+    <loc>http://balaramadurai.github.io/tags/inspiration/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/02-java/</loc>
+    <loc>http://balaramadurai.github.io/blog/13-aspose/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/03-kettle/</loc>
+    <loc>http://balaramadurai.github.io/blog/01-java-excel/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/05-nginx/</loc>
+    <loc>http://balaramadurai.github.io/post/01-java-excel/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/tags/motivation/</loc>
+    <loc>http://balaramadurai.github.io/blog/02-java/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/04-mysql-sqlite/</loc>
+    <loc>http://balaramadurai.github.io/blog/03-kettle/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/06-oracle-back/</loc>
+    <loc>http://balaramadurai.github.io/blog/05-nginx/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/07-oracle-mysql/</loc>
+    <loc>http://balaramadurai.github.io/tags/motivation/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/08-oracle-share/</loc>
+    <loc>http://balaramadurai.github.io/blog/04-mysql-sqlite/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/16-emptytable/</loc>
+    <loc>http://balaramadurai.github.io/categories/new-york/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/17-createoracle/</loc>
+    <loc>http://balaramadurai.github.io/blog/06-oracle-back/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/10-powderdesigner/</loc>
+    <loc>http://balaramadurai.github.io/blog/07-oracle-mysql/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/09-page-print/</loc>
+    <loc>http://balaramadurai.github.io/blog/08-oracle-share/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/program/</loc>
+    <loc>http://balaramadurai.github.io/blog/16-emptytable/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/11-putty/</loc>
+    <loc>http://balaramadurai.github.io/blog/17-createoracle/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/reading/</loc>
+    <loc>http://balaramadurai.github.io/categories/other-destinations/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/tags/</loc>
+    <loc>http://balaramadurai.github.io/blog/10-powderdesigner/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/blog/12-oracle/</loc>
+    <loc>http://balaramadurai.github.io/blog/09-page-print/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/</loc>
+    <loc>http://balaramadurai.github.io/program/</loc>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/blog/11-putty/</loc>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/reading/</loc>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/series/</loc>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/tags/static-sites/</loc>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/author/wangqj/</loc>
+  </url>
+  
+  <url>
+    <loc>http://balaramadurai.github.io/blog/12-oracle/</loc>
   </url>
   
 </urlset>

@@ -1,508 +1,1194 @@
 <!DOCTYPE html>
-<html lang="en-us"><head>
-  <meta charset="utf-8">
-  <title>王庆健的网络博客</title>
+<html lang="en-US">
+  <head>
+    <title>Blogs - wangqj-blog </title>
+    
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel='stylesheet' id='travelify_style-css'  href="http://balaramadurai.github.io/css/style.min.css" type='text/css' media='all' />
+    <link rel='stylesheet' id='google_font_ubuntu-css'  href="http://balaramadurai.github.io/css/style.min.css" type='text/css' media='all' />
+    <link rel="shortcut icon" href="http://balaramadurai.github.io//favicon.ico" type="image/x-icon">
+    
+    <script type="text/javascript">
+     window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/balaramadurai.github.io\/\/js\/wp-emoji-release.min.js"}};
+     !function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+     img.wp-smiley,
+     img.emoji {
+	 display: inline !important;
+	 border: none !important;
+	 box-shadow: none !important;
+	 height: 1em !important;
+	 width: 1em !important;
+	 margin: 0 .07em !important;
+	 vertical-align: -0.1em !important;
+	 background: none !important;
+	 padding: 0 !important;
+     }
+    </style>
 
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is meta description">
-  <meta name="author" content="wangqj">
-  <meta name="generator" content="Hugo 0.60.1" />
 
-  <!-- plugins -->
-  
-  <link rel="stylesheet" href="https://wangqj.cn/plugins/bootstrap/bootstrap.min.css ">
-  
-  <link rel="stylesheet" href="https://wangqj.cn/plugins/slick/slick.css ">
-  
-  <link rel="stylesheet" href="https://wangqj.cn/plugins/themify-icons/themify-icons.css ">
-  
+    <style type="text/css">
+     a { color: #57AD68; }
+     #site-title a { color: ; }
+     #site-title a:hover { color: ; }
+     .wrapper { background: #F8F8F8; }
+     .social-icons ul li a { color: #d0d0d0; list-style: none;}
+     #main-nav a, #main-nav a:hover,  #main-nav a:focus, #main-nav ul li.current-menu-item a,#main-nav ul li.current_page_ancestor a,#main-nav ul li.current-menu-ancestor a,#main-nav ul li.current_page_item a,#main-nav ul li:hover > a { color: #fff; }
+     .widget, article { background: #fff; }
+     .entry-title, .entry-title a, .entry-title a:focus, h1, h2, h3, h4, h5, h6, .widget-title  { color: #1b1e1f; }
+     a:focus, a:active, a:hover, .tags a:hover, .custom-gallery-title a, .widget-title a, #content ul a:hover,#content ol a:hover, .widget ul li a:hover, .entry-title a:hover, .entry-meta a:hover, #site-generator .copyright a:hover { color: #439f55; }
+     #main-nav { background: #57ad68; border-color: #57ad68; }
+     #main-nav ul li ul, body { border-color: #439f55; }
+     #main-nav a:hover,#main-nav ul li.current-menu-item a,#main-nav ul li.current_page_ancestor a,#main-nav ul li.current-menu-ancestor a,#main-nav ul li.current_page_item a,#main-nav ul li:hover > a, #main-nav li:hover > a,#main-nav ul ul :hover > a,#main-nav a:focus { background: #439f55; }
+     #main-nav ul li ul li a:hover,#main-nav ul li ul li:hover > a,#main-nav ul li.current-menu-item ul li a:hover { color: #439f55; }
+     .entry-content { color: #1D1D1D; }
+     input[type="reset"], input[type="button"], input[type="submit"], .entry-meta-bar .readmore, #controllers a:hover, #controllers a.active, .pagination span, .pagination a:hover span, .wp-pagenavi .current, .wp-pagenavi a:hover { background: #57ad68; border-color: #57ad68 !important; }
+     ::selection { background: #57ad68; }
+     blockquote { border-color: #439f55; }
+     #controllers a:hover, #controllers a.active { color:  #439f55; }
+     input[type="reset"]:hover,input[type="button"]:hover,input[type="submit"]:hover,input[type="reset"]:active,input[type="button"]:active,input[type="submit"]:active, .entry-meta-bar .readmore:hover, .entry-meta-bar .readmore:active, ul.default-wp-page li a:hover, ul.default-wp-page li a:active { background: #439f55; border-color: #439f55; }
+    </style>
+    <style type="text/css" id="custom-background-css">
+     body.custom-background { background-image: url("http://balaramadurai.github.io/images/background.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: scroll; }
+    </style>
+    <style type="text/css" media="print">#wpadminbar { display:none; }</style>
+    <style type="text/css" media="screen">
+     * html body { margin-top: 32px !important; }
+     @media screen and ( max-width: 782px ) {
+	 html { margin-top: 26px !important; }
+	 * html body { margin-top: 26px !important; }
+     }
+    </style>
 
-  <!-- Main Stylesheet -->
-  
-  <link rel="stylesheet" href="https://wangqj.cn/css/style.min.css" integrity="" media="screen">
+    
+</head>
 
-  <!--Favicon-->
-  <link rel="shortcut icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
-  <link rel="icon" href="https://wangqj.cn/images/favicon.png " type="image/x-icon">
+  <body class="home blog logged-in admin-bar no-customize-support custom-background ">
+    <div class="wrapper">
+      <header id="branding" >
+	<div class="container clearfix">
+  <div class="hgroup-wrap clearfix">
 
-</head><body>
-<!-- preloader start -->
-<div class="preloader">
+    <section class="hgroup-right">
+      <div class="social-icons clearfix">
+	<ul>
+	  
+	  <li class="facebook">
+	    <a href="https://www.facebook.com/nikimonikado" title="Follow us on Facebook" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="twitter">
+	      <a href="https://twitter.com/nikimonikado" title="Follow us on Twitter" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="email">
+	      <a href="mailto:vip_wqj@163.com" title="Email us" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="rss">
+	    <a href="" title="Subscribe to our feed" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="google-plus">
+	    <a href="https://www.google.com/+nikimonikado" title="Follow us on Google Plus" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="pinterest">
+	    <a href="https://www.pinterest.com/nikimonikado" title="Follow us on Pinterest" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="linkedin">
+	    <a href="https://www.linkedin.com/in/nikimonikado" title="Follow us on LinkedIn" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="tumblr">
+	    <a href="https://nikimonikado.tumblr.com/" title="Follow us on Tumblr" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="vimeo">
+	    <a href="https://www.vimeo.com/nikimonikado" title="Follow us on Vimeo" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="instagram">
+	    <a href="https://www.instagram.com/nikimonikado" title="Follow us on Instagram" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="flickr">
+	    <a href="https://flickr.com/photos/nikimonikado" title="Follow us on Flickr" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="youtube">
+	    <a href="https://www.youtube.com/nikimonikado" title="Follow us on YouTube" target="_blank"></a>
+	  </li>
+	  
+	  
+	  <li class="github">
+	    <a href="https://www.github.com/https://github.com/wang961926256" title="Follow us on GitHub" target="_blank"></a>
+	  </li>
+	  
+	</ul>
+      </div>
+    </section>
+    
+    
+    <hgroup id="site-logo" class="clearfix">
+      <h1 id="site-title">
+	<a href="http://balaramadurai.github.io/" rel="home">
+	  
+          <img src="http://balaramadurai.github.io/logo.png"></img>
+	  
+	  
+	  <span class="site-title">wangqj-blog</span>
+	  
+	</a>
+      </h1>
+      <h2 id="site-description">一只北漂两年半的电脑爱好者</h2>
+    </hgroup>
+    
+  </div>
 </div>
-<!-- preloader end -->
-<header class="navigation fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="https://wangqj.cn/"><img src="https://wangqj.cn/images/logo.png" alt="王庆健的网络博客"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="https://wangqj.cn/"> 首页 </a>
-        </li>
-        
-        
-        <li class="nav-item">
-          <a class="nav-link" href="https://wangqj.cn/blog">博客</a>
-        </li>
-        
-        
-        
-        <li class="nav-item">
-          <a class="nav-link" href="https://wangqj.cn/program">编程</a>
-        </li>
-        
-        
-        
-        <li class="nav-item">
-          <a class="nav-link" href="https://wangqj.cn/reading">读书</a>
-        </li>
-        
-        
-        
-        <li class="nav-item">
-          <a class="nav-link" href="https://wangqj.cn/interview">面试</a>
-        </li>
-        
-        
-      </ul>
-    </div>
-  </nav>
+
+	<nav id="main-nav" class="clearfix">
+  <div class="container clearfix">
+    <ul class="root">
+      
+      
+      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+	<a href="http://balaramadurai.github.io/program/">编程</a>
+	
+      </li>
+      
+      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+	<a href="http://balaramadurai.github.io/reading/">读书</a>
+	
+      </li>
+      
+      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+	<a href="http://balaramadurai.github.io/post/linked-post/">Linked post</a>
+	
+      </li>
+      
+      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
+	<a href="http://balaramadurai.github.io/interview/">面试</a>
+	
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+	<div class="page-title-wrap">
+	  <div class="container clearfix">
+	    <h3 class="page-title">Blogs </h3>
+	  </div>
+	</div>
+	
+      </header>
+      <div id="main" class="container clearfix">
+	<div id="container">
+	  <div id="primary" class="no-margin-left">
+	    <div id="content">
+	      <section class="post type-post status-publish format-standard has-post-thumbnail hentry ">
+		
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/18-excel/">
+    <h2 class="entry-title" itemprop="name">
+        excel数据验证
+    </h2>
+    </a>
 </header>
 
-  
-<section class="page-title bg-primary position-relative overflow-hidden">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Blogs</h1>
-      </div>
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。
+ 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为了防止数据录入错误，方便数据库数据的匹配，直接在下拉菜单中选择对应的项目即可。如下图所示。 第一步、数据验证 选中需要选择的列，数据 –&gt; 数据验证，选择第一个数据验证选项，进行设置。 第二步、设置验证条件 主要分为两种情况
+第一种 选择 允许序列，来源：即输入需要选择的内容，各选项用逗号隔开。注意：序列的长度是有限制，超过会无法进行保存。 第二种 对于选项比较多的，如国籍，出生地等码值多的，设置其为选项也无法写到序列中，怎么处理呢？将选项放到一列，设置公式来读取这列做为选项。 有两种方式：放在同一个sheet和单独存放带一个sheet中。 1、将选项放到同一个sheet 在同一个sheet中可以选中该列，右键 – &gt; 隐藏，即不显示H列
+2、将选项放到其他sheet 注意：设置的公式有所区别，需要有sheet的信息，参照下图所示。  $ 在excel中的作用： excel 单元格有绝对引用、相对引用和混合引用，均用 $ 表示，三者的区别： $ 在谁前面，谁不动。 一个单元格地址有两部分组成：一个是字母（代表列数），一个是数回字（代表行数）。 注：这里是给字母和数字前面都加上了$，读取的都是设置区域固定的内容，如果只是给字母添加，列不变，但行数会变，读取的内容会动态变化。
+博客来源 【1】https://jingyan.baidu.com/article/0964eca26da8bd8285f536ab.html
+        <br>
+      </p>
     </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
   </div>
   
-  <img src="/images/illustrations/page-title.svg" alt="illustrations" class="bg-shape-1 w-100">
-  <img src="/images/illustrations/leaf-pink-round.svg" alt="illustrations" class="bg-shape-2">
-  <img src="/images/illustrations/dots-cyan.svg" alt="illustrations" class="bg-shape-3">
-  <img src="/images/illustrations/leaf-orange.svg" alt="illustrations" class="bg-shape-4">
-  <img src="/images/illustrations/leaf-yellow.svg" alt="illustrations" class="bg-shape-5">
-  <img src="/images/illustrations/dots-group-cyan.svg" alt="illustrations" class="bg-shape-6">
-  <img src="/images/illustrations/leaf-cyan-lg.svg" alt="illustrations" class="bg-shape-7">
-</section>
 
-
-
-  
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-19.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/18-excel/">excel数据验证</a>
-              </h4>
-              <p class="cars-text">excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。
-  在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为了防止数据录入错误，方便数据库数据的匹配，直接在下拉菜单中选择对应的项目即可。如下图所示。 第一步、数据验证 选中需要选择的列，数据 &ndash;&gt; 数据验证，选择第一个数据验证选项，进行设置。 第二步、设置验证条件 主要分为两种情况</p>
-              <a href="https://wangqj.cn/blog/18-excel/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-16.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/15-exttree/">Ext tree 节点的新增和移除</a>
-              </h4>
-              <p class="cars-text">ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。
- 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用 removeChild 和 appendChild方法可以实现增删，这里记录下来，方便备查。 Ext 树创建的js程序代码</p>
-              <a href="https://wangqj.cn/blog/15-exttree/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-20.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/18-ext-button/">ext-button</a>
-              </h4>
-              <p class="cars-text">ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。
- 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。
-1、创建按钮 &ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在大括号中即可。</p>
-              <a href="https://wangqj.cn/blog/18-ext-button/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-1.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/00-ext/">Ext监听</a>
-              </h4>
-              <p class="cars-text">EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。
- ​	在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。 遵循的原则是：谁创建谁监听，在创建的地方添加监听。 下面举例说明一下如何实现监听和触发。 第一步、fireEvent方法添加触发
-// me代表着作用域范围 var me = this; //第一种：往上一级面板传递参数 transData是自定义传递的名称 nodeData表示需要传递的参数 me.</p>
-              <a href="https://wangqj.cn/blog/00-ext/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-15.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/14-encode/">ifream src 绑定中文PDF时，出现404找不到</a>
-              </h4>
-              <p class="cars-text">encode 浏览器在对url解析时自动进行解码
- 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。
-var roserForm = Ext.create(&#39;Ext.container.Container&#39;,{ height : 370, id : &#39;roserFromID&#39;, html : &#39;&lt;iframe id=&#34;roserForm&#34; name=&#34;roserForm&#34; src=&#34;&#34; style=&#34;width:100%; height:100%;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;&#39; }); pdf文件名称为非中文时，通过jquery的attr来对src进行绑定，页面的展示是正常的。</p>
-              <a href="https://wangqj.cn/blog/14-encode/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-14.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/13-aspose/">java Aspose&#43;PDFObject</a>
-              </h4>
-              <p class="cars-text">Aspose office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。
- 最近系统中想做个页面的展示和下载的功能，正好公司购买了Aspose （收费）软件，简单的实现方案是Aspose + PDFObect 将excel转成pdf，直接使用插件来实现预览和下载。记录下来，方便备查！
-一、excel 转 PDF Aspose 适合办公文档的操作，如excel转pdf，word转pdf，excel数据导出，只需要简单的操作就能够实现功能。以下通过Java中的文件流实现转PDF，调用save方法。</p>
-              <a href="https://wangqj.cn/blog/13-aspose/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-2.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/01-java-excel/">Java读取excel</a>
-              </h4>
-              <p class="cars-text">JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。
- ​	最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。
-下面将这个过程记录下来，方便之后的查看。
-第一步、定义一个Map，用于存放excel文件中所有列的信息。 以user表为例，存放其中字段的信息，代码如下，仅供参考。
-private Map&lt;String, Object&gt; getExcelFileType() { Map&lt;String, Object&gt; Map = new HashMap&lt;String, Object&gt;(); JSONObject jsonData = new JSONObject(); jsonData.</p>
-              <a href="https://wangqj.cn/blog/01-java-excel/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-3.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/02-java/">java项目部署</a>
-              </h4>
-              <p class="cars-text">Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？
- ​	最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Java方面的项目，记录下来，方便之后的备查。 首先是工具准备： 远程连接工具：xshell 6 远程文件传输工具：winscp 连接上服务器，在上面部署程序主要经过以下几个步骤：</p>
-              <a href="https://wangqj.cn/blog/02-java/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-4.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/03-kettle/">kettle 数据库迁移</a>
-              </h4>
-              <p class="cars-text">最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
- kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。
- 工具介绍 本机的运行环境： JDK版本： 1.</p>
-              <a href="https://wangqj.cn/blog/03-kettle/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-6.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/05-nginx/">linux部署nginx</a>
-              </h4>
-              <p class="cars-text">nginx 是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行，占有内存少，并发能力强。
- 最近需要学习一下nginx的知识，首先是安装配置环境，这里记录一下，方便以后的查看。 本次是在linux的虚拟机（RedHat Linux7）上配置安装nginx服务，在本机上访问和测试。
-第一步、软件下载 　首先登录nginx的网站，下载所需要的安装文件。这里下载的版本是：nginx-1.</p>
-              <a href="https://wangqj.cn/blog/05-nginx/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-5.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/04-mysql-sqlite/">mysql到sqlite数据传输</a>
-              </h4>
-              <p class="cars-text">mysql和sqlite 是两种常用的数据库，在日常使用中也是需要进行数据的交换。
- 在实际的工作中需要将mysql数据库表中的数据同步到sqlite对应的表中，主要有两种方法。第一种是使用Navicat里的数据传输，第二种是使用程序来实现。
-第一种、程序实现 1、添加sqlite驱动 本项目是通过maven管理，在pom.xml中添加sqlite的驱动包依赖。
-&lt;dependency&gt; &lt;groupId&gt;org.xerial&lt;/groupId&gt; &lt;artifactId&gt;sqlite-jdbc&lt;/artifactId&gt; &lt;version&gt;3.</p>
-              <a href="https://wangqj.cn/blog/04-mysql-sqlite/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-7.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/06-oracle-back/">oracle备份</a>
-              </h4>
-              <p class="cars-text">oracle 是一种重要的关系型数据库，日常工作中需要对其进行备份和恢复。
- ​	在日常开发中，需要及时对数据库进行备份和还原，以oracle为例，两种数据库的恢复和还原的方法，主要有 impdp 和 imp 两种方式：</p>
-              <a href="https://wangqj.cn/blog/06-oracle-back/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-8.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/07-oracle-mysql/">oracle存储过程</a>
-              </h4>
-              <p class="cars-text">存储过程 是在大型数据库系统中，一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它。
- ​	最近有个需求是将oracle版本的存储过程转换为mysql版本的存储过程，专门查询了两种数据库存储过程的差别，这里记录下来，方便之后的查看。
-oracle版本 从user表中查询出name的值，更新到新表new_user 对应的字段。</p>
-              <a href="https://wangqj.cn/blog/07-oracle-mysql/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-9.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/08-oracle-share/">oracle局域网共享</a>
-              </h4>
-              <p class="cars-text">oracle 是性能较好的数据库，如何让其他电脑在局域网下访问同一台机器上的数据库呢？
- ​	最近需要解决的问题：同一局域网下，想让其他计算机访问本地计算机上的oracle数据库。需要更改oracle数据库的某些配置信息，来实现共享。Oracle数据库配置文件位置：oracle\product\11.2.0\dbhome_1\NETWORK\ADMIN 本地数据库的共享通过三步操作来完成，下面是三个步骤的操作。 第一步：更改本地的 tnsnames.ora配置文件，添加本地IP地址。
-// 添加一条本地IP的描述，HOST填充本机的IP地址 ORCL = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.</p>
-              <a href="https://wangqj.cn/blog/08-oracle-share/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-17.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/16-emptytable/">oracle数据库空表处理</a>
-              </h4>
-              <p class="cars-text">ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。
- 最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查阅资料，导库前需要进行数据库的空表处理。这里记录下来，方便备查。
-数据库版本：oracle 11g
-第一步、设置 延迟段创建 deferred_segment_creation 延迟段创建(Oracle 11g的新特性)</p>
-              <a href="https://wangqj.cn/blog/16-emptytable/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-18.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/17-createoracle/">oracle迁移到mysql</a>
-              </h4>
-              <p class="cars-text">oracle和mysql 作为常用的数据库，在实际生产中，两种数据库都具有很广的应用场景。
- 最近项目使用的数据库需要从oracle转到mysql，开始了程序的迁移，项目用Java开发，主要需要更改的是mybatis的xml文件中的SQL语句。这里记录下来方便以后查看。
-一、创建脚本 1、oracle 以学生表TABLE_NAME 为例，列出几个两者之间的不同。以下是oracle数据库创建脚本
-//判断表是否存在，存在则删除 DECLARE num NUMBER ; BEGIN SELECT COUNT (1) INTO num FROM user_tables WHERE TABLE_NAME = &#39;STUDENT&#39; ; IF num = 1 THEN EXECUTE IMMEDIATE &#39;drop table STUDENT cascade constraints&#39; ; END IF ; END ; / //创建表语句 CREATE TABLE STUDENT (	ID VARCHAR2(36), NAME VARCHAR2(50), AGE NUMBER, SEX VARCHAR2(10) ); //添加注释 comment on table STUDENT is &#39;学生表&#39;; comment on column STUDENT.</p>
-              <a href="https://wangqj.cn/blog/17-createoracle/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-11.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/10-powderdesigner/">PowderDesigner连接数据库</a>
-              </h4>
-              <p class="cars-text">PowerDesigner 采用模型驱动方法，将业务与IT结合起来，可帮助部署有效的企业体系架构，并为研发生命周期管理提供强大的分析与设计技术。
- ​ 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的内容。这里采用第一种方式，记录下来，方便之后的查看。
-环境准备 软件：PowerDesigner 15.6 32位jdk：jdk-8u144-windows-i586 驱动包：mysql-connector-java-8.</p>
-              <a href="https://wangqj.cn/blog/10-powderdesigner/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-10.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/09-page-print/">print page</a>
-              </h4>
-              <p class="cars-text">页面打印 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印
- 第一种方式、添加代码打印 　添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：
-// 头部添加打印的信息 &lt;script language=&#34;javascript&#34;&gt; function preview(oper){ //oper表示打印的区域数  if (oper &lt; 10){ bdhtml=window.</p>
-              <a href="https://wangqj.cn/blog/09-page-print/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-12.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/11-putty/">putty连接数据库</a>
-              </h4>
-              <p class="cars-text">PuTTY 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和rlogin客户端。
-  目前需求是通过ssh连接linux上的mysql数据库，实现利用kettle来同步数据。由于无法利用Navicat直接连接，这里选用putty软件来进行ssh的连接，从而管理linux。
-第一步、软件准备  首先到官网上下载putty软件，下载地址：https://www.putty.org/。 下面选择的是64bit版本安装。</p>
-              <a href="https://wangqj.cn/blog/11-putty/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <article class="card shadow">
-            <img class="rounded card-img-top" src="https://wangqj.cn/images/blog/post-13.jpg" alt="post-thumb">
-            <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="https://wangqj.cn/blog/12-oracle/">可重复执行的脚本</a>
-              </h4>
-              <p class="cars-text">数据库脚本 是包含不属于数据库架构定义的Transact-SQL(T-SQL)语句或实用工具（如 SQLCMD）的附加文件。可以将数据库脚本用作部署步骤的一部分（预先部署和后期部署脚本），数据库脚本也可以是存储在数据库项目中的常规管理脚本。。
- 在家办公的情况下，每位项目成员都在自己本地数据库操作，如何保持数据一致性，让小伙伴能正常使用你的功能，可重复执行的脚本就重要了。这里使用的是存储过程，记录下来，方便备查。
-1、创建表 在创建脚本方面，oracle与mysql语法上有所区别。以新建人员表为例，下面是两种数据库的建库脚本。 oracle 建数据表脚本</p>
-              <a href="https://wangqj.cn/blog/12-oracle/" class="btn btn-xs btn-primary">Read More</a>
-            </div>
-          </article>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-
-  
-  <section class="section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">My Clients</h2>
-        </div>
-      </div>
-      <div class="client-logo-slider d-flex align-items-center">
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-  
-  <a href="#" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid" src="https://wangqj.cn/images/clients-logo/client-logo-5.png" alt="client-logo"></a>
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/18-excel/">
+      Read More
+    </a>
+  </span>
   
 </div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/15-exttree/">
+    <h2 class="entry-title" itemprop="name">
+        Ext tree 节点的新增和移除
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。
+最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用 removeChild 和 appendChild方法可以实现增删，这里记录下来，方便备查。 Ext 树创建的js程序代码
+Ext.define(&quot;Ext.Demo.Panel&quot;, { extend : &quot;Ext.tree.Panel&quot;, rootVisible : false, urlSrc : &quot;/rygl/syd/load?theme=none&quot;, initComponent : function() { var me = this; var store = this.createTreeStore(urlsrc); this.store = store; this.callParent(arguments); }, //创建树节点的store 	createTreeStore : function(urlstr) { var me = this; var treeStore = Ext.create('Ext.data.TreeStore', { //autoLoad : true, 	fields : [//叶子model属性，可扩展 	{ name : 'id' }, { name : 'text' }, { name : 'leaf' }, proxy : { type : 'ajax', url : urlstr, reader : { type : 'json', root : 'DT' } }, sorters : [{ property : 'pindex', direction : 'ASC' }], root : { nodeType : 'async', text : me.
+        <br>
+      </p>
     </div>
-  </section>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
   
 
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/15-exttree/">
+      Read More
+    </a>
+  </span>
+  
+</div>
 
 
-<section class="section section-on-footer" data-background="https://wangqj.cn/images/backgrounds/bg-dots.png">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
-      </div>
-      <div class="col-lg-8 mx-auto">
-        <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" method="POST" class="row">
-            <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
-            </div>
-            <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
-            </div>
-            <div class="col-12">
-              <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here"></textarea>
-            </div>
-            <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  </article>
 </section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/19-ext-button-copy/">
+    <h2 class="entry-title" itemprop="name">
+        ext-button
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。
+最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。
+1、创建按钮 – button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在大括号中即可。
+var confirm = Ext.create(&quot;Ext.Button&quot;, { text : &quot;确定&quot;, width : 60, bodyStyle : &quot;padding-bottom: 60px;&quot;, margin : 5, handler : Ext.bind(me.Confirm, me) }); handler 绑定按钮的事件，点击调用的js方法。按钮的样式如下图所示。字体与边框的间隔适中，看着比较美观。 2、创建按钮 – toolbar 定义一个Toolbar，将其放到 dockedItems 中可以在border布局的上方显示横条的工具条。多个按钮的信息，写在 items 属性中，如符号：'-&gt;’ 表示靠右对齐，cls 属性可以引用css定义的样式效果。
+var toolbar = Ext.create(&quot;Ext.Toolbar&quot;, { border : true, items : ['-&gt;',{ text : &quot;确定&quot;, cls : &quot;myself-toolbarbtn&quot;, handler : Ext.bind(this.Confirm, this) },{ text : &quot;取消&quot;, cls : &quot;myself-toolbarbtn&quot;, handler : Ext.
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/19-ext-button-copy/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/19-ext-button/">
+    <h2 class="entry-title" itemprop="name">
+        ext-button
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。
+最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。
+1、创建按钮 – button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在大括号中即可。
+var confirm = Ext.create(&quot;Ext.Button&quot;, { text : &quot;确定&quot;, width : 60, bodyStyle : &quot;padding-bottom: 60px;&quot;, margin : 5, handler : Ext.bind(me.Confirm, me) }); handler 绑定按钮的事件，点击调用的js方法。按钮的样式如下图所示。字体与边框的间隔适中，看着比较美观。 2、创建按钮 – toolbar 定义一个Toolbar，将其放到 dockedItems 中可以在border布局的上方显示横条的工具条。多个按钮的信息，写在 items 属性中，如符号：'-&gt;’ 表示靠右对齐，cls 属性可以引用css定义的样式效果。
+var toolbar = Ext.create(&quot;Ext.Toolbar&quot;, { border : true, items : ['-&gt;',{ text : &quot;确定&quot;, cls : &quot;myself-toolbarbtn&quot;, handler : Ext.bind(this.Confirm, this) },{ text : &quot;取消&quot;, cls : &quot;myself-toolbarbtn&quot;, handler : Ext.
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/19-ext-button/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/00-ext/">
+    <h2 class="entry-title" itemprop="name">
+        Ext监听
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。
+​	在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。 遵循的原则是：谁创建谁监听，在创建的地方添加监听。 下面举例说明一下如何实现监听和触发。 第一步、fireEvent方法添加触发
+// me代表着作用域范围 var me = this; //第一种：往上一级面板传递参数 transData是自定义传递的名称 nodeData表示需要传递的参数 me.fireEvent(&quot;transData&quot;,nodeData); //第二种：继续往上传递 me.fireEvent(&quot;transData&quot;,function( me.fireEvent(&quot;transToData&quot;,nodeData); ) }); 第二步、添加监听 格式为：panel.on(“触发的方法”，调用的方法，this);
+// me代表着作用域范围 监听transData的方法 var panel = Ext.create(&quot;ext.panel&quot;); panel.on(&quot;transData&quot;,this.nodeClick,this); //调用触发的方法 nodeClick : function(){ var me= this; Ext.Msg.alert(&quot;提示&quot;,&quot;触发方法添加成功!&quot;); }, 博客参考： 【1】W3Cschool:https://www.w3cschool.cn/extjs/extjs_overview.html
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/00-ext/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/14-encode/">
+    <h2 class="entry-title" itemprop="name">
+        ifream src 绑定中文PDF时，出现404找不到
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        encode 浏览器在对url解析时自动进行解码
+背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。
+var roserForm = Ext.create('Ext.container.Container',{ height : 370, id : 'roserFromID', html : '&lt;iframe id=&quot;roserForm&quot; name=&quot;roserForm&quot; src=&quot;&quot; style=&quot;width:100%; height:100%;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;' }); pdf文件名称为非中文时，通过jquery的attr来对src进行绑定，页面的展示是正常的。
+$(&quot;#roserForm&quot;).attr(&quot;src&quot;,data.pdf); 网上查看资料后，了解到 http get请求不能传输中文参数问题，浏览器主要是解码的过程。
+网络请求中，对中文字段需要编码和解码，这里Java后台需要对中文文件名称进行编码，传递给前台编码后的字符串(application/x-www-form-urlencoded)，浏览器直接会进行解码，从而读取出相应的文件。
+Java后台处理编码，需要引入 java.net.URLEncoder，用encode对中文字符进行编码。
+import java.net.URLEncoder; //对pdf文件名称进行编码 String PDFName = URLEncoder.encode(“测试”,&quot;utf-8&quot;）; System.out.println(&quot;编码的结果是：&quot;+ PDFName); 控制台输出的结果
+编码的结果是：%E6%B5%8B%E8%AF%95 用 decode 对中文字符进行解码。
+//对pdf文件名称进行解码 String PDFName = ‘%E6%B5%8B%E8%AF%95’; String decode = URLDecoder.decode(PDFName , &quot;utf-8&quot;); System.out.println(&quot;解码的结果是：&quot;+decode); 控制台输出的结果
+解码的结果是： 测试 将编码后的文件名称存放到数据库中，需要的时候取值进行读取即可。 博客参考 【1】https://blog.csdn.net/BD_fuhong/article/details/91598920
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/14-encode/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/13-aspose/">
+    <h2 class="entry-title" itemprop="name">
+        java Aspose&#43;PDFObject
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        Aspose office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。
+最近系统中想做个页面的展示和下载的功能，正好公司购买了Aspose （收费）软件，简单的实现方案是Aspose + PDFObect 将excel转成pdf，直接使用插件来实现预览和下载。记录下来，方便备查！
+一、excel 转 PDF Aspose 适合办公文档的操作，如excel转pdf，word转pdf，excel数据导出，只需要简单的操作就能够实现功能。以下通过Java中的文件流实现转PDF，调用save方法。
+String excelPath = &quot;E://example.xlsx&quot;; String wordPath = &quot;E://example.doc&quot;; String pdfPath = &quot;E://example.pdf&quot;; try { FileInputStream fileInputStream = null; FileOutputStream fileOutputStream = null; //excel文件 	File excelFile = new File(excelPath); if (excelFile.exists()) { fileInputStream = new FileInputStream(excelFile); Workbook workbook = new Workbook(fileInputStream); File pdfFile = new File(pdfPath); fileOutputStream = new FileOutputStream(pdfFile); ////////excel 转 PDF方法 	workbook.save(fileOutputStream, SaveFormat.PDF); /////// word 转 PDF方法 	Document doc = new Document(wordPath ); doc.
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/13-aspose/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/01-java-excel/">
+    <h2 class="entry-title" itemprop="name">
+        Java读取excel
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。
+​	最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。
+下面将这个过程记录下来，方便之后的查看。
+第一步、定义一个Map，用于存放excel文件中所有列的信息。 以user表为例，存放其中字段的信息，代码如下，仅供参考。
+private Map&lt;String, Object&gt; getExcelFileType() { Map&lt;String, Object&gt; Map = new HashMap&lt;String, Object&gt;(); JSONObject jsonData = new JSONObject(); jsonData.put(&quot;name&quot;, &quot;Str&quot;); //不同类型的数据 	jsonData.put(&quot;date&quot;, &quot;DateTime&quot;); Map.put(&quot;user&quot;, jsonData); return Map; } 第二步、 日志设置  数据处理过程中需要记录日志信息。这里使用的是 java.util.logging，配置相关的设置，可以将程序中的导入情况输出到日志中，方便查看。代码如下，仅供参考。
+Logger log = Logger.getLogger(&quot;tesglog&quot;); //日志 //设置日志的级别 log.setLevel(Level.ALL); //设置日志存放的路径 FileHandler fileHandler = new FileHandler(&quot;D:\import.log&quot;); fileHandler.setLevel(Level.ALL); fileHandler.setFormatter(new LogFormatter()); log.addHandler(fileHandler); } 程序执行中会将相应的信息写入到指定的out文件中，程序执行后，可以查看执行的结果信息。
+第三步 读取文件夹内容 思路： 1、读取文件夹，遍历其中的excel文件，获取文件名称 2、定义两个变量sqlcolumn 和sqlvalue，分别用于存放拼接的列和值的信息。 3、按行遍历excel文件内容， 第二行开始，对每个单元格进行读取，根据是否有值来进行拼接插入的字符串。 4、运用jdbcOperations来执行拼接的sql语句，实现数据的入库。 程序实现的代码如下所示，仅供参考。
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/01-java-excel/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/02-java/">
+    <h2 class="entry-title" itemprop="name">
+        java项目部署
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？
+​	最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Java方面的项目，记录下来，方便之后的备查。 首先是工具准备： 远程连接工具：xshell 6 远程文件传输工具：winscp 连接上服务器，在上面部署程序主要经过以下几个步骤：
+第一步：数据备份与更新  为防止发布的程序无法正常使用，首先对之前的项目（java包）进行备份，即使发布不成功，也可快速回退上一个版本。 运用winscp工具连接上远程的服务器，找到项目发布的路径，先替换后更新Java包文件。工具连接的页面如下图所示： 第二步：连接服务器 　运用xshell连接到服务器，连接成功后，查看当前运行的Java进程，命令如下：
+// 查看运行的Java进程 ps -ef|grep java  知识点学习 ps命令 process Status 将某个进程显示出来，列出系统中当前运行的进程 -A 显示所有程序。 -e 此参数的效果和指定&quot;A&quot;参数相同。 -f 显示UID,PPIP,C与STIME栏位。 grep Global Regular Exception Print 全局正则表达式版本，权限为所有用户，查找 强大的文本检索工具，使用正则表达式搜索文本，并把匹配的行打印出来。 | 管道命令 ps命令与grep同时执行
+执行命令后返回以下信息：
+//ps -ef|grep java命令查询的结果 UID PID PPID C STIME TTY TIME CMD ww 14200 12563 0 00:20 pts/0 00:00:00 grep  知识点学习 UID ：程序被该 UID 所拥有 PID ：就是这个程序的 ID PPID ：则是其上级父程序的ID C ：CPU使用的资源百分比 STIME ：系统启动时间 TTY ：登入者的终端机位置 TIME ：使用掉的CPU时间。 CMD ：所下达的是什么指令
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/02-java/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+		<section id="main" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+  <article>
+    
+    
+    <header class="entry-header">
+    <a href="http://balaramadurai.github.io/blog/03-kettle/">
+    <h2 class="entry-title" itemprop="name">
+        kettle 数据库迁移
+    </h2>
+    </a>
+</header>
+
+    <div class="article-entry entry-content clearfix" itemprop="articleBody">
+      <p>
+        最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。
+kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。
+工具介绍 本机的运行环境： JDK版本： 1.8 spoon版本：pdi-ce-8.2.0 软件的运行需要添加Java的数据库驱动包，在软件lib文件夹下，添加数据库驱动。 mysql-connector-java-5.0.8-bin.jar ojdbc6.jar 打开解压后的文件夹，找到并打开spoon.bat，进入spoon软件的界面。如下图所示。 双击转换，可以新建一个转换，设置操作数据库的控件。首先需要做以下两步。
+第一步 新建DB连接 　DB连接右击，新建DB连接，以当前的需求为例，需要分别建立oracle和mysql两个数据库的连接。 第二步 数据库连接 　配置数据库的连接信息，数据库名称，账号，密码等，可以测试连接是否成功。下面是oracle数据库的连接。 改变编码方式（重要） 更改目标数据的编码方式，统一为utf8编码方式，否则会出现乱码。mysql数据库的连接的选项里，添加characterEncoding 设置编码方式为utf8。 数据的迁移可以分为单表的迁移和多表的迁移，两者的处理过程不同，下面将分别介绍。
+1 单表迁移 　在核心对象，输入下找到表输入，拖动到工作区，同样在输出下，找到表输出，拖动到工作区。在表输入控件右键，按住shift键添加表输入到表输出的传输线。 双击表输入，设置相关的参数。选择数据库连接，这里源数据库是oracle，下面是SQL查询语句，如迁移A1表的数据。 在输出表控件上双击，设置参数，数据库连接，这里是mysql数据库，点击浏览并选择需要迁移的目标表a1。 点击三角符号–运行，弹出执行转换的窗口，默认设置，直接点击run，就开始数据的迁移。 下一步提示，文件已经改变，是否保存？选择是，并当前的作业保存在指定的区域。 程序运行，在控制台可以看到打印的日志信息 打开mysql数据库，双击查看对应的表，可以发现数据已经迁移过来了，这里需要注意的是设置数据库的编码方式。 2 多表迁移 单表的数据迁移比较简单，对多张表的批量迁移，需要将需要处理的数据库的表名存储到文件中，如data.txt，注意：一个表名一行，不要有空格。需要在第一行为其起一个别名，如ORCLDATA。 多表数据的批量迁移主要有三个步骤，分别如下所示：
+（1）数据输入 在输入选项中添加文本文件输入控件，作业选项中添加复制记录到结果控件。本步骤的作用是从文本中读取表的信息，复制到结果集中。 双击文本文件输入，设计相关参数。浏览方式选中文本文件，并添加到当前的目录下，如下图所示。 在字段标签下，添加文本文件中起的别名ORCLDATA，数据类型为String，点击确定即可。 最后将其保存为数据输入.ktr，ktr是kettle的格式文件，可以用spoon直接打开，方便之后的操作。
+（2）数据转换 　在表输出选项中分别添加从结果获取记录控件，设置变量控件，再次添加表输入控件和表输出控件，并用数据传输线进行连接，结果如下图所示。 双击从结果获取记录控件，设置字段名称，类型等参数。字段名称填写别名ORCLDATA,类型选择String类型。参考如下图所示。 双击设置变量，设置字段名称，变量名，变量活动类型，这里将字段名称和变量名设置为一样，也可以不同，变量活动类型选择vaild in the parent job，点击确定。 双击表输入，设置参数。选择源数据库，SQL语句，这里是oracle数据库，SQL语句需要填入参数形式的变量名。 同样，双击表输出，设置参数属性。选择目标数据库，目标表使用变量${别名}，提交记录数量，就是每次处理多少条数据。勾选使用批量插入。 最后将当前设置保存为数据转换.ktr，ktr是kettle的格式文件，可以用spoon直接打开。
+（３）执行脚本 在核心对象下，通用选项下，分别添加Start控件，转换控件1，转换控件2和成功控件，并用传输线连接，结果如下。 双击转换1，选择执行文件的路径，这里需要选择的是数据输入.ktr文件，自动生成文件相对的路径。设置结果参考下图。 同样设置转换1的参数，选中数据转换.ktr文件，结果如下图所示。 注意还需要设置命名参数，并勾选两个设置，复制上一步结果到命名参数，将所有参数值传递到子转换，命名参数和流列名都设置为了ORCLDATA。结果如下图所示。 完成以上的设置，最后，点击run开始执行数据迁移，根据表中数据的多少决定其执行的快慢，可到数据库中查看数据的导入情况。 注：执行过程中，可能会出现问题，如表结构的字段设置不够，可根据实际的需要调整。若执行出现问题可在下面留言。
+博客参考： <a href="https://blog.csdn.net/wuzhangweiss/article/details/78408029">https://blog.csdn.net/wuzhangweiss/article/details/78408029</a>
+        <br>
+      </p>
+    </div>
+
+    
+    
+<div class="entry-meta-bar clearfix">
+  <div class="entry-meta">
+    
+    <span class="byline">
+      <span class="author vcard">
+        
+	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
+      </span>
+    </span>
+    
+
+    
+    
+    <span class="posted-on">
+      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
+    </span>
+    
+    
+    
+    
+  </div>
+  
+
+      <span>
+    <a class="readmore" href="http://balaramadurai.github.io/blog/03-kettle/">
+      Read More
+    </a>
+  </span>
+  
+</div>
+
+
+  </article>
+</section>
+ 
+		
+	      </section>
+	      <ul class="default-wp-page clearfix">
+  
+    
+  
+  <li class="next">
+    <a class="extend next" rel="next" href="http://balaramadurai.github.io/blog/page/2/">
+       Next »
+    </a>
+  </li>   
+  
+  
+</ul>
+
+	    </div>
+	  </div>
+	</div>
+	
+<div id="secondary">
+    
+<aside id="rpwe_widget-3" class="widget rpwe_widget">
+    <h3 class="widget-title">
+        Recent Posts
+    </h3>
+    <div class="rpwe-block">
+        <ul class=" rpwe-ul">
+            
+            <li class="rpwe-il rpwe-classfix">
+                <a class="rpwe-img" href="http://balaramadurai.github.io/post/hugo-travelify-theme-features/" class="thumbnail">
+		    
+                    <span class="thumbnail-image thumbnail-none"></span>
+		    
+                </a>
+                <h3 class="rpwe-title">
+		    <a href="http://balaramadurai.github.io/post/hugo-travelify-theme-features/" title="Permalink to Hugo Travelify Theme Features" >Hugo Travelify Theme Features</a>
+		</h3>
+                <time class="rpwe-time published" datetime="2016-06-28 13:07:31 &#43;0200 &#43;0200">28 June, 28280</time>
+            </li>
+            
+            <li class="rpwe-il rpwe-classfix">
+                <a class="rpwe-img" href="http://balaramadurai.github.io/post/migrate-from-jekyll/" class="thumbnail">
+		    
+                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/featured-1.jpg" alt="Blogs">
+		    
+                </a>
+                <h3 class="rpwe-title">
+		    <a href="http://balaramadurai.github.io/post/migrate-from-jekyll/" title="Permalink to java项目部署" >java项目部署</a>
+		</h3>
+                <time class="rpwe-time published" datetime="2015-10-10 13:07:31 &#43;0200 &#43;0200">10 October, 10100</time>
+            </li>
+            
+            <li class="rpwe-il rpwe-classfix">
+                <a class="rpwe-img" href="http://balaramadurai.github.io/post/linked-post/" class="thumbnail">
+		    
+                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/spain6-1018x460.jpg" alt="Blogs">
+		    
+                </a>
+                <h3 class="rpwe-title">
+		    <a href="http://balaramadurai.github.io/post/linked-post/" title="Permalink to Linked post" >Linked post</a>
+		</h3>
+                <time class="rpwe-time published" datetime="2015-10-02 21:49:20 &#43;0200 &#43;0200">02 October, 2020</time>
+            </li>
+            
+            <li class="rpwe-il rpwe-classfix">
+                <a class="rpwe-img" href="http://balaramadurai.github.io/post/go-is-for-lovers/" class="thumbnail">
+		    
+                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/featured-5.jpg" alt="Blogs">
+		    
+                </a>
+                <h3 class="rpwe-title">
+		    <a href="http://balaramadurai.github.io/post/go-is-for-lovers/" title="Permalink to Go is for lovers" >Go is for lovers</a>
+		</h3>
+                <time class="rpwe-time published" datetime="2015-09-17 13:47:08 &#43;0200 &#43;0200">17 September, 17170</time>
+            </li>
+            
+            <li class="rpwe-il rpwe-classfix">
+                <a class="rpwe-img" href="http://balaramadurai.github.io/post/hugo-is-for-lovers/" class="thumbnail">
+		    
+                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/7148951717_9bbf185db3_h-1018x460.jpg" alt="Blogs">
+		    
+                </a>
+                <h3 class="rpwe-title">
+		    <a href="http://balaramadurai.github.io/post/hugo-is-for-lovers/" title="Permalink to Hugo is for lovers" >Hugo is for lovers</a>
+		</h3>
+                <time class="rpwe-time published" datetime="2015-08-03 13:39:46 &#43;0200 &#43;0200">03 August, 3030</time>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+<style>
+ .rpwe-block ul{list-style:none!important;margin-left:0!important;padding-left:0!important;}.rpwe-block li{border-bottom:1px solid #eee;margin-bottom:10px;padding-bottom:10px;list-style-type: none;}.rpwe-block a{display:inline!important;text-decoration:none;}.rpwe-block h3{background:none!important;clear:none;margin-bottom:0!important;margin-top:0!important;font-weight:400;font-size:12px!important;line-height:1.5em;}.rpwe-thumb{border:1px solid #EEE!important;box-shadow:none!important;margin:2px 10px 2px 0;padding:3px!important;}.rpwe-summary{font-size:12px;}.rpwe-time{color:#bbb;font-size:11px;}.rpwe-comment{color:#bbb;font-size:11px;padding-left:5px;}.rpwe-alignleft{display:inline;float:left;}.rpwe-alignright{display:inline;float:right;}.rpwe-aligncenter{display:block;margin-left: auto;margin-right: auto;}.rpwe-clearfix:before,.rpwe-clearfix:after{content:"";display:table !important;}.rpwe-clearfix:after{clear:both;}.rpwe-clearfix{zoom:1;}
+</style>
+
+
+    
+
+    
+
+
+<aside id="blog_subscription-2" class="widget"><h3 class="widget-title">Subscribe via Email</h3>
+  <form action="//balaramadurai.us15.list-manage.com/subscribe/post?u=7f4183fa2fe7abe3dc9f4efad&amp;amp;id=49a3dd3745" method="post">
+    <div>
+      <p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+    </div>
+    <p>
+      <input name="EMAIL" placeholder="Email Address" type="email">
+    </p>
+    <p>
+      <input name="FNAME" value="" placeholder="First Name" type="name">
+    </p>
+
+    <p >
+      <input value="Subscribe" type="submit">
+    </p>
+  </form>
+			<script>
+			
+
+			(function( d ) {
+				
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-2]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				
+				var form = d.getElementById('subscribe-blog-blog_subscription-2'),
+					input = d.getElementById('subscribe-field-blog_subscription-2'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+		
+</aside>
 
 
 
 
-<footer class="bg-dark footer-section">
-  <div class="section">
+
+    
+
+<aside id="search-3" class="widget widget_search">
+  <form method="get" action="https://duckduckgo.com/">
+    <input type="search" name="q" maxlength="255" placeholder="Search the site">
+    <input type="hidden" name="sites" value="http://balaramadurai.github.io/"/>
+    <input type="hidden" name="k7" value="#faf8f8"/>
+    <input type="hidden" name="kj" value="#b33"/>
+    <input type="hidden" name="ky" value="#fafafa"/>
+    <input type="hidden" name="kx" value="b"/>
+    <input type="hidden" name="ko" value="-1"/>
+    <input type="hidden" name="k1" value="-1"/>
+    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+  </form>
+</aside>
+
+
+
+    <aside id="categories-3" class="widget widget_categories">
+  <h3 class="widget-title">Categories</h3>
+  <ul>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/java">Java</a> (1)
+    </li>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/lorem">Lorem</a> (1)
+    </li>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/new-york">New-York</a> (1)
+    </li>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/other-destinations">Other-Destinations</a> (1)
+    </li>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/programming">Programming</a> (2)
+    </li>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/pseudo">Pseudo</a> (1)
+    </li>
+    
+    <li class="cat-item">
+      
+      <a href="http://balaramadurai.github.io/categories/starting">Starting</a> (5)
+    </li>
+    
+  </ul>
+</aside>
+
+    
+
+    
+
+
+
+<aside id="tag_cloud-2" class="widget widget_tag_cloud">
+  <h3 class="widget-title">        Tag cloud</h3>
+  <div class="tagcloud">
+
+
+
+    
+      
+    
+      
+    
+    <a href="http://balaramadurai.github.io/tags/hugo" style="font-size: 7px;" title="3 topics">
+      
+      Hugo
+    </a>
+      
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <a href="http://balaramadurai.github.io/tags/theme" style="font-size: 11px;" title="7 topics">
+      
+      Theme
+    </a>
+      
+      
+  </div>
+
+</aside>
+
+
+    
+
+
+<div class="widget">
+
+  <h3 class="widget-title">Authors 
+  </h3>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+          
+          <li><a href="http://balaramadurai.github.io/author/wangqj"><i class="fa fa-user"></i> wangqj (23)</a>
+          </li>
+          
+          <li><a href="http://balaramadurai.github.io/author/test1"><i class="fa fa-user"></i> test1 (6)</a>
+          </li>
+          
+          <li><a href="http://balaramadurai.github.io/author/test2"><i class="fa fa-user"></i> test2 (1)</a>
+          </li>
+          
+        </ul>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+      </div>   
+    </div>
+    <footer id="footerarea" class="clearfix">
+  <div class="widget-wrap">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h5 class="text-light">Email</h5>
-          <p class="text-white paragraph-lg font-secondary">vip_wqj@163.com</p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary"></p>
-        </div>
-        <div class="col-md-4">
-          <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">中国·海淀</p>
-        </div>
+      <div class="widget-area clearfix">
       </div>
     </div>
   </div>
-  <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">Powered by <a href="https://themefisher.com/best-hugo-themes">Hugo Themes</a></p>
+  
+  <div id="site-generator">
+    <div class="container">
+      <div class="copyright">&copy; 2020
+	Copyright Powered by <a href="http://gohugo.io">Hugo</a>. Original theme by <a href="http://colorlib.com/wp/travelify/">Colorlib</a> adapted for Hugo by <a href="http://balaramadurai.net">Dr. Bala Ramadurai</a>.
+      </div>
+      <div class="footer-right"></div><div style="clear:both;">
+      </div>
+    </div>
+  </div>
+  <div class="back-to-top">
+    <a href="#branding"></a>
   </div>
 </footer>
+</div>
 
 
-<!-- JS Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
-<script src="https://wangqj.cn/plugins/jQuery/jquery.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
-<script src="https://wangqj.cn/plugins/bootstrap/bootstrap.min.js"></script>
 
-<script src="https://wangqj.cn/plugins/slick/slick.min.js"></script>
+<script type='text/javascript' src="http://balaramadurai.github.io/js/jquery.js"></script>
+<script type='text/javascript' src="http://balaramadurai.github.io/js/jquery-migrate.min.js"></script>
+<script type='text/javascript' src="http://balaramadurai.github.io/js/functions.min.js"></script>
 
-<script src="https://wangqj.cn/plugins/shuffle/shuffle.min.js"></script>
-
-<!-- Main Script -->
-
-<script src="https://wangqj.cn/js/script.min.js"></script>
-<!-- google analitycs -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'Your ID', 'auto');
-  ga('send', 'pageview');
+<script type='text/javascript' src="http://balaramadurai.github.io/js/jquery.cycle.all.min.js"></script>
+<script type='text/javascript'>
+  
+ var travelify_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};
+  
 </script>
-</body>
+<script type='text/javascript' src="http://balaramadurai.github.io/js/slider-settings.min.js"></script>
+<script type='text/javascript' src="http://balaramadurai.github.io/js/wp-embed.min.js"></script>
+<link rel='stylesheet' id='font-awesome-css'  href="http://balaramadurai.github.io/css/font-awesome.min.css" type='text/css' media='all' />
+
+
+<script type="text/javascript">
+ (function() {
+     var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+     
+     request = true;
+     
+     b[c] = b[c].replace( rcs, ' ' );
+     
+     b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+ }());
+</script>
+
+<link rel="apple-touch-icon" href="http://balaramadurai.github.io/apple-touch-icon.png" />
+<link rel="stylesheet" href="http://balaramadurai.github.io/fancybox/jquery.fancybox.css">
+
+
+<script src="http://balaramadurai.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://balaramadurai.github.io/js/script.js"></script>
+
+
+
+
+
+
+  </body>
 </html>

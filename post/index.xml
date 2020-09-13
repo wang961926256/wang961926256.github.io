@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on wangqj-blog</title>
+    <link>http://balaramadurai.github.io/post/</link>
+    <description>Recent content in Posts on wangqj-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jun 2016 13:07:31 +0200</lastBuildDate>
+    
+	<atom:link href="http://balaramadurai.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo Travelify Theme Features</title>
+      <link>http://balaramadurai.github.io/post/hugo-travelify-theme-features/</link>
+      <pubDate>Tue, 28 Jun 2016 13:07:31 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/hugo-travelify-theme-features/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hugo-Travelify-Theme&lt;/strong&gt; is the Hugo version of the Wordpress theme - Travelify . The source code was adapted from &lt;em&gt;digitalcraftsman&lt;/em&gt;&amp;rsquo;s Icarus theme with a few changes for additional features (Even this README is a fork from his original theme README :)).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>java项目部署</title>
+      <link>http://balaramadurai.github.io/post/migrate-from-jekyll/</link>
+      <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/migrate-from-jekyll/</guid>
+      <description>Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？
+ ​	最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Java方面的项目，记录下来，方便之后的备查. 首先是工具准备： 远程连接工具：xshell 6 远程文件传输工具：winscp 连接上服务器，在上面部署程序主要经过以下几个步骤：
+第一步：数据备份与更新  为防止发布的程序无法正常使用，首先对之前的项目（java包）进行备份，即使发布不成功，也可快速回退上一个版本。 运用winscp工具连接上远程的服务器，找到项目发布的路径，先替换后更新Java包文件。工具连接的页面如下图所示： 第二步：连接服务器 　运用xshell连接到服务器，连接成功后，查看当前运行的Java进程，命令如下：
+// 查看运行的Java进程 ps -ef|grep java  知识点学习 ps命令 process Status 将某个进程显示出来，列出系统中当前运行的进程 -A 显示所有程序。 -e 此参数的效果和指定&amp;quot;A&amp;quot;参数相同。 -f 显示UID,PPIP,C与STIME栏位。 grep Global Regular Exception Print 全局正则表达式版本，权限为所有用户，查找 强大的文本检索工具，使用正则表达式搜索文本，并把匹配的行打印出来。 | 管道命令 ps命令与grep同时执行
+ 执行命令后返回以下信息：
+//ps -ef|grep java命令查询的结果 UID PID PPID C STIME TTY TIME CMD ww 14200 12563 0 00:20 pts/0 00:00:00 grep  知识点学习 UID ：程序被该 UID 所拥有 PID ：就是这个程序的 ID PPID ：则是其上级父程序的ID C ：CPU使用的资源百分比 STIME ：系统启动时间 TTY ：登入者的终端机位置 TIME ：使用掉的CPU时间。 CMD ：所下达的是什么指令</description>
+    </item>
+    
+    <item>
+      <title>Linked post</title>
+      <link>http://balaramadurai.github.io/post/linked-post/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/linked-post/</guid>
+      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &amp;quot;main&amp;quot; Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.</description>
+    </item>
+    
+    <item>
+      <title>Go is for lovers</title>
+      <link>http://balaramadurai.github.io/post/go-is-for-lovers/</link>
+      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/go-is-for-lovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>Hugo is for lovers</title>
+      <link>http://balaramadurai.github.io/post/hugo-is-for-lovers/</link>
+      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/hugo-is-for-lovers/</guid>
+      <description>JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。
+ ​	最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。
+下面将这个过程记录下来，方便之后的查看。
+第一步、定义一个Map，用于存放excel文件中所有列的信息。 以user表为例，存放其中字段的信息，代码如下，仅供参考。
+private Map&amp;lt;String, Object&amp;gt; getExcelFileType() { Map&amp;lt;String, Object&amp;gt; Map = new HashMap&amp;lt;String, Object&amp;gt;(); JSONObject jsonData = new JSONObject(); jsonData.put(&amp;#34;name&amp;#34;, &amp;#34;Str&amp;#34;); //不同类型的数据 	jsonData.put(&amp;#34;date&amp;#34;, &amp;#34;DateTime&amp;#34;); Map.put(&amp;#34;user&amp;#34;, jsonData); return Map; } 第二步、 日志设置  数据处理过程中需要记录日志信息。这里使用的是 java.util.logging，配置相关的设置，可以将程序中的导入情况输出到日志中，方便查看。代码如下，仅供参考。
+Logger log = Logger.getLogger(&amp;#34;tesglog&amp;#34;); //日志 //设置日志的级别 log.setLevel(Level.ALL); //设置日志存放的路径 FileHandler fileHandler = new FileHandler(&amp;#34;D:\import.log&amp;#34;); fileHandler.setLevel(Level.ALL); fileHandler.setFormatter(new LogFormatter()); log.addHandler(fileHandler); } 程序执行中会将相应的信息写入到指定的out文件中，程序执行后，可以查看执行的结果信息。
+第三步 读取文件夹内容 思路： 1、读取文件夹，遍历其中的excel文件，获取文件名称 2、定义两个变量sqlcolumn 和sqlvalue，分别用于存放拼接的列和值的信息。 3、按行遍历excel文件内容， 第二行开始，对每个单元格进行读取，根据是否有值来进行拼接插入的字符串。 4、运用jdbcOperations来执行拼接的sql语句，实现数据的入库。 程序实现的代码如下所示，仅供参考。</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>http://balaramadurai.github.io/post/creating-a-new-theme/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>http://balaramadurai.github.io/post/test1/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/test1/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>http://balaramadurai.github.io/post/test2/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/test2/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>http://balaramadurai.github.io/post/test3/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/test3/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>http://balaramadurai.github.io/post/test4/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/test4/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>ExtJs 监听创建与触发</title>
+      <link>http://balaramadurai.github.io/post/this-post-has-no-body/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/this-post-has-no-body/</guid>
+      <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。
+ ​	在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。 遵循的原则是：谁创建谁监听，在创建的地方添加监听。 下面举例说明一下如何实现监听和触发。 第一步、fireEvent方法添加触发
+// me代表着作用域范围 var me = this; //第一种：往上一级面板传递参数 transData是自定义传递的名称 nodeData表示需要传递的参数 me.fireEvent(&amp;#34;transData&amp;#34;,nodeData); //第二种：继续往上传递 me.fireEvent(&amp;#34;transData&amp;#34;,function( me.fireEvent(&amp;#34;transToData&amp;#34;,nodeData); ) }); 第二步、添加监听 格式为：panel.on(&amp;ldquo;触发的方法&amp;rdquo;，调用的方法，this);
+// me代表着作用域范围 监听transData的方法 var panel = Ext.create(&amp;#34;ext.panel&amp;#34;); panel.on(&amp;#34;transData&amp;#34;,this.nodeClick,this); //调用触发的方法 nodeClick : function(){ var me= this; Ext.Msg.alert(&amp;#34;提示&amp;#34;,&amp;#34;触发方法添加成功!&amp;#34;); }, 博客参考： 【1】W3Cschool:https://www.w3cschool.cn/extjs/extjs_overview.html</description>
+    </item>
+    
+    <item>
+      <title>Ext监听</title>
+      <link>http://balaramadurai.github.io/post/00-ext/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/00-ext/</guid>
+      <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。
+ ​	在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。 遵循的原则是：谁创建谁监听，在创建的地方添加监听。 下面举例说明一下如何实现监听和触发。 第一步、fireEvent方法添加触发
+// me代表着作用域范围 var me = this; //第一种：往上一级面板传递参数 transData是自定义传递的名称 nodeData表示需要传递的参数 me.fireEvent(&amp;#34;transData&amp;#34;,nodeData); //第二种：继续往上传递 me.fireEvent(&amp;#34;transData&amp;#34;,function( me.fireEvent(&amp;#34;transToData&amp;#34;,nodeData); ) }); 第二步、添加监听 格式为：panel.on(&amp;ldquo;触发的方法&amp;rdquo;，调用的方法，this);
+// me代表着作用域范围 监听transData的方法 var panel = Ext.create(&amp;#34;ext.panel&amp;#34;); panel.on(&amp;#34;transData&amp;#34;,this.nodeClick,this); //调用触发的方法 nodeClick : function(){ var me= this; Ext.Msg.alert(&amp;#34;提示&amp;#34;,&amp;#34;触发方法添加成功!&amp;#34;); }, 博客参考： 【1】W3Cschool:https://www.w3cschool.cn/extjs/extjs_overview.html</description>
+    </item>
+    
+    <item>
+      <title>Java读取excel</title>
+      <link>http://balaramadurai.github.io/post/01-java-excel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/01-java-excel/</guid>
+      <description>JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。
+ ​	最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。
+下面将这个过程记录下来，方便之后的查看。
+第一步、定义一个Map，用于存放excel文件中所有列的信息。 以user表为例，存放其中字段的信息，代码如下，仅供参考。
+private Map&amp;lt;String, Object&amp;gt; getExcelFileType() { Map&amp;lt;String, Object&amp;gt; Map = new HashMap&amp;lt;String, Object&amp;gt;(); JSONObject jsonData = new JSONObject(); jsonData.put(&amp;#34;name&amp;#34;, &amp;#34;Str&amp;#34;); //不同类型的数据 	jsonData.put(&amp;#34;date&amp;#34;, &amp;#34;DateTime&amp;#34;); Map.put(&amp;#34;user&amp;#34;, jsonData); return Map; } 第二步、 日志设置  数据处理过程中需要记录日志信息。这里使用的是 java.util.logging，配置相关的设置，可以将程序中的导入情况输出到日志中，方便查看。代码如下，仅供参考。
+Logger log = Logger.getLogger(&amp;#34;tesglog&amp;#34;); //日志 //设置日志的级别 log.setLevel(Level.ALL); //设置日志存放的路径 FileHandler fileHandler = new FileHandler(&amp;#34;D:\import.log&amp;#34;); fileHandler.setLevel(Level.ALL); fileHandler.setFormatter(new LogFormatter()); log.addHandler(fileHandler); } 程序执行中会将相应的信息写入到指定的out文件中，程序执行后，可以查看执行的结果信息。
+第三步 读取文件夹内容 思路： 1、读取文件夹，遍历其中的excel文件，获取文件名称 2、定义两个变量sqlcolumn 和sqlvalue，分别用于存放拼接的列和值的信息。 3、按行遍历excel文件内容， 第二行开始，对每个单元格进行读取，根据是否有值来进行拼接插入的字符串。 4、运用jdbcOperations来执行拼接的sql语句，实现数据的入库。 程序实现的代码如下所示，仅供参考。</description>
+    </item>
+    
+  </channel>
+</rss>

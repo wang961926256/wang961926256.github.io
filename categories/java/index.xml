@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on wangqj-blog</title>
+    <link>http://balaramadurai.github.io/categories/java/</link>
+    <description>Recent content in Java on wangqj-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Oct 2015 13:07:31 +0200</lastBuildDate>
+    
+	<atom:link href="http://balaramadurai.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java项目部署</title>
+      <link>http://balaramadurai.github.io/post/migrate-from-jekyll/</link>
+      <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
+      
+      <guid>http://balaramadurai.github.io/post/migrate-from-jekyll/</guid>
+      <description>Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？
+ ​	最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Java方面的项目，记录下来，方便之后的备查. 首先是工具准备： 远程连接工具：xshell 6 远程文件传输工具：winscp 连接上服务器，在上面部署程序主要经过以下几个步骤：
+第一步：数据备份与更新  为防止发布的程序无法正常使用，首先对之前的项目（java包）进行备份，即使发布不成功，也可快速回退上一个版本。 运用winscp工具连接上远程的服务器，找到项目发布的路径，先替换后更新Java包文件。工具连接的页面如下图所示： 第二步：连接服务器 　运用xshell连接到服务器，连接成功后，查看当前运行的Java进程，命令如下：
+// 查看运行的Java进程 ps -ef|grep java  知识点学习 ps命令 process Status 将某个进程显示出来，列出系统中当前运行的进程 -A 显示所有程序。 -e 此参数的效果和指定&amp;quot;A&amp;quot;参数相同。 -f 显示UID,PPIP,C与STIME栏位。 grep Global Regular Exception Print 全局正则表达式版本，权限为所有用户，查找 强大的文本检索工具，使用正则表达式搜索文本，并把匹配的行打印出来。 | 管道命令 ps命令与grep同时执行
+ 执行命令后返回以下信息：
+//ps -ef|grep java命令查询的结果 UID PID PPID C STIME TTY TIME CMD ww 14200 12563 0 00:20 pts/0 00:00:00 grep  知识点学习 UID ：程序被该 UID 所拥有 PID ：就是这个程序的 ID PPID ：则是其上级父程序的ID C ：CPU使用的资源百分比 STIME ：系统启动时间 TTY ：登入者的终端机位置 TIME ：使用掉的CPU时间。 CMD ：所下达的是什么指令</description>
+    </item>
+    
+  </channel>
+</rss>
