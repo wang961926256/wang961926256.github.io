@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> wangqj | java Aspose&#43;PDFObject </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="一只北漂两年半的程序汪">
+    
+    <link rel="stylesheet" href="https://wangqj.com/css/style.min.5be3a155aa89a24586c761b1b5538c4040e3735ee32ac12a708dc1696c0982f5.css" integrity="sha256-W&#43;OhVaqJokWGx2GxtVOMQEDjc17jKsEqcI3BaWwJgvU=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="https://wangqj.com/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wangqj.com/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://wangqj.com/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://wangqj.com/favicons/favicon-16x16.png">
+    <link rel="canonical" href="https://wangqj.com/blog/13-aspose/">
+    
+    
+    <script type="text/javascript" src="https://wangqj.com/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://wangqj.com/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="java Aspose&#43;PDFObject"/>
+<meta name="twitter:description" content="Aspose&#43;PDFObject"/>
+
+</head>
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://wangqj.com/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">腹有诗书气自华</a></h3>
+            <div class="description">
+                <p>一只北漂两年半的程序汪</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://de.linkedin.com/" rel="me" aria-label="Linkedin">
+                    <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/wang961926256/" rel="me" aria-label="GitHub">
+                    <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="vip_wqj@163.com" rel="me" aria-label="e-mail">
+                    <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; wangqj 2020 </div>
+    </div>
+</div>
+<div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li><a  href="/"  title="">首页</a></li>
+        
+        
+        <li><a  href="/post/"  title="">博客</a></li>
+        
+        
+        <li><a  href="/about/"  title="">读书</a></li>
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
+    </ul>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>java Aspose&#43;PDFObject
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Mon, Jan 1, 0001</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">One-minute read</span>
+        </div>
+        
+        </div>
+
+    <blockquote>
+<p><strong>Aspose</strong> office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。</p>
+</blockquote>
+<p>最近系统中想做个页面的展示和下载的功能，正好公司购买了Aspose （收费）软件，简单的实现方案是Aspose + PDFObect 将excel转成pdf，直接使用插件来实现预览和下载。记录下来，方便备查！</p>
+<h6 id="一excel-转-pdf">一、excel 转 PDF</h6>
+<p><strong>Aspose</strong>  适合办公文档的操作，如excel转pdf，word转pdf，excel数据导出，只需要简单的操作就能够实现功能。以下通过Java中的文件流实现转PDF，调用save方法。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">String <span style="color:#a6e22e">excelPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E://example.xlsx&#34;</span>;
+String <span style="color:#a6e22e">wordPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E://example.doc&#34;</span>;
+String <span style="color:#a6e22e">pdfPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;E://example.pdf&#34;</span>;
+<span style="color:#66d9ef">try</span> {    
+		<span style="color:#a6e22e">FileInputStream</span> <span style="color:#a6e22e">fileInputStream</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+		<span style="color:#a6e22e">FileOutputStream</span> <span style="color:#a6e22e">fileOutputStream</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+		<span style="color:#75715e">//excel文件       
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">File</span> <span style="color:#a6e22e">excelFile</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">File</span>(<span style="color:#a6e22e">excelPath</span>);
+		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">excelFile</span>.<span style="color:#a6e22e">exists</span>()) {           
+			<span style="color:#a6e22e">fileInputStream</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileInputStream</span>(<span style="color:#a6e22e">excelFile</span>);
+			<span style="color:#a6e22e">Workbook</span> <span style="color:#a6e22e">workbook</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Workbook</span>(<span style="color:#a6e22e">fileInputStream</span>);
+			<span style="color:#a6e22e">File</span> <span style="color:#a6e22e">pdfFile</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">File</span>(<span style="color:#a6e22e">pdfPath</span>);
+			<span style="color:#a6e22e">fileOutputStream</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileOutputStream</span>(<span style="color:#a6e22e">pdfFile</span>);
+			<span style="color:#75715e">////////excel 转 PDF方法
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">workbook</span>.<span style="color:#a6e22e">save</span>(<span style="color:#a6e22e">fileOutputStream</span>, <span style="color:#a6e22e">SaveFormat</span>.<span style="color:#a6e22e">PDF</span>); 
+			<span style="color:#75715e">/////// word 转 PDF方法
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">Document</span> <span style="color:#a6e22e">doc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Document</span>(<span style="color:#a6e22e">wordPath</span> ); 
+			 <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">save</span>(<span style="color:#a6e22e">os</span>, <span style="color:#a6e22e">com</span>.<span style="color:#a6e22e">aspose</span>.<span style="color:#a6e22e">words</span>.<span style="color:#a6e22e">SaveFormat</span>.<span style="color:#a6e22e">PDF</span>);
+			}              
+		}<span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> <span style="color:#a6e22e">e</span>) {           
+			<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">printStackTrace</span>();       
+		} <span style="color:#66d9ef">finally</span> {
+			<span style="color:#75715e">//记得关闭 打开的文件流
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fileInputStream</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+				<span style="color:#66d9ef">try</span> {
+					<span style="color:#a6e22e">fileInputStream</span>.<span style="color:#a6e22e">close</span>();
+				} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">IOException</span> <span style="color:#a6e22e">e</span>) {
+					<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">printStackTrace</span>();
+				}
+			}
+			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fileOutputStream</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+				<span style="color:#66d9ef">try</span> {
+					<span style="color:#a6e22e">fileOutputStream</span>.<span style="color:#a6e22e">close</span>();
+				} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">IOException</span> <span style="color:#a6e22e">e</span>) {
+					<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">printStackTrace</span>();
+				}
+			}
+		}
+</code></pre></div><p>执行成功，在E盘下生成 <strong>example.pdf</strong> 文件
+<img src="https://img-blog.csdnimg.cn/20200229233303964.png" alt="在这里插入图片描述"></p>
+<h6 id="二pdfobject-页面展示">二、pdfobject 页面展示</h6>
+<p>首先到官网上下载插件，<strong>下载地址</strong>：https://pdfobject.com/</p>
+<h6 id="1引用js文件">1、引用js文件</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/pdfobject.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><h6 id="2展示pdf文件">2、展示pdf文件</h6>
+<p><strong>pdfobject</strong> 具有可设置的属性，如支持指定位置，指定打开的起始页。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//定义区域 用于在页面上放PDF
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;localPDF&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#75715e">//打开pdf文件，全屏
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">PDFObject</span>.<span style="color:#a6e22e">embed</span>(<span style="color:#e6db74">&#34;pdf/Java.pdf&#34;</span>);
+       <span style="color:#75715e">//指定位置
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">PDFObject</span>.<span style="color:#a6e22e">embed</span>(<span style="color:#e6db74">&#34;/pdf/data.pdf&#34;</span>, <span style="color:#e6db74">&#34;#localPDF&#34;</span>);
+       <span style="color:#75715e">//指定开始页数
+</span><span style="color:#75715e"></span>       <span style="color:#a6e22e">PDFObject</span>.<span style="color:#a6e22e">embed</span>(<span style="color:#e6db74">&#34;/pdf/data.pdf&#34;</span>, <span style="color:#e6db74">&#34;#localPDF&#34;</span><span style="color:#960050;background-color:#1e0010">，</span>{<span style="color:#a6e22e">page</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;5&#34;</span>});
+ <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><h6 id="博客来源">博客来源</h6>
+<p>【1】https://pdfobject.com/
+【2】https://blog.csdn.net/qshazi/article/details/80885416</p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+<script type="text/javascript" src="https://wangqj.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://wangqj.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://wangqj.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></body>
+
+</html>

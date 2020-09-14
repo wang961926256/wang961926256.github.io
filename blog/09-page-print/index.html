@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> wangqj | print page </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="一只北漂两年半的程序汪">
+    
+    <link rel="stylesheet" href="https://wangqj.com/css/style.min.5be3a155aa89a24586c761b1b5538c4040e3735ee32ac12a708dc1696c0982f5.css" integrity="sha256-W&#43;OhVaqJokWGx2GxtVOMQEDjc17jKsEqcI3BaWwJgvU=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="https://wangqj.com/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wangqj.com/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://wangqj.com/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://wangqj.com/favicons/favicon-16x16.png">
+    <link rel="canonical" href="https://wangqj.com/blog/09-page-print/">
+    
+    
+    <script type="text/javascript" src="https://wangqj.com/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://wangqj.com/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="print page"/>
+<meta name="twitter:description" content="网页信息打印"/>
+
+</head>
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://wangqj.com/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">腹有诗书气自华</a></h3>
+            <div class="description">
+                <p>一只北漂两年半的程序汪</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://de.linkedin.com/" rel="me" aria-label="Linkedin">
+                    <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/wang961926256/" rel="me" aria-label="GitHub">
+                    <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="vip_wqj@163.com" rel="me" aria-label="e-mail">
+                    <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; wangqj 2020 </div>
+    </div>
+</div>
+<div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li><a  href="/"  title="">首页</a></li>
+        
+        
+        <li><a  href="/post/"  title="">博客</a></li>
+        
+        
+        <li><a  href="/about/"  title="">读书</a></li>
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
+    </ul>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>print page
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Mon, Jan 1, 0001</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">One-minute read</span>
+        </div>
+        
+        </div>
+
+    <blockquote>
+<p><strong>页面打印</strong> 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印</p>
+</blockquote>
+<h4 id="第一种方式添加代码打印">第一种方式、添加代码打印</h4>
+<p>　添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。
+　第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 头部添加打印的信息
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">language</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">preview</span>(<span style="color:#a6e22e">oper</span>){  <span style="color:#75715e">//oper表示打印的区域数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">oper</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>){
+    <span style="color:#a6e22e">bdhtml</span><span style="color:#f92672">=</span>window.document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerHTML</span>;    <span style="color:#75715e">//获取当前页的html代码
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sprnstr</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;!--startprint&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">oper</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;--&gt;&#34;</span>;       <span style="color:#75715e">//设置打印开始区
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">eprnstr</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;!--endprint&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">oper</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;--&gt;&#34;</span>;         <span style="color:#75715e">//设置打印结束区
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">prnhtml</span><span style="color:#f92672">=</span><span style="color:#a6e22e">bdhtml</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">bdhtml</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">sprnstr</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span>); <span style="color:#75715e">//从开始代码向后取html
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">prnhtml</span><span style="color:#f92672">=</span><span style="color:#a6e22e">prnhtml</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">prnhtml</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">eprnstr</span>));<span style="color:#75715e">//从结束代码向前取html
+</span><span style="color:#75715e"></span>    window.document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerHTML</span><span style="color:#f92672">=</span><span style="color:#a6e22e">prnhtml</span>;
+    window.<span style="color:#a6e22e">print</span>();  <span style="color:#75715e">//调用window的打印功能
+</span><span style="color:#75715e"></span>    window.document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerHTML</span><span style="color:#f92672">=</span><span style="color:#a6e22e">bdhtml</span>;
+    } 
+    <span style="color:#66d9ef">else</span> {
+        window.<span style="color:#a6e22e">print</span>();
+    }
+}
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><p>第二步，确定打印区域，用startprint1和endprint1来标识位置。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 选择需要打印的div
+</span><span style="color:#75715e"></span><span style="color:#75715e">&lt;!--</span><span style="color:#a6e22e">startprint1</span><span style="color:#f92672">--&gt;</span>   <span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">&lt;!--</span><span style="color:#a6e22e">打印内容开始</span><span style="color:#f92672">--&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">******</span><span style="color:#a6e22e">打印代码区</span><span style="color:#f92672">********</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#a6e22e">打印内容结束</span><span style="color:#f92672">--&gt;</span>
+<span style="color:#75715e">&lt;!--</span><span style="color:#a6e22e">endprint1</span><span style="color:#f92672">--&gt;</span>
+</code></pre></div><p>第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 表示buffer不受限制
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;button_export&#39;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;打印&#39;</span>  <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#a6e22e">preview</span>(<span style="color:#ae81ff">1</span>) <span style="color:#f92672">&gt;</span> <span style="color:#75715e">//1表示只在一个区域使用
+</span></code></pre></div><h4 id="第二种方式控件打印页面">第二种方式、控件打印页面</h4>
+<p>　　利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。
+　　通过以下几步操作完成打印的功能。
+（1）<strong>导入js文件</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 导入jqprint插件
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/js/jquery.jqprint-0.3.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="color:#75715e">//迁移辅助插件jquery-migrate
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><p>　　同时还需要导入jquery-migrate插件，jquery-migrate是迁移插件，有利于解决jQuery版本之间的问题，不用再修改代码。
+（2）<strong>导入css样式</strong>
+　　需要引入两种样式，一种是页面显示的样式，一种是打印的样式，两者需要区别开来，打印样式语句里面需要添加media=&quot;print&quot;来标识，这样就可以打印。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 页面的显示样式
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://localhost:8080/js/debug/lib/layer/css/style.css&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#75715e">//引入打印样式
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;printStyle.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span><span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;print&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p><strong>打印的样式设置</strong>
+设置常用的四个属性： debug、 importCSS、 printContainer和operaSupport，完成不同的打印效果。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 打印的样式
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printStyle</span>() {
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#printInfo&#39;</span>).<span style="color:#a6e22e">jqprint</span>({  
+            <span style="color:#a6e22e">debug</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,<span style="color:#75715e">//显示ifream查看效果            
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">importCSS</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,   <span style="color:#75715e">//引入原页面的样式，先找media=print        
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">printContainer</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#75715e">//表示原选中对象纳入打印中   
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">operaSupport</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">//若支持opera浏览器，会建立临时打印选项卡     
+</span><span style="color:#75715e"></span>        }); 
+    }
+</code></pre></div><p><strong>两种方式对比</strong>
+　　第一种页面打印方式，调用的是window自带的打印功能，生成一个新的页面，速度相对会慢一些，第二种方式直接能够弹出打印的窗口，速度比较快，交互性也比较强。</p>
+<p>博客参考：
+【1】https://blog.csdn.net/lm1022/article/details/80225023
+【2】https://blog.csdn.net/xuexiiphone/article/details/76855590</p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+<script type="text/javascript" src="https://wangqj.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://wangqj.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://wangqj.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></body>
+
+</html>

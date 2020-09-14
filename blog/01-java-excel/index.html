@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> wangqj | Java读取excel </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="一只北漂两年半的程序汪">
+    
+    <link rel="stylesheet" href="https://wangqj.com/css/style.min.5be3a155aa89a24586c761b1b5538c4040e3735ee32ac12a708dc1696c0982f5.css" integrity="sha256-W&#43;OhVaqJokWGx2GxtVOMQEDjc17jKsEqcI3BaWwJgvU=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="https://wangqj.com/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wangqj.com/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://wangqj.com/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://wangqj.com/favicons/favicon-16x16.png">
+    <link rel="canonical" href="https://wangqj.com/blog/01-java-excel/">
+    
+    
+    <script type="text/javascript" src="https://wangqj.com/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://wangqj.com/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Java读取excel"/>
+<meta name="twitter:description" content="excel读取"/>
+
+</head>
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://wangqj.com/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">腹有诗书气自华</a></h3>
+            <div class="description">
+                <p>一只北漂两年半的程序汪</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://de.linkedin.com/" rel="me" aria-label="Linkedin">
+                    <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/wang961926256/" rel="me" aria-label="GitHub">
+                    <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="vip_wqj@163.com" rel="me" aria-label="e-mail">
+                    <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; wangqj 2020 </div>
+    </div>
+</div>
+<div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li><a  href="/"  title="">首页</a></li>
+        
+        
+        <li><a  href="/post/"  title="">博客</a></li>
+        
+        
+        <li><a  href="/about/"  title="">读书</a></li>
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
+    </ul>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>Java读取excel
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Mon, Jan 1, 0001</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">2-minute read</span>
+        </div>
+        
+        </div>
+
+    <blockquote>
+<p><strong>JAVA</strong> 实现批量读取excel文件，将文件中的内容写入到数据库。</p>
+</blockquote>
+<p>​		最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。</p>
+<p>下面将这个过程记录下来，方便之后的查看。</p>
+<h4 id="第一步定义一个map用于存放excel文件中所有列的信息">第一步、定义一个Map，用于存放excel文件中所有列的信息。</h4>
+<p>以user表为例，存放其中字段的信息，代码如下，仅供参考。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Map</span><span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getExcelFileType</span>() {
+	<span style="color:#a6e22e">Map</span><span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">Map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HashMap</span><span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span>();
+	<span style="color:#a6e22e">JSONObject</span> <span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JSONObject</span>();
+	<span style="color:#a6e22e">jsonData</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#e6db74">&#34;Str&#34;</span>);             <span style="color:#75715e">//不同类型的数据
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">jsonData</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;date&#34;</span>, <span style="color:#e6db74">&#34;DateTime&#34;</span>);
+	<span style="color:#a6e22e">Map</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#a6e22e">jsonData</span>);
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Map</span>;
+}
+</code></pre></div><h4 id="第二步-日志设置">第二步、 日志设置</h4>
+<p>     数据处理过程中需要记录日志信息。这里使用的是 <strong>java.util.logging</strong>，配置相关的设置，可以将程序中的导入情况输出到日志中，方便查看。代码如下，仅供参考。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Logger</span> <span style="color:#a6e22e">log</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">getLogger</span>(<span style="color:#e6db74">&#34;tesglog&#34;</span>);   <span style="color:#75715e">//日志
+</span><span style="color:#75715e">//设置日志的级别
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">setLevel</span>(<span style="color:#a6e22e">Level</span>.<span style="color:#a6e22e">ALL</span>); 
+<span style="color:#75715e">//设置日志存放的路径
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">FileHandler</span> <span style="color:#a6e22e">fileHandler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileHandler</span>(<span style="color:#e6db74">&#34;D:\import.log&#34;</span>);  
+<span style="color:#a6e22e">fileHandler</span>.<span style="color:#a6e22e">setLevel</span>(<span style="color:#a6e22e">Level</span>.<span style="color:#a6e22e">ALL</span>);  
+<span style="color:#a6e22e">fileHandler</span>.<span style="color:#a6e22e">setFormatter</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LogFormatter</span>());  
+<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">addHandler</span>(<span style="color:#a6e22e">fileHandler</span>);  
+}
+</code></pre></div><p>程序执行中会将相应的信息写入到指定的out文件中，程序执行后，可以查看执行的结果信息。</p>
+<h4 id="第三步-读取文件夹内容">第三步 读取文件夹内容</h4>
+<p><strong>思路</strong>：
+1、读取文件夹，遍历其中的excel文件，获取文件名称
+2、定义两个变量sqlcolumn 和sqlvalue，分别用于存放拼接的列和值的信息。
+3、按行遍历excel文件内容， 第二行开始，对每个单元格进行读取，根据是否有值来进行拼接插入的字符串。
+4、运用jdbcOperations来执行拼接的sql语句，实现数据的入库。
+程序实现的代码如下所示，仅供参考。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//读取文件夹的信息
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">File</span> <span style="color:#a6e22e">fileINFO</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">File</span>(<span style="color:#e6db74">&#34;D:\INFO&#34;</span>);
+<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">fileINFO</span>.<span style="color:#a6e22e">isDirectory</span>()){
+	String[] <span style="color:#a6e22e">fileINFOlist</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileINFO</span>.<span style="color:#a6e22e">list</span>();
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">fileINFOlist</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> ){
+	<span style="color:#a6e22e">TableName</span><span style="color:#f92672">=</span><span style="color:#a6e22e">fileINFOlist</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">fileINFOlist</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;-&#39;</span>));  		<span style="color:#75715e">//截取获取表名
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">filePath</span><span style="color:#f92672">=</span><span style="color:#a6e22e">fileINFO</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\\&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">fileINFOlist</span>[<span style="color:#a6e22e">i</span>];      <span style="color:#75715e">//拼接excel文件的路径
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//以流 逐个读取文件夹中的文件
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">stream</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileInputStream</span>(<span style="color:#a6e22e">file</span>);
+	<span style="color:#75715e">//读取工作簿
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Workbook</span> <span style="color:#a6e22e">book</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Workbook</span>(<span style="color:#a6e22e">stream</span>);
+	<span style="color:#a6e22e">WorksheetCollection</span> <span style="color:#a6e22e">sheets</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">book</span>.<span style="color:#a6e22e">getWorksheets</span>();  <span style="color:#75715e">//获取sheet信息
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 获取表格中的所有单元格
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Cells</span> <span style="color:#a6e22e">cells</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sheets</span>.<span style="color:#a6e22e">get</span>(<span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">getCells</span>();       <span style="color:#75715e">//从第一行开始取单元格
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxColumnCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cells</span>.<span style="color:#a6e22e">getMaxColumn</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">//获取最大列
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">rowCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cells</span>.<span style="color:#a6e22e">getLastDataRow</span>(<span style="color:#ae81ff">1</span>);      <span style="color:#75715e">//获取最近数据行
+</span><span style="color:#75715e"></span>	String <span style="color:#a6e22e">cellValue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String();               <span style="color:#75715e">//单元格的信息串
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">StringBuffer</span> <span style="color:#a6e22e">errorReport</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StringBuffer</span>();   <span style="color:#75715e">// 检验错误信息
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//获取excel文件中的所有列信息   --自定义的方法
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Map</span><span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">ExcelFile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getExcelFileType</span>();      
+	<span style="color:#a6e22e">JSONObject</span>  <span style="color:#a6e22e">jsonObject</span> <span style="color:#f92672">=</span>(<span style="color:#a6e22e">JSONObject</span>) <span style="color:#a6e22e">ExcelFile</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">TableName</span>);
+	<span style="color:#75715e">// 判断表格列数是否符合要求
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">mm</span><span style="color:#f92672">=</span><span style="color:#a6e22e">jsonObject</span>.<span style="color:#a6e22e">size</span>();
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">maxColumnCount</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">jsonObject</span>.<span style="color:#a6e22e">size</span>()) {
+		<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;success&#34;</span>, <span style="color:#e6db74">&#34;false&#34;</span>);
+		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;列的数量不正确！&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">fileINFOlist</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;信息只能&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">jsonObject</span>.<span style="color:#a6e22e">size</span>()<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;列值！&#34;</span>);
+		<span style="color:#66d9ef">return</span>;
+		}
+		
+ 	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">//从第2行开始取值
+</span><span style="color:#75715e"></span> 	<span style="color:#66d9ef">for</span> (; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">rowCount</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>) {     <span style="color:#75715e">//从第二行开始读数据
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#a6e22e">Iterator</span><span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">male_Iterator</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonObject</span>.<span style="color:#a6e22e">keys</span>();
+		<span style="color:#75715e">//拼接数据库插入sql insert
+</span><span style="color:#75715e"></span>		String  <span style="color:#a6e22e">sqlcolumn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; INSERT INTO &#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">TableName</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; ( &#34;</span>;
+		<span style="color:#75715e">//拼接数据库插入sql value值
+</span><span style="color:#75715e"></span>		String  <span style="color:#a6e22e">sqlvalue</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; ) VALUES( &#34;</span>;
+		<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">tableNameID</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">male_Iterator</span>.<span style="color:#a6e22e">hasNext</span>()){   <span style="color:#75715e">//迭代器遍历
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//获得单元格的value值
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">Cell</span> <span style="color:#a6e22e">cell</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cells</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">j</span>);<span style="color:#75715e">//单元格
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 单元格内数据
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">cellValue</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">cell</span>.<span style="color:#a6e22e">getValue</span>() <span style="color:#f92672">||</span><span style="color:#a6e22e">cell</span>.<span style="color:#a6e22e">getValue</span>().<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">?</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cell</span>.<span style="color:#a6e22e">getStringValue</span>().<span style="color:#a6e22e">trim</span>());
+			<span style="color:#75715e">// 获得key 
+</span><span style="color:#75715e"></span>			String <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">male_Iterator</span>.<span style="color:#a6e22e">next</span>();
+			<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">cellValue</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>){
+				<span style="color:#a6e22e">sqlcolumn</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span>;    <span style="color:#75715e">//拼接列值，如： insert into user
+</span><span style="color:#75715e"></span>				String <span style="color:#a6e22e">dataType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonObject</span>.<span style="color:#a6e22e">getString</span>(<span style="color:#a6e22e">key</span>);
+				<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">dataType</span>.<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;Str&#34;</span>)){  
+					<span style="color:#a6e22e">sqlvalue</span><span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&#39;&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cellValue</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#39;,&#34;</span>;
+				}<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">dataType</span>.<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;DateTime&#34;</span>)){   <span style="color:#75715e">//排序字段
+</span><span style="color:#75715e"></span>					<span style="color:#a6e22e">sqlvalue</span><span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; DATE_FORMAT(&#39;&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cellValue</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#39;,&#39;%Y-%m-%d %H:%i:%s&#39;),&#34;</span>;
+				}<span style="color:#66d9ef">else</span> {
+					<span style="color:#a6e22e">sqlvalue</span><span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&#39;&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">cellValue</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#39;,&#34;</span>;
+				}				
+		     }
+	    }
+	    <span style="color:#75715e">//读取完整行数据 拼接一条insert插入语句执行
+</span><span style="color:#75715e"></span>	    <span style="color:#a6e22e">sqlcolumn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sqlcolumn</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">sqlcolumn</span>.<span style="color:#a6e22e">length</span>()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);  <span style="color:#75715e">//去除逗号
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">sqlvalue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sqlvalue</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">sqlvalue</span>.<span style="color:#a6e22e">length</span>()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);  <span style="color:#75715e">//去除逗号
+</span><span style="color:#75715e"></span>		String <span style="color:#a6e22e">insertsql</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sqlcolumn</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">sqlvalue</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;) &#34;</span>;
+		<span style="color:#75715e">//这里运用jdbcOperations来实现数据库的操作
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">try</span> {
+				<span style="color:#a6e22e">jdbcOperations</span>.<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">insertsql</span>);
+			} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> <span style="color:#a6e22e">e</span>) {
+				<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;success&#34;</span>, <span style="color:#e6db74">&#34;false&#34;</span>);
+				<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;msg&#34;</span>, <span style="color:#a6e22e">fileINFOlist</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; 文件中 第&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;行数据插入失败,请核查该条数据。;&#34;</span>);
+				<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">info</span>(<span style="color:#a6e22e">fileINFOlist</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;文件中 第&#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">k</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;行数据插入失败,请核查该条数据。&#34;</span>);
+				<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;错误日志信息为：&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">getMessage</span>());
+		}
+	}
+}
+</code></pre></div><p>总结：读取excel文件的内容功能较为常见，这里采用的主要是提前将文件中的列写入到map中，根据类型来进行取值，拼接sql来实现数据的入库。</p>
+<h4 id="博客参考">博客参考</h4>
+<p>【1】https://blog.csdn.net/gxx_csdn/article/details/79085713</p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+<script type="text/javascript" src="https://wangqj.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://wangqj.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://wangqj.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></body>
+
+</html>
