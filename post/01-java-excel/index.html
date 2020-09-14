@@ -1,267 +1,107 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Java读取excel - wangqj-blog </title>
+<html lang="en" data-theme=""><head>
+    <title> wangqj | Java读取excel </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="一只北漂两年半的程序汪">
     
-    <link rel='dns-prefetch' href='//s.w.org' />
-    <meta charset="UTF-8" />
-    <meta name="referrer" content="no-referrer">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel='stylesheet' id='travelify_style-css'  href="http://balaramadurai.github.io/css/style.min.css" type='text/css' media='all' />
-    <link rel='stylesheet' id='google_font_ubuntu-css'  href="http://balaramadurai.github.io/css/style.min.css" type='text/css' media='all' />
-    <link rel="shortcut icon" href="http://balaramadurai.github.io//favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://wangqj.com/css/style.min.5be3a155aa89a24586c761b1b5538c4040e3735ee32ac12a708dc1696c0982f5.css" integrity="sha256-W&#43;OhVaqJokWGx2GxtVOMQEDjc17jKsEqcI3BaWwJgvU=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
-    <script type="text/javascript">
-     window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/balaramadurai.github.io\/\/js\/wp-emoji-release.min.js"}};
-     !function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-    </script>
-    <style type="text/css">
-     img.wp-smiley,
-     img.emoji {
-	 display: inline !important;
-	 border: none !important;
-	 box-shadow: none !important;
-	 height: 1em !important;
-	 width: 1em !important;
-	 margin: 0 .07em !important;
-	 vertical-align: -0.1em !important;
-	 background: none !important;
-	 padding: 0 !important;
-     }
-    </style>
-
-
-    <style type="text/css">
-     a { color: #57AD68; }
-     #site-title a { color: ; }
-     #site-title a:hover { color: ; }
-     .wrapper { background: #F8F8F8; }
-     .social-icons ul li a { color: #d0d0d0; list-style: none;}
-     #main-nav a, #main-nav a:hover,  #main-nav a:focus, #main-nav ul li.current-menu-item a,#main-nav ul li.current_page_ancestor a,#main-nav ul li.current-menu-ancestor a,#main-nav ul li.current_page_item a,#main-nav ul li:hover > a { color: #fff; }
-     .widget, article { background: #fff; }
-     .entry-title, .entry-title a, .entry-title a:focus, h1, h2, h3, h4, h5, h6, .widget-title  { color: #1b1e1f; }
-     a:focus, a:active, a:hover, .tags a:hover, .custom-gallery-title a, .widget-title a, #content ul a:hover,#content ol a:hover, .widget ul li a:hover, .entry-title a:hover, .entry-meta a:hover, #site-generator .copyright a:hover { color: #439f55; }
-     #main-nav { background: #57ad68; border-color: #57ad68; }
-     #main-nav ul li ul, body { border-color: #439f55; }
-     #main-nav a:hover,#main-nav ul li.current-menu-item a,#main-nav ul li.current_page_ancestor a,#main-nav ul li.current-menu-ancestor a,#main-nav ul li.current_page_item a,#main-nav ul li:hover > a, #main-nav li:hover > a,#main-nav ul ul :hover > a,#main-nav a:focus { background: #439f55; }
-     #main-nav ul li ul li a:hover,#main-nav ul li ul li:hover > a,#main-nav ul li.current-menu-item ul li a:hover { color: #439f55; }
-     .entry-content { color: #1D1D1D; }
-     input[type="reset"], input[type="button"], input[type="submit"], .entry-meta-bar .readmore, #controllers a:hover, #controllers a.active, .pagination span, .pagination a:hover span, .wp-pagenavi .current, .wp-pagenavi a:hover { background: #57ad68; border-color: #57ad68 !important; }
-     ::selection { background: #57ad68; }
-     blockquote { border-color: #439f55; }
-     #controllers a:hover, #controllers a.active { color:  #439f55; }
-     input[type="reset"]:hover,input[type="button"]:hover,input[type="submit"]:hover,input[type="reset"]:active,input[type="button"]:active,input[type="submit"]:active, .entry-meta-bar .readmore:hover, .entry-meta-bar .readmore:active, ul.default-wp-page li a:hover, ul.default-wp-page li a:active { background: #439f55; border-color: #439f55; }
-    </style>
-    <style type="text/css" id="custom-background-css">
-     body.custom-background { background-image: url("http://balaramadurai.github.io/images/background.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: scroll; }
-    </style>
-    <style type="text/css" media="print">#wpadminbar { display:none; }</style>
-    <style type="text/css" media="screen">
-     * html body { margin-top: 32px !important; }
-     @media screen and ( max-width: 782px ) {
-	 html { margin-top: 26px !important; }
-	 * html body { margin-top: 26px !important; }
-     }
-    </style>
-
+    <link rel="shortcut icon" href="https://wangqj.com/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://wangqj.com/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://wangqj.com/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://wangqj.com/favicons/favicon-16x16.png">
+    <link rel="canonical" href="https://wangqj.com/post/01-java-excel/">
     
+    
+    <script type="text/javascript" src="https://wangqj.com/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://wangqj.com/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Java读取excel"/>
+<meta name="twitter:description" content="excel读取"/>
+
 </head>
-
-  <body class="home blog logged-in admin-bar no-customize-support custom-background ">
-    <div class="wrapper">
-      <header id="branding" >
-	<div class="container clearfix">
-  <div class="hgroup-wrap clearfix">
-
-    <section class="hgroup-right">
-      <div class="social-icons clearfix">
-	<ul>
-	  
-	  <li class="facebook">
-	    <a href="https://www.facebook.com/nikimonikado" title="Follow us on Facebook" target="_blank"></a>
-	  </li>
-	  
-	  
-	  <li class="twitter">
-	      <a href="https://twitter.com/nikimonikado" title="Follow us on Twitter" target="_blank"></a>
-	  </li>
-	  
-	  
-	  <li class="email">
-	      <a href="mailto:vip_wqj@163.com" title="Email us" target="_blank"></a>
-	  </li>
-	  
-	  
-	  <li class="rss">
-	    <a href="" title="Subscribe to our feed" target="_blank"></a>
-	  </li>
-	  
-	  
-	  <li class="google-plus">
-	    <a href="https://www.google.com/+nikimonikado" title="Follow us on Google Plus" target="_blank"></a>
-	  </li>
-	  
-	  
-	  
-	  <li class="linkedin">
-	    <a href="https://www.linkedin.com/in/nikimonikado" title="Follow us on LinkedIn" target="_blank"></a>
-	  </li>
-	  
-	  
-	  
-	  
-	  
-	  
-	  <li class="youtube">
-	    <a href="https://www.youtube.com/nikimonikado" title="Follow us on YouTube" target="_blank"></a>
-	  </li>
-	  
-	  
-	  <li class="github">
-	    <a href="https://www.github.com/https://github.com/wang961926256" title="Follow us on GitHub" target="_blank"></a>
-	  </li>
-	  
-	</ul>
-      </div>
-    </section>
-    
-    
-    <hgroup id="site-logo" class="clearfix">
-      <h1 id="site-title">
-	<a href="http://balaramadurai.github.io/" rel="home">
-	  
-          <img src="http://balaramadurai.github.io/logo.png"></img>
-	  
-	  
-	  <span class="site-title">wangqj-blog</span>
-	  
-	</a>
-      </h1>
-      <h2 id="site-description">一只北漂两年半的电脑爱好者</h2>
-    </hgroup>
-    
-  </div>
-</div>
-
-
-	<nav id="main-nav" class="clearfix">
-  <div class="container clearfix">
-    <ul class="root">
-      
-      
-      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-	<a href="http://balaramadurai.github.io/program/">编程</a>
-	
-      </li>
-      
-      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-	<a href="http://balaramadurai.github.io/reading/">读书</a>
-	
-      </li>
-      
-      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-	<a href="http://balaramadurai.github.io/post/linked-post/">Linked post</a>
-	
-      </li>
-      
-      <li class="menu-item menu-item-type-post_type menu-item-object-page ">
-	<a href="http://balaramadurai.github.io/interview/">面试</a>
-	
-      </li>
-      
-    </ul>
-  </div>
-</nav>
-
-      </header>
-      <div id="main" class="container clearfix">
-	<div id="container">
-	      
-
-<div id="primary" class="no-margin-left">
-
-
-
-    <div id="content">	
-	<section id="post" class="post type-post status-publish format-standard has-post-thumbnail hentry">
-	    <article>
-		<div class="article-inner">
-		    <header class="entry-header">
-    <a href="http://balaramadurai.github.io/post/01-java-excel/">
-    <h2 class="entry-title" itemprop="name">
-        Java读取excel
-    </h2>
-    </a>
-</header>
-
-		    
-    
-<div class="entry-meta-bar clearfix">
-  <div class="entry-meta">
-    
-    <span class="byline">
-      <span class="author vcard">
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://wangqj.com/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">腹有诗书气自华</a></h3>
+            <div class="description">
+                <p>一只北漂两年半的程序汪</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
         
-	<a class="url fn n" href="http://balaramadurai.github.io/author/wangqj">wangqj</a>
-      </span>
-    </span>
-    
-
-    
-    
-    <span class="posted-on">
-      <time class="entry-date published" datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">01 January, 1010</time>
-    </span>
-    
-    
-    
-    
-  </div>
-  
-
-		    
-
-
-
-
-<div class="social-icons">
-    <ul id="blog">
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-
-	<li class="email">
-	    <a href="mailto:?subject=Java%e8%af%bb%e5%8f%96excel&body=Hello%20there%2c%20I%20would%20to%20share%20this%20article%20with%20you Java%e8%af%bb%e5%8f%96excel - http%3a%2f%2fbalaramadurai.github.io%2fpost%2f01-java-excel%2f">Email
-	    </a>
-	</li>
-	
-	
-	
+            <li>
+                <a href="https://de.linkedin.com/" rel="me" aria-label="Linkedin">
+                    <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/wang961926256/" rel="me" aria-label="GitHub">
+                    <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="vip_wqj@163.com" rel="me" aria-label="e-mail">
+                    <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; wangqj 2020 </div>
+    </div>
+</div>
+<div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li><a  href="/"  title="">首页</a></li>
+        
+        
+        <li><a  href="/post/"  title="">博客</a></li>
+        
+        
+        <li><a  href="/about/"  title="">读书</a></li>
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
     </ul>
 </div>
 
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
 
+      <div class="post-title">
+        <h3>Java读取excel
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Mon, Jan 1, 0001</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">2-minute read</span>
+        </div>
+        
+        </div>
 
-
-
-		</div>
-		<div class="entry-content" itemprop="articleBody">
-		    <blockquote>
+    <blockquote>
 <p><strong>JAVA</strong> 实现批量读取excel文件，将文件中的内容写入到数据库。</p>
 </blockquote>
 <p>​		最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。</p>
@@ -371,385 +211,31 @@
 <h4 id="博客参考">博客参考</h4>
 <p>【1】https://blog.csdn.net/gxx_csdn/article/details/79085713</p>
 
-		    	
-		</div>
-		
-		
-<ul class="default-wp-page clearfix">
-  
-  
-  
-  <li class="next">
-    <a href="http://balaramadurai.github.io/post/00-ext/" rel="next">
-      Ext监听
-      <span class="meta-nav">
-	→
-      </span>
-    </a>
-  </li>
-  
-</ul>
-
-
-	    </article>
-	    
-	    
-	</section>
-	
     </div>
-
-
-</div>
-
-<div id="secondary">
-    
-<aside id="rpwe_widget-3" class="widget rpwe_widget">
-    <h3 class="widget-title">
-        Recent Posts
-    </h3>
-    <div class="rpwe-block">
-        <ul class=" rpwe-ul">
-            
-            <li class="rpwe-il rpwe-classfix">
-                <a class="rpwe-img" href="http://balaramadurai.github.io/post/hugo-travelify-theme-features/" class="thumbnail">
-		    
-                    <span class="thumbnail-image thumbnail-none"></span>
-		    
-                </a>
-                <h3 class="rpwe-title">
-		    <a href="http://balaramadurai.github.io/post/hugo-travelify-theme-features/" title="Permalink to Hugo Travelify Theme Features" >Hugo Travelify Theme Features</a>
-		</h3>
-                <time class="rpwe-time published" datetime="2016-06-28 13:07:31 &#43;0200 &#43;0200">28 June, 28280</time>
-            </li>
-            
-            <li class="rpwe-il rpwe-classfix">
-                <a class="rpwe-img" href="http://balaramadurai.github.io/post/migrate-from-jekyll/" class="thumbnail">
-		    
-                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/featured-1.jpg" alt="Java读取excel">
-		    
-                </a>
-                <h3 class="rpwe-title">
-		    <a href="http://balaramadurai.github.io/post/migrate-from-jekyll/" title="Permalink to java项目部署" >java项目部署</a>
-		</h3>
-                <time class="rpwe-time published" datetime="2015-10-10 13:07:31 &#43;0200 &#43;0200">10 October, 10100</time>
-            </li>
-            
-            <li class="rpwe-il rpwe-classfix">
-                <a class="rpwe-img" href="http://balaramadurai.github.io/post/linked-post/" class="thumbnail">
-		    
-                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/spain6-1018x460.jpg" alt="Java读取excel">
-		    
-                </a>
-                <h3 class="rpwe-title">
-		    <a href="http://balaramadurai.github.io/post/linked-post/" title="Permalink to Linked post" >Linked post</a>
-		</h3>
-                <time class="rpwe-time published" datetime="2015-10-02 21:49:20 &#43;0200 &#43;0200">02 October, 2020</time>
-            </li>
-            
-            <li class="rpwe-il rpwe-classfix">
-                <a class="rpwe-img" href="http://balaramadurai.github.io/post/go-is-for-lovers/" class="thumbnail">
-		    
-                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/featured-5.jpg" alt="Java读取excel">
-		    
-                </a>
-                <h3 class="rpwe-title">
-		    <a href="http://balaramadurai.github.io/post/go-is-for-lovers/" title="Permalink to Go is for lovers" >Go is for lovers</a>
-		</h3>
-                <time class="rpwe-time published" datetime="2015-09-17 13:47:08 &#43;0200 &#43;0200">17 September, 17170</time>
-            </li>
-            
-            <li class="rpwe-il rpwe-classfix">
-                <a class="rpwe-img" href="http://balaramadurai.github.io/post/hugo-is-for-lovers/" class="thumbnail">
-		    
-                    <img class="rpwe-alignleft rpwe-thumb" src="http://balaramadurai.github.io/banners/featured-01.jpg" alt="Java读取excel">
-		    
-                </a>
-                <h3 class="rpwe-title">
-		    <a href="http://balaramadurai.github.io/post/hugo-is-for-lovers/" title="Permalink to Java 读取excel文件" >Java 读取excel文件</a>
-		</h3>
-                <time class="rpwe-time published" datetime="2015-08-03 13:39:46 &#43;0200 &#43;0200">03 August, 3030</time>
-            </li>
-            
-        </ul>
-    </div>
-</aside>
-<style>
- .rpwe-block ul{list-style:none!important;margin-left:0!important;padding-left:0!important;}.rpwe-block li{border-bottom:1px solid #eee;margin-bottom:10px;padding-bottom:10px;list-style-type: none;}.rpwe-block a{display:inline!important;text-decoration:none;}.rpwe-block h3{background:none!important;clear:none;margin-bottom:0!important;margin-top:0!important;font-weight:400;font-size:12px!important;line-height:1.5em;}.rpwe-thumb{border:1px solid #EEE!important;box-shadow:none!important;margin:2px 10px 2px 0;padding:3px!important;}.rpwe-summary{font-size:12px;}.rpwe-time{color:#bbb;font-size:11px;}.rpwe-comment{color:#bbb;font-size:11px;padding-left:5px;}.rpwe-alignleft{display:inline;float:left;}.rpwe-alignright{display:inline;float:right;}.rpwe-aligncenter{display:block;margin-left: auto;margin-right: auto;}.rpwe-clearfix:before,.rpwe-clearfix:after{content:"";display:table !important;}.rpwe-clearfix:after{clear:both;}.rpwe-clearfix{zoom:1;}
-</style>
-
-
-    
-
-    
-
-
-<aside id="blog_subscription-2" class="widget"><h3 class="widget-title">Subscribe via Email</h3>
-  <form action="//balaramadurai.us15.list-manage.com/subscribe/post?u=7f4183fa2fe7abe3dc9f4efad&amp;amp;id=49a3dd3745" method="post">
-    <div>
-      <p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
-    </div>
-    <p>
-      <input name="EMAIL" placeholder="Email Address" type="email">
-    </p>
-    <p>
-      <input name="FNAME" value="" placeholder="First Name" type="name">
-    </p>
-
-    <p >
-      <input value="Subscribe" type="submit">
-    </p>
-  </form>
-			<script>
-			
-
-			(function( d ) {
-				
-				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
-					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-2]' );
-						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
-						label.style.position = 'absolute';
-						label.style.height   = '1px';
-						label.style.width    = '1px';
-						label.style.overflow = 'hidden';
-				}
-
-				
-				var form = d.getElementById('subscribe-blog-blog_subscription-2'),
-					input = d.getElementById('subscribe-field-blog_subscription-2'),
-					handler = function( event ) {
-						if ( '' === input.value ) {
-							input.focus();
-
-							if ( event.preventDefault ){
-								event.preventDefault();
-							}
-
-							return false;
-						}
-					};
-
-				if ( window.addEventListener ) {
-					form.addEventListener( 'submit', handler, false );
-				} else {
-					form.attachEvent( 'onsubmit', handler );
-				}
-			})( document );
-			</script>
-		
-</aside>
-
-
-
-
-
-    
-
-<aside id="search-3" class="widget widget_search">
-  <form method="get" action="https://duckduckgo.com/">
-    <input type="search" name="q" maxlength="255" placeholder="Search the site">
-    <input type="hidden" name="sites" value="http://balaramadurai.github.io/"/>
-    <input type="hidden" name="k7" value="#faf8f8"/>
-    <input type="hidden" name="kj" value="#b33"/>
-    <input type="hidden" name="ky" value="#fafafa"/>
-    <input type="hidden" name="kx" value="b"/>
-    <input type="hidden" name="ko" value="-1"/>
-    <input type="hidden" name="k1" value="-1"/>
-    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-  </form>
-</aside>
-
-
-
-    <aside id="categories-3" class="widget widget_categories">
-  <h3 class="widget-title">Categories</h3>
-  <ul>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/java">Java</a> (1)
-    </li>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/lorem">Lorem</a> (1)
-    </li>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/new-york">New-York</a> (1)
-    </li>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/other-destinations">Other-Destinations</a> (1)
-    </li>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/programming">Programming</a> (2)
-    </li>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/pseudo">Pseudo</a> (1)
-    </li>
-    
-    <li class="cat-item">
-      
-      <a href="http://balaramadurai.github.io/categories/starting">Starting</a> (5)
-    </li>
-    
-  </ul>
-</aside>
-
-    
-
-    
-
-
-
-<aside id="tag_cloud-2" class="widget widget_tag_cloud">
-  <h3 class="widget-title">        Tag cloud</h3>
-  <div class="tagcloud">
-
-
-
-    
-      
-    
-      
-    
-    <a href="http://balaramadurai.github.io/tags/hugo" style="font-size: 7px;" title="3 topics">
-      
-      Hugo
-    </a>
-      
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    <a href="http://balaramadurai.github.io/tags/theme" style="font-size: 11px;" title="7 topics">
-      
-      Theme
-    </a>
-      
-      
-  </div>
-
-</aside>
-
-
-    
-
-
-<div class="widget">
-
-  <h3 class="widget-title">Authors 
-  </h3>
-
-    <div class="panel-body">
-        <ul class="nav nav-pills nav-stacked">
-          
-          <li><a href="http://balaramadurai.github.io/author/wangqj"><i class="fa fa-user"></i> wangqj (23)</a>
-          </li>
-          
-          <li><a href="http://balaramadurai.github.io/author/test1"><i class="fa fa-user"></i> test1 (6)</a>
-          </li>
-          
-          <li><a href="http://balaramadurai.github.io/author/test2"><i class="fa fa-user"></i> test2 (1)</a>
-          </li>
-          
-        </ul>
-    </div>
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-      </div>   
-    </div>
-    <footer id="footerarea" class="clearfix">
-  <div class="widget-wrap">
-    <div class="container">
-      <div class="widget-area clearfix">
+    <div class="post-footer">
+      <div class="info">
+        
+        
       </div>
     </div>
-  </div>
-  
-  <div id="site-generator">
-    <div class="container">
-      <div class="copyright">&copy; 2020
-	Copyright Powered by <a href="http://gohugo.io">Hugo</a>. Original theme by <a href="http://colorlib.com/wp/travelify/">Colorlib</a> adapted for Hugo by <a href="http://balaramadurai.net">Dr. Bala Ramadurai</a>.
-      </div>
-      <div class="footer-right"></div><div style="clear:both;">
-      </div>
-    </div>
-  </div>
-  <div class="back-to-top">
-    <a href="#branding"></a>
-  </div>
-</footer>
+
+    
+           
+    
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+                </div>
+            </div>
+        </div>
 
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-<script type='text/javascript' src="http://balaramadurai.github.io/js/jquery.js"></script>
-<script type='text/javascript' src="http://balaramadurai.github.io/js/jquery-migrate.min.js"></script>
-<script type='text/javascript' src="http://balaramadurai.github.io/js/functions.min.js"></script>
-
-<script type='text/javascript' src="http://balaramadurai.github.io/js/jquery.cycle.all.min.js"></script>
-<script type='text/javascript'>
-  
- var travelify_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};
-  
-</script>
-<script type='text/javascript' src="http://balaramadurai.github.io/js/slider-settings.min.js"></script>
-<script type='text/javascript' src="http://balaramadurai.github.io/js/wp-embed.min.js"></script>
-<link rel='stylesheet' id='font-awesome-css'  href="http://balaramadurai.github.io/css/font-awesome.min.css" type='text/css' media='all' />
-
-
-<script type="text/javascript">
- (function() {
-     var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
-     
-     request = true;
-     
-     b[c] = b[c].replace( rcs, ' ' );
-     
-     b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
- }());
-</script>
-
-<link rel="apple-touch-icon" href="http://balaramadurai.github.io/apple-touch-icon.png" />
-<link rel="stylesheet" href="http://balaramadurai.github.io/fancybox/jquery.fancybox.css">
-
-
-<script src="http://balaramadurai.github.io/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://balaramadurai.github.io/js/script.js"></script>
+<script type="text/javascript" src="https://wangqj.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
 
 
 
 
+<script type="text/javascript" src="https://wangqj.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="https://wangqj.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></body>
 
-  </body>
 </html>
