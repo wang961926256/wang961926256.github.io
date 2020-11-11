@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.flysnow.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ext监听</title>
+      <link>https://www.flysnow.org/post/00-EXT/</link>
+      <pubDate>Mon, 11 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.flysnow.org/post/00-EXT/</guid>
+      <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之</description>
+    </item>
     
     <item>
       <title></title>
@@ -64,6 +73,15 @@ pectora summo.&lt;/p&gt;</description>
       
       <guid>https://www.flysnow.org/post/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>编程</title>
+      <link>https://www.flysnow.org/about/program/</link>
+      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
+      
+      <guid>https://www.flysnow.org/about/program/</guid>
+      <description>May the Force be with you, the Torque about you This is where my great about goes</description>
     </item>
     
     <item>
@@ -194,15 +212,6 @@ In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.flysnow.org/blog/00-EXT/</guid>
-      <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之</description>
-    </item>
-    
-    <item>
-      <title>Ext监听</title>
-      <link>https://www.flysnow.org/post/00-EXT/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.flysnow.org/post/00-EXT/</guid>
       <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之</description>
     </item>
     

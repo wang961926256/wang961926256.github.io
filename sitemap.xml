@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.flysnow.org/post/00-EXT/</loc>
+    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/post/</loc>
+    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/</loc>
+    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url>
@@ -33,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://www.flysnow.org/post/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.flysnow.org/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url>
@@ -54,11 +64,6 @@
   
   <url>
     <loc>https://www.flysnow.org/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.flysnow.org/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -100,6 +105,16 @@
   <url>
     <loc>https://www.flysnow.org/post/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/about/</loc>
+    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/about/program/</loc>
+    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
   </url>
   
   <url>
@@ -212,10 +227,6 @@
   
   <url>
     <loc>https://www.flysnow.org/blog/00-EXT/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.flysnow.org/post/00-EXT/</loc>
   </url>
   
   <url>
