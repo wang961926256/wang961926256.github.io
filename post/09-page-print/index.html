@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>print page | 梦幻通灵的博客</title>
+    <meta property="og:title" content="print page - 梦幻通灵的博客">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="网页信息打印">
+        <meta name="author" content="wangqj">
+        
+    <meta property="og:url" content="https://www.flysnow.org/post/09-page-print/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.flysnow.org">
+                        梦幻通灵的博客
+                    </a>
+                
+                <p class="description">专注于Java、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.flysnow.org">首页</a>
+                    
+                    <a  href="https://www.flysnow.org/program/" title="编程">编程</a>
+                    
+                    <a  href="https://www.flysnow.org/reading/" title="读书">读书</a>
+                    
+                    <a  href="https://www.flysnow.org/interview/" title="面试">面试</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">print page</h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <blockquote>
+<p><strong>页面打印</strong> 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印</p>
+</blockquote>
+<h4 id="第一种方式添加代码打印">第一种方式、添加代码打印</h4>
+<p>　添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。
+　第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 头部添加打印的信息
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">&lt;</span>script language<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;javascript&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+<span style="color:#000;font-weight:bold">function</span> preview(oper){  <span style="color:#998;font-style:italic">//oper表示打印的区域数
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">if</span> (oper <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">10</span>){
+    bdhtml<span style="color:#000;font-weight:bold">=</span><span style="color:#0086b3">window</span>.<span style="color:#0086b3">document</span>.body.innerHTML;    <span style="color:#998;font-style:italic">//获取当前页的html代码
+</span><span style="color:#998;font-style:italic"></span>    sprnstr<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;&lt;!--startprint&#34;</span><span style="color:#000;font-weight:bold">+</span>oper<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;--&gt;&#34;</span>;       <span style="color:#998;font-style:italic">//设置打印开始区
+</span><span style="color:#998;font-style:italic"></span>    eprnstr<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;&lt;!--endprint&#34;</span><span style="color:#000;font-weight:bold">+</span>oper<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;--&gt;&#34;</span>;         <span style="color:#998;font-style:italic">//设置打印结束区
+</span><span style="color:#998;font-style:italic"></span>    prnhtml<span style="color:#000;font-weight:bold">=</span>bdhtml.substring(bdhtml.indexOf(sprnstr)<span style="color:#000;font-weight:bold">+</span><span style="color:#099">18</span>); <span style="color:#998;font-style:italic">//从开始代码向后取html
+</span><span style="color:#998;font-style:italic"></span>    prnhtml<span style="color:#000;font-weight:bold">=</span>prnhtml.substring(<span style="color:#099">0</span>,prnhtml.indexOf(eprnstr));<span style="color:#998;font-style:italic">//从结束代码向前取html
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#0086b3">window</span>.<span style="color:#0086b3">document</span>.body.innerHTML<span style="color:#000;font-weight:bold">=</span>prnhtml;
+    <span style="color:#0086b3">window</span>.print();  <span style="color:#998;font-style:italic">//调用window的打印功能
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#0086b3">window</span>.<span style="color:#0086b3">document</span>.body.innerHTML<span style="color:#000;font-weight:bold">=</span>bdhtml;
+    } 
+    <span style="color:#000;font-weight:bold">else</span> {
+        <span style="color:#0086b3">window</span>.print();
+    }
+}
+<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/script&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第二步，确定打印区域，用startprint1和endprint1来标识位置。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 选择需要打印的div
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">&lt;!--</span>startprint1<span style="color:#000;font-weight:bold">--&gt;</span>   <span style="color:#998;font-style:italic">//
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">&lt;!--</span>打印内容开始<span style="color:#000;font-weight:bold">--&gt;</span>
+<span style="color:#000;font-weight:bold">&lt;</span>div <span style="color:#000;font-weight:bold">&gt;</span>
+    <span style="color:#000;font-weight:bold">******</span>打印代码区<span style="color:#000;font-weight:bold">********</span>
+<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/div&gt;</span>
+<span style="color:#998;font-style:italic">&lt;!--</span>打印内容结束<span style="color:#000;font-weight:bold">--&gt;</span>
+<span style="color:#998;font-style:italic">&lt;!--</span>endprint1<span style="color:#000;font-weight:bold">--&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第三步，打印的按钮，preview()里面参数表示可以打印的次数，这里可以设置为1。这样可以查看页面的打印效果。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 表示buffer不受限制
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">&lt;</span>input type<span style="color:#000;font-weight:bold">=</span>button name<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;button_export&#39;</span> value<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;打印&#39;</span>  onclick<span style="color:#000;font-weight:bold">=</span>preview(<span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#998;font-style:italic">//1表示只在一个区域使用
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="第二种方式控件打印页面">第二种方式、控件打印页面</h4>
+<p>　　利用jQuery的jqprint控件实现页面的打印，首先需要下载插件，地址可参考：http://www.jq22.com/jquery-info347。
+　　通过以下几步操作完成打印的功能。
+（1）<strong>导入js文件</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 导入jqprint插件
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">&lt;</span>script src<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;/js/js/jquery.jqprint-0.3.js&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/script&gt;</span>
+<span style="color:#998;font-style:italic">//迁移辅助插件jquery-migrate
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">&lt;</span>script src<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;https://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/script&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>　　同时还需要导入jquery-migrate插件，jquery-migrate是迁移插件，有利于解决jQuery版本之间的问题，不用再修改代码。
+（2）<strong>导入css样式</strong>
+　　需要引入两种样式，一种是页面显示的样式，一种是打印的样式，两者需要区别开来，打印样式语句里面需要添加media=&quot;print&quot;来标识，这样就可以打印。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 页面的显示样式
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">&lt;</span>link rel<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;stylesheet&#34;</span> href<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;http://localhost:8080/js/debug/lib/layer/css/style.css&#34;</span> type<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;text/css&#34;</span> <span style="color:#000;font-weight:bold">/&gt;</span>
+<span style="color:#998;font-style:italic">//引入打印样式
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">&lt;</span>link href<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;printStyle.css&#34;</span> rel<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;stylesheet&#34;</span>type<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;text/css&#34;</span> media<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;print&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>打印的样式设置</strong>
+设置常用的四个属性： debug、 importCSS、 printContainer和operaSupport，完成不同的打印效果。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 打印的样式
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">function</span> printStyle() {
+        $(<span style="color:#d14">&#39;#printInfo&#39;</span>).jqprint({  
+            debug<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span>,<span style="color:#998;font-style:italic">//显示ifream查看效果            
+</span><span style="color:#998;font-style:italic"></span>            importCSS<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,   <span style="color:#998;font-style:italic">//引入原页面的样式，先找media=print        
+</span><span style="color:#998;font-style:italic"></span>            printContainer<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>, <span style="color:#998;font-style:italic">//表示原选中对象纳入打印中   
+</span><span style="color:#998;font-style:italic"></span>            operaSupport<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span> <span style="color:#998;font-style:italic">//若支持opera浏览器，会建立临时打印选项卡     
+</span><span style="color:#998;font-style:italic"></span>        }); 
+    }
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>两种方式对比</strong>
+　　第一种页面打印方式，调用的是window自带的打印功能，生成一个新的页面，速度相对会慢一些，第二种方式直接能够弹出打印的窗口，速度比较快，交互性也比较强。</p>
+<p>博客参考：
+【1】https://blog.csdn.net/lm1022/article/details/80225023
+【2】https://blog.csdn.net/xuexiiphone/article/details/76855590</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.flysnow.org">梦幻通灵</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.flysnow.org/post/09-page-print/">https://www.flysnow.org/post/09-page-print/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/00-EXT/">Ext监听</a></li>
+        
+        <li><a href="/post/markdown-syntax/">Markdown Syntax Guide</a></li>
+        
+        <li><a href="/post/placeholder-text/">Placeholder Text</a></li>
+        
+        <li><a href="/post/math-typesetting/">Math Typesetting</a></li>
+        
+        <li><a href="/post/emoji-support/">Emoji Support</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "your github repo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="https://www.flysnow.org">梦幻通灵的博客 By 梦幻通灵</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.flysnow.org/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.flysnow.org">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.flysnow.org/post/00-EXT/" title="Ext监听">Ext监听</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/markdown-syntax/" title="Markdown Syntax Guide">Markdown Syntax Guide</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/placeholder-text/" title="Placeholder Text">Placeholder Text</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/math-typesetting/" title="Math Typesetting">Math Typesetting</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/emoji-support/" title="Emoji Support">Emoji Support</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/hugo-travelify-theme-features/" title="Hugo Travelify Theme Features">Hugo Travelify Theme Features</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/migrate-from-jekyll/" title="java项目部署">java项目部署</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/go-is-for-lovers/" title="Go is for lovers">Go is for lovers</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/hugo-is-for-lovers/" title="Java 读取excel文件">Java 读取excel文件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.flysnow.org/post/creating-a-new-theme/" title="Creating a new theme">Creating a new theme</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="https://www.aliyun.com/minisite/goods?userCode=jdg9oj97&amp;share_source=copy_link" title="【2019双12】ALL IN CLoud 低至1折" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1_rYHo7P2gK0jSZPxXXacQpXa-690-388.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://cloud.tencent.com/act/cps/redirect?redirect=1048&amp;cps_key=14ff722692ac784fa8c3301c8c28d924&amp;from=console" title="助力产业智慧升级，云服务器首年88元起，更有千元代金券礼包免费领！" target="_blank" style="color:red">
+                
+                    <img src="https://upload-dianshi-1255598498.file.myqcloud.com/345-7c71532bd4935fbdd9a67c1a71e577b1767b805c.200%E7%89%88%E6%9C%ACB.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.aliyun.com/acts/limit-buy?userCode=jdg9oj97" title="【渠道专享低折扣】11月特惠 限时2折" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1hblJl7Y2gK0jSZFgXXc5OFXa-750-400.jpg">
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.flysnow.org/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/New-York/">New York (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/Other-Destinations/">Other Destinations (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/lorem/">lorem (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/programming/">programming (3)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/pseudo/">pseudo (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/starting/">starting (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/syntax/">syntax (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/themes/">themes (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.flysnow.org/tags/ExtJS/">ExtJS</a>
+    
+    <a href="https://www.flysnow.org/tags/ExtJS/">ExtJS</a>
+    
+    <a href="https://www.flysnow.org/tags/css/">css</a>
+    
+    <a href="https://www.flysnow.org/tags/emoji/">emoji</a>
+    
+    <a href="https://www.flysnow.org/tags/go/">go</a>
+    
+    <a href="https://www.flysnow.org/tags/html/">html</a>
+    
+    <a href="https://www.flysnow.org/tags/hugo/">hugo</a>
+    
+    <a href="https://www.flysnow.org/tags/index/">index</a>
+    
+    <a href="https://www.flysnow.org/tags/inspiration/">inspiration</a>
+    
+    <a href="https://www.flysnow.org/tags/ipsum/">ipsum</a>
+    
+    <a href="https://www.flysnow.org/tags/kettle/">kettle</a>
+    
+    <a href="https://www.flysnow.org/tags/markdown/">markdown</a>
+    
+    <a href="https://www.flysnow.org/tags/motivation/">motivation</a>
+    
+    <a href="https://www.flysnow.org/tags/static-sites/">static sites</a>
+    
+    <a href="https://www.flysnow.org/tags/text/">text</a>
+    
+    <a href="https://www.flysnow.org/tags/theme/">theme</a>
+    
+    <a href="https://www.flysnow.org/tags/themes/">themes</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.wangqj.cn/" title="梦幻通灵的博客">梦幻通灵的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/u012190388" title="CSDN博客">CSDN博客地址</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.flysnow.org/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
