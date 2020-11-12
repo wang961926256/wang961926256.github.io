@@ -1,0 +1,1 @@
+https://github.com/flysnow-org/maupassant-hugo
