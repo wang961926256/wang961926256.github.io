@@ -136,15 +136,6 @@ In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;r
     
     <item>
       <title>ext-button</title>
-      <link>https://www.flysnow.org/post/19-ext-button-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.flysnow.org/post/19-ext-button-copy/</guid>
-      <description>ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。 1、创建按钮 &amp;ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在</description>
-    </item>
-    
-    <item>
-      <title>ext-button</title>
       <link>https://www.flysnow.org/post/19-ext-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -203,7 +194,7 @@ In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.flysnow.org/post/03-kettle/</guid>
-      <description>最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。 kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon软件解压</description>
+      <description>背景介绍 最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。 kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon</description>
     </item>
     
     <item>

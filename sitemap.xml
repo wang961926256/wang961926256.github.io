@@ -8,7 +8,12 @@
   </url>
   
   <url>
-    <loc>https://www.flysnow.org/tags/ExtJS/</loc>
+    <loc>https://www.flysnow.org/tags/ExtJs/</loc>
+    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/categories/ExtJs/</loc>
     <lastmod>2019-11-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -19,11 +24,6 @@
   
   <url>
     <loc>https://www.flysnow.org/post/</loc>
-    <lastmod>2019-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.flysnow.org/categories/programming/</loc>
     <lastmod>2019-11-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -163,6 +163,11 @@
   </url>
   
   <url>
+    <loc>https://www.flysnow.org/categories/programming/</loc>
+    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/tags/hugo/</loc>
     <lastmod>2015-08-03T13:39:46+02:00</lastmod>
   </url>
@@ -201,6 +206,10 @@
   </url>
   
   <url>
+    <loc>https://www.flysnow.org/tags/excel/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/blog/18-excel/</loc>
   </url>
   
@@ -222,10 +231,6 @@
   
   <url>
     <loc>https://www.flysnow.org/blog/19-ext-button/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.flysnow.org/post/19-ext-button-copy/</loc>
   </url>
   
   <url>
@@ -317,6 +322,14 @@
   </url>
   
   <url>
+    <loc>https://www.flysnow.org/tags/Nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/categories/Nginx/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/blog/06-oracle-back/</loc>
   </url>
   
@@ -377,11 +390,19 @@
   </url>
   
   <url>
+    <loc>https://www.flysnow.org/tags/putty/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/blog/11-putty/</loc>
   </url>
   
   <url>
     <loc>https://www.flysnow.org/post/11-putty/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/tags/sqlite/</loc>
   </url>
   
   <url>

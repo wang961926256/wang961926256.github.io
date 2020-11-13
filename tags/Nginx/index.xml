@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 梦幻通灵的博客</title>
+    <link>https://www.flysnow.org/tags/Nginx/</link>
+    <description>Recent content in Nginx on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://www.flysnow.org/tags/Nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux部署nginx</title>
+      <link>https://www.flysnow.org/post/05-nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.flysnow.org/post/05-nginx/</guid>
+      <description>nginx 是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行，占有内存少，并发能力强。 最近需要学习一下nginx的知识，首先是安装配置环境，这里记录一下，方便以后的查看。 本次是在linux的虚拟机（RedHat Linux7）</description>
+    </item>
+    
+  </channel>
+</rss>

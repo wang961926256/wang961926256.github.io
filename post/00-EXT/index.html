@@ -144,6 +144,8 @@
         <nav id="TableOfContents">
   <ul>
     <li><a href="#知识了解">知识了解</a></li>
+    <li><a href="#第一步方法添加">第一步、方法添加</a></li>
+    <li><a href="#第二步添加监听">第二步、添加监听</a></li>
   </ul>
 </nav>
     </div>
@@ -186,7 +188,7 @@
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/programming'>programming</a></span>
+            <span class="meta-category"><a href='/categories/ExtJs'>ExtJs</a></span>
             
         </div>
         
@@ -202,10 +204,11 @@
 <blockquote>
 <p><strong>EXT</strong> 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。</p>
 </blockquote>
-<p>​		在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。
+<p>​	在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之间的参数传递，可以将整个panel作为参数进行传递，随着结构的复杂，会出现多个panel间的传值，相对比较混乱，因此，需要借助监听和触发来传递所需要的参数。记录下来，方便以后查看。
 遵循的原则是：<strong>谁创建谁监听，在创建的地方添加监听</strong>。
-下面举例说明一下如何实现监听和触发。
-<strong>第一步</strong>、fireEvent方法添加触发</p>
+下面举例说明一下如何实现监听和触发。</p>
+<h2 id="第一步方法添加">第一步、方法添加</h2>
+<p>fireEvent方法添加触发</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -230,8 +233,8 @@
 });
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>第二步</strong>、添加监听
-格式为：panel.on(&ldquo;触发的方法&rdquo;，调用的方法，this);</p>
+</div><h2 id="第二步添加监听">第二步、添加监听</h2>
+<p>格式为：panel.on(&ldquo;触发的方法&rdquo;，调用的方法，this);</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -277,6 +280,8 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/19-ext-button/">ext-button</a></li>
+        
         <li><a href="/post/markdown-syntax/">Markdown Syntax Guide</a></li>
         
         <li><a href="/post/placeholder-text/">Placeholder Text</a></li>
@@ -284,8 +289,6 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
         <li><a href="/post/math-typesetting/">Math Typesetting</a></li>
         
         <li><a href="/post/emoji-support/">Emoji Support</a></li>
-        
-        <li><a href="/program/program/">编程</a></li>
         
     </ul>
 </div>
@@ -295,7 +298,7 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
             
             <ul class="clearfix">
                 
-                <li><a href='/tags/ExtJS'>ExtJS</a></li>
+                <li><a href='/tags/ExtJs'>ExtJs</a></li>
                 
             </ul>
             
@@ -476,15 +479,19 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
+    <li><a href="https://www.flysnow.org/categories/ExtJs/">ExtJs (1)</a></li>
+    
     <li><a href="https://www.flysnow.org/categories/Java/">Java (1)</a></li>
     
     <li><a href="https://www.flysnow.org/categories/New-York/">New York (1)</a></li>
+    
+    <li><a href="https://www.flysnow.org/categories/Nginx/">Nginx (1)</a></li>
     
     <li><a href="https://www.flysnow.org/categories/Other-Destinations/">Other Destinations (1)</a></li>
     
     <li><a href="https://www.flysnow.org/categories/lorem/">lorem (1)</a></li>
     
-    <li><a href="https://www.flysnow.org/categories/programming/">programming (3)</a></li>
+    <li><a href="https://www.flysnow.org/categories/programming/">programming (2)</a></li>
     
     <li><a href="https://www.flysnow.org/categories/pseudo/">pseudo (1)</a></li>
     
@@ -501,13 +508,15 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
         <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
-    <a href="https://www.flysnow.org/tags/ExtJS/">ExtJS</a>
+    <a href="https://www.flysnow.org/tags/ExtJs/">ExtJs</a>
     
-    <a href="https://www.flysnow.org/tags/ExtJS/">ExtJS</a>
+    <a href="https://www.flysnow.org/tags/Nginx/">Nginx</a>
     
     <a href="https://www.flysnow.org/tags/css/">css</a>
     
     <a href="https://www.flysnow.org/tags/emoji/">emoji</a>
+    
+    <a href="https://www.flysnow.org/tags/excel/">excel</a>
     
     <a href="https://www.flysnow.org/tags/go/">go</a>
     
@@ -526,6 +535,10 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
     <a href="https://www.flysnow.org/tags/markdown/">markdown</a>
     
     <a href="https://www.flysnow.org/tags/motivation/">motivation</a>
+    
+    <a href="https://www.flysnow.org/tags/putty/">putty</a>
+    
+    <a href="https://www.flysnow.org/tags/sqlite/">sqlite</a>
     
     <a href="https://www.flysnow.org/tags/static-sites/">static sites</a>
     
@@ -549,6 +562,10 @@ Ext.Msg.alert(<span style="color:#d14">&#34;提示&#34;</span>,<span style="colo
         
         <li>
             <a target="_blank" href="https://blog.csdn.net/u012190388" title="CSDN博客">CSDN博客地址</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.jianshu.com/u/b5d211128694" title="简书">简书地址</a>
         </li>
         
     </ul>

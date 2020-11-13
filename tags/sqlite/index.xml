@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sqlite on 梦幻通灵的博客</title>
+    <link>https://www.flysnow.org/tags/sqlite/</link>
+    <description>Recent content in sqlite on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://www.flysnow.org/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql到sqlite数据传输</title>
+      <link>https://www.flysnow.org/post/04-mysql-sqlite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.flysnow.org/post/04-mysql-sqlite/</guid>
+      <description>mysql和sqlite 是两种常用的数据库，在日常使用中也是需要进行数据的交换。 在实际的工作中需要将mysql数据库表中的数据同步到sqlite对应的表中，主要有两种方法。第一种是使用Navicat里的数据传输，第二种是使用程序来实现。 第一种、程序实现 1、添加sqlite驱动 本项</description>
+    </item>
+    
+  </channel>
+</rss>
