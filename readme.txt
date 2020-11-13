@@ -1,1 +1,1 @@
-https://github.com/flysnow-org/maupassant-hugo
+技术学习点滴记录
