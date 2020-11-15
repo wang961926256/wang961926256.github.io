@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>excel数据验证</title>
+      <link>https://www.flysnow.org/post/18-excel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.flysnow.org/post/18-excel/</guid>
+      <description>excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为了防止数</description>
+    </item>
+    
+    <item>
       <title>Java读取excel</title>
       <link>https://www.flysnow.org/post/01-java-excel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

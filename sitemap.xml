@@ -286,6 +286,10 @@
   </url>
   
   <url>
+    <loc>https://www.flysnow.org/tags/Jenkins/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/tags/kettle/</loc>
   </url>
   
@@ -402,11 +406,27 @@
   </url>
   
   <url>
+    <loc>https://www.flysnow.org/tags/RabbitMQ/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/post/21-RabbitMQ-springboot/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.flysnow.org/tags/sqlite/</loc>
   </url>
   
   <url>
     <loc>https://www.flysnow.org/tags/static-sites/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/post/20-RabbitMQ/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.flysnow.org/post/22-Jenkins/</loc>
   </url>
   
   <url>
