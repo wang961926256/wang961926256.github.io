@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on 梦幻通灵的博客</title>
-    <link>https://www.flysnow.org/categories/programming/</link>
+    <link>https://www.wangqj.cn/categories/programming/</link>
     <description>Recent content in programming on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 17 Sep 2015 13:47:08 +0200</lastBuildDate>
     
-	<atom:link href="https://www.flysnow.org/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wangqj.cn/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go is for lovers</title>
-      <link>https://www.flysnow.org/post/go-is-for-lovers/</link>
+      <link>https://www.wangqj.cn/post/go-is-for-lovers/</link>
       <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
       
-      <guid>https://www.flysnow.org/post/go-is-for-lovers/</guid>
+      <guid>https://www.wangqj.cn/post/go-is-for-lovers/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates. The go docs provide more details.
 Introduction to Go Templates Go templates provide an extremely simple template language. It adheres to the belief that only the most basic of logic belongs in the template or view layer. One consequence of this simplicity is that go templates parse very quickly.
@@ -25,46 +25,46 @@ A unique characteristic of go templates is they are content aware. Variables and
     
     <item>
       <title>excel数据验证</title>
-      <link>https://www.flysnow.org/post/18-excel/</link>
+      <link>https://www.wangqj.cn/post/18-excel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/18-excel/</guid>
+      <guid>https://www.wangqj.cn/post/18-excel/</guid>
       <description>excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为了防止数</description>
     </item>
     
     <item>
       <title>ext-button</title>
-      <link>https://www.flysnow.org/post/19-ext-button/</link>
+      <link>https://www.wangqj.cn/post/19-ext-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/19-ext-button/</guid>
+      <guid>https://www.wangqj.cn/post/19-ext-button/</guid>
       <description>ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。 1、创建按钮 &amp;ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在</description>
     </item>
     
     <item>
       <title>Spring Boot整合RabbitMQ</title>
-      <link>https://www.flysnow.org/post/21-RabbitMQ-springboot/</link>
+      <link>https://www.wangqj.cn/post/21-RabbitMQ-springboot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/21-RabbitMQ-springboot/</guid>
+      <guid>https://www.wangqj.cn/post/21-RabbitMQ-springboot/</guid>
       <description>消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。 知识学习与回顾 RabbitMQ有6种消息模型，但第6种属于RPC，因此只</description>
     </item>
     
     <item>
       <title>初探消息队列RabbitMQ</title>
-      <link>https://www.flysnow.org/post/20-RabbitMQ/</link>
+      <link>https://www.wangqj.cn/post/20-RabbitMQ/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/20-RabbitMQ/</guid>
+      <guid>https://www.wangqj.cn/post/20-RabbitMQ/</guid>
       <description>在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，生产者不</description>
     </item>
     
     <item>
       <title>初试本地安装Jenkins软件</title>
-      <link>https://www.flysnow.org/post/22-Jenkins/</link>
+      <link>https://www.wangqj.cn/post/22-Jenkins/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/22-Jenkins/</guid>
+      <guid>https://www.wangqj.cn/post/22-Jenkins/</guid>
       <description>公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与配置。本次是在window下操作，这里记录操作的过程，方便以后查看。 环境准备 1）Tomcat 官网地址：Tomcat下载 由于本次在win下安装，选择的</description>
     </item>
     

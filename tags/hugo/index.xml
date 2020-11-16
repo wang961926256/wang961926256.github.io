@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on 梦幻通灵的博客</title>
-    <link>https://www.flysnow.org/tags/hugo/</link>
+    <link>https://www.wangqj.cn/tags/hugo/</link>
     <description>Recent content in hugo on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 03 Aug 2015 13:39:46 +0200</lastBuildDate>
     
-	<atom:link href="https://www.flysnow.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wangqj.cn/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java 读取excel文件</title>
-      <link>https://www.flysnow.org/post/hugo-is-for-lovers/</link>
+      <link>https://www.wangqj.cn/post/hugo-is-for-lovers/</link>
       <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
       
-      <guid>https://www.flysnow.org/post/hugo-is-for-lovers/</guid>
+      <guid>https://www.wangqj.cn/post/hugo-is-for-lovers/</guid>
       <description>JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。 ​ 最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。 下面将这个</description>
     </item>
     
     <item>
       <title>ExtJs 监听创建与触发</title>
-      <link>https://www.flysnow.org/post/this-post-has-no-body/</link>
+      <link>https://www.wangqj.cn/post/this-post-has-no-body/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/this-post-has-no-body/</guid>
+      <guid>https://www.wangqj.cn/post/this-post-has-no-body/</guid>
       <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之</description>
     </item>
     

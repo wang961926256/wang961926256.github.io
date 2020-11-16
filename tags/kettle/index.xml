@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kettle on 梦幻通灵的博客</title>
-    <link>https://www.flysnow.org/tags/kettle/</link>
+    <link>https://www.wangqj.cn/tags/kettle/</link>
     <description>Recent content in kettle on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://www.flysnow.org/tags/kettle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wangqj.cn/tags/kettle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>kettle 数据库迁移</title>
-      <link>https://www.flysnow.org/post/03-kettle/</link>
+      <link>https://www.wangqj.cn/post/03-kettle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.flysnow.org/post/03-kettle/</guid>
+      <guid>https://www.wangqj.cn/post/03-kettle/</guid>
       <description>背景介绍 最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。 kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon</description>
     </item>
     
