@@ -19,5 +19,14 @@
       <description>Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？ ​ 最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Java方面的项目，记录下来，方便之后的备查。 首先是工具准备： 远程连接工具：xshell 6 远程文件传输工具：winscp 连接上服务器，在上面部署程序主要</description>
     </item>
     
+    <item>
+      <title>putty连接数据库</title>
+      <link>https://www.wangqj.cn/post/11-putty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/11-putty/</guid>
+      <description>PuTTY 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和rlogin客户端。 目前需求是通过ssh连接linux上的mysql数据库，实现利用kettle来同步数据。由于无法利用Navicat直接连接，这里</description>
+    </item>
+    
   </channel>
 </rss>

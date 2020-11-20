@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aspose on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/Aspose/</link>
+    <description>Recent content in Aspose on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://www.wangqj.cn/categories/Aspose/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java Aspose&#43;PDFObject</title>
+      <link>https://www.wangqj.cn/post/13-aspose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/13-aspose/</guid>
+      <description>Aspose office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。 最近系统中想做个页面的展示和下载的功能，正好公司购买了Aspose （收费）软件，简单的实现方案是Aspose + PDFObect 将excel转成pdf，直接使用插件来实现预览和下载。记录下来，方便备查！ 一、excel 转</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>powerDesigner on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/powerDesigner/</link>
+    <description>Recent content in powerDesigner on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://www.wangqj.cn/categories/powerDesigner/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PowderDesigner连接数据库</title>
+      <link>https://www.wangqj.cn/post/10-powderDesigner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/10-powderDesigner/</guid>
+      <description>PowerDesigner 采用模型驱动方法，将业务与IT结合起来，可帮助部署有效的企业体系架构，并为研发生命周期管理提供强大的分析与设计技术。 ​ 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和</description>
+    </item>
+    
+  </channel>
+</rss>
