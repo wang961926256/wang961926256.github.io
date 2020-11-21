@@ -330,11 +330,23 @@
   </url>
   
   <url>
+    <loc>https://www.wangqj.cn/tags/mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/categories/mysql/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.wangqj.cn/blog/04-mysql-sqlite/</loc>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/post/04-mysql-sqlite/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/post/23-mysql-lock/</loc>
   </url>
   
   <url>

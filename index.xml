@@ -351,6 +351,15 @@ In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;r
     </item>
     
     <item>
+      <title>mysql锁</title>
+      <link>https://www.wangqj.cn/post/23-mysql-lock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/23-mysql-lock/</guid>
+      <description>在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命令 2、杀</description>
+    </item>
+    
+    <item>
       <title>oracle备份</title>
       <link>https://www.wangqj.cn/blog/06-oracle-back/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
