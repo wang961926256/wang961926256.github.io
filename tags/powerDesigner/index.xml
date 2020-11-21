@@ -6,6 +6,7 @@
     <description>Recent content in powerDesigner on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/powerDesigner/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,10 +14,10 @@
     <item>
       <title>PowderDesigner连接数据库</title>
       <link>https://www.wangqj.cn/post/10-powderDesigner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/post/10-powderDesigner/</guid>
-      <description>PowerDesigner 采用模型驱动方法，将业务与IT结合起来，可帮助部署有效的企业体系架构，并为研发生命周期管理提供强大的分析与设计技术。 ​ 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和</description>
+      <description>背景介绍 PowerDesigner 采用模型驱动方法，将业务与IT结合起来，可帮助部署有效的企业体系架构，并为研发生命周期管理提供强大的分析与设计技术。 ​ 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesig</description>
     </item>
     
   </channel>

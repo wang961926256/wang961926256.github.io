@@ -6,6 +6,7 @@
     <description>Recent content in excel on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,19 +14,19 @@
     <item>
       <title>excel数据验证</title>
       <link>https://www.wangqj.cn/post/18-excel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/post/18-excel/</guid>
-      <description>excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为了防止数</description>
+      <description>背景介绍 excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为</description>
     </item>
     
     <item>
       <title>Java读取excel</title>
       <link>https://www.wangqj.cn/post/01-java-excel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/post/01-java-excel/</guid>
-      <description>JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。 ​ 最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。 下面将这个</description>
+      <description>背景介绍 JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。 ​ 最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个文档对应数据库中不同表的内容。数据格式：INFO文件中存放若10张excel文档，文档名称格式为表名-描述（如user-用户表.xls）。 下</description>
     </item>
     
   </channel>

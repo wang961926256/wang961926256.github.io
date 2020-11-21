@@ -22,14 +22,5 @@ We&amp;rsquo;ll start with creating a new site with a very basic template. Then 
 In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;rdquo; prompt. The output will follow. Lines that start with &amp;ldquo;#&amp;rdquo; are comments that I&amp;rsquo;ve added to explain a point. When I show updates to a file, the &amp;ldquo;:wq&amp;rdquo; on the last line means to save the file.</description>
     </item>
     
-    <item>
-      <title>ExtJs 监听创建与触发</title>
-      <link>https://www.wangqj.cn/post/this-post-has-no-body/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/post/this-post-has-no-body/</guid>
-      <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之</description>
-    </item>
-    
   </channel>
 </rss>

@@ -13,10 +13,10 @@
     
     <item>
       <title> 读书</title>
-      <link>https://www.wangqj.cn/interview/interview/</link>
+      <link>https://www.wangqj.cn/interview/Java/</link>
       <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
       
-      <guid>https://www.wangqj.cn/interview/interview/</guid>
+      <guid>https://www.wangqj.cn/interview/Java/</guid>
       <description>1.Java集合对象 java中集合类都是由Collection和Map接口派生出来的,其中Set和List接口是Collection接口派生出来的子接口，他们分别代表了无序集合和有序集合，Map接口的所有实现类用于保存具有映射关系的数据（关联数组）。 ArrayList：实现了长度</description>
     </item>
     

@@ -13,6 +13,10 @@
     <meta property="og:title" content="Spring Boot整合RabbitMQ - 梦幻通灵的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2020-11-06T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-11-06T00:00:00&#43;08:00'>
         
     <meta name="Keywords" content="java,android,博客,项目管理,python,软件架构,公众号,小程序">
     <meta name="description" content="迁移">
@@ -139,11 +143,11 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#背景介绍">背景介绍</a></li>
+    <li><a href="#知识学习与回顾">知识学习与回顾</a></li>
+    <li><a href="#1新建项目并引入rabbitmq依赖">1、新建项目并引入RabbitMQ依赖</a></li>
+    <li><a href="#2新建测试类">2、新建测试类</a></li>
+    <li><a href="#参考博客">参考博客</a></li>
   </ul>
 </nav>
     </div>
@@ -180,13 +184,13 @@
             <h1 class="post-title">Spring Boot整合RabbitMQ</h1>
         </header>
         <date class="post-meta meta-date">
-            1年1月1日
+            2020年11月6日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/programming'>programming</a></span>
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
             
         </div>
         
@@ -198,14 +202,15 @@
         
         
         <div class="post-content">
-            <p>消息队列在项目中的运用是越来越广泛，上篇博客 <a href="https://editor.csdn.net/md/?articleId=109014096">初探消息队列RabbitMQ</a> 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。</p>
-<h6 id="知识学习与回顾">知识学习与回顾</h6>
+            <h2 id="背景介绍">背景介绍</h2>
+<p>消息队列在项目中的运用是越来越广泛，上篇博客 <a href="https://editor.csdn.net/md/?articleId=109014096">初探消息队列RabbitMQ</a> 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。</p>
+<h2 id="知识学习与回顾">知识学习与回顾</h2>
 <p>RabbitMQ有6种消息模型，但第6种属于RPC，因此只需要学习五种。其中第3、4、5种都属于是订阅模型，区别在于他们选择的路由方式不同。下图对应的是这几种消息模型。
 
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201030231310289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
     
 运用Spring Boot进行RabbitMQ的整合，主要通过以下几个步骤。</p>
-<h6 id="1新建项目并引入rabbitmq依赖">1、新建项目并引入RabbitMQ依赖</h6>
+<h2 id="1新建项目并引入rabbitmq依赖">1、新建项目并引入RabbitMQ依赖</h2>
 <p>方法一、直接在pom.xml文件中添加以下配置信息</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -250,7 +255,7 @@
     virtual <span style="color:#000;font-weight:bold">:</span> <span style="color:#a61717;background-color:#e3d2d2">/</span>
 </code></pre></td></tr></table>
 </div>
-</div><h6 id="2新建测试类">2、新建测试类</h6>
+</div><h2 id="2新建测试类">2、新建测试类</h2>
 <p>新建测试类SpringbootApplicationTests.java，作为生产者来生产消息。
 <strong>1) 第一种模型 hello word</strong>
 生产者模型需要注入 RabbitTemplate  进行消息的生产，hello word 模型的生产者生产消息的程序。</p>
@@ -673,7 +678,7 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
 </code></pre></td></tr></table>
 </div>
 </div><p>* 代码全部，满足order开头的消息都是可以进行处理。</p>
-<h5 id="参考博客">参考博客</h5>
+<h2 id="参考博客">参考博客</h2>
 <p>【1】https://www.cnblogs.com/ifme/p/12024064.html</p>
 
         </div>
@@ -698,13 +703,13 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
         
         <li><a href="/post/20-RabbitMQ/">初探消息队列RabbitMQ</a></li>
         
-        <li><a href="/post/00-EXT/">Ext监听</a></li>
+        <li><a href="/post/24-eclipse/">eclipse查看源码</a></li>
         
-        <li><a href="/post/markdown-syntax/">Markdown Syntax Guide</a></li>
+        <li><a href="/post/23-mysql-lock/">mysql锁</a></li>
         
-        <li><a href="/post/placeholder-text/">Placeholder Text</a></li>
+        <li><a href="/post/22-Jenkins/">初试本地安装Jenkins软件</a></li>
         
-        <li><a href="/post/math-typesetting/">Math Typesetting</a></li>
+        <li><a href="/post/18-excel/">excel数据验证</a></li>
         
     </ul>
 </div>
@@ -816,43 +821,43 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
 <ul class="widget-list">
     
     <li>
-        <a href="https://www.wangqj.cn/post/00-EXT/" title="Ext监听">Ext监听</a>
+        <a href="https://www.wangqj.cn/post/24-eclipse/" title="eclipse查看源码">eclipse查看源码</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/markdown-syntax/" title="Markdown Syntax Guide">Markdown Syntax Guide</a>
+        <a href="https://www.wangqj.cn/post/23-mysql-lock/" title="mysql锁">mysql锁</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/placeholder-text/" title="Placeholder Text">Placeholder Text</a>
+        <a href="https://www.wangqj.cn/post/21-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/math-typesetting/" title="Math Typesetting">Math Typesetting</a>
+        <a href="https://www.wangqj.cn/post/20-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/emoji-support/" title="Emoji Support">Emoji Support</a>
+        <a href="https://www.wangqj.cn/post/22-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/hugo-travelify-theme-features/" title="Hugo Travelify Theme Features">Hugo Travelify Theme Features</a>
+        <a href="https://www.wangqj.cn/post/18-excel/" title="excel数据验证">excel数据验证</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/migrate-from-jekyll/" title="java项目部署">java项目部署</a>
+        <a href="https://www.wangqj.cn/post/17-CreateOracle/" title="oracle迁移到mysql">oracle迁移到mysql</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/go-is-for-lovers/" title="Go is for lovers">Go is for lovers</a>
+        <a href="https://www.wangqj.cn/post/16-EmptyTable/" title="oracle数据库空表处理">oracle数据库空表处理</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/hugo-is-for-lovers/" title="Java 读取excel文件">Java 读取excel文件</a>
+        <a href="https://www.wangqj.cn/post/15-ExtTree/" title="Ext tree 节点的新增和移除">Ext tree 节点的新增和移除</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/creating-a-new-theme/" title="Creating a new theme">Creating a new theme</a>
+        <a href="https://www.wangqj.cn/post/14-encode/" title="ifream 绑定PDF出错">ifream 绑定PDF出错</a>
     </li>
     
 </ul>
@@ -897,17 +902,17 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
     
     <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Java/">Java (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/New-York/">New York (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (4)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (6)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Other-Destinations/">Other Destinations (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (2)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
     
@@ -919,9 +924,7 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
     
     <li><a href="https://www.wangqj.cn/categories/powerDesigner/">powerDesigner (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/programming/">programming (6)</a></li>
-    
-    <li><a href="https://www.wangqj.cn/categories/pseudo/">pseudo (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/programming/">programming (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/putty/">putty (1)</a></li>
     
@@ -966,8 +969,6 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
     
     <a href="https://www.wangqj.cn/tags/html/">html</a>
     
-    <a href="https://www.wangqj.cn/tags/hugo/">hugo</a>
-    
     <a href="https://www.wangqj.cn/tags/index/">index</a>
     
     <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
@@ -989,8 +990,6 @@ work 模型是对第一种消息模型的改进，多个消费者可以对消息
     <a href="https://www.wangqj.cn/tags/putty/">putty</a>
     
     <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
-    
-    <a href="https://www.wangqj.cn/tags/static-sites/">static sites</a>
     
     <a href="https://www.wangqj.cn/tags/text/">text</a>
     

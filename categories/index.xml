@@ -6,17 +6,116 @@
     <description>Recent content in Categories on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 11 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Jenkins</title>
+      <link>https://www.wangqj.cn/categories/Jenkins/</link>
+      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/Jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://www.wangqj.cn/categories/mysql/</link>
+      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://www.wangqj.cn/categories/RabbitMQ/</link>
+      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/RabbitMQ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Excel</title>
+      <link>https://www.wangqj.cn/categories/Excel/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/Excel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oracle</title>
+      <link>https://www.wangqj.cn/categories/Oracle/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/Oracle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ExtJs</title>
       <link>https://www.wangqj.cn/categories/ExtJs/</link>
-      <pubDate>Mon, 11 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/categories/ExtJs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encode</title>
+      <link>https://www.wangqj.cn/categories/encode/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/encode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aspose</title>
+      <link>https://www.wangqj.cn/categories/Aspose/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/Aspose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>putty</title>
+      <link>https://www.wangqj.cn/categories/putty/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/putty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powerDesigner</title>
+      <link>https://www.wangqj.cn/categories/powerDesigner/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/powerDesigner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>page</title>
+      <link>https://www.wangqj.cn/categories/page/</link>
+      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/page/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://www.wangqj.cn/categories/Nginx/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/Nginx/</guid>
       <description></description>
     </item>
     
@@ -48,15 +147,6 @@
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://www.wangqj.cn/categories/Java/</link>
-      <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/Java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>programming</title>
       <link>https://www.wangqj.cn/categories/programming/</link>
       <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
@@ -66,110 +156,11 @@
     </item>
     
     <item>
-      <title>pseudo</title>
-      <link>https://www.wangqj.cn/categories/pseudo/</link>
-      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/pseudo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>starting</title>
       <link>https://www.wangqj.cn/categories/starting/</link>
       <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
       
       <guid>https://www.wangqj.cn/categories/starting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aspose</title>
-      <link>https://www.wangqj.cn/categories/Aspose/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/Aspose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>encode</title>
-      <link>https://www.wangqj.cn/categories/encode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/encode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mysql</title>
-      <link>https://www.wangqj.cn/categories/mysql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>New York</title>
-      <link>https://www.wangqj.cn/categories/New-York/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/New-York/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://www.wangqj.cn/categories/Nginx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/Nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oracle</title>
-      <link>https://www.wangqj.cn/categories/Oracle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/Oracle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Other Destinations</title>
-      <link>https://www.wangqj.cn/categories/Other-Destinations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/Other-Destinations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>page</title>
-      <link>https://www.wangqj.cn/categories/page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/page/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>powerDesigner</title>
-      <link>https://www.wangqj.cn/categories/powerDesigner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/powerDesigner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>putty</title>
-      <link>https://www.wangqj.cn/categories/putty/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/putty/</guid>
       <description></description>
     </item>
     

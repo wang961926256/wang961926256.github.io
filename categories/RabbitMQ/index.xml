@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RabbitMQ on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/RabbitMQ/</link>
+    <description>Recent content in RabbitMQ on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 06 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/categories/RabbitMQ/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Boot整合RabbitMQ</title>
+      <link>https://www.wangqj.cn/post/21-RabbitMQ-springboot/</link>
+      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/21-RabbitMQ-springboot/</guid>
+      <description>背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。 知识学习与回顾 RabbitMQ有6种消息模型，但第6种属于RPC</description>
+    </item>
+    
+    <item>
+      <title>初探消息队列RabbitMQ</title>
+      <link>https://www.wangqj.cn/post/20-RabbitMQ/</link>
+      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/20-RabbitMQ/</guid>
+      <description>背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，</description>
+    </item>
+    
+  </channel>
+</rss>

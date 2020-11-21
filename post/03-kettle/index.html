@@ -13,6 +13,10 @@
     <meta property="og:title" content="kettle 数据库迁移 - 梦幻通灵的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2019-12-10T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-12-10T00:00:00&#43;08:00'>
         
     <meta name="Keywords" content="java,android,博客,项目管理,python,软件架构,公众号,小程序">
     <meta name="description" content="kettle 数据库迁移">
@@ -139,13 +143,17 @@
     <div class="post-toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#背景介绍">背景介绍</a>
+    <li><a href="#背景介绍">背景介绍</a></li>
+    <li><a href="#工具介绍">工具介绍</a></li>
+    <li><a href="#第一步-新建db连接">第一步 新建DB连接</a></li>
+    <li><a href="#第二步-数据库连接">第二步 数据库连接</a></li>
+    <li><a href="#1-单表迁移">1 单表迁移</a></li>
+    <li><a href="#2-多表迁移">2 多表迁移</a>
       <ul>
         <li></li>
-        <li><a href="#1-单表迁移">1 单表迁移</a></li>
-        <li><a href="#2-多表迁移">2 多表迁移</a></li>
       </ul>
     </li>
+    <li><a href="#博客参考">博客参考</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +190,7 @@
             <h1 class="post-title">kettle 数据库迁移</h1>
         </header>
         <date class="post-meta meta-date">
-            1年1月1日
+            2019年12月10日
         </date>
         
         
@@ -199,7 +207,7 @@
 <p><strong>kettle spoon</strong>是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。
 spoon软件解压后可直接运行，会自动检查Java环境，因此需要提前配置好环境。</p>
 </blockquote>
-<h5 id="工具介绍">工具介绍</h5>
+<h2 id="工具介绍">工具介绍</h2>
 <p><strong>本机的运行环境</strong>：
 JDK版本： 1.8
 spoon版本：pdi-ce-8.2.0
@@ -211,12 +219,12 @@ ojdbc6.jar
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190131220046402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
     
 　　双击转换，可以新建一个转换，设置操作数据库的控件。首先需要做以下两步。</p>
-<h4 id="第一步-新建db连接">第一步 新建DB连接</h4>
+<h2 id="第一步-新建db连接">第一步 新建DB连接</h2>
 <p>　　DB连接右击，新建DB连接，以当前的需求为例，需要分别建立oracle和mysql两个数据库的连接。
 
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2019012819084154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
     </p>
-<h4 id="第二步-数据库连接">第二步 数据库连接</h4>
+<h2 id="第二步-数据库连接">第二步 数据库连接</h2>
 <p>　　配置数据库的连接信息，数据库名称，账号，密码等，可以测试连接是否成功。下面是oracle数据库的连接。
 
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190128191201270.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
@@ -227,7 +235,7 @@ ojdbc6.jar
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2019012819155748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
     
 数据的迁移可以分为单表的迁移和多表的迁移，两者的处理过程不同，下面将分别介绍。</p>
-<h3 id="1-单表迁移">1 单表迁移</h3>
+<h2 id="1-单表迁移">1 单表迁移</h2>
 <p>　　在核心对象，输入下找到表输入，拖动到工作区，同样在输出下，找到表输出，拖动到工作区。在表输入控件右键，按住shift键添加表输入到表输出的传输线。
 
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190129111302552.png" />   
@@ -256,7 +264,7 @@ ojdbc6.jar
 
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190129113830947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
     </p>
-<h3 id="2-多表迁移">2 多表迁移</h3>
+<h2 id="2-多表迁移">2 多表迁移</h2>
 <p>单表的数据迁移比较简单，对多张表的批量迁移，需要将需要处理的数据库的表名存储到文件中，如data.txt，注意：一个表名一行，不要有空格。需要在第一行为其起一个别名，如ORCLDATA。
 
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190129140938400.png" />   
@@ -320,8 +328,8 @@ ojdbc6.jar
         <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20190131231132134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
     </p>
 <p><strong>注</strong>：执行过程中，可能会出现问题，如表结构的字段设置不够，可根据实际的需要调整。若执行出现问题可在下面留言。</p>
-<p>博客参考：
-<a href="https://blog.csdn.net/wuzhangweiss/article/details/78408029">https://blog.csdn.net/wuzhangweiss/article/details/78408029</a></p>
+<h2 id="博客参考">博客参考</h2>
+<p><a href="https://blog.csdn.net/wuzhangweiss/article/details/78408029">https://blog.csdn.net/wuzhangweiss/article/details/78408029</a></p>
 
         </div>
 
@@ -343,15 +351,15 @@ ojdbc6.jar
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/02-java/">Java项目部署</a></li>
+        
+        <li><a href="/post/01-java-excel/">Java读取excel</a></li>
+        
         <li><a href="/post/00-EXT/">Ext监听</a></li>
         
         <li><a href="/post/markdown-syntax/">Markdown Syntax Guide</a></li>
         
         <li><a href="/post/placeholder-text/">Placeholder Text</a></li>
-        
-        <li><a href="/post/math-typesetting/">Math Typesetting</a></li>
-        
-        <li><a href="/post/emoji-support/">Emoji Support</a></li>
         
     </ul>
 </div>
@@ -463,43 +471,43 @@ ojdbc6.jar
 <ul class="widget-list">
     
     <li>
-        <a href="https://www.wangqj.cn/post/00-EXT/" title="Ext监听">Ext监听</a>
+        <a href="https://www.wangqj.cn/post/24-eclipse/" title="eclipse查看源码">eclipse查看源码</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/markdown-syntax/" title="Markdown Syntax Guide">Markdown Syntax Guide</a>
+        <a href="https://www.wangqj.cn/post/23-mysql-lock/" title="mysql锁">mysql锁</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/placeholder-text/" title="Placeholder Text">Placeholder Text</a>
+        <a href="https://www.wangqj.cn/post/21-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/math-typesetting/" title="Math Typesetting">Math Typesetting</a>
+        <a href="https://www.wangqj.cn/post/20-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/emoji-support/" title="Emoji Support">Emoji Support</a>
+        <a href="https://www.wangqj.cn/post/22-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/hugo-travelify-theme-features/" title="Hugo Travelify Theme Features">Hugo Travelify Theme Features</a>
+        <a href="https://www.wangqj.cn/post/18-excel/" title="excel数据验证">excel数据验证</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/migrate-from-jekyll/" title="java项目部署">java项目部署</a>
+        <a href="https://www.wangqj.cn/post/17-CreateOracle/" title="oracle迁移到mysql">oracle迁移到mysql</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/go-is-for-lovers/" title="Go is for lovers">Go is for lovers</a>
+        <a href="https://www.wangqj.cn/post/16-EmptyTable/" title="oracle数据库空表处理">oracle数据库空表处理</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/hugo-is-for-lovers/" title="Java 读取excel文件">Java 读取excel文件</a>
+        <a href="https://www.wangqj.cn/post/15-ExtTree/" title="Ext tree 节点的新增和移除">Ext tree 节点的新增和移除</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/creating-a-new-theme/" title="Creating a new theme">Creating a new theme</a>
+        <a href="https://www.wangqj.cn/post/14-encode/" title="ifream 绑定PDF出错">ifream 绑定PDF出错</a>
     </li>
     
 </ul>
@@ -544,17 +552,17 @@ ojdbc6.jar
     
     <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Java/">Java (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/New-York/">New York (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (4)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (6)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Other-Destinations/">Other Destinations (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (2)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
     
@@ -566,9 +574,7 @@ ojdbc6.jar
     
     <li><a href="https://www.wangqj.cn/categories/powerDesigner/">powerDesigner (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/programming/">programming (6)</a></li>
-    
-    <li><a href="https://www.wangqj.cn/categories/pseudo/">pseudo (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/programming/">programming (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/putty/">putty (1)</a></li>
     
@@ -613,8 +619,6 @@ ojdbc6.jar
     
     <a href="https://www.wangqj.cn/tags/html/">html</a>
     
-    <a href="https://www.wangqj.cn/tags/hugo/">hugo</a>
-    
     <a href="https://www.wangqj.cn/tags/index/">index</a>
     
     <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
@@ -636,8 +640,6 @@ ojdbc6.jar
     <a href="https://www.wangqj.cn/tags/putty/">putty</a>
     
     <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
-    
-    <a href="https://www.wangqj.cn/tags/static-sites/">static sites</a>
     
     <a href="https://www.wangqj.cn/tags/text/">text</a>
     

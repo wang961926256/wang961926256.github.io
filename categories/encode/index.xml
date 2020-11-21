@@ -6,17 +6,18 @@
     <description>Recent content in encode on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/encode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ifream src 绑定中文PDF时，出现404找不到</title>
+      <title>ifream 绑定PDF出错</title>
       <link>https://www.wangqj.cn/post/14-encode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/post/14-encode/</guid>
-      <description>encode 浏览器在对url解析时自动进行解码 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。 1 2 3 4 5 var roserForm = Ext.create(&amp;#39;Ext.container.Container&amp;#39;,{ height : 370,</description>
+      <description>背景介绍 encode 浏览器在对url解析时自动进行解码 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。 1 2 3 4 5 var roserForm =</description>
     </item>
     
   </channel>
