@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Oracle存储过程常见问题及解决方法 | 梦幻通灵的博客</title>
+    <meta property="og:title" content="Oracle存储过程常见问题及解决方法 - 梦幻通灵的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-01-08T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2019-01-08T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="迁移">
+        <meta name="author" content="wangqj">
+        
+    <meta property="og:url" content="https://www.wangqj.cn/post/0001-oracle-Procedure/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.wangqj.cn">
+                        梦幻通灵的博客
+                    </a>
+                
+                <p class="description">专注于Java、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.wangqj.cn">首页</a>
+                    
+                    <a  href="https://www.wangqj.cn/program/" title="编程">编程</a>
+                    
+                    <a  href="https://www.wangqj.cn/reading/" title="读书">读书</a>
+                    
+                    <a  href="https://www.wangqj.cn/interview/" title="面试">面试</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景介绍">背景介绍</a></li>
+    <li><a href="#存储过程demo">存储过程Demo</a></li>
+    <li><a href="#知识点">知识点</a></li>
+    <li><a href="#博客参考">博客参考</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Oracle存储过程常见问题及解决方法</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年1月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Procedure'>Procedure</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="背景介绍">背景介绍</h2>
+<p>存储过程是为完成特定功能的SQL集。目前工作中用到的存储过程就是对数据库中的字段进行批量的更新。
+最近在写存储过程中遇到了一些问题，查阅了网上的解决方案，自己也记录下来，方便备查。
+1、 <strong>内存溢出</strong>
+　　执行输出语句的时候报错：ORA-20000: ORU-10027: buffer overflow, limit of 20000 bytes，意思是说输出的buffer不够使用。
+解决方案：
+第一种方案，更改serveroutput的size值，更改语句为 SQL&gt; set   serveroutput   on   size   100000
+第二种方案，直接在begin后面添加buffer不受限制的语句。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 表示buffer不受限制
+</span><span style="color:#998;font-style:italic"></span>DBMS_OUTPUT.ENABLE(buffer_size =&gt; <span style="color:#000;font-weight:bold">null</span>); 
+</code></pre></td></tr></table>
+</div>
+</div><p>2、 <strong>数据为空</strong>
+　　遍历数据表中字段，会有为空的情况，执行报错：ORA-01403: no data found，意思是说没有找到数据，需要进行异常的处理。
+解决方案：没有数据的时候需要抛出异常，添加以下语句。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 没有数据时，将字符串指定值，这里直接给空
+</span><span style="color:#998;font-style:italic"></span>EXCEPTION WHEN NO_DATA_FOUND THEN
+str <span style="color:#000;font-weight:bold">:=</span> <span style="color:#d14">&#39;&#39;</span>; 
+</code></pre></td></tr></table>
+</div>
+</div><p>3、 <strong>输出执行的结果</strong>
+　　想要查看程序执行的结果，打印出执行的结果，添加以下语句。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 输出程序执行的结果语句
+</span><span style="color:#998;font-style:italic"></span>dbms_output.put_line(str);
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="存储过程demo">存储过程Demo</h2>
+<p>下面列举了简单的存储过程的语法，供参考。
+1、<strong>创建简单的存储过程</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 简单存储过程创建语句
+</span><span style="color:#998;font-style:italic"></span>create procedure GetPerson()
+begin 
+    select <span style="color:#000;font-weight:bold">*</span> from person; 
+end;
+</code></pre></td></tr></table>
+</div>
+</div><p>2、<strong>调用和删除存储过程</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 调用存储过程
+</span><span style="color:#998;font-style:italic"></span>call GetPerson();
+<span style="color:#998;font-style:italic">//删除存储过程
+</span><span style="color:#998;font-style:italic"></span>drop procedure <span style="color:#000;font-weight:bold">if</span> exists GetPerson;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>代码参考：存储过程代码</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 完整的存储过程的代码
+</span><span style="color:#998;font-style:italic"></span>declare
+ str varchar2(<span style="color:#099">400</span>);  <span style="color:#000;font-weight:bold">--</span>变量的声明
+ A00 varchar2(<span style="color:#099">100</span>);
+ begin
+      <span style="color:#000;font-weight:bold">for</span> row_ABC <span style="color:#000;font-weight:bold">in</span> (select A00 from 表名 t ) loop  <span style="color:#000;font-weight:bold">--</span>遍历表中数据
+          str<span style="color:#000;font-weight:bold">:=</span><span style="color:#d14">&#39;&#39;</span>;      
+          A00<span style="color:#000;font-weight:bold">:=</span>row_ABC.A00;
+	BEGIN
+		DBMS_OUTPUT.ENABLE(buffer_size =&gt; <span style="color:#000;font-weight:bold">null</span>);  <span style="color:#000;font-weight:bold">--</span>buffer不受限制
+		select  KK into str_6 from
+		(select  xzzw KK from( select 字段)  as xzzw from 表名 where ZA01<span style="color:#000;font-weight:bold">=</span>A00));            
+		dbms_output.put_line(str);   <span style="color:#000;font-weight:bold">---</span>打印输出执行的结果
+		update 表名 set 字段<span style="color:#000;font-weight:bold">=</span>str where a00<span style="color:#000;font-weight:bold">=</span>A00BL;  <span style="color:#000;font-weight:bold">--</span>更新表中对应信息
+		EXCEPTION WHEN NO_DATA_FOUND THEN   <span style="color:#000;font-weight:bold">--</span>抛出异常
+		str <span style="color:#000;font-weight:bold">:=</span> <span style="color:#d14">&#39;&#39;</span>;    <span style="color:#000;font-weight:bold">--</span>并将字符串str置为空
+		commit;   <span style="color:#000;font-weight:bold">--</span>数据提交
+		END;
+  END LOOP;  <span style="color:#000;font-weight:bold">--</span>循环结束
+END;<span style="color:#000;font-weight:bold">--</span>游标结束
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="知识点">知识点</h2>
+<p>1、<strong>for loop 语句</strong>
+　　for loop 语句一种重复控制结构，可以有效地编写一个需要执行特定次数的循环。语法格式如下：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// for loop语法
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">for</span> name <span style="color:#000;font-weight:bold">in</span> 表 loop
+ End loop;
+</code></pre></td></tr></table>
+</div>
+</div><p>2、<strong>符号:=</strong>
+　:=符号，在存储过程中相当于赋值的作用。例如初始化字符串str:=&rsquo;'。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// :=符号的使用
+</span><span style="color:#998;font-style:italic"></span>str<span style="color:#000;font-weight:bold">:=</span><span style="color:#d14">&#39;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>　</p>
+<h2 id="博客参考">博客参考</h2>
+<p><a href="http://www.cnblogs.com/aipan/p/5306613.html">http://www.cnblogs.com/aipan/p/5306613.html</a></p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.wangqj.cn">梦幻通灵</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.wangqj.cn/post/0001-oracle-Procedure/">https://www.wangqj.cn/post/0001-oracle-Procedure/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/interview/Java/"> 读书</a></li>
+        
+        <li><a href="/reading/reading/"> 读书</a></li>
+        
+        <li><a href="/program/program/">编程</a></li>
+        
+        <li><a href="/post/hugo-travelify-theme-features/">Hugo Travelify Theme Features</a></li>
+        
+        <li><a href="/post/go-is-for-lovers/">Go is for lovers</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Procedure'>Procedure</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "your github repo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.wangqj.cn/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.wangqj.cn">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0044-mysql-lock/" title="mysql锁">mysql锁</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0042-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0041-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0040-eclipse-code/" title="eclipse查看源码">eclipse查看源码</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0039-eclipse-git/" title="eclipse 获取并运行git上项目">eclipse 获取并运行git上项目</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0038-Java-jdk/" title="bat配置Java开发环境">bat配置Java开发环境</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0037-oracle-lock/" title="oracle 数据库锁库">oracle 数据库锁库</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0036-vue-run/" title="vue项目编译与运行">vue项目编译与运行</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/" title="eclipse 中高亮显示">eclipse 中高亮显示</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Blog/">Blog (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Java/">Java (5)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/JeDate/">JeDate (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Navicat/">Navicat (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Network/">Network (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (8)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Procedure/">Procedure (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Sign/">Sign (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/kettle/">kettle (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/lorem/">lorem (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/mysql/">mysql (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/page/">page (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/programming/">programming (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/putty/">putty (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/sqlite/">sqlite (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/starting/">starting (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/syntax/">syntax (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/themes/">themes (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.wangqj.cn/tags/Aspose/">Aspose</a>
+    
+    <a href="https://www.wangqj.cn/tags/Blog/">Blog</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
+    
+    <a href="https://www.wangqj.cn/tags/Java/">Java</a>
+    
+    <a href="https://www.wangqj.cn/tags/JeDate/">JeDate</a>
+    
+    <a href="https://www.wangqj.cn/tags/Jenkins/">Jenkins</a>
+    
+    <a href="https://www.wangqj.cn/tags/Navicat/">Navicat</a>
+    
+    <a href="https://www.wangqj.cn/tags/Network/">Network</a>
+    
+    <a href="https://www.wangqj.cn/tags/Nginx/">Nginx</a>
+    
+    <a href="https://www.wangqj.cn/tags/Oracle/">Oracle</a>
+    
+    <a href="https://www.wangqj.cn/tags/Procedure/">Procedure</a>
+    
+    <a href="https://www.wangqj.cn/tags/RabbitMQ/">RabbitMQ</a>
+    
+    <a href="https://www.wangqj.cn/tags/Sign/">Sign</a>
+    
+    <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
+    
+    <a href="https://www.wangqj.cn/tags/css/">css</a>
+    
+    <a href="https://www.wangqj.cn/tags/eclipse/">eclipse</a>
+    
+    <a href="https://www.wangqj.cn/tags/emoji/">emoji</a>
+    
+    <a href="https://www.wangqj.cn/tags/encode/">encode</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/git/">git</a>
+    
+    <a href="https://www.wangqj.cn/tags/go/">go</a>
+    
+    <a href="https://www.wangqj.cn/tags/html/">html</a>
+    
+    <a href="https://www.wangqj.cn/tags/index/">index</a>
+    
+    <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
+    
+    <a href="https://www.wangqj.cn/tags/ipsum/">ipsum</a>
+    
+    <a href="https://www.wangqj.cn/tags/kettle/">kettle</a>
+    
+    <a href="https://www.wangqj.cn/tags/markdown/">markdown</a>
+    
+    <a href="https://www.wangqj.cn/tags/motivation/">motivation</a>
+    
+    <a href="https://www.wangqj.cn/tags/mysql/">mysql</a>
+    
+    <a href="https://www.wangqj.cn/tags/page/">page</a>
+    
+    <a href="https://www.wangqj.cn/tags/putty/">putty</a>
+    
+    <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
+    
+    <a href="https://www.wangqj.cn/tags/theme/">theme</a>
+    
+    <a href="https://www.wangqj.cn/tags/themes/">themes</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.wangqj.cn/" title="梦幻通灵的博客">梦幻通灵的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/u012190388" title="CSDN博客">CSDN博客地址</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.jianshu.com/u/b5d211128694" title="简书">简书地址</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.wangqj.cn/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

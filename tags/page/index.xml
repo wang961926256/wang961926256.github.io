@@ -6,17 +6,17 @@
     <description>Recent content in page on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 06 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>print page</title>
-      <link>https://www.wangqj.cn/post/09-page-print/</link>
-      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      <link>https://www.wangqj.cn/post/0002-page-print/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/09-page-print/</guid>
+      <guid>https://www.wangqj.cn/post/0002-page-print/</guid>
       <description>背景介绍 页面打印 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印 第一种方式、添加代码打印 添加代码打印就是在需要打印的代码出添加相应的代码实现打印的效果。主要分为三步来完成。 第一步在head头部添加打印的配置信息。根据需求修改，参考代码如下： 1 2 3 4 5</description>
     </item>
     

@@ -79,86 +79,11 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/22-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+                <a href="https://www.wangqj.cn/post/0044-mysql-lock/" title="mysql锁">mysql锁</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年11月6日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Jenkins'>Jenkins</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与配置。本次是在window下操作，这里记录操作的过程，方便以后查看。 环境准备 1）Tomcat 官网地址：Tomcat下载 由于本次在win下安装……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/22-Jenkins/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/20-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年11月6日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/20-RabbitMQ/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/21-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年11月6日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。 知识学习与回顾 RabbitMQ有6种消息模型，但第6种属于RPC……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/21-RabbitMQ-springboot/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/23-mysql-lock/" title="mysql锁">mysql锁</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年11月6日
+            2020年11月19日
         </date>
         
         <div class="post-meta">
@@ -171,7 +96,7 @@
         <div class="post-content">
             背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/23-mysql-lock/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0044-mysql-lock/">阅读全文</a></p>
     </article>
     
     
@@ -179,11 +104,86 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/24-eclipse/" title="eclipse查看源码">eclipse查看源码</a>
+                <a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年11月6日
+            2020年10月31日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。 知识学习与回顾 RabbitMQ有6种消息模型，但第6种属于RPC……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0042-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年10月17日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0042-RabbitMQ/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0041-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年9月30日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Jenkins'>Jenkins</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与配置。本次是在window下操作，这里记录操作的过程，方便以后查看。 环境准备 1）Tomcat 官网地址：Tomcat下载 由于本次在win下安装……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0041-Jenkins/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0040-eclipse-code/" title="eclipse查看源码">eclipse查看源码</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年9月20日
         </date>
         
         <div class="post-meta">
@@ -196,7 +196,7 @@
         <div class="post-content">
             背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。 比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/24-eclipse/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0040-eclipse-code/">阅读全文</a></p>
     </article>
     
     
@@ -204,24 +204,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/18-excel/" title="excel数据验证">excel数据验证</a>
+                <a href="https://www.wangqj.cn/post/0039-eclipse-git/" title="eclipse 获取并运行git上项目">eclipse 获取并运行git上项目</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年5月28日
+            2020年8月30日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/Excel'>Excel</a></span>
+            <span class="meta-category"><a href='/categories/git'>git</a></span>
             
         </div>
         
         <div class="post-content">
-            背景介绍 excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为……
+            背景介绍 公司运用GitLab来管理Java的源码，在管理员授权源码权限后，可以获取最新的程序到本地运行。记录下来配置的流程，方便以后查看。 本地操作系统是win10，安装好Git的环境，安装比较简单，可以参考网上的安装教程，这里不再列举，推荐学习下廖雪峰老师的教程，链接是参考博客【……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/18-excel/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0039-eclipse-git/">阅读全文</a></p>
     </article>
     
     
@@ -229,24 +229,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/17-CreateOracle/" title="oracle迁移到mysql">oracle迁移到mysql</a>
+                <a href="https://www.wangqj.cn/post/0038-Java-jdk/" title="bat配置Java开发环境">bat配置Java开发环境</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年5月15日
+            2020年8月17日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/Oracle'>Oracle</a></span>
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
             
         </div>
         
         <div class="post-content">
-            背景介绍 oracle和mysql 作为常用的数据库，在实际生产中，两种数据库都具有很广的应用场景。 最近项目使用的数据库需要从oracle转到mysql，开始了程序的迁移，项目用Java开发，主要需要更改的是mybatis的xml文件中的SQL语句。这里记录下来方便以后查看。 一、创建……
+            背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，能不能写个脚本呢，将软件写入到环境变量，把软件放到指定的目录。下面记录这个过程，方便以后查看。 处理这个问题主要可以分为以下两步： 第一步 将文件……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/17-CreateOracle/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0038-Java-jdk/">阅读全文</a></p>
     </article>
     
     
@@ -254,24 +254,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/16-EmptyTable/" title="oracle数据库空表处理">oracle数据库空表处理</a>
+                <a href="https://www.wangqj.cn/post/0036-vue-run/" title="vue项目编译与运行">vue项目编译与运行</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年5月1日
+            2020年7月31日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/Oracle'>Oracle</a></span>
+            <span class="meta-category"><a href='/categories/Vue'>Vue</a></span>
             
         </div>
         
         <div class="post-content">
-            背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查阅资料，导库前需要进行数据库的空表处理。这里记录下来，方便备查。 数据库版本：oracle 11g 第一步、设置 延迟段创建 deferred_segment_creation 延迟段创建(Oracle 1……
+            背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。 1、安装npm 有时候用npm下载依……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/16-EmptyTable/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0036-vue-run/">阅读全文</a></p>
     </article>
     
     
@@ -279,24 +279,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/15-ExtTree/" title="Ext tree 节点的新增和移除">Ext tree 节点的新增和移除</a>
+                <a href="https://www.wangqj.cn/post/0037-oracle-lock/" title="oracle 数据库锁库">oracle 数据库锁库</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年4月28日
+            2020年7月31日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/ExtJs'>ExtJs</a></span>
+            <span class="meta-category"><a href='/categories/Vue'>Vue</a></span>
             
         </div>
         
         <div class="post-content">
-            背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用 removeChild 和 appendChild方法可以实现增删，这里记录下来，方便备查。 Ext 树创建的js程序代码 1 2 3 4 5……
+            背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错原因，以下记录处理的的过程，方便备查。 1、原因 在 oracle database 11g中，默认在default概要文件中设置了“FAILED_LOGIN_ATTEMPT……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/15-ExtTree/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0037-oracle-lock/">阅读全文</a></p>
     </article>
     
     
@@ -304,24 +304,24 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/14-encode/" title="ifream 绑定PDF出错">ifream 绑定PDF出错</a>
+                <a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/" title="eclipse 中高亮显示">eclipse 中高亮显示</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年3月28日
+            2020年6月30日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/encode'>encode</a></span>
+            <span class="meta-category"><a href='/categories/eclipse'>eclipse</a></span>
             
         </div>
         
         <div class="post-content">
-            背景介绍 encode 浏览器在对url解析时自动进行解码 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。 1 2 3 4 5 var roserForm =……
+            背景介绍 在使用eclipse编译器时，需要对变量进行高亮显示，方便快速的去看代码 1、文件内容的高亮显示 在 菜单栏的 window &mdash;&gt; preference &mdash;&ndash;&gt; Content type &mdash;&ndash;&gt; Text &mdash;-&gt; Html &mdash;&gt; Add 弹出窗口 File type ： 在输入框中输入 .vm ，选中添加的.vm 在下面的 Defualt encoding 中输入：&ldquo;utf-8“ 单击 update ，点击ok，设置完毕。 重新打开vm页面就可以……
         </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/14-encode/">阅读全文</a></p>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/">阅读全文</a></p>
     </article>
     
     
@@ -347,6 +347,10 @@
     
     <li >
         <a href="https://www.wangqj.cn/post/page/4/">4</a>
+    </li>
+    
+    <li >
+        <a href="https://www.wangqj.cn/post/page/5/">5</a>
     </li>
     
 
@@ -411,43 +415,43 @@
 <ul class="widget-list">
     
     <li>
-        <a href="https://www.wangqj.cn/post/24-eclipse/" title="eclipse查看源码">eclipse查看源码</a>
+        <a href="https://www.wangqj.cn/post/0044-mysql-lock/" title="mysql锁">mysql锁</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/23-mysql-lock/" title="mysql锁">mysql锁</a>
+        <a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/21-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
+        <a href="https://www.wangqj.cn/post/0042-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/20-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
+        <a href="https://www.wangqj.cn/post/0041-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/22-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+        <a href="https://www.wangqj.cn/post/0040-eclipse-code/" title="eclipse查看源码">eclipse查看源码</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/18-excel/" title="excel数据验证">excel数据验证</a>
+        <a href="https://www.wangqj.cn/post/0039-eclipse-git/" title="eclipse 获取并运行git上项目">eclipse 获取并运行git上项目</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/17-CreateOracle/" title="oracle迁移到mysql">oracle迁移到mysql</a>
+        <a href="https://www.wangqj.cn/post/0038-Java-jdk/" title="bat配置Java开发环境">bat配置Java开发环境</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/16-EmptyTable/" title="oracle数据库空表处理">oracle数据库空表处理</a>
+        <a href="https://www.wangqj.cn/post/0037-oracle-lock/" title="oracle 数据库锁库">oracle 数据库锁库</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/15-ExtTree/" title="Ext tree 节点的新增和移除">Ext tree 节点的新增和移除</a>
+        <a href="https://www.wangqj.cn/post/0036-vue-run/" title="vue项目编译与运行">vue项目编译与运行</a>
     </li>
     
     <li>
-        <a href="https://www.wangqj.cn/post/14-encode/" title="ifream 绑定PDF出错">ifream 绑定PDF出错</a>
+        <a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/" title="eclipse 中高亮显示">eclipse 中高亮显示</a>
     </li>
     
 </ul>
@@ -459,25 +463,25 @@
     <ul class="widget-list">
         
         <li>
-            <a href="https://www.aliyun.com/minisite/goods?userCode=jdg9oj97&amp;share_source=copy_link" title="【2019双12】ALL IN CLoud 低至1折" target="_blank" style="color:red">
+            <a href="" title="" target="_blank" style="color:red">
                 
-                    <img src="https://img.alicdn.com/tfs/TB1_rYHo7P2gK0jSZPxXXacQpXa-690-388.jpg">
-                
-            </a>
-        </li>
-        
-        <li>
-            <a href="https://cloud.tencent.com/act/cps/redirect?redirect=1048&amp;cps_key=14ff722692ac784fa8c3301c8c28d924&amp;from=console" title="助力产业智慧升级，云服务器首年88元起，更有千元代金券礼包免费领！" target="_blank" style="color:red">
-                
-                    <img src="https://upload-dianshi-1255598498.file.myqcloud.com/345-7c71532bd4935fbdd9a67c1a71e577b1767b805c.200%E7%89%88%E6%9C%ACB.jpg">
+                    
                 
             </a>
         </li>
         
         <li>
-            <a href="https://www.aliyun.com/acts/limit-buy?userCode=jdg9oj97" title="【渠道专享低折扣】11月特惠 限时2折" target="_blank" style="color:red">
+            <a href="" title="" target="_blank" style="color:red">
                 
-                    <img src="https://img.alicdn.com/tfs/TB1hblJl7Y2gK0jSZFgXXc5OFXa-750-400.jpg">
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
                 
             </a>
         </li>
@@ -490,21 +494,43 @@
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Blog/">Blog (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/Java/">Java (5)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/JeDate/">JeDate (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Navicat/">Navicat (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Network/">Network (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (6)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (8)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Procedure/">Procedure (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (2)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/Sign/">Sign (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/kettle/">kettle (2)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/lorem/">lorem (1)</a></li>
     
@@ -512,11 +538,11 @@
     
     <li><a href="https://www.wangqj.cn/categories/page/">page (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/powerDesigner/">powerDesigner (1)</a></li>
-    
     <li><a href="https://www.wangqj.cn/categories/programming/">programming (1)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/putty/">putty (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/putty/">putty (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/sqlite/">sqlite (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/starting/">starting (1)</a></li>
     
@@ -533,17 +559,33 @@
     
     <a href="https://www.wangqj.cn/tags/Aspose/">Aspose</a>
     
+    <a href="https://www.wangqj.cn/tags/Blog/">Blog</a>
+    
     <a href="https://www.wangqj.cn/tags/excel/">excel</a>
     
     <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
     
+    <a href="https://www.wangqj.cn/tags/Java/">Java</a>
+    
+    <a href="https://www.wangqj.cn/tags/JeDate/">JeDate</a>
+    
     <a href="https://www.wangqj.cn/tags/Jenkins/">Jenkins</a>
+    
+    <a href="https://www.wangqj.cn/tags/Navicat/">Navicat</a>
+    
+    <a href="https://www.wangqj.cn/tags/Network/">Network</a>
     
     <a href="https://www.wangqj.cn/tags/Nginx/">Nginx</a>
     
     <a href="https://www.wangqj.cn/tags/Oracle/">Oracle</a>
     
+    <a href="https://www.wangqj.cn/tags/Procedure/">Procedure</a>
+    
     <a href="https://www.wangqj.cn/tags/RabbitMQ/">RabbitMQ</a>
+    
+    <a href="https://www.wangqj.cn/tags/Sign/">Sign</a>
+    
+    <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
     
     <a href="https://www.wangqj.cn/tags/css/">css</a>
     
@@ -554,6 +596,8 @@
     <a href="https://www.wangqj.cn/tags/encode/">encode</a>
     
     <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/git/">git</a>
     
     <a href="https://www.wangqj.cn/tags/go/">go</a>
     
@@ -575,13 +619,9 @@
     
     <a href="https://www.wangqj.cn/tags/page/">page</a>
     
-    <a href="https://www.wangqj.cn/tags/powerDesigner/">powerDesigner</a>
-    
     <a href="https://www.wangqj.cn/tags/putty/">putty</a>
     
     <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
-    
-    <a href="https://www.wangqj.cn/tags/text/">text</a>
     
     <a href="https://www.wangqj.cn/tags/theme/">theme</a>
     

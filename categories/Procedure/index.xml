@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Procedure on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/Procedure/</link>
+    <description>Recent content in Procedure on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/categories/Procedure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle存储过程常见问题及解决方法</title>
+      <link>https://www.wangqj.cn/post/0001-oracle-Procedure/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0001-oracle-Procedure/</guid>
+      <description>背景介绍 存储过程是为完成特定功能的SQL集。目前工作中用到的存储过程就是对数据库中的字段进行批量的更新。 最近在写存储过程中遇到了一些问题，查阅了网上的解决方案，自己也记录下来，方便备查。 1、 内存溢出 执行输出语句的时候报错：ORA-20000: ORU-10027: buffer overflow, limit of 20000 bytes，意思是说输出的</description>
+    </item>
+    
+  </channel>
+</rss>

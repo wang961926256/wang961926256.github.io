@@ -6,17 +6,26 @@
     <description>Recent content in kettle on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/kettle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>kettle 数据库迁移</title>
-      <link>https://www.wangqj.cn/post/03-kettle/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      <title>Linux环境部署Kettle</title>
+      <link>https://www.wangqj.cn/post/0015-linux-kettle/</link>
+      <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/03-kettle/</guid>
+      <guid>https://www.wangqj.cn/post/0015-linux-kettle/</guid>
+      <description>背景介绍 最近遇到了需要在linux上部署kettle实现数据库的同步，源库是oracle，目标库是mysql，下面记录kettle部署的步骤，方便之后的查看。 kettle的运行要求设备安装有Java环境，建议首先安装jdk和jre,配置Java环境。 第一步、软件下载 用winScp</description>
+    </item>
+    
+    <item>
+      <title>kettle 数据库迁移</title>
+      <link>https://www.wangqj.cn/post/0004-kettle/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0004-kettle/</guid>
       <description>背景介绍 最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。 kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon</description>
     </item>
     

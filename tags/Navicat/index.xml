@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Navicat on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/tags/Navicat/</link>
+    <description>Recent content in Navicat on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/tags/Navicat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Navicat数据同步报错</title>
+      <link>https://www.wangqj.cn/post/0019-Navicat-error/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0019-Navicat-error/</guid>
+      <description>背景介绍 最近在用Navicat的同步工具做mysql数据库的同步时，中间出现报错：1153 - Got apacket bigger than &amp;lsquo;max_allowed_packet&amp;rsquo; bytes，导致数据库同步中断，网上查询报错原因是最大传递包值 max_allowed_packet过小，需要修改大小，这里修改的是16M，记录下来，方便之后的查看。 处理方案有两种</description>
+    </item>
+    
+    <item>
+      <title>Navicat实现excel数据入库</title>
+      <link>https://www.wangqj.cn/post/0012-Navicat-input/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0012-Navicat-input/</guid>
+      <description>背景介绍 最近的需求是把excel模板中的数据导入到数据库对应表中，采用Navicat工具的导入功能，下面记录一下处理的过程，以备查看。 第一步、 数据库滤重 在用户表中，有部分人存在两条记录，最新的一条是有效数据，因此需要对人员表进行滤重操作。将滤重的结果存放到单独的一张表中，SQL语</description>
+    </item>
+    
+  </channel>
+</rss>

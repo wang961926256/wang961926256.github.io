@@ -6,17 +6,26 @@
     <description>Recent content in putty on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/putty/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>putty连接数据库</title>
-      <link>https://www.wangqj.cn/post/11-putty/</link>
-      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      <title>PowderDesigner连接mysql本地数据库</title>
+      <link>https://www.wangqj.cn/post/0021-PowderDesigner/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/11-putty/</guid>
+      <guid>https://www.wangqj.cn/post/0021-PowderDesigner/</guid>
+      <description>背景介绍 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将PowderDesigner和数据库相连，导入进去，生成对应的结构。第二种是从excel文档中导入到软件中，每操作一次都需改excel文件中的</description>
+    </item>
+    
+    <item>
+      <title>putty连接数据库</title>
+      <link>https://www.wangqj.cn/post/0014-linux-putty/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0014-linux-putty/</guid>
       <description>背景介绍 PuTTY 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和rlogin客户端。 目前需求是通过ssh连接linux上的mysql数据库，实现利用kettle来同步数据。由于无法利用Navicat直接连</description>
     </item>
     

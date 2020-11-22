@@ -6,18 +6,27 @@
     <description>Recent content in eclipse on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 06 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>eclipse查看源码</title>
-      <link>https://www.wangqj.cn/post/24-eclipse/</link>
-      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      <link>https://www.wangqj.cn/post/0040-eclipse-code/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/24-eclipse/</guid>
+      <guid>https://www.wangqj.cn/post/0040-eclipse-code/</guid>
       <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。 比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问</description>
+    </item>
+    
+    <item>
+      <title>eclipse 中高亮显示</title>
+      <link>https://www.wangqj.cn/post/0035-eclipse-Highlight/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0035-eclipse-Highlight/</guid>
+      <description>背景介绍 在使用eclipse编译器时，需要对变量进行高亮显示，方便快速的去看代码 1、文件内容的高亮显示 在 菜单栏的 window &amp;mdash;&amp;gt; preference &amp;mdash;&amp;ndash;&amp;gt; Content type &amp;mdash;&amp;ndash;&amp;gt; Text &amp;mdash;-&amp;gt; Html &amp;mdash;&amp;gt; Add 弹出窗口 File type ： 在输入框中输入 .vm ，选中添加的.vm 在下面的 Defualt encoding 中输入：&amp;ldquo;utf-8“ 单击 update ，点击ok，设置完毕。 重新打开vm页面就可以</description>
     </item>
     
   </channel>

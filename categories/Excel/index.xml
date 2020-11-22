@@ -6,17 +6,17 @@
     <description>Recent content in Excel on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/Excel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>excel数据验证</title>
-      <link>https://www.wangqj.cn/post/18-excel/</link>
-      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <link>https://www.wangqj.cn/post/0033-excel-out/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/18-excel/</guid>
+      <guid>https://www.wangqj.cn/post/0033-excel-out/</guid>
       <description>背景介绍 excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为</description>
     </item>
     

@@ -13,11 +13,20 @@
     
     <item>
       <title>Aspose &#43; PDFObject</title>
-      <link>https://www.wangqj.cn/post/13-aspose/</link>
+      <link>https://www.wangqj.cn/post/0027-aspose/</link>
       <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/13-aspose/</guid>
+      <guid>https://www.wangqj.cn/post/0027-aspose/</guid>
       <description>背景介绍 Aspose office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。 最近系统中想做个页面的展示和下载的功能，正好公司购买了Aspose （收费）软件，简单的实现方案是Aspose + PDFObect 将excel转成pdf，直接使用插件来实现预览和下载。记录下来，方便备查！ 一、ex</description>
+    </item>
+    
+    <item>
+      <title>Java实现 用Aspose.Cells导出excel模板数据</title>
+      <link>https://www.wangqj.cn/post/0010-Aspose-cells/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0010-Aspose-cells/</guid>
+      <description>背景介绍 最近有个需求是将数据库查询出来的数据，写入到用户提供的指定的模板中。查询一番，java方面的有jxl和poi两种插件，考虑到本次模板有多个页签，只是简单的数据查询，便选择Aspose.Cells。记录下来实现的过程，方便之后的查看。 Aspose.Cell控件支持多种参数变</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sign on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/tags/Sign/</link>
+    <description>Recent content in Sign on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/tags/Sign/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>英文引号处理</title>
+      <link>https://www.wangqj.cn/post/0003-sign/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0003-sign/</guid>
+      <description>背景介绍 最近遇到了一个英文引号引起的问题，后台读取数据库字段，传递给前台一直无法正确解析，如str=my&amp;rsquo;s book，中间英文的引号被当做结束符号，会报错，因此需要对其转换处理。网上查阅资料后，发现可以用spring的org.springframework.web.u</description>
+    </item>
+    
+  </channel>
+</rss>

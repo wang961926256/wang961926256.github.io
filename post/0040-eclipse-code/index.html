@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>eclipse查看源码 | 梦幻通灵的博客</title>
+    <meta property="og:title" content="eclipse查看源码 - 梦幻通灵的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-09-20T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-09-20T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="迁移">
+        <meta name="author" content="wangqj">
+        
+    <meta property="og:url" content="https://www.wangqj.cn/post/0040-eclipse-code/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.wangqj.cn">
+                        梦幻通灵的博客
+                    </a>
+                
+                <p class="description">专注于Java、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.wangqj.cn">首页</a>
+                    
+                    <a  href="https://www.wangqj.cn/program/" title="编程">编程</a>
+                    
+                    <a  href="https://www.wangqj.cn/reading/" title="读书">读书</a>
+                    
+                    <a  href="https://www.wangqj.cn/interview/" title="面试">面试</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景介绍">背景介绍</a></li>
+    <li><a href="#小结">小结</a></li>
+    <li><a href="#参考博客">参考博客</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">eclipse查看源码</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年9月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/mysql'>mysql</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="背景介绍">背景介绍</h2>
+<p>在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。</p>
+<p>比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问题呢？
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920215818182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
+    
+你可以试试这样，推荐这样做，在编辑栏的 <strong>help</strong> &ndash;&gt; <strong>eclipse macketplace</strong> &ndash;&gt; 输入<strong>Enhanced Class Decompiler</strong>，如下图所示。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920215949163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
+    
+点击 <strong>install</strong>  安装插件，接下里会列出五种编译的插件，笔者是全部安装到eclipse中，也可以选择安装，貌似差别不是太大。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920220030862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
+    
+直接下一步即可，会自动下载这几款的插件并安装，如下图所示。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920220113235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
+    
+安装完成后，会提示让重启eclipse，选择 yes 即可。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920220739160.png#pic_center" />   
+    
+重启完成后，在jar包右键，会有open class with 的选项，五种可供选择。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920221020865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
+    
+这里选择 jad，右侧显示的就会不一样，接下来就可以愉快的阅读源码了~
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200920221241967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70#pic_center" />   
+    </p>
+<h2 id="小结">小结</h2>
+<p>查阅资料发现，网上提供的有查看 jre 中如 <strong>rt.jar</strong> 包中基础源码的查看，也可以实现 点击方法跳转到源码的页面，有兴趣的话可以查看下参考博客【2】提供的步骤，祝好！</p>
+<h2 id="参考博客">参考博客</h2>
+<p>【1】https://blog.csdn.net/weixin_38322326/article/details/83511269
+【2】https://blog.csdn.net/u011019141/article/details/80466495</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.wangqj.cn">梦幻通灵</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.wangqj.cn/post/0040-eclipse-code/">https://www.wangqj.cn/post/0040-eclipse-code/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/0035-eclipse-Highlight/">eclipse 中高亮显示</a></li>
+        
+        <li><a href="/post/0039-eclipse-git/">eclipse 获取并运行git上项目</a></li>
+        
+        <li><a href="/post/0038-Java-jdk/">bat配置Java开发环境</a></li>
+        
+        <li><a href="/post/0037-oracle-lock/">oracle 数据库锁库</a></li>
+        
+        <li><a href="/post/0036-vue-run/">vue项目编译与运行</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/eclipse'>eclipse</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "your github repo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.wangqj.cn/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.wangqj.cn">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0044-mysql-lock/" title="mysql锁">mysql锁</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0042-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0041-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0040-eclipse-code/" title="eclipse查看源码">eclipse查看源码</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0039-eclipse-git/" title="eclipse 获取并运行git上项目">eclipse 获取并运行git上项目</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0038-Java-jdk/" title="bat配置Java开发环境">bat配置Java开发环境</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0037-oracle-lock/" title="oracle 数据库锁库">oracle 数据库锁库</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0036-vue-run/" title="vue项目编译与运行">vue项目编译与运行</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/" title="eclipse 中高亮显示">eclipse 中高亮显示</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Blog/">Blog (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Java/">Java (5)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/JeDate/">JeDate (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Navicat/">Navicat (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Network/">Network (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (8)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Procedure/">Procedure (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Sign/">Sign (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/kettle/">kettle (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/lorem/">lorem (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/mysql/">mysql (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/page/">page (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/programming/">programming (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/putty/">putty (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/sqlite/">sqlite (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/starting/">starting (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/syntax/">syntax (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/themes/">themes (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.wangqj.cn/tags/Aspose/">Aspose</a>
+    
+    <a href="https://www.wangqj.cn/tags/Blog/">Blog</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
+    
+    <a href="https://www.wangqj.cn/tags/Java/">Java</a>
+    
+    <a href="https://www.wangqj.cn/tags/JeDate/">JeDate</a>
+    
+    <a href="https://www.wangqj.cn/tags/Jenkins/">Jenkins</a>
+    
+    <a href="https://www.wangqj.cn/tags/Navicat/">Navicat</a>
+    
+    <a href="https://www.wangqj.cn/tags/Network/">Network</a>
+    
+    <a href="https://www.wangqj.cn/tags/Nginx/">Nginx</a>
+    
+    <a href="https://www.wangqj.cn/tags/Oracle/">Oracle</a>
+    
+    <a href="https://www.wangqj.cn/tags/Procedure/">Procedure</a>
+    
+    <a href="https://www.wangqj.cn/tags/RabbitMQ/">RabbitMQ</a>
+    
+    <a href="https://www.wangqj.cn/tags/Sign/">Sign</a>
+    
+    <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
+    
+    <a href="https://www.wangqj.cn/tags/css/">css</a>
+    
+    <a href="https://www.wangqj.cn/tags/eclipse/">eclipse</a>
+    
+    <a href="https://www.wangqj.cn/tags/emoji/">emoji</a>
+    
+    <a href="https://www.wangqj.cn/tags/encode/">encode</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/git/">git</a>
+    
+    <a href="https://www.wangqj.cn/tags/go/">go</a>
+    
+    <a href="https://www.wangqj.cn/tags/html/">html</a>
+    
+    <a href="https://www.wangqj.cn/tags/index/">index</a>
+    
+    <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
+    
+    <a href="https://www.wangqj.cn/tags/ipsum/">ipsum</a>
+    
+    <a href="https://www.wangqj.cn/tags/kettle/">kettle</a>
+    
+    <a href="https://www.wangqj.cn/tags/markdown/">markdown</a>
+    
+    <a href="https://www.wangqj.cn/tags/motivation/">motivation</a>
+    
+    <a href="https://www.wangqj.cn/tags/mysql/">mysql</a>
+    
+    <a href="https://www.wangqj.cn/tags/page/">page</a>
+    
+    <a href="https://www.wangqj.cn/tags/putty/">putty</a>
+    
+    <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
+    
+    <a href="https://www.wangqj.cn/tags/theme/">theme</a>
+    
+    <a href="https://www.wangqj.cn/tags/themes/">themes</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.wangqj.cn/" title="梦幻通灵的博客">梦幻通灵的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/u012190388" title="CSDN博客">CSDN博客地址</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.jianshu.com/u/b5d211128694" title="简书">简书地址</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.wangqj.cn/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

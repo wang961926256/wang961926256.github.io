@@ -6,27 +6,27 @@
     <description>Recent content in mysql on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 06 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>eclipse查看源码</title>
-      <link>https://www.wangqj.cn/post/24-eclipse/</link>
-      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      <title>mysql锁</title>
+      <link>https://www.wangqj.cn/post/0044-mysql-lock/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/24-eclipse/</guid>
-      <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。 比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问</description>
+      <guid>https://www.wangqj.cn/post/0044-mysql-lock/</guid>
+      <description>背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命</description>
     </item>
     
     <item>
-      <title>mysql锁</title>
-      <link>https://www.wangqj.cn/post/23-mysql-lock/</link>
-      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      <title>eclipse查看源码</title>
+      <link>https://www.wangqj.cn/post/0040-eclipse-code/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/23-mysql-lock/</guid>
-      <description>背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命</description>
+      <guid>https://www.wangqj.cn/post/0040-eclipse-code/</guid>
+      <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。 比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/tags/Network/</link>
+    <description>Recent content in Network on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 18 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/tags/Network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>虚拟机配置联网</title>
+      <link>https://www.wangqj.cn/post/0009-VM-Network/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0009-VM-Network/</guid>
+      <description>背景介绍 在本地安装上VMware软件，无法连接上网络，发现时没有配置网络，网上搜索一番，记录下来，方便以后查看。 一、虚拟机上网络配置 虚拟机版本：centos7 上网 第一步：Edit-&amp;gt;Virtual Network Editor 默认选择NAT模式 选择Restore Defaults即可(恢复默认设置) 第</description>
+    </item>
+    
+  </channel>
+</rss>

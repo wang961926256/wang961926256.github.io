@@ -6,35 +6,35 @@
     <description>Recent content in ExtJs on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/ExtJs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ext tree 节点的新增和移除</title>
-      <link>https://www.wangqj.cn/post/15-ExtTree/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <link>https://www.wangqj.cn/post/0030-ExtTree/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/15-ExtTree/</guid>
+      <guid>https://www.wangqj.cn/post/0030-ExtTree/</guid>
       <description>背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用 removeChild 和 appendChild方法可以实现增删，这里记录下来，方便备查。 Ext 树创建的js程序代码 1 2 3 4 5</description>
     </item>
     
     <item>
       <title>Ext监听</title>
-      <link>https://www.wangqj.cn/post/00-EXT/</link>
-      <pubDate>Mon, 11 Nov 2019 00:00:00 +0000</pubDate>
+      <link>https://www.wangqj.cn/post/0013-Ext-linster/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/00-EXT/</guid>
+      <guid>https://www.wangqj.cn/post/0013-Ext-linster/</guid>
       <description>知识了解 EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父pane</description>
     </item>
     
     <item>
       <title>ext-button</title>
-      <link>https://www.wangqj.cn/post/19-ext-button/</link>
+      <link>https://www.wangqj.cn/post/0034-ext-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/19-ext-button/</guid>
+      <guid>https://www.wangqj.cn/post/0034-ext-button/</guid>
       <description>背景介绍 ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。 1、创建按钮 &amp;ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数</description>
     </item>
     

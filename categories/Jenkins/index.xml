@@ -6,17 +6,17 @@
     <description>Recent content in Jenkins on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 06 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/Jenkins/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>初试本地安装Jenkins软件</title>
-      <link>https://www.wangqj.cn/post/22-Jenkins/</link>
-      <pubDate>Fri, 06 Nov 2020 00:00:00 +0000</pubDate>
+      <link>https://www.wangqj.cn/post/0041-Jenkins/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/22-Jenkins/</guid>
+      <guid>https://www.wangqj.cn/post/0041-Jenkins/</guid>
       <description>背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与配置。本次是在window下操作，这里记录操作的过程，方便以后查看。 环境准备 1）Tomcat 官网地址：Tomcat下载 由于本次在win下安装</description>
     </item>
     

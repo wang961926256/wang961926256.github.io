@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JeDate on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/JeDate/</link>
+    <description>Recent content in JeDate on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 29 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/categories/JeDate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JeDate日期控件</title>
+      <link>https://www.wangqj.cn/post/0020-JeDate/</link>
+      <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0020-JeDate/</guid>
+      <description>背景介绍 最近在接手的项目中遇到JeDate时间控件，点击未选择日时出现undefined，赶紧查看API，发现原有控件没有对日期选中处理，这里对日添加个默认值，记录一下，方便之后的查看。 问题场景： 在JeDate日期插件中，若未选中日，点击确定，在文本框显示的日期中包含undefi</description>
+    </item>
+    
+  </channel>
+</rss>
