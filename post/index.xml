@@ -122,7 +122,7 @@
     <item>
       <title>oracle数据库空表处理</title>
       <link>https://www.wangqj.cn/post/0031-EmptyTable/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/post/0031-EmptyTable/</guid>
       <description>背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查阅资料，导库前需要进行数据库的空表处理。这里记录下来，方便备查。 数据库版本：oracle 11g 第一步、设置 延迟段创建 deferred_segment_creation 延迟段创建(Oracle 1</description>

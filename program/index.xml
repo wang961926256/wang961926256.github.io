@@ -6,18 +6,27 @@
     <description>Recent content in Programs on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Jun 2017 15:36:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/program/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>编程</title>
-      <link>https://www.wangqj.cn/program/program/</link>
-      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
+      <title>软考</title>
+      <link>https://www.wangqj.cn/program/software-02/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/program/program/</guid>
-      <description>May the Force be with you, the Torque about you This is where my great about goes</description>
+      <guid>https://www.wangqj.cn/program/software-02/</guid>
+      <description>【摘要】 20xx年x月到20xx年x月，我参与了xxx项目，该项目主要是xxx，在该项目中我担任xxx（注，必须是项目经理，系统架构师，系统分析师），负责xxx。针对于#论文主题#，我采取了xxx等措施，取得了良好的效果。20xx年系统上线，得到了客户的好评。 【正文】 20xx年x</description>
+    </item>
+    
+    <item>
+      <title>软考真题</title>
+      <link>https://www.wangqj.cn/program/software-01/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/program/software-01/</guid>
+      <description>软件架构师 历年论文整理 2017年 从下列的 4 道试题（试题一至试题四）中任选 1 道解答 。请在答题纸上的指定位置处将所选择试题的题号框涂黑 。若多 涂或者未涂题号框，则对题号最小的一道试题进行评分。 试题一论软件系统建模方法及其应用 软件系统建模（Software System Modeling）是软件开发中</description>
     </item>
     
   </channel>
