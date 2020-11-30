@@ -4,36 +4,41 @@
   
   <url>
     <loc>https://www.wangqj.cn/categories/</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/tags/mysql/</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/categories/mysql/</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/post/0044-mysql-lock/</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/post/</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/tags/</loc>
-    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/post/0044-mysql-lock-copy/</loc>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/</loc>
+    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/post/0044-mysql-lock/</loc>
     <lastmod>2020-11-19T00:00:00+00:00</lastmod>
   </url>
   

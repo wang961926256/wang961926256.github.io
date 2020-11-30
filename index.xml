@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>全库查询某个指定的值或字段</title>
+      <link>https://www.wangqj.cn/post/0044-mysql-lock-copy/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0044-mysql-lock-copy/</guid>
+      <description>背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍历，列出库中的位置，记录下来，方便备查。 mysql版本 存储过程输入参数如下所示。 输入参数 | 中文名称 &amp;mdash;&amp;mdash;&amp;ndash; | &amp;mdash;&amp;ndash; para_databasename | 数据库名称 para_finstr | 查询的字符串 存储过</description>
+    </item>
     
     <item>
       <title>mysql锁</title>
