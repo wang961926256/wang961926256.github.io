@@ -488,18 +488,33 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/reading/reading/</loc>
-    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/interview/</loc>
     <lastmod>2017-06-07T15:36:00+05:30</lastmod>
   </url>
   
   <url>
+    <loc>https://www.wangqj.cn/reading/0001-reading/</loc>
+    <lastmod>2017-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/reading/0002-reading/</loc>
+    <lastmod>2017-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wangqj.cn/reading/</loc>
-    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
+    <lastmod>2017-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/tags/demo/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/categories/demo/</loc>
+    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
   </url>
   
   <url>
@@ -508,27 +523,7 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/tags/ipsum/</loc>
-    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/categories/lorem/</loc>
-    <lastmod>2016-06-28T13:07:31+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/go/</loc>
-    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/post/go-is-for-lovers/</loc>
-    <lastmod>2015-09-17T13:47:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/categories/programming/</loc>
     <lastmod>2015-09-17T13:47:08+02:00</lastmod>
   </url>
   
@@ -538,53 +533,8 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/categories/starting/</loc>
-    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/theme/</loc>
-    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/css/</loc>
-    <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/html/</loc>
-    <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/markdown/</loc>
-    <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/post/markdown-syntax/</loc>
     <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/categories/syntax/</loc>
-    <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/themes/</loc>
-    <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/categories/themes/</loc>
-    <lastmod>2015-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/emoji/</loc>
-    <lastmod>2015-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
