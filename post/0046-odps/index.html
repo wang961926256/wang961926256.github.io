@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>初探阿里数据治理平台ODPS | 梦幻通灵的博客</title>
+    <meta property="og:title" content="初探阿里数据治理平台ODPS - 梦幻通灵的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-12-20T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-12-20T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="java,android,博客,项目管理,软件架构,公众号,小程序">
+    <meta name="description" content="迁移">
+        <meta name="author" content="wangqj">
+        
+    <meta property="og:url" content="https://www.wangqj.cn/post/0046-odps/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script data-ad-client="ca-pub-1299909080814017" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.wangqj.cn">
+                        梦幻通灵的博客
+                    </a>
+                
+                <p class="description">北漂一枚，专注于Java、软件架构、个人公众号</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.wangqj.cn">首页</a>
+                    
+                    <a  href="https://www.wangqj.cn/program/" title="软考">软考</a>
+                    
+                    <a  href="https://www.wangqj.cn/reading/" title="读书">读书</a>
+                    
+                    <a  href="https://www.wangqj.cn/interview/" title="面试">面试</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景介绍">背景介绍</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">初探阿里数据治理平台ODPS</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/ODPS'>ODPS</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="背景介绍">背景介绍</h2>
+<p>在随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下使用的过程，方便备查。
+<strong>ODPS</strong> （Open Data Processing Service）,是阿里巴巴通用计算平台提供的一种快速、完全托管的 GB/TB/PB 级数据仓库解决方案，现在已更名为MaxCompute，MaxCompute 向用户提供了完善的数据导入方案以及多种经典的分布式计算模型，能够更快速的解决用户海量数据计算问题，有效降低企业成本，并保障数据安全。</p>
+<h6 id="第一步登录平台">第一步、登录平台</h6>
+<p>
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201231210242419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    
+产品 - 选择DataWorks
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201231212345404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    
+选择预先分配好的部门
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020123121242838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    </p>
+<h6 id="第二步进入主页面">第二步、进入主页面</h6>
+<p>左侧是操作结构树，包括数据集成、数据开发等，右侧是编辑区域，显示快速访问的快捷键。主题色是黑色，科技感十足。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201231212720506.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    
+左侧树，<strong>表</strong>，右键&ndash;&gt; 新建，从生产环境导入数据，作为工作区间的数据源。</p>
+<h6 id="第三步数据处理">第三步、数据处理</h6>
+<p>在 MacComputer 下的数据开发下，进行数据处理逻辑的编辑。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201231213600824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    
+1、新建表
+在ODPS工作空间，建立自己的中间表，方便数据的处理。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 创建表脚本
+</span><span style="color:#998;font-style:italic"></span>drop table user_odps;
+TRUNCATE TABLE user_odps;
+CREATE TABLE IF NOT EXISTS user_odps
+(
+   user_id			STRING COMMENT <span style="color:#d14">&#39;用户编号&#39;</span>,
+   user_name 		STRING COMMENT <span style="color:#d14">&#39;姓名&#39;</span>,
+   sex 				STRING COMMENT <span style="color:#d14">&#39;性别&#39;</span>,
+   phone 			STRING COMMENT <span style="color:#d14">&#39;手机号&#39;</span>,
+   age 				BIGINT COMMENT <span style="color:#d14">&#39;年龄&#39;</span>,
+   birthday 		DateTime COMMENT <span style="color:#d14">&#39;出生日期&#39;</span>,
+   address 			STRING COMMENT <span style="color:#d14">&#39;地址&#39;</span>
+) 
+COMMENT <span style="color:#d14">&#39;用户信息表&#39;</span>;
+</code></pre></td></tr></table>
+</div>
+</div><p>ODPS上的字段支持 String、Bigint、DateTime等，需要将mysql中 varchar 字段串等进行转换。</p>
+<blockquote>
+<p>注：1、表名最好是以 <strong>_odps</strong> 结尾，如 user_odps
+2、创建成功不会在左侧的树上显示，但可以通过select语句进行查询</p>
+</blockquote>
+<p>2、往表中添加数据
+编写SQL语句，抽取数据导入了新建的中间表，可以使用  <strong>insert overwrite</strong> 语法</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 数据导入
+</span><span style="color:#998;font-style:italic"></span>INSERT OVERWRITE TABLE user_odps 
+select 
+   user_id,
+   user_name,
+   sex,
+   phone,
+   age,
+   birthday,
+   address
+from 
+   user
+where 
+   is_deleted <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;0&#39;</span>;
+</code></pre></td></tr></table>
+</div>
+</div><p>可以对表进行分区处理，添加以下语句</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 根据时间对表进行分区
+</span><span style="color:#998;font-style:italic"></span>PARTITION (load_date<span style="color:#000;font-weight:bold">=</span>{$bdp.system.DATE })
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="第五步数据传输">第五步、数据传输</h6>
+<p>在数据集成页签下进行数据回传，将整合完成的数据同步到指定的区域。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201231213404703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    
+设置数据同步的规则，左侧选择源目标，数据库，可以选择新建的odps表，右侧是目标数据源，选择数据表，支持mysql，ADS等类型的数据源。下方是两张表对应的关系，可以改变，为方便维护，建议要字段类型，名称等保持一致。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20201231222718174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
+    </p>
+<h6 id="参考文档">参考文档</h6>
+<p>【1】https://help.aliyun.com/document_detail/84669.html?spm=a2c4g.11186623.6.601.26de4154p0enK7
+【2】ODPS权威指南 李姝芳
+【3】https://developer.aliyun.com/group/maxcompute/#/?_k=twks3n</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.wangqj.cn">梦幻通灵</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.wangqj.cn/post/0046-odps/">https://www.wangqj.cn/post/0046-odps/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/0045-mysql-oracle-search/">全库查询某个指定的值或字段</a></li>
+        
+        <li><a href="/post/0044-mysql-lock/">mysql锁</a></li>
+        
+        <li><a href="/reading/0001-technology/">技术名词</a></li>
+        
+        <li><a href="/program/software-02/">软考</a></li>
+        
+        <li><a href="/program/software-01/">软考真题</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/ODPS'>ODPS</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "https://github.com/wang961926256/wang961926256.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-TWJETDJPV7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.wangqj.cn/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.wangqj.cn">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0049-Golang/" title="初探Golang语言之环境搭建">初探Golang语言之环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0048-Kubernetes-docker/" title="初探Kubernetes&#43;Docker 分布式应用部署（上）">初探Kubernetes&#43;Docker 分布式应用部署（上）</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0047-docker/" title="Docker 学习笔记">Docker 学习笔记</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0046-odps/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0045-mysql-oracle-search/" title="全库查询某个指定的值或字段">全库查询某个指定的值或字段</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0044-mysql-lock/" title="mysql锁">mysql锁</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/reading/0001-technology/" title="技术名词">技术名词</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0042-RabbitMQ/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0041-Jenkins/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Blog/">Blog (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Golang/">Golang (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Java/">Java (5)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/JeDate/">JeDate (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Navicat/">Navicat (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Network/">Network (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/ODPS/">ODPS (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (8)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Procedure/">Procedure (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Sign/">Sign (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/demo/">demo (4)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/docker/">docker (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/kettle/">kettle (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/mysql/">mysql (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/page/">page (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/putty/">putty (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/sqlite/">sqlite (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/technology/">technology (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.wangqj.cn/tags/Aspose/">Aspose</a>
+    
+    <a href="https://www.wangqj.cn/tags/Blog/">Blog</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
+    
+    <a href="https://www.wangqj.cn/tags/Golang/">Golang</a>
+    
+    <a href="https://www.wangqj.cn/tags/Java/">Java</a>
+    
+    <a href="https://www.wangqj.cn/tags/JeDate/">JeDate</a>
+    
+    <a href="https://www.wangqj.cn/tags/Jenkins/">Jenkins</a>
+    
+    <a href="https://www.wangqj.cn/tags/Kubernetes/">Kubernetes</a>
+    
+    <a href="https://www.wangqj.cn/tags/Navicat/">Navicat</a>
+    
+    <a href="https://www.wangqj.cn/tags/Network/">Network</a>
+    
+    <a href="https://www.wangqj.cn/tags/Nginx/">Nginx</a>
+    
+    <a href="https://www.wangqj.cn/tags/ODPS/">ODPS</a>
+    
+    <a href="https://www.wangqj.cn/tags/Oracle/">Oracle</a>
+    
+    <a href="https://www.wangqj.cn/tags/Procedure/">Procedure</a>
+    
+    <a href="https://www.wangqj.cn/tags/RabbitMQ/">RabbitMQ</a>
+    
+    <a href="https://www.wangqj.cn/tags/Sign/">Sign</a>
+    
+    <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
+    
+    <a href="https://www.wangqj.cn/tags/demo/">demo</a>
+    
+    <a href="https://www.wangqj.cn/tags/docker/">docker</a>
+    
+    <a href="https://www.wangqj.cn/tags/eclipse/">eclipse</a>
+    
+    <a href="https://www.wangqj.cn/tags/encode/">encode</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/git/">git</a>
+    
+    <a href="https://www.wangqj.cn/tags/index/">index</a>
+    
+    <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
+    
+    <a href="https://www.wangqj.cn/tags/kettle/">kettle</a>
+    
+    <a href="https://www.wangqj.cn/tags/motivation/">motivation</a>
+    
+    <a href="https://www.wangqj.cn/tags/mysql/">mysql</a>
+    
+    <a href="https://www.wangqj.cn/tags/page/">page</a>
+    
+    <a href="https://www.wangqj.cn/tags/putty/">putty</a>
+    
+    <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
+    
+    <a href="https://www.wangqj.cn/tags/technology/">technology</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.wangqj.cn/" title="梦幻通灵的博客">梦幻通灵的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/u012190388" title="CSDN博客">CSDN博客地址</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.jianshu.com/u/b5d211128694" title="简书">简书地址</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.wangqj.cn/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

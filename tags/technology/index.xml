@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>technology on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/tags/technology/</link>
+    <description>Recent content in technology on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>技术名词</title>
+      <link>https://www.wangqj.cn/reading/0001-technology/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/reading/0001-technology/</guid>
+      <description>Elastic Compute Service 弹性计算 ECS Distribute Relational Database Service 分布式关系数据库 DRDS SchedulerX 分布式任务调度 SKU stock keeping unit 库存量单元，商品下的一个分类（商品的颜色或者编码） SPU standard product Unit 标准化产品单元 即 商品的编码 一个SPU 对应多个SKU SPU 是iphone6s SKU表示粉色的iphone6s</description>
+    </item>
+    
+  </channel>
+</rss>

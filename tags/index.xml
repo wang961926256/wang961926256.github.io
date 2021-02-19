@@ -6,17 +6,62 @@
     <description>Recent content in Tags on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Golang</title>
+      <link>https://www.wangqj.cn/tags/Golang/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/tags/Golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://www.wangqj.cn/tags/Kubernetes/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/tags/Kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://www.wangqj.cn/tags/docker/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ODPS</title>
+      <link>https://www.wangqj.cn/tags/ODPS/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/tags/ODPS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>mysql</title>
       <link>https://www.wangqj.cn/tags/mysql/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technology</title>
+      <link>https://www.wangqj.cn/tags/technology/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/tags/technology/</guid>
       <description></description>
     </item>
     
