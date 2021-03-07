@@ -6,10 +6,28 @@
     <description>Recent content in Java on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 17 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/Java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Eclipse编译器常见问题处理方式</title>
+      <link>https://www.wangqj.cn/post/0051-eclipse/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0051-eclipse/</guid>
+      <description>背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置文件删除 文件路径：eclipse的configuration.settings文件夹下 找到org.eclipse.ui.ide.prefs文</description>
+    </item>
+    
+    <item>
+      <title>Maven的pom.xml文件报错排查处理</title>
+      <link>https://www.wangqj.cn/post/0050-maven-warn/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0050-maven-warn/</guid>
+      <description>背景介绍 导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。 处理方案 环境配置可以从以下步骤，逐步定位问题。 第一步、检查Java环境是否安装成功 快捷键 win + R ，输入 cmd 进入命令行，查看 Jdk 版本。 1 2 // jdk 版本 &amp;gt;&amp;gt; java -version 这里安装的是Java1.8版本 注：若显示不</description>
+    </item>
     
     <item>
       <title>bat配置Java开发环境</title>
