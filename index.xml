@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>足球解说-贺炜</title>
+      <link>https://www.wangqj.cn/reading/0006-soccer/</link>
+      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/reading/0006-soccer/</guid>
+      <description>人生当中成功只是一时的，失败却是主旋律。但是如何面对失败，却把人分成了不同的样子。有的人会被失败击垮，有的人能够不断地爬起来继续向前。澳大利亚队是如此的，西班牙队也是如此。我想真正的成熟并不是追求完美，而是直面自己的缺憾，这才是生活的本质。罗曼罗兰说过的，这个世上只有一种真正的英</description>
+    </item>
     
     <item>
       <title>vue项目编译与运行</title>
@@ -564,68 +573,12 @@ A unique characteristic of go templates is they are content aware. Variables and
     </item>
     
     <item>
-      <title>Creating a new theme</title>
-      <link>https://www.wangqj.cn/post/creating-a-new-theme/</link>
-      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
-      
-      <guid>https://www.wangqj.cn/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template. Then we&amp;rsquo;ll add in a few pages and posts. With small variations on that, you will be able to create many different types of web sites.
-In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;rdquo; prompt. The output will follow. Lines that start with &amp;ldquo;#&amp;rdquo; are comments that I&amp;rsquo;ve added to explain a point. When I show updates to a file, the &amp;ldquo;:wq&amp;rdquo; on the last line means to save the file.</description>
-    </item>
-    
-    <item>
       <title>Markdown Syntax Guide</title>
       <link>https://www.wangqj.cn/post/markdown-syntax/</link>
       <pubDate>Wed, 11 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/post/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>https://www.wangqj.cn/post/emoji-support/</link>
-      <pubDate>Thu, 05 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/post/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>excel数据验证</title>
-      <link>https://www.wangqj.cn/blog/18-excel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/18-excel/</guid>
-      <description>excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为了防止数</description>
-    </item>
-    
-    <item>
-      <title>Ext tree 节点的新增和移除</title>
-      <link>https://www.wangqj.cn/blog/15-ExtTree/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/15-ExtTree/</guid>
-      <description>ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用 removeChild 和 appendChild方法可以实现增删，这里记录下来，方便备查。 Ext 树创建的js程序代码 1 2 3 4 5 6 7 8 9</description>
-    </item>
-    
-    <item>
-      <title>ext-button</title>
-      <link>https://www.wangqj.cn/blog/19-ext-button-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/19-ext-button-copy/</guid>
-      <description>ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。 1、创建按钮 &amp;ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在</description>
-    </item>
-    
-    <item>
-      <title>ext-button</title>
-      <link>https://www.wangqj.cn/blog/19-ext-button/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/19-ext-button/</guid>
-      <description>ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效果也会有一定的差别，下面记录下来，方便之后的查看。 1、创建按钮 &amp;ndash; button Ext 可以直接创建单个的按钮对象，设置按钮的名称，大小，宽度等属性，属性的参数直接写在</description>
     </item>
     
     <item>
@@ -644,15 +597,6 @@ In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;r
       
       <guid>https://www.wangqj.cn/blog/00-EXT/</guid>
       <description>EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是良好的表格，表单等控件，界面美观，适合OA类项目的数据展示。 ​ 在实际的开发中，不同的panel之间需要进行传值，子panel面板与父panel面板之</description>
-    </item>
-    
-    <item>
-      <title>ifream src 绑定中文PDF时，出现404找不到</title>
-      <link>https://www.wangqj.cn/blog/14-encode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/14-encode/</guid>
-      <description>encode 浏览器在对url解析时自动进行解码 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中文名字的 pdf文件（如test.pdf），可以正常展示，当返回的文件名称是中文（如测试.pdf）时，出现404找不到的错误。 1 2 3 4 5 var roserForm = Ext.create(&amp;#39;Ext.container.Container&amp;#39;,{ height : 370,</description>
     </item>
     
     <item>
@@ -743,24 +687,6 @@ In this tutorial, commands that you enter will start with the &amp;ldquo;$&amp;r
       
       <guid>https://www.wangqj.cn/post/0022-oracle-photo/</guid>
       <description>背景介绍 最近有个需求是将oracle数据库中存放的blob类型的二进制流照片，下载到本地，写了一个照片导出的方法，方便备查。 第一步：查询数据库中照片 查询数据库中存放的照片的字段信息，放到 DataTable 数据结构中。 1 2 3 4 5 6 7 8 9 10 11 12 String picturePathFolder=System.getProperty(&amp;#34;resourceFiles.location&amp;#34;) + File.separator + &amp;#34;photo&amp;#34; ; //判断文件是否存在 File folderFile = new File(picturePathFolder); JSONObject resJson = new JSONObject(); if</description>
-    </item>
-    
-    <item>
-      <title>oracle数据库空表处理</title>
-      <link>https://www.wangqj.cn/blog/16-EmptyTable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/16-EmptyTable/</guid>
-      <description>ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查阅资料，导库前需要进行数据库的空表处理。这里记录下来，方便备查。 数据库版本：oracle 11g 第一步、设置 延迟段创建 deferred_segment_creation 延迟段创建(Oracle 11g的新</description>
-    </item>
-    
-    <item>
-      <title>oracle迁移到mysql</title>
-      <link>https://www.wangqj.cn/blog/17-CreateOracle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/blog/17-CreateOracle/</guid>
-      <description>oracle和mysql 作为常用的数据库，在实际生产中，两种数据库都具有很广的应用场景。 最近项目使用的数据库需要从oracle转到mysql，开始了程序的迁移，项目用Java开发，主要需要更改的是mybatis的xml文件中的SQL语句。这里记录下来方便以后查看。 一、创建脚本 1、</description>
     </item>
     
     <item>

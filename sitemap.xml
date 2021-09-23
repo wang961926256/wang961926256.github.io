@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wangqj.cn/reading/</loc>
+    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/</loc>
+    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/reading/0006-soccer/</loc>
+    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wangqj.cn/categories/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
   </url>
@@ -30,16 +45,6 @@
   <url>
     <loc>https://www.wangqj.cn/post/0052-vue-run/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/reading/</loc>
-    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -633,38 +638,12 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/post/creating-a-new-theme/</loc>
-    <lastmod>2015-06-24T13:50:46+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/post/markdown-syntax/</loc>
     <lastmod>2015-03-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/post/emoji-support/</loc>
-    <lastmod>2015-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/blog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/18-excel/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/15-ExtTree/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/19-ext-button-copy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/19-ext-button/</loc>
   </url>
   
   <url>
@@ -673,10 +652,6 @@
   
   <url>
     <loc>https://www.wangqj.cn/blog/00-EXT/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/14-encode/</loc>
   </url>
   
   <url>
@@ -729,14 +704,6 @@
   
   <url>
     <loc>https://www.wangqj.cn/post/0022-oracle-photo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/16-EmptyTable/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/blog/17-CreateOracle/</loc>
   </url>
   
   <url>
