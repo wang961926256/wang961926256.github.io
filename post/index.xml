@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vue项目编译与运行</title>
+      <link>https://www.wangqj.cn/post/0052-vue-run/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0052-vue-run/</guid>
+      <description>背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。 1、安装npm 有时候用npm下载依</description>
+    </item>
     
     <item>
       <title>Eclipse编译器常见问题处理方式</title>

@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vue项目编译与运行</title>
+      <link>https://www.wangqj.cn/post/0052-vue-run/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0052-vue-run/</guid>
+      <description>背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。 1、安装npm 有时候用npm下载依</description>
+    </item>
     
     <item>
       <title>寻找你愿意忍受的痛苦</title>
@@ -18,6 +27,15 @@
       
       <guid>https://www.wangqj.cn/reading/0004-struggle/</guid>
       <description>约翰·乌歇尔（John Urschel）是一个职业橄榄球运动员。 2017年退役后，他改行研究数学，先在宾夕法尼亚大学拿到数学硕士，现在麻省理工学院攻读数学博士。 约翰·乌歇尔从小就对数学有兴趣，在他还打球的2015年，就在学术杂志上发表过论文《用于计算图拉普拉斯算子的 Fiedler 向量的级联多重</description>
+    </item>
+    
+    <item>
+      <title>寻找你愿意忍受的痛苦</title>
+      <link>https://www.wangqj.cn/reading/0005-joke/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/reading/0005-joke/</guid>
+      <description>如果父母是一件工作，谁愿意接这破活儿，工作内容是：无条件对你好。 你们能理解这种矛盾吗？我对宇宙如此渺小，我对公司却如此重要，不去上班就扣我钱。 一个人看电影，吃快餐，喝咖啡，吃火锅，甚至自己去做手术，都不算是孤独，只能说明一个人过得很好。 同样是挤地铁，早高峰和晚高峰人的状态都不一样</description>
     </item>
     
     <item>
