@@ -6,10 +6,19 @@
     <description>Recent content in Java on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/Java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bat 文件快速配置Java开发环境</title>
+      <link>https://www.wangqj.cn/post/0054-java-env/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0054-java-env/</guid>
+      <description>背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，能不能写个脚本呢，将软件写入到环境变量，把软件放到指定的目录。下面记录这个过程，方便以后查看。 处理这个问题主要可以分为以下两步： 第一步 将文件</description>
+    </item>
     
     <item>
       <title>Eclipse编译器常见问题处理方式</title>

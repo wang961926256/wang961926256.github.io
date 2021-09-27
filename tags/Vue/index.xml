@@ -6,10 +6,19 @@
     <description>Recent content in Vue on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/Vue/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>oracle 数据库  ORA-28000错误的原因及解决办法</title>
+      <link>https://www.wangqj.cn/post/0053-oracle-lock/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0053-oracle-lock/</guid>
+      <description>背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错原因，以下记录处理的的过程，方便备查。 1、原因 在 oracle database 11g中，默认在default概要文件中设置了“FAILED_LOGIN_ATTEMPT</description>
+    </item>
     
     <item>
       <title>vue项目编译与运行</title>

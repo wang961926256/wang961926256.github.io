@@ -6,10 +6,19 @@
     <description>Recent content in RabbitMQ on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 31 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/RabbitMQ/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>初探消息队列RabbitMQ</title>
+      <link>https://www.wangqj.cn/post/0058-RabbitMq-up/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0058-RabbitMq-up/</guid>
+      <description>背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，</description>
+    </item>
     
     <item>
       <title>Spring Boot整合RabbitMQ</title>

@@ -6,10 +6,64 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>初探消息队列RabbitMQ</title>
+      <link>https://www.wangqj.cn/post/0058-RabbitMq-up/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0058-RabbitMq-up/</guid>
+      <description>背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，</description>
+    </item>
+    
+    <item>
+      <title>初试本地安装Jenkins软件</title>
+      <link>https://www.wangqj.cn/post/0057-Jenkins-up/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0057-Jenkins-up/</guid>
+      <description>背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与配置。本次是在window下操作，这里记录操作的过程，方便以后查看。 环境准备 1）Tomcat 官网地址：Tomcat下载 由于本次在win下安装</description>
+    </item>
+    
+    <item>
+      <title>eclipse 快速实现查看源码的方法</title>
+      <link>https://www.wangqj.cn/post/0056-eclipse-show/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0056-eclipse-show/</guid>
+      <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。 比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问</description>
+    </item>
+    
+    <item>
+      <title>eclipse 获取并运行git上项目</title>
+      <link>https://www.wangqj.cn/post/0055-eclipse-git/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0055-eclipse-git/</guid>
+      <description>背景介绍 公司运用GitLab来管理Java的源码，在管理员授权源码权限后，可以获取最新的程序到本地运行。记录下来配置的流程，方便以后查看。 本地操作系统是win10，安装好Git的环境，安装比较简单，可以参考网上的安装教程，这里不再列举，推荐学习下廖雪峰老师的教程，链接是参考博客【</description>
+    </item>
+    
+    <item>
+      <title>bat 文件快速配置Java开发环境</title>
+      <link>https://www.wangqj.cn/post/0054-java-env/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0054-java-env/</guid>
+      <description>背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，能不能写个脚本呢，将软件写入到环境变量，把软件放到指定的目录。下面记录这个过程，方便以后查看。 处理这个问题主要可以分为以下两步： 第一步 将文件</description>
+    </item>
+    
+    <item>
+      <title>oracle 数据库  ORA-28000错误的原因及解决办法</title>
+      <link>https://www.wangqj.cn/post/0053-oracle-lock/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0053-oracle-lock/</guid>
+      <description>背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错原因，以下记录处理的的过程，方便备查。 1、原因 在 oracle database 11g中，默认在default概要文件中设置了“FAILED_LOGIN_ATTEMPT</description>
+    </item>
     
     <item>
       <title>vue项目编译与运行</title>
@@ -459,36 +513,6 @@
       
       <guid>https://www.wangqj.cn/post/0001-oracle-Procedure/</guid>
       <description>背景介绍 存储过程是为完成特定功能的SQL集。目前工作中用到的存储过程就是对数据库中的字段进行批量的更新。 最近在写存储过程中遇到了一些问题，查阅了网上的解决方案，自己也记录下来，方便备查。 1、 内存溢出 执行输出语句的时候报错：ORA-20000: ORU-10027: buffer overflow, limit of 20000 bytes，意思是说输出的</description>
-    </item>
-    
-    <item>
-      <title>Hugo Travelify Theme Features</title>
-      <link>https://www.wangqj.cn/post/hugo-travelify-theme-features/</link>
-      <pubDate>Tue, 28 Jun 2016 13:07:31 +0200</pubDate>
-      
-      <guid>https://www.wangqj.cn/post/hugo-travelify-theme-features/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Hugo-Travelify-Theme&lt;/strong&gt; is the Hugo version of the Wordpress theme - Travelify . The source code was adapted from &lt;em&gt;digitalcraftsman&lt;/em&gt;&amp;rsquo;s Icarus theme with a few changes for additional features (Even this README is a fork from his original theme README :)).&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Go is for lovers</title>
-      <link>https://www.wangqj.cn/post/go-is-for-lovers/</link>
-      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
-      
-      <guid>https://www.wangqj.cn/post/go-is-for-lovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates. The go docs provide more details.
-Introduction to Go Templates Go templates provide an extremely simple template language. It adheres to the belief that only the most basic of logic belongs in the template or view layer. One consequence of this simplicity is that go templates parse very quickly.
-A unique characteristic of go templates is they are content aware. Variables and content will be sanitized depending on the context of where they are used.</description>
-    </item>
-    
-    <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://www.wangqj.cn/post/markdown-syntax/</link>
-      <pubDate>Wed, 11 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/post/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
     
     <item>

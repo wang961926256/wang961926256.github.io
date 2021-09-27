@@ -6,10 +6,19 @@
     <description>Recent content in git on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>eclipse 获取并运行git上项目</title>
+      <link>https://www.wangqj.cn/post/0055-eclipse-git/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0055-eclipse-git/</guid>
+      <description>背景介绍 公司运用GitLab来管理Java的源码，在管理员授权源码权限后，可以获取最新的程序到本地运行。记录下来配置的流程，方便以后查看。 本地操作系统是win10，安装好Git的环境，安装比较简单，可以参考网上的安装教程，这里不再列举，推荐学习下廖雪峰老师的教程，链接是参考博客【</description>
+    </item>
     
     <item>
       <title>eclipse 获取并运行git上项目</title>
