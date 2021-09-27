@@ -6,15 +6,33 @@
     <description>Recent content in Categories on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>ODPS</title>
+      <link>https://www.wangqj.cn/categories/ODPS/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/ODPS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://www.wangqj.cn/categories/mysql/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>RabbitMQ</title>
       <link>https://www.wangqj.cn/categories/RabbitMQ/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/categories/RabbitMQ/</guid>
       <description></description>
@@ -89,24 +107,6 @@
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/categories/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ODPS</title>
-      <link>https://www.wangqj.cn/categories/ODPS/</link>
-      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/ODPS/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mysql</title>
-      <link>https://www.wangqj.cn/categories/mysql/</link>
-      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/categories/mysql/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content in RabbitMQ on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/RabbitMQ/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SpringBoot整合RabbitMQ</title>
+      <link>https://www.wangqj.cn/post/0059-springboot-RabbitMq/</link>
+      <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0059-springboot-RabbitMq/</guid>
+      <description>背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。 知识学习与回顾 RabbitMQ有6种消息模型，但第6种属于RPC</description>
+    </item>
     
     <item>
       <title>初探消息队列RabbitMQ</title>

@@ -6,10 +6,28 @@
     <description>Recent content in mysql on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 08 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>全库查询某个指定的值或字段（mysql oracle）</title>
+      <link>https://www.wangqj.cn/post/0061-database-find/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0061-database-find/</guid>
+      <description>背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍历，列出库中的位置，记录下来，方便备查。 mysql版本 存储过程输入参数如下所示。 输入参数 | 中文名称 &amp;mdash;&amp;mdash;&amp;ndash; | &amp;mdash;&amp;ndash; para_databasename | 数据库名称 para_finstr | 查询的字符串 存储过</description>
+    </item>
+    
+    <item>
+      <title>mysql锁表处理及日常使用</title>
+      <link>https://www.wangqj.cn/post/0060-mysql-locked/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0060-mysql-locked/</guid>
+      <description>背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命</description>
+    </item>
     
     <item>
       <title>全库查询某个指定的值或字段</title>
