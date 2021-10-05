@@ -6,10 +6,19 @@
     <description>Recent content in docker on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://www.wangqj.cn/post/0063-docker-learn/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0063-docker-learn/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲的不错，主要是命令操作，这里记录下来，方便查看。 在本地安装的虚拟机（Redhat）上进行练习。 第一步、安装Docker 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
     
     <item>
       <title>Docker 学习笔记</title>

@@ -21,6 +21,33 @@
     </item>
     
     <item>
+      <title>初探Golang语言之环境搭建</title>
+      <link>https://www.wangqj.cn/post/0065-golang-create/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0065-golang-create/</guid>
+      <description>背景介绍 在日常力扣刷题时，看到不少go语言解法，对比Java似乎简便，于是尝试着了解下这种语言，从本地本地环境搭建开始，操作是挺方便，这里记录一下，方便备查。 第一步、软件下载和安装 下载地址：GO语言中文网 1、window 版本安装 window 系统下载 msi 格式的安装文件，直接点击安装即可。 选择安</description>
+    </item>
+    
+    <item>
+      <title>初探Kubernetes&#43;Docker 分布式应用部署（上）</title>
+      <link>https://www.wangqj.cn/post/0064-k8s-docker/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0064-k8s-docker/</guid>
+      <description>背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 知识了解 Kubernetes 简称 K8s 是容器集群管理系统，是一个开源的平台，可以实现容器集群的自动化部署、自动扩缩容、维护等功能. 第一步、安装Docker 本虚拟机是 Ce</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://www.wangqj.cn/post/0063-docker-learn/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0063-docker-learn/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲的不错，主要是命令操作，这里记录下来，方便查看。 在本地安装的虚拟机（Redhat）上进行练习。 第一步、安装Docker 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
+    <item>
       <title>初探阿里数据治理平台ODPS</title>
       <link>https://www.wangqj.cn/post/0062-odps-keywords/</link>
       <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>

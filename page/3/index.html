@@ -79,6 +79,75 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0045-mysql-oracle-search/" title="全库查询某个指定的值或字段">全库查询某个指定的值或字段</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/mysql'>mysql</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍历，列出库中的位置，记录下来，方便备查。 mysql版本 存储过程输入参数如下所示。 输入参数 | 中文名称 &mdash;&mdash;&ndash; | &mdash;&ndash; para_databasename | 数据库名称 para_finstr | 查询的字符串 存储过……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0045-mysql-oracle-search/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0044-mysql-lock/" title="mysql锁">mysql锁</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年11月19日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/mysql'>mysql</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0044-mysql-lock/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/reading/0001-technology/" title="技术名词">技术名词</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年11月19日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/technology'>technology</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            Elastic Compute Service 弹性计算 ECS Distribute Relational Database Service 分布式关系数据库 DRDS SchedulerX 分布式任务调度 SKU stock keeping unit 库存量单元，商品下的一个分类（商品的颜色或者编码） SPU standard product Unit 标准化产品单元 即 商品的编码 一个SPU 对应多个SKU SPU 是iphone6s SKU表示粉色的iphone6s……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/reading/0001-technology/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://www.wangqj.cn/post/0043-RabbitMQ-springboot/" title="Spring Boot整合RabbitMQ">Spring Boot整合RabbitMQ</a>
             </h1>
         </header>
@@ -237,75 +306,6 @@
         <p class="readmore"><a href="https://www.wangqj.cn/post/0037-oracle-lock/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0036-vue-run/" title="vue项目编译与运行">vue项目编译与运行</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月31日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Vue'>Vue</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。 1、安装npm 有时候用npm下载依……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0036-vue-run/">阅读全文</a></p>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/" title="eclipse 中高亮显示">eclipse 中高亮显示</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年6月30日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/eclipse'>eclipse</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 在使用eclipse编译器时，需要对变量进行高亮显示，方便快速的去看代码 1、文件内容的高亮显示 在 菜单栏的 window &mdash;&gt; preference &mdash;&ndash;&gt; Content type &mdash;&ndash;&gt; Text &mdash;-&gt; Html &mdash;&gt; Add 弹出窗口 File type ： 在输入框中输入 .vm ，选中添加的.vm 在下面的 Defualt encoding 中输入：&ldquo;utf-8“ 单击 update ，点击ok，设置完毕。 重新打开vm页面就可以……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0035-eclipse-Highlight/">阅读全文</a></p>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0033-excel-out/" title="excel数据验证">excel数据验证</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年5月30日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Excel'>Excel</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制系统输入的模板时，使用到excel的数据验证功能，用到的可选项比较多，超出了序列的长度，需要处理换一种读取的方式。这里记录下来，方便备查。 为……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0033-excel-out/">阅读全文</a></p>
-    </article>
-    
     
 
 
@@ -423,6 +423,18 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.wangqj.cn/post/0065-golang-create/" title="初探Golang语言之环境搭建">初探Golang语言之环境搭建</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0064-k8s-docker/" title="初探Kubernetes&#43;Docker 分布式应用部署（上）">初探Kubernetes&#43;Docker 分布式应用部署（上）</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0063-docker-learn/" title="Docker 学习笔记">Docker 学习笔记</a>
+    </li>
+    
+    <li>
         <a href="https://www.wangqj.cn/post/0062-odps-keywords/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
     </li>
     
@@ -448,18 +460,6 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.wangqj.cn/post/0056-eclipse-show/" title="eclipse 快速实现查看源码的方法">eclipse 快速实现查看源码的方法</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0055-eclipse-git/" title="eclipse 获取并运行git上项目">eclipse 获取并运行git上项目</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0054-java-env/" title="bat 文件快速配置Java开发环境">bat 文件快速配置Java开发环境</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0053-oracle-lock/" title="oracle 数据库  ORA-28000错误的原因及解决办法">oracle 数据库  ORA-28000错误的原因及解决办法</a>
     </li>
     
 </ul>
@@ -514,6 +514,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/Golang/">Golang (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Java/">Java (8)</a></li>
@@ -544,13 +546,15 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/docker/">docker (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/docker/">docker (2)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/k8s/">k8s (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/kettle/">kettle (2)</a></li>
     
@@ -584,6 +588,8 @@ if (!doNotTrack) {
     <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
     
     <a href="https://www.wangqj.cn/tags/git/">git</a>
+    
+    <a href="https://www.wangqj.cn/tags/Go/">Go</a>
     
     <a href="https://www.wangqj.cn/tags/Golang/">Golang</a>
     
@@ -628,6 +634,8 @@ if (!doNotTrack) {
     <a href="https://www.wangqj.cn/tags/index/">index</a>
     
     <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
+    
+    <a href="https://www.wangqj.cn/tags/k8s/">k8s</a>
     
     <a href="https://www.wangqj.cn/tags/kettle/">kettle</a>
     

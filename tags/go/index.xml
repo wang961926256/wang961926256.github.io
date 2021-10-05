@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>go on 梦幻通灵的博客</title>
-    <link>https://www.wangqj.cn/tags/go/</link>
-    <description>Recent content in go on 梦幻通灵的博客</description>
+    <title>Go on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/tags/Go/</link>
+    <description>Recent content in Go on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 17 Sep 2015 13:47:08 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jul 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wangqj.cn/tags/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wangqj.cn/tags/Go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Go is for lovers</title>
-      <link>https://www.wangqj.cn/post/go-is-for-lovers/</link>
-      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
+      <title>初探Golang语言之环境搭建</title>
+      <link>https://www.wangqj.cn/post/0065-golang-create/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/go-is-for-lovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates. The go docs provide more details.
-Introduction to Go Templates Go templates provide an extremely simple template language. It adheres to the belief that only the most basic of logic belongs in the template or view layer. One consequence of this simplicity is that go templates parse very quickly.
-A unique characteristic of go templates is they are content aware. Variables and content will be sanitized depending on the context of where they are used.</description>
+      <guid>https://www.wangqj.cn/post/0065-golang-create/</guid>
+      <description>背景介绍 在日常力扣刷题时，看到不少go语言解法，对比Java似乎简便，于是尝试着了解下这种语言，从本地本地环境搭建开始，操作是挺方便，这里记录一下，方便备查。 第一步、软件下载和安装 下载地址：GO语言中文网 1、window 版本安装 window 系统下载 msi 格式的安装文件，直接点击安装即可。 选择安</description>
     </item>
     
   </channel>
