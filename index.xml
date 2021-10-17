@@ -687,6 +687,24 @@
     </item>
     
     <item>
+      <title>计算机网络</title>
+      <link>https://www.wangqj.cn/interview/network/</link>
+      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
+      
+      <guid>https://www.wangqj.cn/interview/network/</guid>
+      <description>跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&amp;ldquo;Access-Controller-Allow-Origin&amp;rdquo;,&amp;quot;*&amp;quot;) 可以访问所有网站，不受是否同源限制 2、jsonp 方式 3、后台控制 访问同域名下的端口 4、网关 SSO 和 OAuth2.0区别 OAuth2.0 使用场景：联合登录，一次注册，多次使用 SSO 使用场景：单点登录，一次登录</description>
+    </item>
+    
+    <item>
+      <title>计算机网络</title>
+      <link>https://www.wangqj.cn/interview/redis/</link>
+      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
+      
+      <guid>https://www.wangqj.cn/interview/redis/</guid>
+      <description>跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&amp;ldquo;Access-Controller-Allow-Origin&amp;rdquo;,&amp;quot;*&amp;quot;) 可以访问所有网站，不受是否同源限制 2、jsonp 方式 3、后台控制 访问同域名下的端口 4、网关 SSO 和 OAuth2.0区别 OAuth2.0 使用场景：联合登录，一次注册，多次使用 SSO 使用场景：单点登录，一次登录</description>
+    </item>
+    
+    <item>
       <title> 读书</title>
       <link>https://www.wangqj.cn/reading/0002-reading/</link>
       <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
