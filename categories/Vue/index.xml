@@ -6,10 +6,19 @@
     <description>Recent content in Vue on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/Vue/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>初探 Element 页面弹窗效果实现</title>
+      <link>https://www.wangqj.cn/post/0068-vue-dialog/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0068-vue-dialog/</guid>
+      <description>背景介绍 最近空闲的时候在B站看Element的前端项目，动手跟着敲敲，下面学习笔记，方便备查。 一、环境准备 1）使用编译器VScode开发，可安装 vetur 插件，方便vue文件显示。 2）预先安装 nodejs 环境，可参考网上教程。 3）使用可视化项目管理 vue ui，可安装以下依赖插件。 运行依赖 vue-cli-plugin-element 1.0.1、</description>
+    </item>
     
     <item>
       <title>oracle 数据库  ORA-28000错误的原因及解决办法</title>

@@ -6,10 +6,19 @@
     <description>Recent content in Excel on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/categories/Excel/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Excel/CSV 表格中被转换的E &#43; 如何恢复</title>
+      <link>https://www.wangqj.cn/post/0069-excel-import/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0069-excel-import/</guid>
+      <description>背景介绍 最近在给用户导出csv文件，出现乱码和格式被转换，无法显示出原来的数据，网上查找未解决，自己捣鼓，记录下来，方便备查。 问题描述： 1、长字符串被转换成E+格式 2、文字变成乱码，无法识别 软件版本：office2016 解决方案一 第一步、设置单元格格式 单击选中整列，右键&amp;ndas</description>
+    </item>
     
     <item>
       <title>excel数据验证</title>

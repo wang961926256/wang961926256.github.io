@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Excel/CSV 表格中被转换的E &#43; 如何恢复</title>
+      <link>https://www.wangqj.cn/post/0069-excel-import/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0069-excel-import/</guid>
+      <description>背景介绍 最近在给用户导出csv文件，出现乱码和格式被转换，无法显示出原来的数据，网上查找未解决，自己捣鼓，记录下来，方便备查。 问题描述： 1、长字符串被转换成E+格式 2、文字变成乱码，无法识别 软件版本：office2016 解决方案一 第一步、设置单元格格式 单击选中整列，右键&amp;ndas</description>
+    </item>
     
     <item>
       <title>足球解说-贺炜</title>
@@ -18,6 +27,15 @@
       
       <guid>https://www.wangqj.cn/reading/0006-soccer/</guid>
       <description>人生当中成功只是一时的，失败却是主旋律。但是如何面对失败，却把人分成了不同的样子。有的人会被失败击垮，有的人能够不断地爬起来继续向前。澳大利亚队是如此的，西班牙队也是如此。我想真正的成熟并不是追求完美，而是直面自己的缺憾，这才是生活的本质。罗曼罗兰说过的，这个世上只有一种真正的英</description>
+    </item>
+    
+    <item>
+      <title>初探 Element 页面弹窗效果实现</title>
+      <link>https://www.wangqj.cn/post/0068-vue-dialog/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0068-vue-dialog/</guid>
+      <description>背景介绍 最近空闲的时候在B站看Element的前端项目，动手跟着敲敲，下面学习笔记，方便备查。 一、环境准备 1）使用编译器VScode开发，可安装 vetur 插件，方便vue文件显示。 2）预先安装 nodejs 环境，可参考网上教程。 3）使用可视化项目管理 vue ui，可安装以下依赖插件。 运行依赖 vue-cli-plugin-element 1.0.1、</description>
     </item>
     
     <item>
