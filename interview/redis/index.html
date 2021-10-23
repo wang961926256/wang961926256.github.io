@@ -189,33 +189,113 @@
         
         
         <div class="post-content">
-            <p>跨域请求
-跨域指浏览器在发起网路请求，会检查协议，端口</p>
-<p>绕过
-1、在response 添加header  respsetHeader(&ldquo;Access-Controller-Allow-Origin&rdquo;,&quot;*&quot;) 可以访问所有网站，不受是否同源限制
-2、jsonp 方式
-3、后台控制 访问同域名下的端口
-4、网关</p>
-<p>SSO 和 OAuth2.0区别
-OAuth2.0 使用场景：联合登录，一次注册，多次使用
-SSO 使用场景：单点登录，一次登录，多次同时登录
-关键：session信息集中存储 spring security</p>
-<p>浏览器发送请求到接收到请求中间经历的过程
-1、浏览器解析用户输入的url，生成HTTP格式的请求
-2、根据URL域名从本地host文件查找是否有映射IP，若没有则将域名发送电脑配置的DNS进行域名解析，得到IP地址
-3、浏览器通过操作系统将请求通过四层网络协议发送出去
-4、可能会经过路由器，将换季、最终到达服务器
-5、服务器接收到请求后，根据请求所指定的端口，将请求传递给绑定该端口的应用程序
-6、Tomcat 接收数据后，按照http协议的格式进行解析，解析得到所要访问的servlet
-7、servlet来处理请求，若是SpringMVC中DispatherServlet，则会找到对应的controller中方法，并执行改方法得到结果
-8、Tomcat 得到响应结果后封装HTTP响应的形式，再次通过网络发送浏览器所在的服务器
-9、浏览器所在的服务器拿到结果后传递到浏览器，浏览器进行渲染</p>
-<p>https 如何保证安全传输
-使用对称加密、非对称加密、数字证书等保证数据安全性。</p>
-<p>epoll 和 poll 区别
-1、select 模型 使用的是数组来存储socket连接文件描述符，容量是固定的，需要轮询来判断是否发生IO事件
-2、poll模型，使用的是链表来存储socket连接文件描述，容量是不固定，需要轮询来判断是否发生IO事件
-3、epoll模型，事件通知模型，当发生IO事件，应用程序才能进行IO操作</p>
+            <p>redis 单线程速度为什么快
+redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。
+cpu 上下文切换</p>
+<p>Redis 分布式锁
+利用setnx 保证，若key存在，则获取不到锁
+利用lua脚本来保证多个redis的原子性
+考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约
+redis锁挂掉后，采用红锁的方式来同时向N/2+1个节点申请锁，只有都申请到锁才能证明获取锁成功</p>
+<p>redis 持久化
+RDB redis DataBase 将某时刻的内存快照snapshot ，以二进制的方式写入磁盘
+手动触发
+save 命令
+使redis处于阻塞状态，直到RDB持久化完成，才会响应其他客户端发来的命令。生产环境慎用
+bgsave 命令
+fork 出紫禁城进行持久化，主进程只在fork过程中有短暂的阻塞，子进程创建后，主进程可以响应客户端请求。
+COW 写时拷贝 拷贝副本 
+自动触发
+save m n 在m秒，若干有n个键发生改变，则自动触发持久化，通过bgsave执行，若设置多个、只要满足其一就会茶法，配置文件有默认配置（可注释）
+flushall
+用于清空redis所有的数据库，flushdb 清空当前redis所在的库数据（默认0数据库），会清空RDB文件，同时生成dump.rdb，内容为空
+主从同步 全部同步会触发bgsave命令，生成rdb文件</p>
+<p>优点
+1、整个redis只存在一个 dump.rdb，方便持久化
+2、容灾性好
+3、性能最大化，fork子进程完成写操作
+4、相对数据集大时，比AOF的启动效率更高</p>
+<p>缺点：
+1、数据安全性低。数据可能会丢失
+2、</p>
+<p>mysql 主从复制
+数据可以从数据库服务器主节点复制到一个或者多个从节点
+默认采取 异步复制方式，数据更新在远程连接上进行</p>
+<p>持久化的两种方式
+RDB    redis of DataBase 快照
+在指定时间间隔内将内存中的数据集快照写入到磁盘，snapshot 将快照文件直接写入到内存
+单独创建fork 子进程进行持久化 先写入临时文件 等持久化结束，替换上一次持久化的文件
+缺点：最后一次持久化后的数据可能丢失
+优点：节省磁盘空间 恢复速度快
+fork 复制一份父进程 linux 写时复制 父进程和子进程会共同使用一段物理内存
+保存的文件
+配置文件  redis.conf
+dbfilename dump.rdb 在哪开启的redis，文件就生成在哪
+自动保存设置
+save  900 1
+save 300 10
+save 60 10000</p>
+<p>stop-writes-on-bgsave-error yes 无法进行磁盘写入，则关闭写操作
+edbcompression yes 进行rdb保存时，将文件压缩
+rdbchecksum yes 使用CRC64算法进行数据校验 有开销
+config get dir 查询rdb 文件的位置</p>
+<p>AOF append-only file 只追加文件 
+以日志形式来记录每个写操作，将执行过的所有写指定记录下来，只许追加文件但一颗改写文件，启动之初会获取该文件重新构建数据。
+优点：备份机制更加稳健 丢失数据概率更低
+缺点：恢复数据速度慢 每次读写都同步，有性能压力
+appendonly no
+redis-check-aof &ndash;fix appendonly.aof  恢复数据库
+同步频率 
+Rewrite 文件追加 重写机制 
+复制为临时文件 最后rename</p>
+<p>主从复制
+Master/slaver  主 写为主，从 读为主
+配从不配主
+（1）拷贝 多个redis.conf 文件 include
+（2）开启daemonize yes</p>
+<p>info replication 打印主从复制的相关信息
+slaveof <!-- raw HTML omitted --> <!-- raw HTML omitted --> 成为某个实例的从服务器</p>
+<p>面试考点
+切入点问题  数据保持一致，主从关系在，数据一致
+从机不能进行写’
+主机shutdown 后 从机会原地待命，主机显示为down</p>
+<p>复制原理
+每次从机联通时，往主机发送sync指令
+主机进行存盘操作，发送RDB文件，发送给从机
+从机获取RDB文件后，进行全盘加载
+薪火相传
+上一个slave 可以作为下一个slave 的 Master
+链条  去中心化 
+slave no one 不做其他服务器的从服务器</p>
+<p>哨兵模式 sentinel
+反客为主 自动版  如果发生故障，根据投票数自动将从库转化为主库
+留言协议
+投票协议
+新建 sentinel.conf
+sentinel monitor mymaster 127.0.0.1 6379 1 
+mymaster 监控对象起的服务器的名字  1 为至少有多少个哨兵同意迁移的数量</p>
+<p>新主登基 
+启动  redis-sentinel  sentinel.conf
+选择优先级靠前的  优先级  redis.conf  slave-priority 100
+选择偏移量最大的         偏移量是指获取原主数据最多的
+选择runid 最小的从服务   每个实例启动后会随机生成一个40位的runid</p>
+<p>集群
+水平扩容 启动N个redis节点
+分区partition 提供一定程度的可用性 即时一部分失效或无法通信，集群也可以继续处理
+安装ruvy环境
+yum install ruby
+yum install rubygems
+执行 rpm -Uvh *。RPM</p>
+<p>设置集群模式
+cluster-enabled yes 打开集群
+cluster-config-file nodes-6381.conf  节点的配置文件
+cluster-node-timeout 15000 设置超时时间</p>
+<p>集群方案
+哨兵模式 sentinel
+集群监控：负责监控 master 和 slave 是否正常工作
+消息通知
+故障转移
+配置中心</p>
 
         </div>
 
@@ -232,9 +312,9 @@ SSO 使用场景：单点登录，一次登录，多次同时登录
         
         <li><a href="/interview/Java/"> 读书</a></li>
         
-        <li><a href="/reading/0002-reading/"> 读书</a></li>
-        
         <li><a href="/reading/0003-phi/"> 读书</a></li>
+        
+        <li><a href="/reading/0002-reading/"> 读书</a></li>
         
         <li><a href="/blog/00-EXT/">Ext监听</a></li>
         
@@ -336,6 +416,14 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
+    </li>
+    
+    <li>
         <a href="https://www.wangqj.cn/post/0069-excel-import/" title="Excel/CSV 表格中被转换的E &#43; 如何恢复">Excel/CSV 表格中被转换的E &#43; 如何恢复</a>
     </li>
     
@@ -365,14 +453,6 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.wangqj.cn/post/0062-odps-keywords/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0061-database-find/" title="全库查询某个指定的值或字段（mysql oracle）">全库查询某个指定的值或字段（mysql oracle）</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0060-mysql-locked/" title="mysql锁表处理及日常使用">mysql锁表处理及日常使用</a>
     </li>
     
 </ul>
@@ -425,7 +505,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/git/">git (3)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
     

@@ -6,10 +6,28 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>虚拟机的docker中安装 mysql 和 redis</title>
+      <link>https://www.wangqj.cn/post/0071-docker-redis/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0071-docker-redis/</guid>
+      <description>背景介绍 最近重装虚拟机，环境重头安装，这里记录下安装的过程，方便备查。 环境：CentOS Linux release 7 1 2 3 // 查看版本 &amp;gt; cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 一、安装docker 首先 安装 yum 依赖 1 2 // 安装 yum &amp;gt; studo yum install -y yum-utils 安装 docker 两个步骤： 第一步、确认是否安装过docker，若有旧的docker则删除，命令如下。 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>如何向码云Gitee提交代码</title>
+      <link>https://www.wangqj.cn/post/0070-gitee-push/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0070-gitee-push/</guid>
+      <description>背景介绍 作为常用的版本管理工具，git的使用范围较广，这里记录下来本地练习，代码提交Gitee的过程，方便备查。 前提条件：注册Gitee账号 第一步、新建仓库&amp;ndash;Gitee 在Gitee控制台页面，右上角的 + 号，选择新建仓库。 在弹出的页面，填写仓库的名称，这里叫 vue_sh</description>
+    </item>
     
     <item>
       <title>Excel/CSV 表格中被转换的E &#43; 如何恢复</title>
@@ -701,7 +719,7 @@
       <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
       
       <guid>https://www.wangqj.cn/interview/redis/</guid>
-      <description>跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&amp;ldquo;Access-Controller-Allow-Origin&amp;rdquo;,&amp;quot;*&amp;quot;) 可以访问所有网站，不受是否同源限制 2、jsonp 方式 3、后台控制 访问同域名下的端口 4、网关 SSO 和 OAuth2.0区别 OAuth2.0 使用场景：联合登录，一次注册，多次使用 SSO 使用场景：单点登录，一次登录</description>
+      <description>redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若key存在，则获取不到锁 利用lua脚本来保证多个redis的原子性 考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约 redis锁挂掉后，</description>
     </item>
     
     <item>

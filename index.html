@@ -79,6 +79,52 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近重装虚拟机，环境重头安装，这里记录下安装的过程，方便备查。 环境：CentOS Linux release 7 1 2 3 // 查看版本 &gt; cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 一、安装docker 首先 安装 yum 依赖 1 2 // 安装 yum &gt; studo yum install -y yum-utils 安装 docker 两个步骤： 第一步、确认是否安装过docker，若有旧的docker则删除，命令如下。 1 2 3……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0071-docker-redis/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 作为常用的版本管理工具，git的使用范围较广，这里记录下来本地练习，代码提交Gitee的过程，方便备查。 前提条件：注册Gitee账号 第一步、新建仓库&ndash;Gitee 在Gitee控制台页面，右上角的 + 号，选择新建仓库。 在弹出的页面，填写仓库的名称，这里叫 vue_sh……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0070-gitee-push/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://www.wangqj.cn/post/0069-excel-import/" title="Excel/CSV 表格中被转换的E &#43; 如何恢复">Excel/CSV 表格中被转换的E &#43; 如何恢复</a>
             </h1>
         </header>
@@ -260,52 +306,6 @@
         <p class="readmore"><a href="https://www.wangqj.cn/post/0062-odps-keywords/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0061-database-find/" title="全库查询某个指定的值或字段（mysql oracle）">全库查询某个指定的值或字段（mysql oracle）</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年6月5日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Mysql'>Mysql</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍历，列出库中的位置，记录下来，方便备查。 mysql版本 存储过程输入参数如下所示。 输入参数 | 中文名称 &mdash;&mdash;&ndash; | &mdash;&ndash; para_databasename | 数据库名称 para_finstr | 查询的字符串 存储过……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0061-database-find/">阅读全文</a></p>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0060-mysql-locked/" title="mysql锁表处理及日常使用">mysql锁表处理及日常使用</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年5月28日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Mysql'>Mysql</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0060-mysql-locked/">阅读全文</a></p>
-    </article>
-    
     
 
 
@@ -423,6 +423,14 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
+    </li>
+    
+    <li>
         <a href="https://www.wangqj.cn/post/0069-excel-import/" title="Excel/CSV 表格中被转换的E &#43; 如何恢复">Excel/CSV 表格中被转换的E &#43; 如何恢复</a>
     </li>
     
@@ -452,14 +460,6 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.wangqj.cn/post/0062-odps-keywords/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0061-database-find/" title="全库查询某个指定的值或字段（mysql oracle）">全库查询某个指定的值或字段（mysql oracle）</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0060-mysql-locked/" title="mysql锁表处理及日常使用">mysql锁表处理及日常使用</a>
     </li>
     
 </ul>
@@ -512,7 +512,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/git/">git (3)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
     

@@ -6,10 +6,28 @@
     <description>Recent content in git on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>虚拟机的docker中安装 mysql 和 redis</title>
+      <link>https://www.wangqj.cn/post/0071-docker-redis/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0071-docker-redis/</guid>
+      <description>背景介绍 最近重装虚拟机，环境重头安装，这里记录下安装的过程，方便备查。 环境：CentOS Linux release 7 1 2 3 // 查看版本 &amp;gt; cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 一、安装docker 首先 安装 yum 依赖 1 2 // 安装 yum &amp;gt; studo yum install -y yum-utils 安装 docker 两个步骤： 第一步、确认是否安装过docker，若有旧的docker则删除，命令如下。 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>如何向码云Gitee提交代码</title>
+      <link>https://www.wangqj.cn/post/0070-gitee-push/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0070-gitee-push/</guid>
+      <description>背景介绍 作为常用的版本管理工具，git的使用范围较广，这里记录下来本地练习，代码提交Gitee的过程，方便备查。 前提条件：注册Gitee账号 第一步、新建仓库&amp;ndash;Gitee 在Gitee控制台页面，右上角的 + 号，选择新建仓库。 在弹出的页面，填写仓库的名称，这里叫 vue_sh</description>
+    </item>
     
     <item>
       <title>eclipse 获取并运行git上项目</title>

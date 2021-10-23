@@ -89,7 +89,7 @@
         </date>
         
         <div class="post-content">
-            跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&ldquo;Access-Controller-Allow-Origin&rdquo;,&quot;*&quot;) 可以访问所有网站，不受是否同源限制 2、jsonp 方式 3、后台控制 访问同域名下的端口 4、网关 SSO 和 OAuth2.0区别 OAuth2.0 使用场景：联合登录，一次注册，多次使用 SSO 使用场景：单点登录，一次登录……
+            redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若key存在，则获取不到锁 利用lua脚本来保证多个redis的原子性 考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约 redis锁挂掉后，……
         </div>
         <p class="readmore"><a href="https://www.wangqj.cn/interview/redis/">阅读全文</a></p>
     </article>
@@ -200,6 +200,14 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
+    </li>
+    
+    <li>
         <a href="https://www.wangqj.cn/post/0069-excel-import/" title="Excel/CSV 表格中被转换的E &#43; 如何恢复">Excel/CSV 表格中被转换的E &#43; 如何恢复</a>
     </li>
     
@@ -229,14 +237,6 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.wangqj.cn/post/0062-odps-keywords/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0061-database-find/" title="全库查询某个指定的值或字段（mysql oracle）">全库查询某个指定的值或字段（mysql oracle）</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0060-mysql-locked/" title="mysql锁表处理及日常使用">mysql锁表处理及日常使用</a>
     </li>
     
 </ul>
@@ -289,7 +289,7 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
     
-    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    <li><a href="https://www.wangqj.cn/categories/git/">git (3)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
     
