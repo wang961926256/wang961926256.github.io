@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>自动化测试之selenium小试牛刀</title>
+      <link>https://www.wangqj.cn/post/0072-selenium-test/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0072-selenium-test/</guid>
+      <description>背景介绍 最近在学习python的时候，看到大佬的博客，动手跟着尝试，记录下来，方便查看。selenium 由于web应用程序的自动化测试工具，具有开源、跨平台、支持多种浏览器、多种语言、成熟稳定、功能强大的特点。 环境搭建 第一步、安装python环境 环境安装跟着网上教程即可，这里选择</description>
+    </item>
+    
+    <item>
       <title>虚拟机的docker中安装 mysql 和 redis</title>
       <link>https://www.wangqj.cn/post/0071-docker-redis/</link>
       <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
