@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos下安装Gitlab 和 Jenkins 记录</title>
+      <link>https://www.wangqj.cn/post/0073-linux-gitlab/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0073-linux-gitlab/</guid>
+      <description>背景介绍 最近想走一遍自动化部署流程，在本地虚拟机搭建环境，特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Gitlab 1、安装相关依赖 1 2 3 4 5 6 7 8 // yum 命令下载安装所需要的四个依赖 &amp;gt; yum -y install policycoreutils openssh-server openssh-clients postfix // 启动ssh服务 设置为开启启动 &amp;gt; systemctl enable sshd &amp;amp;&amp;amp; sudo systemctl start sshd // 查看状态 &amp;gt; systemctl status sshd // 设置pos</description>
+    </item>
     
     <item>
       <title>自动化测试之selenium小试牛刀</title>
