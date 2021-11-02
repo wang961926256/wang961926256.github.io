@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tomcat on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/Tomcat/</link>
+    <description>Recent content in Tomcat on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/categories/Tomcat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos下安装Maven和Tomcat记录</title>
+      <link>https://www.wangqj.cn/post/0074-linux-tomcat/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0074-linux-tomcat/</guid>
+      <description>背景介绍 接上篇，在本地虚拟机搭建环境，本篇安装 Maven和 Tomcat 特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Maven 1、软件下载 通过wget命令来下载安装。 1 2 3 4 5 6 7 8 // yum 命令下载安装包，这里下载的是 3.5.0 &amp;gt; wget http://mirrors.cnnic.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz // 解压 tar -zxvf apache-maven-3.6.3-bin.tar.gz // 新建文件 mkdir /opt/maven // 移动 mv apache-maven-3.6.3/* /opt/maven 2、设置环境变量 进入到系</description>
+    </item>
+    
+  </channel>
+</rss>

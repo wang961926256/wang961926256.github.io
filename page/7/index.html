@@ -79,6 +79,52 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0015-linux-kettle/" title="Linux环境部署Kettle">Linux环境部署Kettle</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年8月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/kettle'>kettle</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近遇到了需要在linux上部署kettle实现数据库的同步，源库是oracle，目标库是mysql，下面记录kettle部署的步骤，方便之后的查看。 kettle的运行要求设备安装有Java环境，建议首先安装jdk和jre,配置Java环境。 第一步、软件下载 用winScp……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0015-linux-kettle/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0014-linux-putty/" title="putty连接数据库">putty连接数据库</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年8月4日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/putty'>putty</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 PuTTY 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和rlogin客户端。 目前需求是通过ssh连接linux上的mysql数据库，实现利用kettle来同步数据。由于无法利用Navicat直接连……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0014-linux-putty/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://www.wangqj.cn/post/0013-Ext-linster/" title="Ext监听">Ext监听</a>
             </h1>
         </header>
@@ -260,52 +306,6 @@
         <p class="readmore"><a href="https://www.wangqj.cn/post/0006-java-deploy/">阅读全文</a></p>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0004-kettle/" title="kettle 数据库迁移">kettle 数据库迁移</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年1月31日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/kettle'>kettle</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下面给大家分享一下使用的过程情况，仅供参考。 kettle spoon是Java语言编写，以图形化的界面来管理数据，并允许在不同数据库间迁移数据。 spoon……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0004-kettle/">阅读全文</a></p>
-    </article>
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0003-sign/" title="英文引号处理">英文引号处理</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年1月26日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Sign'>Sign</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近遇到了一个英文引号引起的问题，后台读取数据库字段，传递给前台一直无法正确解析，如str=my&rsquo;s book，中间英文的引号被当做结束符号，会报错，因此需要对其转换处理。网上查阅资料后，发现可以用spring的org.springframework.web.u……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0003-sign/">阅读全文</a></p>
-    </article>
-    
     
 
 
@@ -427,6 +427,14 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.wangqj.cn/post/0075-linux-prometheus/" title="初探 Prometheus安装配置篇">初探 Prometheus安装配置篇</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0074-linux-tomcat/" title="Centos下安装Maven和Tomcat记录">Centos下安装Maven和Tomcat记录</a>
+    </li>
+    
+    <li>
         <a href="https://www.wangqj.cn/post/0073-linux-gitlab/" title="Centos下安装Gitlab 和 Jenkins 记录">Centos下安装Gitlab 和 Jenkins 记录</a>
     </li>
     
@@ -456,14 +464,6 @@ if (!doNotTrack) {
     
     <li>
         <a href="https://www.wangqj.cn/post/0066-java-maven/" title="Maven的pom.xml文件报错排查处理">Maven的pom.xml文件报错排查处理</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0065-golang-create/" title="初探Golang语言之环境搭建">初探Golang语言之环境搭建</a>
-    </li>
-    
-    <li>
-        <a href="https://www.wangqj.cn/post/0064-k8s-docker/" title="初探Kubernetes&#43;Docker 分布式应用部署（上）">初探Kubernetes&#43;Docker 分布式应用部署（上）</a>
     </li>
     
 </ul>
@@ -544,9 +544,13 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/Procedure/">Procedure (1)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/Prometheus/">Prometheus (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (4)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Sign/">Sign (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Tomcat/">Tomcat (1)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
     
@@ -608,6 +612,8 @@ if (!doNotTrack) {
     <a href="https://www.wangqj.cn/tags/Jenkins/">Jenkins</a>
     
     <a href="https://www.wangqj.cn/tags/Kubernetes/">Kubernetes</a>
+    
+    <a href="https://www.wangqj.cn/tags/Linux/">Linux</a>
     
     <a href="https://www.wangqj.cn/tags/mysql/">mysql</a>
     

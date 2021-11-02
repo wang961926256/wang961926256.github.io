@@ -6,10 +6,28 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>初探 Prometheus安装配置篇</title>
+      <link>https://www.wangqj.cn/post/0075-linux-prometheus/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0075-linux-prometheus/</guid>
+      <description>背景介绍 周末在家搭建普罗米修斯监控，记录下来，以备查看。 知识学习 Prometheus 作为一个开源的服务监控系统和时间序列数据库，开源真好。 特点： 1）多维度数据模型：由度量名称和键值对标识时间序列数据 2）promSQL 数据查询 3）不依赖分布式环境，单个服务器节点可以直接工作 4）基于HTTP的pull</description>
+    </item>
+    
+    <item>
+      <title>Centos下安装Maven和Tomcat记录</title>
+      <link>https://www.wangqj.cn/post/0074-linux-tomcat/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0074-linux-tomcat/</guid>
+      <description>背景介绍 接上篇，在本地虚拟机搭建环境，本篇安装 Maven和 Tomcat 特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Maven 1、软件下载 通过wget命令来下载安装。 1 2 3 4 5 6 7 8 // yum 命令下载安装包，这里下载的是 3.5.0 &amp;gt; wget http://mirrors.cnnic.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz // 解压 tar -zxvf apache-maven-3.6.3-bin.tar.gz // 新建文件 mkdir /opt/maven // 移动 mv apache-maven-3.6.3/* /opt/maven 2、设置环境变量 进入到系</description>
+    </item>
     
     <item>
       <title>Centos下安装Gitlab 和 Jenkins 记录</title>
