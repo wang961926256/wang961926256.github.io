@@ -4,16 +4,41 @@
   
   <url>
     <loc>https://www.wangqj.cn/categories/</loc>
-    <lastmod>2021-10-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/tags/Linux/</loc>
-    <lastmod>2021-10-02T00:00:00+00:00</lastmod>
+    <loc>https://www.wangqj.cn/post/0076-linux-nacos/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/tags/nacos/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/categories/nacos/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/post/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/tags/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/tags/Linux/</loc>
     <lastmod>2021-10-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,17 +48,7 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/tags/</loc>
-    <lastmod>2021-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/post/0075-linux-prometheus/</loc>
-    <lastmod>2021-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/</loc>
     <lastmod>2021-10-02T00:00:00+00:00</lastmod>
   </url>
   
