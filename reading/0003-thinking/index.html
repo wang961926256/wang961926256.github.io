@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>vue项目编译与运行 | 梦幻通灵的博客</title>
-    <meta property="og:title" content="vue项目编译与运行 - 梦幻通灵的博客">
+    <title> 读书 | 梦幻通灵的博客</title>
+    <meta property="og:title" content=" 读书 - 梦幻通灵的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2021-03-10T00:00:00&#43;08:00'>
+    <meta property="article:published_time" content='2017-06-07T00:00:00&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2021-03-10T00:00:00&#43;08:00'>
+    <meta property="article:modified_time" content='2017-06-07T00:00:00&#43;08:00'>
         
     <meta name="Keywords" content="Java,博客,项目管理,软件架构,公众号">
-    <meta name="description" content="迁移">
-        <meta name="author" content="wangqj">
+    <meta name="description" content=" 读书">
         
-    <meta property="og:url" content="https://www.wangqj.cn/post/0052-vue-run/">
+    <meta name="author" content="梦幻通灵">
+    <meta property="og:url" content="https://www.wangqj.cn/reading/0003-thinking/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -58,7 +58,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://www.wangqj.cn">首页</a>
+                    <a class="" href="https://www.wangqj.cn">首页</a>
                     
                     <a  href="https://www.wangqj.cn/program/" title="软考">软考</a>
                     
@@ -143,15 +143,7 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#背景介绍">背景介绍</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -183,18 +175,11 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">vue项目编译与运行</h1>
+            <h1 class="post-title"> 读书</h1>
         </header>
         <date class="post-meta meta-date">
-            2021年3月10日
+            2017年6月7日
         </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/vue'>vue</a></span>
-            
-        </div>
         
         
         <div class="post-meta">
@@ -204,83 +189,34 @@
         
         
         <div class="post-content">
-            <h2 id="背景介绍">背景介绍</h2>
-<p>vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。</p>
-<h6 id="1安装npm">1、安装npm</h6>
-<p>有时候用npm下载依赖，速度较慢，可能会出现失败，可以安装国内的镜像如cnpm，安装npm的命令如下。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">npm install <span style="color:#000;font-weight:bold">-</span>g cnpm <span style="color:#000;font-weight:bold">--</span>registry<span style="color:#000;font-weight:bold">=</span>http<span style="color:#000;font-weight:bold">:</span><span style="color:#998;font-style:italic">//registry.npm.taobao.org
-</span><span style="color:#998;font-style:italic">// 若运行失败的话 可以确认一下npm的版本
-</span><span style="color:#998;font-style:italic"></span>npm <span style="color:#000;font-weight:bold">-</span>v
-<span style="color:#998;font-style:italic">// 可以试试升级为最新的版本
-</span><span style="color:#998;font-style:italic"></span>npm install <span style="color:#000;font-weight:bold">-</span>g npm
-</code></pre></td></tr></table>
-</div>
-</div><h6 id="2安装模块管理器-webpack">2、安装模块管理器 webpack</h6>
-<p>为了方便对项目中的各种资源文件，如js，image等进行管理，可以安装webpack模块加载器。安装命令如下。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">npm install webpack <span style="color:#000;font-weight:bold">-</span>g
-</code></pre></td></tr></table>
-</div>
-</div><h6 id="3安装脚手架-vue-cli">3、安装脚手架 vue-cli</h6>
-<p><strong>vue-cli</strong> 是vue的脚手架，通过安装它，可以轻松的创建新的应用程序而且可用于自动生成vue和webpack的项目模板。安装命令如下。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">cnpm install vue<span style="color:#000;font-weight:bold">-</span>cli <span style="color:#000;font-weight:bold">-</span>g
-<span style="color:#998;font-style:italic">// 查看版本
-</span><span style="color:#998;font-style:italic"></span>vue <span style="color:#000;font-weight:bold">--</span>version
-</code></pre></td></tr></table>
-</div>
-</div><p>安装成功后，vue的环境就安装好了，可以下载源码文件，尝试运行项目。</p>
-<h6 id="4查看启动方式">4、查看启动方式</h6>
-<p>对源码解压，在解压后源码文件夹的 <strong>package.json</strong> 文件中，可以看项目启动的方式，如 start : <strong>npm run dev</strong>，注意有些可能不是 dev
-
-        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200731220742282.png" />   
-    
-程序底层开始执行底层相当执行 dev后面的命令 webpack-dev-server &ndash;inline &ndash;progress &ndash;config build/webpack.dev.conf.js命令，执行命令生成一个 <strong>node_modules</strong> 文件夹，里面是下载的依赖信息。
-
-        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200731221949298.png" />   
-    </p>
-<blockquote>
-<p>注意：文件夹中已经存在node_modules文件夹，需要将其删除，重新下载，否则可能导致启动不成功！</p>
-</blockquote>
-<h6 id="5浏览器打开">5、浏览器打开</h6>
-<p>启动成功后，会自动跳转到登录页面，这样再运行后台的程序，就可以进行登录操作了。
-
-        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200731221354474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
-    </p>
-<h6 id="参考博客">参考博客</h6>
-<p>【1】https://blog.csdn.net/qq_44900944/article/details/98760857?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-7-98760857.nonecase</p>
+            <p>读书 旅行 总有一个在路上</p>
+<p>一个人的书单 亦是一个人的人生目录</p>
+<p>我相信，人生没有白走的路，每一步都算数。人生总有起起落落，总是先苦后甜。喝下三杯酒，一杯敬过往，一杯敬明天，一杯敬自己。</p>
+<p>待你了无牵挂，与我仗剑天涯，一剑一双人，一笛一余生，清风伴晓月，不羡世间人</p>
+<p>海底月是天上月 眼前人是心上人 向来心事看客心 奈何人是剧中人</p>
+<p>愿所有的欢乐都陪伴着你，仰首是春，俯首是秋；愿所有的幸福都追随着你，月圆是画，月缺是诗。——汪国真</p>
+<p>一个真正的文化人，应具备四种素养：根植于内心的修养；无需提醒的自觉；以约束为前提的自由；为别人着想的善良。​</p>
+<p>保养好自己身体，老了别给孩子添麻烦。教育好自家孩子，大了别给社会添麻烦。 &ndash;张泉灵</p>
+<p>世间的感情莫过于两种：一种是相濡以沫，却厌倦到终老；另一种是相忘于江湖，却怀念到哭泣。</p>
+<p>新旧之间没有怨讼，唯有真与伪是大敌要庆幸遇见，也要不惧离开，别离是常态，相聚是奢华。平行世界，多元生活，既可以朝九晚五，又能够浪迹天涯。</p>
+<p>一生清贫怎敢如繁华  两袖清风怎敢耽误佳人</p>
+<p>愿君所遇皆佳人</p>
+<p>乌云的边上是镶着边 你能看见光</p>
+<p>满壶离愁苦楚埋心间 唯道一生风华换丰年</p>
+<p>侠之大者 为国为民</p>
+<p>生容易 活容易 生活不容易</p>
+<p>物来顺应 未来不迎 当时不杂 既过不恋</p>
+<p>生活的给予，无论好坏都请接纳。然后，自己写下每一页。</p>
+<p>生活所有的智慧 都来自于对他的热爱</p>
+<p>尊严只在剑锋之上，真理只在大炮的射程之内</p>
+<p>落其实者思其树，饮其流者怀其源</p>
+<p>胸怀千秋伟业，恰是百年风华。国剧京韵，余音绕梁，流光溢彩，沉醉其华。</p>
+<p>阅读你喜欢的书，直到你喜欢阅读。（Read what you love until you love to read.）</p>
+<p>做你喜欢的事，直到你喜欢去做。（Do what you love until you love to Do.）</p>
 
         </div>
 
         
-<div class="post-archive">
-    <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://www.wangqj.cn">梦幻通灵</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.wangqj.cn/post/0052-vue-run/">https://www.wangqj.cn/post/0052-vue-run/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
-    </ul>
-</div>
-<br/>
-
 
 
         
@@ -289,15 +225,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/reading/0004-struggle/">寻找你愿意忍受的痛苦</a></li>
+        <li><a href="/reading/0002-reading/"> 读书</a></li>
         
-        <li><a href="/reading/0005-joke/">寻找你愿意忍受的痛苦</a></li>
+        <li><a href="/blog/00-EXT/">Ext监听</a></li>
         
-        <li><a href="/post/0051-eclipse/">Eclipse编译器常见问题处理方式</a></li>
+        <li><a href="/blog/01-java-excel/">Java读取excel</a></li>
         
-        <li><a href="/post/0050-maven-warn/">Maven的pom.xml文件报错排查处理</a></li>
+        <li><a href="/blog/10-powderDesigner/">PowderDesigner连接数据库</a></li>
         
-        <li><a href="/post/0049-Golang/">初探Golang语言之环境搭建</a></li>
+        <li><a href="/post/0034-ext-button/">ext-button</a></li>
         
     </ul>
 </div>
@@ -305,11 +241,7 @@
 
         <div class="post-meta meta-tags">
             
-            <ul class="clearfix">
-                
-                <li><a href='/tags/vue'>vue</a></li>
-                
-            </ul>
+            没有标签
             
         </div>
     </article>
