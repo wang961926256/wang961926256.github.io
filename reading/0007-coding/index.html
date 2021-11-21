@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>vue项目编译与运行 | 梦幻通灵的博客</title>
-    <meta property="og:title" content="vue项目编译与运行 - 梦幻通灵的博客">
+    <title>编程警句 | 梦幻通灵的博客</title>
+    <meta property="og:title" content="编程警句 - 梦幻通灵的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2021-03-10T00:00:00&#43;08:00'>
+    <meta property="article:published_time" content='2021-11-07T00:00:00&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2021-03-10T00:00:00&#43;08:00'>
+    <meta property="article:modified_time" content='2021-11-07T00:00:00&#43;08:00'>
         
     <meta name="Keywords" content="Java,博客,项目管理,软件架构,公众号">
-    <meta name="description" content="迁移">
-        <meta name="author" content="wangqj">
+    <meta name="description" content="编程警句">
         
-    <meta property="og:url" content="https://www.wangqj.cn/post/0052-vue-run/">
+    <meta name="author" content="梦幻通灵">
+    <meta property="og:url" content="https://www.wangqj.cn/reading/0007-coding/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -58,7 +58,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://www.wangqj.cn">首页</a>
+                    <a class="" href="https://www.wangqj.cn">首页</a>
                     
                     <a  href="https://www.wangqj.cn/program/" title="软考">软考</a>
                     
@@ -143,15 +143,7 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#背景介绍">背景介绍</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -183,18 +175,11 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">vue项目编译与运行</h1>
+            <h1 class="post-title">编程警句</h1>
         </header>
         <date class="post-meta meta-date">
-            2021年3月10日
+            2021年11月7日
         </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/vue'>vue</a></span>
-            
-        </div>
         
         
         <div class="post-meta">
@@ -204,83 +189,132 @@
         
         
         <div class="post-content">
-            <h2 id="背景介绍">背景介绍</h2>
-<p>vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。</p>
-<h6 id="1安装npm">1、安装npm</h6>
-<p>有时候用npm下载依赖，速度较慢，可能会出现失败，可以安装国内的镜像如cnpm，安装npm的命令如下。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">npm install <span style="color:#000;font-weight:bold">-</span>g cnpm <span style="color:#000;font-weight:bold">--</span>registry<span style="color:#000;font-weight:bold">=</span>http<span style="color:#000;font-weight:bold">:</span><span style="color:#998;font-style:italic">//registry.npm.taobao.org
-</span><span style="color:#998;font-style:italic">// 若运行失败的话 可以确认一下npm的版本
-</span><span style="color:#998;font-style:italic"></span>npm <span style="color:#000;font-weight:bold">-</span>v
-<span style="color:#998;font-style:italic">// 可以试试升级为最新的版本
-</span><span style="color:#998;font-style:italic"></span>npm install <span style="color:#000;font-weight:bold">-</span>g npm
-</code></pre></td></tr></table>
-</div>
-</div><h6 id="2安装模块管理器-webpack">2、安装模块管理器 webpack</h6>
-<p>为了方便对项目中的各种资源文件，如js，image等进行管理，可以安装webpack模块加载器。安装命令如下。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">npm install webpack <span style="color:#000;font-weight:bold">-</span>g
-</code></pre></td></tr></table>
-</div>
-</div><h6 id="3安装脚手架-vue-cli">3、安装脚手架 vue-cli</h6>
-<p><strong>vue-cli</strong> 是vue的脚手架，通过安装它，可以轻松的创建新的应用程序而且可用于自动生成vue和webpack的项目模板。安装命令如下。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">cnpm install vue<span style="color:#000;font-weight:bold">-</span>cli <span style="color:#000;font-weight:bold">-</span>g
-<span style="color:#998;font-style:italic">// 查看版本
-</span><span style="color:#998;font-style:italic"></span>vue <span style="color:#000;font-weight:bold">--</span>version
-</code></pre></td></tr></table>
-</div>
-</div><p>安装成功后，vue的环境就安装好了，可以下载源码文件，尝试运行项目。</p>
-<h6 id="4查看启动方式">4、查看启动方式</h6>
-<p>对源码解压，在解压后源码文件夹的 <strong>package.json</strong> 文件中，可以看项目启动的方式，如 start : <strong>npm run dev</strong>，注意有些可能不是 dev
-
-        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200731220742282.png" />   
-    
-程序底层开始执行底层相当执行 dev后面的命令 webpack-dev-server &ndash;inline &ndash;progress &ndash;config build/webpack.dev.conf.js命令，执行命令生成一个 <strong>node_modules</strong> 文件夹，里面是下载的依赖信息。
-
-        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200731221949298.png" />   
-    </p>
-<blockquote>
-<p>注意：文件夹中已经存在node_modules文件夹，需要将其删除，重新下载，否则可能导致启动不成功！</p>
-</blockquote>
-<h6 id="5浏览器打开">5、浏览器打开</h6>
-<p>启动成功后，会自动跳转到登录页面，这样再运行后台的程序，就可以进行登录操作了。
-
-        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200731221354474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" />   
-    </p>
-<h6 id="参考博客">参考博客</h6>
-<p>【1】https://blog.csdn.net/qq_44900944/article/details/98760857?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-7-98760857.nonecase</p>
+            <p>Alan Jay Perlis (April 1, 1922 – February7, 1990)，美国著名计算机科学家，历任普渡大学，卡耐基梅隆大学，耶鲁大学教授。第一位图灵奖获得者。</p>
+<p>1.一个人的常量是另一个人的变量。（甲之常量，乙之变量）
+2.函数会延迟绑定（binding）；数据结构会诱导绑定的发生。正确姿势：在编程后期再定义数据结构。
+3.语法糖（英语：Syntacticsugar，也译为糖衣语法）会引起分号的癌症。
+4.每个程序都是其他程序的一部分，因此很少能完全适用。
+5.如果程序需要处理大量的数据，那么它处理数据的方式一定只局限于少数几种。
+6.对称性这个概念能够降低复杂度（协同例程包括子例程）；不要放过任何寻找对称性的机会。
+7.编写错误的程序要比理解正确的程序简单多了。
+8.如果一种语言的程序需要人们去注意一些不相关的东西，那么这是一门低级语言。（low level）
+9.在同一个数据结构上运行100个函数要比在十种数据结构上运行10个函数要好。
+10.尽早形成习惯：以相同的方式执行相同的过程。积累习惯用语。标准化。莎士比亚与你之间的唯一区别在于习惯用语的多少，而不是词汇量。
+11.如果你的程序有10个参数，那你可能是漏了一些。
+12.递归是计算的源头，因为它用更长的执行时间换来了描述的精简。
+13.如果两个人编写的程序完全相同，则每个人写的都应该拆解成microcode，这样以后肯定就不会完全相同了。
+14.从长远来看，每个程序都会变得越来越繁复冗余，最终成为一堆没用的碎片。
+15.所有东西都应该自顶向下构建，除了第一次。
+16.每个程序都至少有两个目的：一个是写这个程序的原因，另一个不是。
+17.如果在你解释自己写的程序时，有听众点头了，那他一定是睡着了，请务必把他叫醒。
+18.没有循环和结构化变量的程序根本不值得一写。
+19.如果一门编程语言不能影响你对编程的整体认知，那它甚至不值得一学。
+20.只要有模块化的地方，就可能会有误会发生：隐藏起一部分信息就意味着需要注意检查沟通的过程。</p>
+<p>21.优化会阻碍软件的进化。
+22.一个好的系统必须拥有强大的命令语言。
+23.要了解程序，你必须同时成为机器和程序。
+24.如果我们从小就开始编写程序，那么也许长大以后我们自然而然地就能够阅读它们了。
+25.一个人只能在头脑中显示复杂的信息。就像对于视觉来说，移动，流动或视角的改变要远比静止的图片重要，无论图片有多么精美。
+26.在我们想要在程序中表达的东西里，永远都会有一些是所有已知语言都无法很好的表达的。
+27.一旦你真正了解了编程的精髓，就请其他人来编写它。
+28.在计算机行业，很难找到正确的时间单位来衡量进度。某些大教堂花了一个世纪才完成。你能想象一个需要花费这么长时间的程序会有多么大的体量吗？
+29.如果要给一个系统的门面翻新，需要在控制图中添加一个能构成循环的边，而不仅仅是新增一个节点。
+30.在编程的过程中，我们所做的一切都是某种更通用情形的特例——而且通常我们很快就能体会到这一点。
+31.简洁并不会先于复杂性发生，而是在复杂性之后。
+32.程序员不应以其才智和逻辑来衡量，而应以案例分析的完整性来衡量。
+33.第十一条诫命是“汝可计算”或“汝不可计算”——具体是哪个我忘了。（The eleventh commandment was &ldquo;Thou Shalt Compute&rdquo; or&quot;Thou Shalt Not Compute&rdquo;. 译者注：此处为化用基督教十条诫命的典故。）
+34.字符串是一个比较极端的数据结构，任何传递了字符串的地方都存在很多重复的过程。它是隐藏信息的理想工具。
+35.每个人都能被教会如何雕刻：但不能这样教米开朗基罗。对于优秀的程序员来说也是如此。
+36.使用程序证明四色定理不会改变背后的数学——它只能表明这个世纪挑战本身在数学上可能并没那么重要。
+37.最重要的那台计算机其实一直在我们的颅内高速运转，不断向外界寻找那种能令人满意的对大脑的仿真。对真正的计算机的标准化将是一场灾难——因此标准化可能不会发生。
+38.结构化程序设计支持排中律。（译者注：the law of the excluded middle，排中律是指在同一个思维过程中，两个互相矛盾的思想不能都假，必有一真。）
+39.关于图像：一张图片的价值与一万个单词等量——但也仅与一万个描述这张图片的单词等量。几乎没有哪个10K单词的集合能够被图片充分描述。
+40.有两种方式可以编写完全不报错的程序：但只有第三种能work。</p>
+<p>41.一些编程语言虽然做到了拥抱变化，但本身却没有进步。
+42.通过某个程序员对FORTRAN持续保持活力这件事的态度，能够对他本人有所了解。
+43.在软件系统的世界中，通常是那些早起的鸟儿创造虫子。
+44.有时我认为在计算机领域中，唯一一件统一的事情就只有“取指令-执行”周期。
+45.计算的目的是模仿我们的综合能力，而不是理解我们的分析能力。
+46.与双关语一样，编程也是一种文字游戏。
+47.正如威尔·罗杰斯（Will Rogers）所说，“不存在自由变量这种东西。”
+48.对于不懂编程的外行来说，最好的编程入门书籍是《爱丽丝梦游仙境》。但这只是因为，对于任何一行的外行来说，这本书都是最好的。
+49.在我们的伊甸园中，放弃汇编语言就是我们偷尝的禁果：浪费机器周期的编程语言是有罪的。现在，LISP机器允许LISP程序员们脱掉胸罩以及遮羞的无花果叶了。
+50.当我们理解了基于知识的系统时，情况将与以前一样——但我们的指尖会被烧焦。
+51.将计算机带到家里，既不会改变家也不会改变计算机，但可能会使街角的酒吧重新焕发活力。
+52.一个系统有子系统，子系统又有子系统，子子孙孙无穷尽也，这也解释了为什么我们总是需要从头来过。
+53.很多好主意一旦踏上语义鸿沟，就再也听不到。
+54.要提防图灵焦油坑（译者注：Turingtar-pit，指允许极大的功能自由度，但因为对常用任务没有给予任何支持，因此难以学习和使用的系统），虽然一切皆有可能，但想做的事情却没有一件是容易的。
+55. LISP程序员只看到所有东西的价值，却对要付出的代价一无所知。
+56.软件一直处于紧张状态。因为它看上去可以任意地变得更完美；但它也可以任意地改变这种状态。
+57.更改规格以适合程序比反之要容易得多。
+58.愚蠢的人无视复杂度。实用主义者忍受它的折磨。少数人可以绕道而行。而天才则将其删除。
+59.在英语中，每个词都可以变成动词。在我们的编程语言中可以这样吗？
+60.在寻求无法企及的事物时，简洁只会碍手碍脚。</p>
+<p>61.在编程上，以及在其他任何事情上，身处error都意味着涅槃。
+62.在计算中，不变的量是短暂的。
+63.当我们编写可以“学习”的程序时，事后会证明，我们学到了，但程序并没有。
+64.通常情况下手段能合理化目标：目标促进了技术的发展，而即使这个目标不复存在了，技术依然能留存。
+65.不要搞错了：计算机处理的是数字，而不是符号。我们对一项活动算数化的程度，衡量了我们理解（和控制）的程度。
+66.使变量可变很容易。控制恒定的持续时间才是难点。
+67.想一想，光是琢磨“算法”和“程序”之间的根本区别，我们花费了多少心神。
+68.如果我们相信数据结构，就必须相信独立的（因此也是并行的）进程。要不然我们为什么还要在结构内收集数据？我们为什么要容忍那些只提供其中之一的语言呢？
+69.在某个5年里，我们将获得一种非常出色的编程语言。只是我们无法控制这5年什么时候到来。
+70.几个世纪以来，印第安人发展了手语来传达那些与生活息息相关的现象。而来自不同部落（FORTRAN，LISP，ALGOL，SNOBOL等）的程序员们不需要在小马上扛着一块黑板也能做到。
+71.文档就像定期保险：它能满足人的需求，因为几乎没有人是为了取得利益而去做这件事的。
+72.充分的bootstrap是一种自相矛盾的说法。
+73.控制变化梯度的不是语言的弱点而是语言的优势：唉，一门语言永远脱离不了自己原生的羁绊。
+74.有没有可能，软件与其他任何事物都不同，因为它本身就是注定被丢弃的：它的意义就在于像肥皂泡那样破裂？
+75.由于生命力活跃，计算领域总是迫切需要新的陈词滥调：平庸可以安抚我们的神经。
+76.应该由用户来给程序定参数，而不是程序的创建者。
+77.人，计算机，以及算法之间的交流就像是一场抢凳子游戏：疯狂地寻求平衡只能使三个中的一个最终只能尴尬地站着。
+78.如果你的计算机说英语，那它可能是日本制造的。
+79.接触人工智能领域一年足以使人开始相信上帝真的存在。
+80.长时间的与计算机接触，会把数学家变成文员，把文员变成数学家。</p>
+<p>81.在计算领域，将显而易见的东西变成有用的东西是“挫败感”一词的鲜活定义。
+82.我们处在时代更迭的边界上：今天，我们的程序证明了费马的倒数第二个定理。
+83.图灵机和现代计算机之间有什么区别？就像希拉里（Hillary）登上珠穆朗玛峰（Everest），和希尔顿酒店在珠穆朗玛峰上落成之间的区别那样。
+84.研究实验室的座右铭：我们今天已经在从事的研究，有的人可能到明天才刚想到这个idea。
+85.尽管中国人应该崇拜APL，但是他们把赌注压在了FORTRAN上。
+86.如果我们认为可以把一个活跃的数据库系统中进程与数据的比率任意减小，甚至保持在较小的程度，我们都只是在自欺欺人罢了。
+87.我们有迷你（mini）计算机和微型（micro）计算机。而pico计算机又是什么小众的语义分支呢？
+88.麦克斯韦方程式不足以设计电动机，这并不是计算机的错。
+89.使用手持计算器并不能教会人们计算机知识，但能让人们忘记怎么做算术。
+90.有了计算技术，铁树都能开花。
+91.这台计算机让人想起LonChaney——它是一个有着一千张面孔的机器。
+92.计算机是终极的污染源：其产生的排泄物与生产的食物之间无法区别。
+93.当有人说，“我想要一种那样的编程语言，我只需要说自己想干什么就可以了”时，干脆给他一根棒棒糖好了。
+94.界面能让项目保持整洁，但不能加速它的增长：而功能可以。
+95.如果你不愿意对自己的idea负责，那就算有好的idea也没用，连提都不要提。
+96.计算机并不能自行带来秩序，就像它也不能自行让机会显露。
+97.当一个教授坚持认为计算机科学是X但绝对不是Y时，请同情一下他带的研究生。
+98.在计算中，出现一次故障的平均时间会越来越短。
+99.在人和计算机的共生系统中，必须由人来做出调整适应机器：因为机器不会自己适应。
+100.只要世界上还有一个程序，我们就永远都不会没有程序可写。</p>
+<p>101.面对失败是处理方法很简单：努力改进就行了。而面对成功的处理方法也很简单：你解决的是错误的问题。所以同样需要努力改进。
+102.仅仅通过表面上正式的手段，是无法从非正式过渡到正式的。
+103.纯粹适用的语言，适用性很差。
+104.系统的存在本身就是它价值的证明。
+105.你无法跟别人交流复杂性本身，只能交流对它的认识。
+106.从字符串中提取出意义是很困难的，但字符串是我们交流的唯一凭借。
+107.争论愈演愈烈：PL / I 是Bactrian还是Dromedary（双峰骆驼还是单峰骆驼）？
+108.每当两个程序员批评他们自己写的程序时，两个人都沉默了。
+109.想想吧！有了VLSI，我们可以在1平方厘米中包装100个ENIACS。
+110.编辑是一项重新措辞的活动。
+111.罗马帝国为何衰亡？“办公自动化”用拉丁语怎么说？
+112.计算机让计算机科学感到丢脸。
+113.连接神经科学和心理学的唯一建设性理论将从软件研究中诞生。
+114.对计算机来说，自然语言是不自然的。
+115.对大多数人来说，编程的概念虽然简单明了，但真正动手编程却比登天还难。
+116.你能学的时候觉得自己差不多知道了，能写下来的时候觉得心里更有把握了，能教别人的时候觉得自己更明白了，但当你能写出程序的时候，你就能确定自己真的懂了。
+117.教孩子编程是违背现代教育原则的。制定计划，严格地组织自己的思路，专注于细节，学习自我批评。做这些事情有什么乐趣可言？
+118.如果你可以想象出一个只有计算机或机器人处于底层的社会，那么还有什么是你想象不出来的呢。
+119.编程是一种不自然的行为。
+120.改造旧程序以适应新机器通常意味着，新机器会被调整到像旧机器那样运作。</p>
+<p>原文链接：http://www.cs.yale.edu/homes/perlis-alan/quotes.html</p>
 
         </div>
 
         
-<div class="post-archive">
-    <ul class="post-copyright">
-        <li><strong>原文作者：</strong><a rel="author" href="https://www.wangqj.cn">梦幻通灵</a></li>
-        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.wangqj.cn/post/0052-vue-run/">https://www.wangqj.cn/post/0052-vue-run/</a></li>
-        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
-    </ul>
-</div>
-<br/>
-
 
 
         
@@ -289,15 +323,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/reading/0004-struggle/">寻找你愿意忍受的痛苦</a></li>
+        <li><a href="/post/0078-font-echarts/">Echerts 绘制折线图</a></li>
         
-        <li><a href="/reading/0005-joke/">细细品味语言</a></li>
+        <li><a href="/post/0077-linux-sonarqube/">Centos安装部署sonarqube</a></li>
         
-        <li><a href="/post/0051-eclipse/">Eclipse编译器常见问题处理方式</a></li>
+        <li><a href="/post/0076-linux-nacos/">Centos安装部署nacos实战</a></li>
         
-        <li><a href="/post/0050-maven-warn/">Maven的pom.xml文件报错排查处理</a></li>
+        <li><a href="/post/0075-linux-prometheus/">初探 Prometheus安装配置篇</a></li>
         
-        <li><a href="/post/0049-Golang/">初探Golang语言之环境搭建</a></li>
+        <li><a href="/post/0074-linux-tomcat/">Centos下安装Maven和Tomcat记录</a></li>
         
     </ul>
 </div>
@@ -305,11 +339,7 @@
 
         <div class="post-meta meta-tags">
             
-            <ul class="clearfix">
-                
-                <li><a href='/tags/vue'>vue</a></li>
-                
-            </ul>
+            没有标签
             
         </div>
     </article>
