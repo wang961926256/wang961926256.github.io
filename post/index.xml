@@ -6,18 +6,18 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Echerts 绘制折线图</title>
-      <link>https://www.wangqj.cn/post/0078-font-echarts/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <title>用 Fiddler 来抓取手机包</title>
+      <link>https://www.wangqj.cn/post/0079-phone-fiddler/</link>
+      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wangqj.cn/post/0078-font-echarts/</guid>
-      <description>背景介绍 最近想画个折线图，展示业务的走势，选择用的是echarts，这里记录下来，方便查看。 详细介绍可以去官网查看demo哦 -&amp;gt; 官网地址 前端开发语言：vue 先放一张最终的折线效果图，横坐标是日期，纵坐标是金额。 带着问题往下看 1、横纵坐标怎么加？ echarts 折线图接收的参数是数组，注意不能是字</description>
+      <guid>https://www.wangqj.cn/post/0079-phone-fiddler/</guid>
+      <description>背景介绍 中秋假期，项目组内想帮忙抓取手机数据包，跟着网上教程操作一遍，遇到的坑，记录下来，方便备查。 工具：fiddler 官网下载 目的：抓取和查看手机端的HTTPS请求 ==注意：手机和电脑要处于同一局域网下。== 主要分为两大步骤 第一步、电脑端设置 1、查看本地ip地址 在 cmd 下输入命令 ipconfig</description>
     </item>
     
     <item>

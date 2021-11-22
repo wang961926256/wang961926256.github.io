@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fiddler on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/Fiddler/</link>
+    <description>Recent content in Fiddler on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/categories/Fiddler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用 Fiddler 来抓取手机包</title>
+      <link>https://www.wangqj.cn/post/0079-phone-fiddler/</link>
+      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0079-phone-fiddler/</guid>
+      <description>背景介绍 中秋假期，项目组内想帮忙抓取手机数据包，跟着网上教程操作一遍，遇到的坑，记录下来，方便备查。 工具：fiddler 官网下载 目的：抓取和查看手机端的HTTPS请求 ==注意：手机和电脑要处于同一局域网下。== 主要分为两大步骤 第一步、电脑端设置 1、查看本地ip地址 在 cmd 下输入命令 ipconfig</description>
+    </item>
+    
+  </channel>
+</rss>
