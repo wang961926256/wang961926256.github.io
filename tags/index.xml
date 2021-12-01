@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VMware</title>
+      <link>https://www.wangqj.cn/tags/VMware/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/tags/VMware/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fiddler</title>

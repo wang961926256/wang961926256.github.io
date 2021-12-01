@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VMware workstation 12 无法远程连接</title>
+      <link>https://www.wangqj.cn/post/0080-wmware-workstation/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0080-wmware-workstation/</guid>
+      <description>背景介绍 突然发现个人电脑无法连接本地的虚拟机，回想最近没有更改配置，直接就连接不上，没法进行练习，一步步排查原因，记录下来，方便备查。 原环境：VMware-workstation-full-12.5.9 主要可以从几个方面排查 1、确认是否虚拟机是否能够上网 虚拟机中查看虚拟机的id地</description>
+    </item>
     
     <item>
       <title>用 Fiddler 来抓取手机包</title>
