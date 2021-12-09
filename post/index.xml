@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java8 Stream 实现 List 转 Map</title>
+      <link>https://www.wangqj.cn/post/0081-java-list-map/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0081-java-list-map/</guid>
+      <description>背景介绍 在Java处理数据时，如何将数据库查询的List结果集合转换成Map? 使用Java8的 stream 来实现，可参考以下例子。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 // 构造List数据集合 List&amp;lt;User&amp;gt; userList = new ArrayList&amp;lt;&amp;gt;(); User user = new User(); user.setId(1L); user.setUsername(&amp;#34;张三&amp;#34;); user</description>
+    </item>
     
     <item>
       <title>VMware workstation 12 无法远程连接</title>
