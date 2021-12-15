@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wangqj.cn/reading/</loc>
+    <lastmod>2021-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/</loc>
+    <lastmod>2021-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/reading/0009-love/</loc>
+    <lastmod>2021-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wangqj.cn/categories/</loc>
     <lastmod>2021-12-06T00:00:00+00:00</lastmod>
   </url>
@@ -33,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/</loc>
-    <lastmod>2021-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/tags/VMware/</loc>
     <lastmod>2021-11-26T00:00:00+00:00</lastmod>
   </url>
@@ -50,11 +60,6 @@
   <url>
     <loc>https://www.wangqj.cn/post/0080-wmware-workstation/</loc>
     <lastmod>2021-11-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/reading/</loc>
-    <lastmod>2021-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -300,6 +305,21 @@
   <url>
     <loc>https://www.wangqj.cn/post/0062-odps-keywords/</loc>
     <lastmod>2021-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/interview/</loc>
+    <lastmod>2021-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/interview/Java/</loc>
+    <lastmod>2021-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/interview/redis/</loc>
+    <lastmod>2021-06-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -848,22 +868,7 @@
   </url>
   
   <url>
-    <loc>https://www.wangqj.cn/interview/Java/</loc>
-    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/interview/</loc>
-    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wangqj.cn/interview/network/</loc>
-    <lastmod>2017-06-07T15:36:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/interview/redis/</loc>
     <lastmod>2017-06-07T15:36:00+05:30</lastmod>
   </url>
   

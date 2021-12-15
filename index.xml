@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>爱情美句</title>
+      <link>https://www.wangqj.cn/reading/0009-love/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/reading/0009-love/</guid>
+      <description>1、真正的爱情是需要对对方有一种深度的理解、一种很深的价值确认。 2、相爱虽然是两个人的事，但过的始终是自己的人生，一个人只是经由另一个人去拓展生命的广度和深度。</description>
+    </item>
     
     <item>
       <title>Java8 Stream 实现 List 转 Map</title>
@@ -207,6 +216,24 @@
       
       <guid>https://www.wangqj.cn/post/0062-odps-keywords/</guid>
       <description>背景介绍 随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下使用的过程，方便备查。 知识了解 ODPS （Open Data Processing Service）,是阿里巴巴通用计算平台提供的一种快速、完全托管的 GB/TB/PB 级数据仓库解决方案，现在已更</description>
+    </item>
+    
+    <item>
+      <title>Java知识</title>
+      <link>https://www.wangqj.cn/interview/Java/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/interview/Java/</guid>
+      <description>1.Java集合对象 java中集合类都是由Collection和Map接口派生出来的,其中Set和List接口是Collection接口派生出来的子接口，他们分别代表了无序集合和有序集合，Map接口的所有实现类用于保存具有映射关系的数据（关联数组）。 ArrayList：实现了长度</description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>https://www.wangqj.cn/interview/redis/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/interview/redis/</guid>
+      <description>redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若key存在，则获取不到锁 利用lua脚本来保证多个redis的原子性 考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约 redis锁挂掉后，</description>
     </item>
     
     <item>
@@ -795,30 +822,12 @@
     </item>
     
     <item>
-      <title> 读书</title>
-      <link>https://www.wangqj.cn/interview/Java/</link>
-      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
-      
-      <guid>https://www.wangqj.cn/interview/Java/</guid>
-      <description>1.Java集合对象 java中集合类都是由Collection和Map接口派生出来的,其中Set和List接口是Collection接口派生出来的子接口，他们分别代表了无序集合和有序集合，Map接口的所有实现类用于保存具有映射关系的数据（关联数组）。 ArrayList：实现了长度</description>
-    </item>
-    
-    <item>
       <title>计算机网络</title>
       <link>https://www.wangqj.cn/interview/network/</link>
       <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
       
       <guid>https://www.wangqj.cn/interview/network/</guid>
       <description>跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&amp;ldquo;Access-Controller-Allow-Origin&amp;rdquo;,&amp;quot;*&amp;quot;) 可以访问所有网站，不受是否同源限制 2、jsonp 方式 3、后台控制 访问同域名下的端口 4、网关 SSO 和 OAuth2.0区别 OAuth2.0 使用场景：联合登录，一次注册，多次使用 SSO 使用场景：单点登录，一次登录</description>
-    </item>
-    
-    <item>
-      <title>计算机网络</title>
-      <link>https://www.wangqj.cn/interview/redis/</link>
-      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
-      
-      <guid>https://www.wangqj.cn/interview/redis/</guid>
-      <description>redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若key存在，则获取不到锁 利用lua脚本来保证多个redis的原子性 考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约 redis锁挂掉后，</description>
     </item>
     
     <item>
@@ -831,7 +840,7 @@
     </item>
     
     <item>
-      <title> 读书</title>
+      <title>优美句子</title>
       <link>https://www.wangqj.cn/reading/0003-thinking/</link>
       <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
       

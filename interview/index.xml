@@ -6,18 +6,27 @@
     <description>Recent content in Interviews on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Jun 2017 15:36:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 07 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/interview/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title> 读书</title>
+      <title>Java知识</title>
       <link>https://www.wangqj.cn/interview/Java/</link>
-      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/interview/Java/</guid>
       <description>1.Java集合对象 java中集合类都是由Collection和Map接口派生出来的,其中Set和List接口是Collection接口派生出来的子接口，他们分别代表了无序集合和有序集合，Map接口的所有实现类用于保存具有映射关系的数据（关联数组）。 ArrayList：实现了长度</description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>https://www.wangqj.cn/interview/redis/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/interview/redis/</guid>
+      <description>redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若key存在，则获取不到锁 利用lua脚本来保证多个redis的原子性 考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约 redis锁挂掉后，</description>
     </item>
     
     <item>
@@ -27,15 +36,6 @@
       
       <guid>https://www.wangqj.cn/interview/network/</guid>
       <description>跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&amp;ldquo;Access-Controller-Allow-Origin&amp;rdquo;,&amp;quot;*&amp;quot;) 可以访问所有网站，不受是否同源限制 2、jsonp 方式 3、后台控制 访问同域名下的端口 4、网关 SSO 和 OAuth2.0区别 OAuth2.0 使用场景：联合登录，一次注册，多次使用 SSO 使用场景：单点登录，一次登录</description>
-    </item>
-    
-    <item>
-      <title>计算机网络</title>
-      <link>https://www.wangqj.cn/interview/redis/</link>
-      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
-      
-      <guid>https://www.wangqj.cn/interview/redis/</guid>
-      <description>redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若key存在，则获取不到锁 利用lua脚本来保证多个redis的原子性 考虑锁过期，需要额外的看门狗定时任务来监听锁是否需要续约 redis锁挂掉后，</description>
     </item>
     
   </channel>
