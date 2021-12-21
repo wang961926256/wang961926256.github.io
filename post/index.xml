@@ -6,10 +6,28 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 vscode 上刷力扣 Leetcode 可以这样来</title>
+      <link>https://www.wangqj.cn/post/0083-vscode-leetcode/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0083-vscode-leetcode/</guid>
+      <description>背景介绍 背景 神奇的算法网站 LeetCode 值得驻留，网页版似乎不太方便，作为习惯于在编译器上敲代码的你，如何 vscode 上优雅的刷力扣 Leetcode，在本地配置，记录下来方便备查。 环境前置：==电脑具备 NodeJs环境== 第一步、安装插件 在左侧栏的 Vscode 插件中心中搜索并安装 LeetCode 插件。 安装成功，在左侧栏会出现</description>
+    </item>
+    
+    <item>
+      <title>Docker 环境下为 Elasticsearch 安装IK 分词器</title>
+      <link>https://www.wangqj.cn/post/0082-docker-es/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0082-docker-es/</guid>
+      <description>背景介绍 1024 程序员节，祝各位大佬节日快乐！ 接上篇，安装好 Elasticsearch 和 kibana 就可以进行 Es 操作。 背景 Elasticsearch 在创建倒排索引时，需要对文档进行分词；在搜索时对用户的输入内容进行分词，但默认的分词效果不好，可以安装IK分词来处理。 一、IK 分词器安装 主要有两种方式：在线安装和离线安装 1、在线安装 第一步、进入容</description>
+    </item>
     
     <item>
       <title>Java8 Stream 实现 List 转 Map</title>

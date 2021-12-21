@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Docker 环境下为 Elasticsearch 安装IK 分词器 | 梦幻通灵的博客</title>
+    <meta property="og:title" content="Docker 环境下为 Elasticsearch 安装IK 分词器 - 梦幻通灵的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-12-16T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-12-16T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="Java,博客,项目管理,软件架构,公众号">
+    <meta name="description" content="Fiddler">
+        <meta name="author" content="wangqj">
+        
+    <meta property="og:url" content="https://www.wangqj.cn/post/0082-docker-es/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script data-ad-client="ca-pub-1299909080814017" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.wangqj.cn">
+                        梦幻通灵的博客
+                    </a>
+                
+                <p class="description">北漂一枚，专注于Java、软件架构、个人公众号</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://www.wangqj.cn">首页</a>
+                    
+                    <a  href="https://www.wangqj.cn/program/" title="软考">软考</a>
+                    
+                    <a  href="https://www.wangqj.cn/reading/" title="读书">读书</a>
+                    
+                    <a  href="https://www.wangqj.cn/interview/" title="面试">面试</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景介绍">背景介绍</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Docker 环境下为 Elasticsearch 安装IK 分词器</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年12月16日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Elasticsearch'>Elasticsearch</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="背景介绍">背景介绍</h2>
+<p><strong>1024 程序员节，祝各位大佬节日快乐！</strong>
+接上篇，安装好 Elasticsearch 和 kibana 就可以进行 Es 操作。
+背景
+Elasticsearch 在创建倒排索引时，需要对文档进行分词；在搜索时对用户的输入内容进行分词，但默认的分词效果不好，可以安装IK分词来处理。</p>
+<h5 id="一ik-分词器安装">一、IK 分词器安装</h5>
+<p>主要有两种方式：在线安装和离线安装</p>
+<h6 id="1在线安装">1、在线安装</h6>
+<p><strong>第一步、进入容器内部</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 进入容器内部
+</span><span style="color:#998;font-style:italic"></span>docker exec <span style="color:#000;font-weight:bold">-</span>it es <span style="color:#000;font-weight:bold">/</span>bin<span style="color:#000;font-weight:bold">/</span>bash
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>第二步、下载安装</strong>
+将 分词器安装到 plugin 文件下，注意版本要一致，这里统一为 <strong>7.12.1</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 在线安装
+</span><span style="color:#998;font-style:italic"></span>.<span style="color:#000;font-weight:bold">/</span>bin<span style="color:#000;font-weight:bold">/</span>elasticsearch<span style="color:#000;font-weight:bold">-</span>plugin install https<span style="color:#000;font-weight:bold">:</span><span style="color:#998;font-style:italic">//github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.12.1/elasticsearch-analysis-ik-7.12.1.zip
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第三步、退出并启动</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 退出
+</span><span style="color:#998;font-style:italic"></span>exit
+<span style="color:#998;font-style:italic">// 重启
+</span><span style="color:#998;font-style:italic"></span>docker restart es
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="2离线安装">2、离线安装</h6>
+<p><strong>第一步、查询数据卷目录</strong>
+插件安装需要获取 Elasticsearch  的plugins 目录的挂载位置。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 输入数据卷
+</span><span style="color:#998;font-style:italic"></span>docker volume inspect es<span style="color:#000;font-weight:bold">-</span>plugins
+</code></pre></td></tr></table>
+</div>
+</div><p>
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/e8e318b7b19b413f980ae7b3a959e747.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" />   
+    
+<strong>第二步、上传 安装包到 指定位置</strong>
+下载 elasticsearch-analysis-ik-7.12.1.zip 放到 第一步查询目录下，进行挂载，注意这里的版本选择的是 <strong>7.12.1</strong></p>
+<p><strong>第三步、重启容器</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">// 重启
+</span><span style="color:#998;font-style:italic"></span>docker restart es
+<span style="color:#998;font-style:italic">// 查看日志
+</span><span style="color:#998;font-style:italic"></span>docker logs <span style="color:#000;font-weight:bold">-</span>f es
+</code></pre></td></tr></table>
+</div>
+</div><p>查看运行日志，如下图所示。
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/ef84b5bd803845f1b083cdd0e7bc43dd.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" />   
+    </p>
+<h6 id="三验证">三、验证</h6>
+<p>IK 分词主要有两种模式
+<strong>ik_smart</strong>           ==最少切分   粗粒度切分 智能切分==
+<strong>ik_max_word</strong>  ==最细切分 最新粒度切分==
+举例如下：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">POST <span style="color:#000;font-weight:bold">/</span>_analyze
+{
+  <span style="color:#d14">&#34;text&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#d14">&#34;1024程序员节&#34;</span>,
+  <span style="color:#d14">&#34;analyzer&#34;</span><span style="color:#000;font-weight:bold">:</span><span style="color:#d14">&#34;ik_max_word&#34;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>ik_smart</strong> 粗粒度分词，只展示出 程序员
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/26bf2a199a554889b8342a7ee2061964.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" />   
+    
+<strong>ik_max_word</strong> 细粒度分词，展示出 程序员、程序、员
+
+        <img class="mx-auto" alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/b05b1b1612b442be88a8963571e86e86.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" />   
+    </p>
+<h5 id="四分词设置">四、分词设置</h5>
+<p>对于默认的分词库可以进行扩展或者停用。
+配置文件位置：IK分词器安装目录下 config 配置文件下<strong>IKAnalyzer.cfg</strong></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#998;font-style:italic">&lt;!--</span>配置远程扩展字典 <span style="color:#000;font-weight:bold">--&gt;</span>
+<span style="color:#000;font-weight:bold">&lt;</span>entry key<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;remote_ext_dict&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>ext.dic<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/entry&gt;</span>
+ <span style="color:#998;font-style:italic">&lt;!--</span>配置远程扩展停止词字典<span style="color:#000;font-weight:bold">--&gt;</span>
+<span style="color:#000;font-weight:bold">&lt;</span>entry key<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;remote_ext_stopwords&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>stopword.dic<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/entry&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 config 下新建 扩展文件 ext.dic 和 停止扩展词文件 stopword.dic，分别添加相应的内容即可！</p>
+<h5 id="参考博客">参考博客</h5>
+<p>【1】https://blog.csdn.net/u012211603/article/details/90757253</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/reading/0009-love/">爱情美句</a></li>
+        
+        <li><a href="/post/0081-java-list-map/">Java8 Stream 实现 List 转 Map</a></li>
+        
+        <li><a href="/post/0080-wmware-workstation/">VMware workstation 12 无法远程连接</a></li>
+        
+        <li><a href="/reading/0008-china-import/">中华老字号</a></li>
+        
+        <li><a href="/reading/0007-coding/">编程警句</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Docker'>Docker</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "https://github.com/wang961926256/wang961926256.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://blog.csdn.net/u012190388" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">梦幻通灵</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-TWJETDJPV7', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.wangqj.cn/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.wangqj.cn">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0080-wmware-workstation/" title="VMware workstation 12 无法远程连接">VMware workstation 12 无法远程连接</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0079-phone-fiddler/" title="用 Fiddler 来抓取手机包">用 Fiddler 来抓取手机包</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0077-linux-sonarqube/" title="Centos安装部署sonarqube">Centos安装部署sonarqube</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0076-linux-nacos/" title="Centos安装部署nacos实战">Centos安装部署nacos实战</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0075-linux-prometheus/" title="初探 Prometheus安装配置篇">初探 Prometheus安装配置篇</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0074-linux-tomcat/" title="Centos下安装Maven和Tomcat记录">Centos下安装Maven和Tomcat记录</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0073-linux-gitlab/" title="Centos下安装Gitlab 和 Jenkins 记录">Centos下安装Gitlab 和 Jenkins 记录</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0072-selenium-test/" title="自动化测试之selenium小试牛刀">自动化测试之selenium小试牛刀</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
+    </li>
+    
+    <li>
+        <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="" title="" target="_blank" style="color:red">
+                
+                    
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.wangqj.cn/categories/Aspose/">Aspose (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Blog/">Blog (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Elasticsearch/">Elasticsearch (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Excel/">Excel (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/ExtJs/">ExtJs (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Fiddler/">Fiddler (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/git/">git (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Golang/">Golang (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Java/">Java (10)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Java8/">Java8 (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/JeDate/">JeDate (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Jenkins/">Jenkins (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Kubernetes/">Kubernetes (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Leetcode/">Leetcode (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/mysql/">mysql (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Navicat/">Navicat (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Network/">Network (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Nginx/">Nginx (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/ODPS/">ODPS (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Oracle/">Oracle (8)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Procedure/">Procedure (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Prometheus/">Prometheus (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/RabbitMQ/">RabbitMQ (4)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Sign/">Sign (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Tomcat/">Tomcat (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/VMware/">VMware (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/docker/">docker (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/encode/">encode (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/git/">git (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/k8s/">k8s (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/kettle/">kettle (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/mysql/">mysql (3)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/nacos/">nacos (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/page/">page (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/putty/">putty (2)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/selenium/">selenium (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/sonarqube/">sonarqube (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/sqlite/">sqlite (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/technology/">technology (1)</a></li>
+    
+    <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (3)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://www.wangqj.cn/tags/Aspose/">Aspose</a>
+    
+    <a href="https://www.wangqj.cn/tags/Blog/">Blog</a>
+    
+    <a href="https://www.wangqj.cn/tags/docker/">docker</a>
+    
+    <a href="https://www.wangqj.cn/tags/eclipse/">eclipse</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
+    
+    <a href="https://www.wangqj.cn/tags/Fiddler/">Fiddler</a>
+    
+    <a href="https://www.wangqj.cn/tags/git/">git</a>
+    
+    <a href="https://www.wangqj.cn/tags/Gitlab/">Gitlab</a>
+    
+    <a href="https://www.wangqj.cn/tags/Go/">Go</a>
+    
+    <a href="https://www.wangqj.cn/tags/Golang/">Golang</a>
+    
+    <a href="https://www.wangqj.cn/tags/Java/">Java</a>
+    
+    <a href="https://www.wangqj.cn/tags/Java8/">Java8</a>
+    
+    <a href="https://www.wangqj.cn/tags/JeDate/">JeDate</a>
+    
+    <a href="https://www.wangqj.cn/tags/Jenkins/">Jenkins</a>
+    
+    <a href="https://www.wangqj.cn/tags/Kubernetes/">Kubernetes</a>
+    
+    <a href="https://www.wangqj.cn/tags/Linux/">Linux</a>
+    
+    <a href="https://www.wangqj.cn/tags/mysql/">mysql</a>
+    
+    <a href="https://www.wangqj.cn/tags/Navicat/">Navicat</a>
+    
+    <a href="https://www.wangqj.cn/tags/Network/">Network</a>
+    
+    <a href="https://www.wangqj.cn/tags/Nginx/">Nginx</a>
+    
+    <a href="https://www.wangqj.cn/tags/ODPS/">ODPS</a>
+    
+    <a href="https://www.wangqj.cn/tags/Oracle/">Oracle</a>
+    
+    <a href="https://www.wangqj.cn/tags/Procedure/">Procedure</a>
+    
+    <a href="https://www.wangqj.cn/tags/RabbitMQ/">RabbitMQ</a>
+    
+    <a href="https://www.wangqj.cn/tags/Sign/">Sign</a>
+    
+    <a href="https://www.wangqj.cn/tags/VMware/">VMware</a>
+    
+    <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
+    
+    <a href="https://www.wangqj.cn/tags/docker/">docker</a>
+    
+    <a href="https://www.wangqj.cn/tags/eclipse/">eclipse</a>
+    
+    <a href="https://www.wangqj.cn/tags/encode/">encode</a>
+    
+    <a href="https://www.wangqj.cn/tags/excel/">excel</a>
+    
+    <a href="https://www.wangqj.cn/tags/git/">git</a>
+    
+    <a href="https://www.wangqj.cn/tags/index/">index</a>
+    
+    <a href="https://www.wangqj.cn/tags/inspiration/">inspiration</a>
+    
+    <a href="https://www.wangqj.cn/tags/k8s/">k8s</a>
+    
+    <a href="https://www.wangqj.cn/tags/kettle/">kettle</a>
+    
+    <a href="https://www.wangqj.cn/tags/motivation/">motivation</a>
+    
+    <a href="https://www.wangqj.cn/tags/mysql/">mysql</a>
+    
+    <a href="https://www.wangqj.cn/tags/nacos/">nacos</a>
+    
+    <a href="https://www.wangqj.cn/tags/page/">page</a>
+    
+    <a href="https://www.wangqj.cn/tags/putty/">putty</a>
+    
+    <a href="https://www.wangqj.cn/tags/selenium/">selenium</a>
+    
+    <a href="https://www.wangqj.cn/tags/sonarqube/">sonarqube</a>
+    
+    <a href="https://www.wangqj.cn/tags/sqlite/">sqlite</a>
+    
+    <a href="https://www.wangqj.cn/tags/technology/">technology</a>
+    
+    <a href="https://www.wangqj.cn/tags/vscode/">vscode</a>
+    
+    <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.wangqj.cn/" title="梦幻通灵的博客">梦幻通灵的博客</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://blog.csdn.net/u012190388" title="CSDN博客">CSDN博客地址</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.jianshu.com/u/b5d211128694" title="简书">简书地址</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.wangqj.cn/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

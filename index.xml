@@ -6,10 +6,28 @@
     <description>Recent content on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 vscode 上刷力扣 Leetcode 可以这样来</title>
+      <link>https://www.wangqj.cn/post/0083-vscode-leetcode/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0083-vscode-leetcode/</guid>
+      <description>背景介绍 背景 神奇的算法网站 LeetCode 值得驻留，网页版似乎不太方便，作为习惯于在编译器上敲代码的你，如何 vscode 上优雅的刷力扣 Leetcode，在本地配置，记录下来方便备查。 环境前置：==电脑具备 NodeJs环境== 第一步、安装插件 在左侧栏的 Vscode 插件中心中搜索并安装 LeetCode 插件。 安装成功，在左侧栏会出现</description>
+    </item>
+    
+    <item>
+      <title>Docker 环境下为 Elasticsearch 安装IK 分词器</title>
+      <link>https://www.wangqj.cn/post/0082-docker-es/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0082-docker-es/</guid>
+      <description>背景介绍 1024 程序员节，祝各位大佬节日快乐！ 接上篇，安装好 Elasticsearch 和 kibana 就可以进行 Es 操作。 背景 Elasticsearch 在创建倒排索引时，需要对文档进行分词；在搜索时对用户的输入内容进行分词，但默认的分词效果不好，可以安装IK分词来处理。 一、IK 分词器安装 主要有两种方式：在线安装和离线安装 1、在线安装 第一步、进入容</description>
+    </item>
     
     <item>
       <title>爱情美句</title>
@@ -831,21 +849,21 @@
     </item>
     
     <item>
-      <title> 读书</title>
-      <link>https://www.wangqj.cn/reading/0002-reading/</link>
-      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wangqj.cn/reading/0002-reading/</guid>
-      <description>有些鸟儿天生就是关不住的，它们的羽毛太鲜明，歌声太甜美、也太狂野了，所以你只能放它们走，否则哪天你打开笼子喂它们时，它们也会想办法扬长而去。你知道把它们关住是不对的，所以你会为它们感到高兴，但如此一来，你住的地方仍然会因为它们离去而显得更加黯淡和空虚。有些鸟儿天生就是关不住的，它</description>
-    </item>
-    
-    <item>
       <title>优美句子</title>
       <link>https://www.wangqj.cn/reading/0003-thinking/</link>
       <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangqj.cn/reading/0003-thinking/</guid>
       <description>读书 旅行 总有一个在路上 一个人的书单 亦是一个人的人生目录 我相信，人生没有白走的路，每一步都算数。人生总有起起落落，总是先苦后甜。喝下三杯酒，一杯敬过往，一杯敬明天，一杯敬自己。 待你了无牵挂，与我仗剑天涯，一剑一双人，一笛一余生，清风伴晓月，不羡世间人 海底月是天上月 眼前人是心上人 向来</description>
+    </item>
+    
+    <item>
+      <title>读书</title>
+      <link>https://www.wangqj.cn/reading/0002-reading/</link>
+      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/reading/0002-reading/</guid>
+      <description>有些鸟儿天生就是关不住的，它们的羽毛太鲜明，歌声太甜美、也太狂野了，所以你只能放它们走，否则哪天你打开笼子喂它们时，它们也会想办法扬长而去。你知道把它们关住是不对的，所以你会为它们感到高兴，但如此一来，你住的地方仍然会因为它们离去而显得更加黯淡和空虚。有些鸟儿天生就是关不住的，它</description>
     </item>
     
     <item>
