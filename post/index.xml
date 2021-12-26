@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wangqj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在win10下通过WSL安装Linux子系统-Ubuntu</title>
+      <link>https://www.wangqj.cn/post/0084-wsl-Linux/</link>
+      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0084-wsl-Linux/</guid>
+      <description>背景介绍 在本地日常使用linux系统，不想安装虚拟机该怎么搞？win10提供新的解决方案，下面记录操作过程，方便备查。 WSL（Windows Subsystem for Linux）在Windows 10上能够运行原生Linux二进制可执行文件（ELF格式）的兼容层。它是由微软与Canonical公司合作开</description>
+    </item>
     
     <item>
       <title>在 vscode 上刷力扣 Leetcode 可以这样来</title>

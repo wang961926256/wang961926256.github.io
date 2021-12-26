@@ -81,6 +81,31 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0073-linux-gitlab/" title="Centos下安装Gitlab 和 Jenkins 记录">Centos下安装Gitlab 和 Jenkins 记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Jenkins'>Jenkins</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近想走一遍自动化部署流程，在本地虚拟机搭建环境，特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Gitlab 1、安装相关依赖 1 2 3 4 5 6 7 8 // yum 命令下载安装所需要的四个依赖 &gt; yum -y install policycoreutils openssh-server openssh-clients postfix // 启动ssh服务 设置为开启启动 &gt; systemctl enable sshd &amp;&amp; sudo systemctl start sshd // 查看状态 &gt; systemctl status sshd // 设置pos……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0073-linux-gitlab/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
             </h1>
         </header>
@@ -299,31 +324,6 @@
             背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 知识了解 Kubernetes 简称 K8s 是容器集群管理系统，是一个开源的平台，可以实现容器集群的自动化部署、自动扩缩容、维护等功能. 第一步、安装Docker 本虚拟机是 Ce……
         </div>
         <p class="readmore"><a href="https://www.wangqj.cn/post/0064-k8s-docker/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0063-docker-learn/" title="Docker 学习笔记">Docker 学习笔记</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年6月20日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/docker'>docker</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲的不错，主要是命令操作，这里记录下来，方便查看。 在本地安装的虚拟机（Redhat）上进行练习。 第一步、安装Docker 1 2 3 4 5 6 7 8 9 10 11……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0063-docker-learn/">阅读全文</a></p>
     </article>
     
     
@@ -585,6 +585,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/Vue/">Vue (2)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/WSL/">WSL (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/docker/">docker (2)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/eclipse/">eclipse (1)</a></li>
@@ -677,6 +679,8 @@ if (!doNotTrack) {
     <a href="https://www.wangqj.cn/tags/VMware/">VMware</a>
     
     <a href="https://www.wangqj.cn/tags/Vue/">Vue</a>
+    
+    <a href="https://www.wangqj.cn/tags/WSL/">WSL</a>
     
     <a href="https://www.wangqj.cn/tags/docker/">docker</a>
     
