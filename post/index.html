@@ -81,6 +81,31 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0086-finereport/" title="帆软 FineReport 动态列如何设置">帆软 FineReport 动态列如何设置</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/FineReport'>FineReport</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近有个需求是用采购的帆软报表来动态展示数据，记录下来，方便备查。 环境准备 帆软 FineReport V9.0 以用户信息统计表为例，具体操作步骤如下。 第一步、设置查询信息集 新建信息集 Data，在编辑栏中 输入查询的SQL，查询 tb_user 表，其中 ${cols} 为变量，可以在 定义其的数值。 1 2 3 4 5 6 7 // ${cols} 表示列 SELECT ${cols} FROM tb_user GROUP BY……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0086-finereport/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://www.wangqj.cn/post/0085-python-email/" title="python 实现使用163邮箱发送有图片的邮件">python 实现使用163邮箱发送有图片的邮件</a>
             </h1>
         </header>
@@ -328,6 +353,231 @@
     
     
     
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0074-linux-tomcat/" title="Centos下安装Maven和Tomcat记录">Centos下安装Maven和Tomcat记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月30日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Tomcat'>Tomcat</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 接上篇，在本地虚拟机搭建环境，本篇安装 Maven和 Tomcat 特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Maven 1、软件下载 通过wget命令来下载安装。 1 2 3 4 5 6 7 8 // yum 命令下载安装包，这里下载的是 3.5.0 &gt; wget http://mirrors.cnnic.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz // 解压 tar -zxvf apache-maven-3.6.3-bin.tar.gz // 新建文件 mkdir /opt/maven // 移动 mv apache-maven-3.6.3/* /opt/maven 2、设置环境变量 进入到系……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0074-linux-tomcat/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0073-linux-gitlab/" title="Centos下安装Gitlab 和 Jenkins 记录">Centos下安装Gitlab 和 Jenkins 记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Jenkins'>Jenkins</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近想走一遍自动化部署流程，在本地虚拟机搭建环境，特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Gitlab 1、安装相关依赖 1 2 3 4 5 6 7 8 // yum 命令下载安装所需要的四个依赖 &gt; yum -y install policycoreutils openssh-server openssh-clients postfix // 启动ssh服务 设置为开启启动 &gt; systemctl enable sshd &amp;&amp; sudo systemctl start sshd // 查看状态 &gt; systemctl status sshd // 设置pos……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0073-linux-gitlab/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近重装虚拟机，环境重头安装，这里记录下安装的过程，方便备查。 环境：CentOS Linux release 7 1 2 3 // 查看版本 &gt; cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 一、安装docker 首先 安装 yum 依赖 1 2 // 安装 yum &gt; studo yum install -y yum-utils 安装 docker 两个步骤： 第一步、确认是否安装过docker，若有旧的docker则删除，命令如下。 1 2 3……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0071-docker-redis/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0072-selenium-test/" title="自动化测试之selenium小试牛刀">自动化测试之selenium小试牛刀</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年9月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/selenium'>selenium</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近在学习python的时候，看到大佬的博客，动手跟着尝试，记录下来，方便查看。selenium 由于web应用程序的自动化测试工具，具有开源、跨平台、支持多种浏览器、多种语言、成熟稳定、功能强大的特点。 环境搭建 第一步、安装python环境 环境安装跟着网上教程即可，这里选择……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0072-selenium-test/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 作为常用的版本管理工具，git的使用范围较广，这里记录下来本地练习，代码提交Gitee的过程，方便备查。 前提条件：注册Gitee账号 第一步、新建仓库&ndash;Gitee 在Gitee控制台页面，右上角的 + 号，选择新建仓库。 在弹出的页面，填写仓库的名称，这里叫 vue_sh……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0070-gitee-push/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0069-excel-import/" title="Excel/CSV 表格中被转换的E &#43; 如何恢复">Excel/CSV 表格中被转换的E &#43; 如何恢复</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Excel'>Excel</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近在给用户导出csv文件，出现乱码和格式被转换，无法显示出原来的数据，网上查找未解决，自己捣鼓，记录下来，方便备查。 问题描述： 1、长字符串被转换成E+格式 2、文字变成乱码，无法识别 软件版本：office2016 解决方案一 第一步、设置单元格格式 单击选中整列，右键&ndas……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0069-excel-import/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0068-vue-dialog/" title="初探 Element 页面弹窗效果实现">初探 Element 页面弹窗效果实现</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/vue'>vue</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近空闲的时候在B站看Element的前端项目，动手跟着敲敲，下面学习笔记，方便备查。 一、环境准备 1）使用编译器VScode开发，可安装 vetur 插件，方便vue文件显示。 2）预先安装 nodejs 环境，可参考网上教程。 3）使用可视化项目管理 vue ui，可安装以下依赖插件。 运行依赖 vue-cli-plugin-element 1.0.1、……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0068-vue-dialog/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0067-eclipse-skill/" title="Eclipse编译器常见问题处理方式">Eclipse编译器常见问题处理方式</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置文件删除 文件路径：eclipse的configuration.settings文件夹下 找到org.eclipse.ui.ide.prefs文……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0067-eclipse-skill/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0066-java-maven/" title="Maven的pom.xml文件报错排查处理">Maven的pom.xml文件报错排查处理</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 新年刚上班，公司给配的电脑突然蓝屏了，居然重装也没成功，一夜回到解放前。只能先拿自己的电脑down代码，搭环境。本来是简单的过程，出现问题，下面记录下来，方便查看。 问题描述 导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。 处理方案 环境配……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0066-java-maven/">阅读全文</a></p>
+    </article>
+    
+    
+    
 
 
 
@@ -355,22 +605,6 @@
         <a href="https://www.wangqj.cn/post/page/5/">5</a>
     </li>
     
-    <li >
-        <a href="https://www.wangqj.cn/post/page/6/">6</a>
-    </li>
-    
-    <li >
-        <a href="https://www.wangqj.cn/post/page/7/">7</a>
-    </li>
-    
-    <li >
-        <a href="https://www.wangqj.cn/post/page/8/">8</a>
-    </li>
-    
-    <li >
-        <a href="https://www.wangqj.cn/post/page/9/">9</a>
-    </li>
-    
 
     
     <li class="next">
@@ -385,7 +619,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
+        &copy; 2022 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
         
     </div>
     <br />
@@ -537,6 +771,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/Fiddler/">Fiddler (1)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/FineReport/">FineReport (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/git/">git (3)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
@@ -635,6 +871,8 @@ if (!doNotTrack) {
     <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
     
     <a href="https://www.wangqj.cn/tags/Fiddler/">Fiddler</a>
+    
+    <a href="https://www.wangqj.cn/tags/FineReport/">FineReport</a>
     
     <a href="https://www.wangqj.cn/tags/git/">git</a>
     

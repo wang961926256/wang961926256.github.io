@@ -4,12 +4,37 @@
   
   <url>
     <loc>https://www.wangqj.cn/categories/</loc>
-    <lastmod>2021-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/tags/FineReport/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/categories/FineReport/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wangqj.cn/post/</loc>
-    <lastmod>2021-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/tags/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/post/0086-finereport/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wangqj.cn/</loc>
+    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,16 +49,6 @@
   
   <url>
     <loc>https://www.wangqj.cn/post/0085-python-email/</loc>
-    <lastmod>2021-12-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/tags/</loc>
-    <lastmod>2021-12-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wangqj.cn/</loc>
     <lastmod>2021-12-31T00:00:00+00:00</lastmod>
   </url>
   

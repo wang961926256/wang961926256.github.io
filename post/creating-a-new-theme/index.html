@@ -717,7 +717,7 @@ $
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-  {{ range first 10 .Data.Pages }}
+  {{ range first 20 .Data.Pages }}
     &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
   {{ end }}
 &lt;/body&gt;
@@ -846,7 +846,7 @@ $
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-  {{ range first 10 .Data.Pages }}
+  {{ range first 20 .Data.Pages }}
     &lt;h1&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h1&gt;
   {{ end }}
 &lt;/body&gt;
@@ -934,7 +934,7 @@ i'm speechless
 &lt;html&gt;
 &lt;body&gt;
   &lt;h1&gt;posts&lt;/h1&gt;
-  {{ range first 10 .Data.Pages }}
+  {{ range first 20 .Data.Pages }}
     {{ if eq .Type &quot;post&quot;}}
       &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
     {{ end }}
@@ -992,7 +992,7 @@ $ vi themes/zafta/layouts/partials/footer.html
 {{ partial &quot;header.html&quot; . }}
 
   &lt;h1&gt;posts&lt;/h1&gt;
-  {{ range first 10 .Data.Pages }}
+  {{ range first 20 .Data.Pages }}
     {{ if eq .Type &quot;post&quot;}}
       &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
     {{ end }}

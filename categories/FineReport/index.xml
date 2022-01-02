@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FineReport on 梦幻通灵的博客</title>
+    <link>https://www.wangqj.cn/categories/FineReport/</link>
+    <description>Recent content in FineReport on 梦幻通灵的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wangqj.cn/categories/FineReport/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>帆软 FineReport 动态列如何设置</title>
+      <link>https://www.wangqj.cn/post/0086-finereport/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wangqj.cn/post/0086-finereport/</guid>
+      <description>背景介绍 最近有个需求是用采购的帆软报表来动态展示数据，记录下来，方便备查。 环境准备 帆软 FineReport V9.0 以用户信息统计表为例，具体操作步骤如下。 第一步、设置查询信息集 新建信息集 Data，在编辑栏中 输入查询的SQL，查询 tb_user 表，其中 ${cols} 为变量，可以在 定义其的数值。 1 2 3 4 5 6 7 // ${cols} 表示列 SELECT ${cols} FROM tb_user GROUP BY</description>
+    </item>
+    
+  </channel>
+</rss>

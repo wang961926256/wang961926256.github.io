@@ -81,231 +81,6 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0074-linux-tomcat/" title="Centos下安装Maven和Tomcat记录">Centos下安装Maven和Tomcat记录</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年9月30日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Tomcat'>Tomcat</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 接上篇，在本地虚拟机搭建环境，本篇安装 Maven和 Tomcat 特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Maven 1、软件下载 通过wget命令来下载安装。 1 2 3 4 5 6 7 8 // yum 命令下载安装包，这里下载的是 3.5.0 &gt; wget http://mirrors.cnnic.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz // 解压 tar -zxvf apache-maven-3.6.3-bin.tar.gz // 新建文件 mkdir /opt/maven // 移动 mv apache-maven-3.6.3/* /opt/maven 2、设置环境变量 进入到系……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0074-linux-tomcat/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0073-linux-gitlab/" title="Centos下安装Gitlab 和 Jenkins 记录">Centos下安装Gitlab 和 Jenkins 记录</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年9月20日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Jenkins'>Jenkins</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近想走一遍自动化部署流程，在本地虚拟机搭建环境，特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Gitlab 1、安装相关依赖 1 2 3 4 5 6 7 8 // yum 命令下载安装所需要的四个依赖 &gt; yum -y install policycoreutils openssh-server openssh-clients postfix // 启动ssh服务 设置为开启启动 &gt; systemctl enable sshd &amp;&amp; sudo systemctl start sshd // 查看状态 &gt; systemctl status sshd // 设置pos……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0073-linux-gitlab/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0071-docker-redis/" title="虚拟机的docker中安装 mysql 和 redis">虚拟机的docker中安装 mysql 和 redis</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年9月1日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近重装虚拟机，环境重头安装，这里记录下安装的过程，方便备查。 环境：CentOS Linux release 7 1 2 3 // 查看版本 &gt; cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 一、安装docker 首先 安装 yum 依赖 1 2 // 安装 yum &gt; studo yum install -y yum-utils 安装 docker 两个步骤： 第一步、确认是否安装过docker，若有旧的docker则删除，命令如下。 1 2 3……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0071-docker-redis/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0072-selenium-test/" title="自动化测试之selenium小试牛刀">自动化测试之selenium小试牛刀</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年9月1日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/selenium'>selenium</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近在学习python的时候，看到大佬的博客，动手跟着尝试，记录下来，方便查看。selenium 由于web应用程序的自动化测试工具，具有开源、跨平台、支持多种浏览器、多种语言、成熟稳定、功能强大的特点。 环境搭建 第一步、安装python环境 环境安装跟着网上教程即可，这里选择……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0072-selenium-test/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0070-gitee-push/" title="如何向码云Gitee提交代码">如何向码云Gitee提交代码</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年8月22日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 作为常用的版本管理工具，git的使用范围较广，这里记录下来本地练习，代码提交Gitee的过程，方便备查。 前提条件：注册Gitee账号 第一步、新建仓库&ndash;Gitee 在Gitee控制台页面，右上角的 + 号，选择新建仓库。 在弹出的页面，填写仓库的名称，这里叫 vue_sh……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0070-gitee-push/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0069-excel-import/" title="Excel/CSV 表格中被转换的E &#43; 如何恢复">Excel/CSV 表格中被转换的E &#43; 如何恢复</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年8月12日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Excel'>Excel</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近在给用户导出csv文件，出现乱码和格式被转换，无法显示出原来的数据，网上查找未解决，自己捣鼓，记录下来，方便备查。 问题描述： 1、长字符串被转换成E+格式 2、文字变成乱码，无法识别 软件版本：office2016 解决方案一 第一步、设置单元格格式 单击选中整列，右键&ndas……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0069-excel-import/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0068-vue-dialog/" title="初探 Element 页面弹窗效果实现">初探 Element 页面弹窗效果实现</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年8月6日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/vue'>vue</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 最近空闲的时候在B站看Element的前端项目，动手跟着敲敲，下面学习笔记，方便备查。 一、环境准备 1）使用编译器VScode开发，可安装 vetur 插件，方便vue文件显示。 2）预先安装 nodejs 环境，可参考网上教程。 3）使用可视化项目管理 vue ui，可安装以下依赖插件。 运行依赖 vue-cli-plugin-element 1.0.1、……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0068-vue-dialog/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0067-eclipse-skill/" title="Eclipse编译器常见问题处理方式">Eclipse编译器常见问题处理方式</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年7月28日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置文件删除 文件路径：eclipse的configuration.settings文件夹下 找到org.eclipse.ui.ide.prefs文……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0067-eclipse-skill/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.wangqj.cn/post/0066-java-maven/" title="Maven的pom.xml文件报错排查处理">Maven的pom.xml文件报错排查处理</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2021年7月20日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            背景介绍 新年刚上班，公司给配的电脑突然蓝屏了，居然重装也没成功，一夜回到解放前。只能先拿自己的电脑down代码，搭环境。本来是简单的过程，出现问题，下面记录下来，方便查看。 问题描述 导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。 处理方案 环境配……
-        </div>
-        <p class="readmore"><a href="https://www.wangqj.cn/post/0066-java-maven/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
                 <a href="https://www.wangqj.cn/post/0065-golang-create/" title="初探Golang语言之环境搭建">初探Golang语言之环境搭建</a>
             </h1>
         </header>
@@ -324,6 +99,481 @@
             背景介绍 在日常力扣刷题时，看到不少go语言解法，对比Java似乎简便，于是尝试着了解下这种语言，从本地本地环境搭建开始，操作是挺方便，这里记录一下，方便备查。 第一步、软件下载和安装 下载地址：GO语言中文网 1、window 版本安装 window 系统下载 msi 格式的安装文件，直接点击安装即可。 选择安……
         </div>
         <p class="readmore"><a href="https://www.wangqj.cn/post/0065-golang-create/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0064-k8s-docker/" title="初探Kubernetes&#43;Docker 分布式应用部署（上）">初探Kubernetes&#43;Docker 分布式应用部署（上）</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/k8s'>k8s</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 知识了解 Kubernetes 简称 K8s 是容器集群管理系统，是一个开源的平台，可以实现容器集群的自动化部署、自动扩缩容、维护等功能. 第一步、安装Docker 本虚拟机是 Ce……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0064-k8s-docker/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0063-docker-learn/" title="Docker 学习笔记">Docker 学习笔记</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年6月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲的不错，主要是命令操作，这里记录下来，方便查看。 在本地安装的虚拟机（Redhat）上进行练习。 第一步、安装Docker 1 2 3 4 5 6 7 8 9 10 11……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0063-docker-learn/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0062-odps-keywords/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年6月15日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/ODPS'>ODPS</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下使用的过程，方便备查。 知识了解 ODPS （Open Data Processing Service）,是阿里巴巴通用计算平台提供的一种快速、完全托管的 GB/TB/PB 级数据仓库解决方案，现在已更……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0062-odps-keywords/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0061-database-find/" title="全库查询某个指定的值或字段（mysql oracle）">全库查询某个指定的值或字段（mysql oracle）</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年6月5日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Mysql'>Mysql</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍历，列出库中的位置，记录下来，方便备查。 mysql版本 存储过程输入参数如下所示。 输入参数 | 中文名称 &mdash;&mdash;&ndash; | &mdash;&ndash; para_databasename | 数据库名称 para_finstr | 查询的字符串 存储过……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0061-database-find/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0060-mysql-locked/" title="mysql锁表处理及日常使用">mysql锁表处理及日常使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Mysql'>Mysql</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，查询数据库的所有连接信息。 1 2 // 显示连接的进程 show processlist 关注几个指标参数 id : 表示进程的id user : 表示连接的用户 info : 表示执行的语句，这里显示的是查询命……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0060-mysql-locked/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0059-springboot-RabbitMq/" title="SpringBoot整合RabbitMQ">SpringBoot整合RabbitMQ</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何与Spring Boot进行整合呢，查阅些资料，记录下来练习的过程，方便备查。 知识学习与回顾 RabbitMQ有6种消息模型，但第6种属于RPC……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0059-springboot-RabbitMq/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0058-RabbitMq-up/" title="初探消息队列RabbitMQ">初探消息队列RabbitMQ</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/RabbitMQ'>RabbitMQ</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、Kafka等，先安装RabbitMQ感受下，以下记录步骤，方便备查。 名词理解 MQ（Message Queue） 消息队列，通过生产者和消费者模型，……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0058-RabbitMq-up/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0057-Jenkins-up/" title="初试本地安装Jenkins软件">初试本地安装Jenkins软件</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月2日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Jenkins'>Jenkins</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与配置。本次是在window下操作，这里记录操作的过程，方便以后查看。 环境准备 1）Tomcat 官网地址：Tomcat下载 由于本次在win下安装……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0057-Jenkins-up/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0056-eclipse-show/" title="eclipse 快速实现查看源码的方法">eclipse 快速实现查看源码的方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年4月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Eclipse'>Eclipse</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方法有好几种，尝试后，记录下来设置的过程，方便备查。 比如说 org.apache.commons.net 包，想看该jar包中具体的方法，双击是看不到结果的，如下图所示。那要怎么解决这个问……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0056-eclipse-show/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0055-eclipse-git/" title="eclipse 获取并运行git上项目">eclipse 获取并运行git上项目</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年4月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Git'>Git</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 公司运用GitLab来管理Java的源码，在管理员授权源码权限后，可以获取最新的程序到本地运行。记录下来配置的流程，方便以后查看。 本地操作系统是win10，安装好Git的环境，安装比较简单，可以参考网上的安装教程，这里不再列举，推荐学习下廖雪峰老师的教程，链接是参考博客【……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0055-eclipse-git/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0054-java-env/" title="bat 文件快速配置Java开发环境">bat 文件快速配置Java开发环境</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年4月2日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，能不能写个脚本呢，将软件写入到环境变量，把软件放到指定的目录。下面记录这个过程，方便以后查看。 处理这个问题主要可以分为以下两步： 第一步 将文件……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0054-java-env/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0053-oracle-lock/" title="oracle 数据库  ORA-28000错误的原因及解决办法">oracle 数据库  ORA-28000错误的原因及解决办法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年3月23日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/vue'>vue</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错原因，以下记录处理的的过程，方便备查。 1、原因 在 oracle database 11g中，默认在default概要文件中设置了“FAILED_LOGIN_ATTEMPT……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0053-oracle-lock/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0052-vue-run/" title="vue项目编译与运行">vue项目编译与运行</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年3月10日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/vue'>vue</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭建的过程，方便之后的查看。之前本地电脑还安装了node.js的环境，这里不再说明，具体可以参考网上的教程。 1、安装npm 有时候用npm下载依……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0052-vue-run/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0051-eclipse/" title="Eclipse编译器常见问题处理方式">Eclipse编译器常见问题处理方式</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置文件删除 文件路径：eclipse的configuration.settings文件夹下 找到org.eclipse.ui.ide.prefs文……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0051-eclipse/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0050-maven-warn/" title="Maven的pom.xml文件报错排查处理">Maven的pom.xml文件报错排查处理</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。 处理方案 环境配置可以从以下步骤，逐步定位问题。 第一步、检查Java环境是否安装成功 快捷键 win + R ，输入 cmd 进入命令行，查看 Jdk 版本。 1 2 // jdk 版本 &gt;&gt; java -version 这里安装的是Java1.8版本 注：若显示不……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0050-maven-warn/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0049-Golang/" title="初探Golang语言之环境搭建">初探Golang语言之环境搭建</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年2月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Golang'>Golang</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在日常力扣刷题时，看到不少go语言解法，对比Java似乎简便，于是尝试着了解下这种语言，从本地本地环境搭建开始，操作是挺方便，这里记录一下，方便备查。 第一步、软件下载和安装 下载地址：GO语言中文网 1、window 版本安装 window 系统下载 msi 格式的安装文件，直接点击安装即可。 选择安……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0049-Golang/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0048-Kubernetes-docker/" title="初探Kubernetes&#43;Docker 分布式应用部署（上）">初探Kubernetes&#43;Docker 分布式应用部署（上）</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年1月26日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Kubernetes'>Kubernetes</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 Dubernetes 简称 K8s 是容器集群管理系统，是一个开源的平台，可以实现容器集群的自动化部署、自动扩缩容、维护等功能. 第一步、安装Docker 本虚拟机是 CentOS……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0048-Kubernetes-docker/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0047-docker/" title="Docker 学习笔记">Docker 学习笔记</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年1月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/docker'>docker</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲的不错，主要是命令操作，这里记录下来，方便查看。 在本地安装的虚拟机（Redhat）上进行练习。 第一步、安装Docker 1 2 3 4 5 6 7 8 9 10 11……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0047-docker/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://www.wangqj.cn/post/0046-odps/" title="初探阿里数据治理平台ODPS">初探阿里数据治理平台ODPS</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年12月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/ODPS'>ODPS</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            背景介绍 在随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下使用的过程，方便备查。 ODPS （Open Data Processing Service）,是阿里巴巴通用计算平台提供的一种快速、完全托管的 GB/TB/PB 级数据仓库解决方案，现在已更名为M……
+        </div>
+        <p class="readmore"><a href="https://www.wangqj.cn/post/0046-odps/">阅读全文</a></p>
     </article>
     
     
@@ -359,22 +609,6 @@
         <a href="https://www.wangqj.cn/post/page/5/">5</a>
     </li>
     
-    <li >
-        <a href="https://www.wangqj.cn/post/page/6/">6</a>
-    </li>
-    
-    <li >
-        <a href="https://www.wangqj.cn/post/page/7/">7</a>
-    </li>
-    
-    <li >
-        <a href="https://www.wangqj.cn/post/page/8/">8</a>
-    </li>
-    
-    <li >
-        <a href="https://www.wangqj.cn/post/page/9/">9</a>
-    </li>
-    
 
     
     <li class="next">
@@ -389,7 +623,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2021 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
+        &copy; 2022 <a href="https://www.wangqj.cn">梦幻通灵的博客 By 梦幻通灵</a>
         
     </div>
     <br />
@@ -541,6 +775,8 @@ if (!doNotTrack) {
     
     <li><a href="https://www.wangqj.cn/categories/Fiddler/">Fiddler (1)</a></li>
     
+    <li><a href="https://www.wangqj.cn/categories/FineReport/">FineReport (1)</a></li>
+    
     <li><a href="https://www.wangqj.cn/categories/git/">git (3)</a></li>
     
     <li><a href="https://www.wangqj.cn/categories/Go/">Go (1)</a></li>
@@ -639,6 +875,8 @@ if (!doNotTrack) {
     <a href="https://www.wangqj.cn/tags/ExtJs/">ExtJs</a>
     
     <a href="https://www.wangqj.cn/tags/Fiddler/">Fiddler</a>
+    
+    <a href="https://www.wangqj.cn/tags/FineReport/">FineReport</a>
     
     <a href="https://www.wangqj.cn/tags/git/">git</a>
     
