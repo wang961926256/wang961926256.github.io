@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/docker/</link>
+    <description>Recent content in docker on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 16 Dec 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/docker/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker 环境下为 Elasticsearch 安装IK 分词器</title>
+      <link>https://wangqj.cn/post/0082-docker-es/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0082-docker-es/</guid>
+      <description>背景介绍 1024 程序员节，祝各位大佬节日快乐！ 接上篇，安装好 Elasticsearch 和 kibana 就可以进行 Es 操作。 背景 Elasticsearch 在创建倒排索引时，需要对文档进行分词；在搜索时对用户的输</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://wangqj.cn/post/0063-docker-learn/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0063-docker-learn/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://wangqj.cn/post/0047-docker/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0047-docker/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲</description>
+    </item>
+    
+  </channel>
+</rss>

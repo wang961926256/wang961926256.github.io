@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ODPS on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/odps/</link>
+    <description>Recent content in ODPS on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/odps/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初探阿里数据治理平台ODPS</title>
+      <link>https://wangqj.cn/post/0062-odps-keywords/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0062-odps-keywords/</guid>
+      <description>背景介绍 随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下使</description>
+    </item>
+    
+    <item>
+      <title>初探阿里数据治理平台ODPS</title>
+      <link>https://wangqj.cn/post/0046-odps/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0046-odps/</guid>
+      <description>背景介绍 在随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下</description>
+    </item>
+    
+  </channel>
+</rss>

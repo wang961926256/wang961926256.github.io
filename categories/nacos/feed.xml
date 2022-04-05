@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nacos on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/nacos/</link>
+    <description>Recent content in nacos on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 12 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/nacos/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos安装部署nacos实战</title>
+      <link>https://wangqj.cn/post/0076-linux-nacos/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0076-linux-nacos/</guid>
+      <description>背景介绍 Nacos 作为微服务重要的服务发现，服务注册中心，具有重要的作用。下面记录下安装部署的情况，方便备查。 一、环境搭建 nacos 前置 Java 环境，安装命令如下</description>
+    </item>
+    
+  </channel>
+</rss>

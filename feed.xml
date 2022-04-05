@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/feed.xml</link>
+    <description>Recent content on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>帆软 FineReport 动态列如何设置</title>
+      <link>https://wangqj.cn/post/0086-finereport/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0086-finereport/</guid>
+      <description>背景介绍 最近有个需求是用采购的帆软报表来动态展示数据，记录下来，方便备查。 环境准备 帆软 FineReport V9.0 以用户信息统计表为例，具体操作步骤如下。 第一步、设</description>
+    </item>
+    
+    <item>
+      <title>python 实现使用163邮箱发送有图片的邮件</title>
+      <link>https://wangqj.cn/post/0085-python-email/</link>
+      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0085-python-email/</guid>
+      <description>背景介绍 周末温习下python，正好最近在做监控，想着 给163邮箱发邮件，记录下来，方便备查。 邮件发送必须要知道邮件的 传输协议 SMTP SMTP （Simp</description>
+    </item>
+    
+    <item>
+      <title>在win10下通过WSL安装Linux子系统-Ubuntu</title>
+      <link>https://wangqj.cn/post/0084-wsl-linux/</link>
+      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0084-wsl-linux/</guid>
+      <description>背景介绍 在本地日常使用linux系统，不想安装虚拟机该怎么搞？win10提供新的解决方案，下面记录操作过程，方便备查。 WSL（Windows</description>
+    </item>
+    
+    <item>
+      <title>在 vscode 上刷力扣 Leetcode 可以这样来</title>
+      <link>https://wangqj.cn/post/0083-vscode-leetcode/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0083-vscode-leetcode/</guid>
+      <description>背景介绍 背景 神奇的算法网站 LeetCode 值得驻留，网页版似乎不太方便，作为习惯于在编译器上敲代码的你，如何 vscode 上优雅的刷力扣 Leetcode，在本地配置，</description>
+    </item>
+    
+    <item>
+      <title>Docker 环境下为 Elasticsearch 安装IK 分词器</title>
+      <link>https://wangqj.cn/post/0082-docker-es/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0082-docker-es/</guid>
+      <description>背景介绍 1024 程序员节，祝各位大佬节日快乐！ 接上篇，安装好 Elasticsearch 和 kibana 就可以进行 Es 操作。 背景 Elasticsearch 在创建倒排索引时，需要对文档进行分词；在搜索时对用户的输</description>
+    </item>
+    
+    <item>
+      <title>爱情美句</title>
+      <link>https://wangqj.cn/reading/0009-love/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0009-love/</guid>
+      <description>1、真正的爱情是需要对对方有一种深度的理解、一种很深的价值确认。 2、相爱虽然是两个人的事，但过的始终是自己的人生，一个人只是经由另一个人去拓</description>
+    </item>
+    
+    <item>
+      <title>Java8 Stream 实现 List 转 Map</title>
+      <link>https://wangqj.cn/post/0081-java-list-map/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0081-java-list-map/</guid>
+      <description>背景介绍 在Java处理数据时，如何将数据库查询的List结果集合转换成Map? 使用Java8的 stream 来实现，可参考以下例子。 // 构造List数据集</description>
+    </item>
+    
+    <item>
+      <title>VMware workstation 12 无法远程连接</title>
+      <link>https://wangqj.cn/post/0080-wmware-workstation/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0080-wmware-workstation/</guid>
+      <description>背景介绍 突然发现个人电脑无法连接本地的虚拟机，回想最近没有更改配置，直接就连接不上，没法进行练习，一步步排查原因，记录下来，方便备查。 原环境</description>
+    </item>
+    
+    <item>
+      <title>中华老字号</title>
+      <link>https://wangqj.cn/reading/0008-china-import/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0008-china-import/</guid>
+      <description>中华老字号 1、大北照相 前门大街2号 赵雁成 2006年被认定为中华老字号 历届党代会 人代会的御用拍摄的店 上千人的同框拍摄 6张底片 后期合成 2、全聚德</description>
+    </item>
+    
+    <item>
+      <title>编程警句</title>
+      <link>https://wangqj.cn/reading/0007-coding/</link>
+      <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0007-coding/</guid>
+      <description>Alan Jay Perlis (April 1, 1922 – February7, 1990)，美国著名计算机科学家，历任普渡大学，卡耐基梅隆大学，耶鲁大学教授。第一位图灵奖获得者。 1.一个人的常量是另一个人</description>
+    </item>
+    
+    <item>
+      <title>用 Fiddler 来抓取手机包</title>
+      <link>https://wangqj.cn/post/0079-phone-fiddler/</link>
+      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0079-phone-fiddler/</guid>
+      <description>背景介绍 中秋假期，项目组内想帮忙抓取手机数据包，跟着网上教程操作一遍，遇到的坑，记录下来，方便备查。 工具：fiddler 官网下载 目的：抓取和</description>
+    </item>
+    
+    <item>
+      <title>Centos安装部署sonarqube</title>
+      <link>https://wangqj.cn/post/0077-linux-sonarqube/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0077-linux-sonarqube/</guid>
+      <description>背景介绍 sonarqube作为重要的代码分析平台，可持续分析和评测源代码的质量。下面记录安装过程，方便查看。 第一步、安装 官网下载 最新地址 历史</description>
+    </item>
+    
+    <item>
+      <title>Centos安装部署nacos实战</title>
+      <link>https://wangqj.cn/post/0076-linux-nacos/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0076-linux-nacos/</guid>
+      <description>背景介绍 Nacos 作为微服务重要的服务发现，服务注册中心，具有重要的作用。下面记录下安装部署的情况，方便备查。 一、环境搭建 nacos 前置 Java 环境，安装命令如下</description>
+    </item>
+    
+    <item>
+      <title>初探 Prometheus安装配置篇</title>
+      <link>https://wangqj.cn/post/0075-linux-prometheus/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0075-linux-prometheus/</guid>
+      <description>背景介绍 周末在家搭建普罗米修斯监控，记录下来，以备查看。 知识学习 Prometheus 作为一个开源的服务监控系统和时间序列数据库，开源真好。 特点： 1）多维度数据</description>
+    </item>
+    
+    <item>
+      <title>Centos下安装Maven和Tomcat记录</title>
+      <link>https://wangqj.cn/post/0074-linux-tomcat/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0074-linux-tomcat/</guid>
+      <description>背景介绍 接上篇，在本地虚拟机搭建环境，本篇安装 Maven和 Tomcat 特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Maven 1、软件下载 通过w</description>
+    </item>
+    
+    <item>
+      <title>Centos下安装Gitlab 和 Jenkins 记录</title>
+      <link>https://wangqj.cn/post/0073-linux-gitlab/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0073-linux-gitlab/</guid>
+      <description>背景介绍 最近想走一遍自动化部署流程，在本地虚拟机搭建环境，特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Gitlab 1、安装相关依赖 //</description>
+    </item>
+    
+    <item>
+      <title>自动化测试之selenium小试牛刀</title>
+      <link>https://wangqj.cn/post/0072-selenium-test/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0072-selenium-test/</guid>
+      <description>背景介绍 最近在学习python的时候，看到大佬的博客，动手跟着尝试，记录下来，方便查看。selenium 由于web应用程序的自动化测试工具，</description>
+    </item>
+    
+    <item>
+      <title>虚拟机的docker中安装 mysql 和 redis</title>
+      <link>https://wangqj.cn/post/0071-docker-redis/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0071-docker-redis/</guid>
+      <description>背景介绍 最近重装虚拟机，环境重头安装，这里记录下安装的过程，方便备查。 环境：CentOS Linux release 7 // 查看版本 &amp;gt; cat /etc/redhat-release CentOS Linux release 7.4.1708 (Core) 一、安装docker</description>
+    </item>
+    
+    <item>
+      <title>如何向码云Gitee提交代码</title>
+      <link>https://wangqj.cn/post/0070-gitee-push/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0070-gitee-push/</guid>
+      <description>背景介绍 作为常用的版本管理工具，git的使用范围较广，这里记录下来本地练习，代码提交Gitee的过程，方便备查。 前提条件：注册Gitee账号</description>
+    </item>
+    
+    <item>
+      <title>Excel/CSV 表格中被转换的E &#43; 如何恢复</title>
+      <link>https://wangqj.cn/post/0069-excel-import/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0069-excel-import/</guid>
+      <description>背景介绍 最近在给用户导出csv文件，出现乱码和格式被转换，无法显示出原来的数据，网上查找未解决，自己捣鼓，记录下来，方便备查。 问题描述： 1、</description>
+    </item>
+    
+    <item>
+      <title>足球解说-贺炜</title>
+      <link>https://wangqj.cn/reading/0006-soccer/</link>
+      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0006-soccer/</guid>
+      <description>人生当中成功只是一时的，失败却是主旋律。但是如何面对失败，却把人分成了不同的样子。有的人会被失败击垮，有的人能够不断地爬起来继续向前。澳大利</description>
+    </item>
+    
+    <item>
+      <title>初探 Element 页面弹窗效果实现</title>
+      <link>https://wangqj.cn/post/0068-vue-dialog/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0068-vue-dialog/</guid>
+      <description>背景介绍 最近空闲的时候在B站看Element的前端项目，动手跟着敲敲，下面学习笔记，方便备查。 一、环境准备 1）使用编译器VScode开发，可</description>
+    </item>
+    
+    <item>
+      <title>Eclipse编译器常见问题处理方式</title>
+      <link>https://wangqj.cn/post/0067-eclipse-skill/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0067-eclipse-skill/</guid>
+      <description>背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置</description>
+    </item>
+    
+    <item>
+      <title>Maven的pom.xml文件报错排查处理</title>
+      <link>https://wangqj.cn/post/0066-java-maven/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0066-java-maven/</guid>
+      <description>背景介绍 新年刚上班，公司给配的电脑突然蓝屏了，居然重装也没成功，一夜回到解放前。只能先拿自己的电脑down代码，搭环境。本来是简单的过程，出</description>
+    </item>
+    
+    <item>
+      <title>初探Golang语言之环境搭建</title>
+      <link>https://wangqj.cn/post/0065-golang-create/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0065-golang-create/</guid>
+      <description>背景介绍 在日常力扣刷题时，看到不少go语言解法，对比Java似乎简便，于是尝试着了解下这种语言，从本地本地环境搭建开始，操作是挺方便，这里记</description>
+    </item>
+    
+    <item>
+      <title>初探Kubernetes&#43;Docker 分布式应用部署（上）</title>
+      <link>https://wangqj.cn/post/0064-k8s-docker/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0064-k8s-docker/</guid>
+      <description>背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 知识了</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://wangqj.cn/post/0063-docker-learn/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0063-docker-learn/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲</description>
+    </item>
+    
+    <item>
+      <title>初探阿里数据治理平台ODPS</title>
+      <link>https://wangqj.cn/post/0062-odps-keywords/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0062-odps-keywords/</guid>
+      <description>背景介绍 随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下使</description>
+    </item>
+    
+    <item>
+      <title>Java知识</title>
+      <link>https://wangqj.cn/interview/java/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/interview/java/</guid>
+      <description>1.Java集合对象 java中集合类都是由Collection和Map接口派生出来的,其中Set和List接口是Collection接口派生</description>
+    </item>
+    
+    <item>
+      <title>面试</title>
+      <link>https://wangqj.cn/interview/redis/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/interview/redis/</guid>
+      <description>redis 单线程速度为什么快 redis 基于Reactor 模式开发网络事件处理器、文件事件处理器，它是单线程的。 cpu 上下文切换 Redis 分布式锁 利用setnx 保证，若k</description>
+    </item>
+    
+    <item>
+      <title>全库查询某个指定的值或字段（mysql oracle）</title>
+      <link>https://wangqj.cn/post/0061-database-find/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0061-database-find/</guid>
+      <description>背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍</description>
+    </item>
+    
+    <item>
+      <title>mysql锁表处理及日常使用</title>
+      <link>https://wangqj.cn/post/0060-mysql-locked/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0060-mysql-locked/</guid>
+      <description>背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot整合RabbitMQ</title>
+      <link>https://wangqj.cn/post/0059-springboot-rabbitmq/</link>
+      <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0059-springboot-rabbitmq/</guid>
+      <description>背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何</description>
+    </item>
+    
+    <item>
+      <title>初探消息队列RabbitMQ</title>
+      <link>https://wangqj.cn/post/0058-rabbitmq-up/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0058-rabbitmq-up/</guid>
+      <description>背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、K</description>
+    </item>
+    
+    <item>
+      <title>初试本地安装Jenkins软件</title>
+      <link>https://wangqj.cn/post/0057-jenkins-up/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0057-jenkins-up/</guid>
+      <description>背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与</description>
+    </item>
+    
+    <item>
+      <title>eclipse 快速实现查看源码的方法</title>
+      <link>https://wangqj.cn/post/0056-eclipse-show/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0056-eclipse-show/</guid>
+      <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方</description>
+    </item>
+    
+    <item>
+      <title>eclipse 获取并运行git上项目</title>
+      <link>https://wangqj.cn/post/0055-eclipse-git/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0055-eclipse-git/</guid>
+      <description>背景介绍 公司运用GitLab来管理Java的源码，在管理员授权源码权限后，可以获取最新的程序到本地运行。记录下来配置的流程，方便以后查看。 本</description>
+    </item>
+    
+    <item>
+      <title>bat 文件快速配置Java开发环境</title>
+      <link>https://wangqj.cn/post/0054-java-env/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0054-java-env/</guid>
+      <description>背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，</description>
+    </item>
+    
+    <item>
+      <title>oracle 数据库  ORA-28000错误的原因及解决办法</title>
+      <link>https://wangqj.cn/post/0053-oracle-lock/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0053-oracle-lock/</guid>
+      <description>背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错</description>
+    </item>
+    
+    <item>
+      <title>vue项目编译与运行</title>
+      <link>https://wangqj.cn/post/0052-vue-run/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0052-vue-run/</guid>
+      <description>背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭</description>
+    </item>
+    
+    <item>
+      <title>寻找你愿意忍受的痛苦</title>
+      <link>https://wangqj.cn/reading/0004-struggle/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0004-struggle/</guid>
+      <description>约翰·乌歇尔（John Urschel）是一个职业橄榄球运动员。 2017年退役后，他改行研究数学，先在宾夕法尼亚大学拿到数学硕士，现在麻省理工</description>
+    </item>
+    
+    <item>
+      <title>细细品味语言</title>
+      <link>https://wangqj.cn/reading/0005-joke/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0005-joke/</guid>
+      <description>如果父母是一件工作，谁愿意接这破活儿，工作内容是：无条件对你好。 你们能理解这种矛盾吗？我对宇宙如此渺小，我对公司却如此重要，不去上班就扣我钱</description>
+    </item>
+    
+    <item>
+      <title>Eclipse编译器常见问题处理方式</title>
+      <link>https://wangqj.cn/post/0051-eclipse/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0051-eclipse/</guid>
+      <description>背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置</description>
+    </item>
+    
+    <item>
+      <title>Maven的pom.xml文件报错排查处理</title>
+      <link>https://wangqj.cn/post/0050-maven-warn/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0050-maven-warn/</guid>
+      <description>背景介绍 导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。 处理方案 环境配置可以从以下步骤，逐步定位问题。</description>
+    </item>
+    
+    <item>
+      <title>初探Golang语言之环境搭建</title>
+      <link>https://wangqj.cn/post/0049-golang/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0049-golang/</guid>
+      <description>背景介绍 在日常力扣刷题时，看到不少go语言解法，对比Java似乎简便，于是尝试着了解下这种语言，从本地本地环境搭建开始，操作是挺方便，这里记</description>
+    </item>
+    
+    <item>
+      <title>初探Kubernetes&#43;Docker 分布式应用部署（上）</title>
+      <link>https://wangqj.cn/post/0048-kubernetes-docker/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0048-kubernetes-docker/</guid>
+      <description>背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 Dubernetes 简称</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://wangqj.cn/post/0047-docker/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0047-docker/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲</description>
+    </item>
+    
+    <item>
+      <title>初探阿里数据治理平台ODPS</title>
+      <link>https://wangqj.cn/post/0046-odps/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0046-odps/</guid>
+      <description>背景介绍 在随着用户量的增加，数据处理变的较为复杂，百万级别数据量下，关联查询的效率不高，公司开始采用阿里的ODPS平台来整合数据，下面记录下</description>
+    </item>
+    
+    <item>
+      <title>全库查询某个指定的值或字段</title>
+      <link>https://wangqj.cn/post/0045-mysql-oracle-search/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0045-mysql-oracle-search/</guid>
+      <description>背景介绍 在已知功能的情况下，如何快速的获取该功能用到了哪些表，从数据库中遍历并展示出来，通常是要怎么做呢？网上查阅，使用存储过程来实现循环遍</description>
+    </item>
+    
+    <item>
+      <title>mysql锁</title>
+      <link>https://wangqj.cn/post/0044-mysql-lock/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0044-mysql-lock/</guid>
+      <description>背景介绍 在开发过程中突然发现数据库查询不出来结果，猜想是数据表被锁住了，网上查询后，执行命令解决。记录下来，方便备查。 1、查看进程 执行命令，</description>
+    </item>
+    
+    <item>
+      <title>技术名词</title>
+      <link>https://wangqj.cn/reading/0001-technology/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0001-technology/</guid>
+      <description>Elastic Compute Service 弹性计算 ECS Distribute Relational Database Service 分布式关系数据库 DRDS SchedulerX 分布式任务调度 SKU stock keeping unit 库存量单元，商品下的一个分类（商品的颜色或者编码） SPU standard product Unit 标准化产品单元 即</description>
+    </item>
+    
+    <item>
+      <title>软考</title>
+      <link>https://wangqj.cn/program/software-02/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/program/software-02/</guid>
+      <description>【摘要】 20xx年x月到20xx年x月，我参与了xxx项目，该项目主要是xxx，在该项目中我担任xxx（注，必须是项目经理，系统架构师，系统</description>
+    </item>
+    
+    <item>
+      <title>软考真题</title>
+      <link>https://wangqj.cn/program/software-01/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/program/software-01/</guid>
+      <description>软件架构师 历年论文整理 2017年 从下列的 4 道试题（试题一至试题四）中任选 1 道解答 。请在答题纸上的指定位置处将所选择试题的题号框涂黑 。若多 涂或</description>
+    </item>
+    
+    <item>
+      <title>软考真题</title>
+      <link>https://wangqj.cn/program/software-03/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/program/software-03/</guid>
+      <description>软件架构师 历年论文整理 2017年 从下列的 4 道试题（试题一至试题四）中任选 1 道解答 。请在答题纸上的指定位置处将所选择试题的题号框涂黑 。若多 涂或</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot整合RabbitMQ</title>
+      <link>https://wangqj.cn/post/0043-rabbitmq-springboot/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0043-rabbitmq-springboot/</guid>
+      <description>背景介绍 消息队列在项目中的运用是越来越广泛，上篇博客 初探消息队列RabbitMQ 安装上了RabbitMQ，实现了消息队列的生产和消费，那如何</description>
+    </item>
+    
+    <item>
+      <title>初探消息队列RabbitMQ</title>
+      <link>https://wangqj.cn/post/0042-rabbitmq/</link>
+      <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0042-rabbitmq/</guid>
+      <description>背景介绍 在当今数据量访问比较大的应用中都用到了消息队列，缓解直接请求的压力，提高服务的性能。消息队列有ActiveMQ、RabbitMq、K</description>
+    </item>
+    
+    <item>
+      <title>初试本地安装Jenkins软件</title>
+      <link>https://wangqj.cn/post/0041-jenkins/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0041-jenkins/</guid>
+      <description>背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与</description>
+    </item>
+    
+    <item>
+      <title>eclipse查看源码</title>
+      <link>https://wangqj.cn/post/0040-eclipse-code/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0040-eclipse-code/</guid>
+      <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方</description>
+    </item>
+    
+    <item>
+      <title>eclipse 获取并运行git上项目</title>
+      <link>https://wangqj.cn/post/0039-eclipse-git/</link>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0039-eclipse-git/</guid>
+      <description>背景介绍 公司运用GitLab来管理Java的源码，在管理员授权源码权限后，可以获取最新的程序到本地运行。记录下来配置的流程，方便以后查看。 本</description>
+    </item>
+    
+    <item>
+      <title>bat配置Java开发环境</title>
+      <link>https://wangqj.cn/post/0038-java-jdk/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0038-java-jdk/</guid>
+      <description>背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，</description>
+    </item>
+    
+    <item>
+      <title>oracle 数据库锁库</title>
+      <link>https://wangqj.cn/post/0037-oracle-lock/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0037-oracle-lock/</guid>
+      <description>背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错</description>
+    </item>
+    
+    <item>
+      <title>vue项目编译与运行</title>
+      <link>https://wangqj.cn/post/0036-vue-run/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0036-vue-run/</guid>
+      <description>背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭</description>
+    </item>
+    
+    <item>
+      <title>eclipse 中高亮显示</title>
+      <link>https://wangqj.cn/post/0035-eclipse-highlight/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0035-eclipse-highlight/</guid>
+      <description>背景介绍 在使用eclipse编译器时，需要对变量进行高亮显示，方便快速的去看代码 1、文件内容的高亮显示 在 菜单栏的 window &amp;mdash;&amp;gt; preference &amp;mdash;&amp;ndash;&amp;gt; Content type &amp;mdash;&amp;ndash;&amp;gt; Text &amp;mdash;-&amp;gt; Html &amp;mdash;&amp;gt; Add 弹出</description>
+    </item>
+    
+    <item>
+      <title>excel数据验证</title>
+      <link>https://wangqj.cn/post/0033-excel-out/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0033-excel-out/</guid>
+      <description>背景介绍 excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制</description>
+    </item>
+    
+    <item>
+      <title>oracle迁移到mysql</title>
+      <link>https://wangqj.cn/post/0032-oracletomysql/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0032-oracletomysql/</guid>
+      <description>背景介绍 oracle和mysql 作为常用的数据库，在实际生产中，两种数据库都具有很广的应用场景。 最近项目使用的数据库需要从oracle转到m</description>
+    </item>
+    
+    <item>
+      <title>oracle数据库空表处理</title>
+      <link>https://wangqj.cn/post/0031-emptytable/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0031-emptytable/</guid>
+      <description>背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查</description>
+    </item>
+    
+    <item>
+      <title>Ext tree 节点的新增和移除</title>
+      <link>https://wangqj.cn/post/0030-exttree/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0030-exttree/</guid>
+      <description>背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增</description>
+    </item>
+    
+    <item>
+      <title>Java 程序打包zip</title>
+      <link>https://wangqj.cn/post/0029-javatozip/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0029-javatozip/</guid>
+      <description>背景介绍 最近工作中需要将指定文件夹下的文件，挑选出来，并打包下载。网上查询后，使用zipFile实现压缩，这里记录下来，方便备查。 //引入Z</description>
+    </item>
+    
+    <item>
+      <title>ifream 绑定PDF出错</title>
+      <link>https://wangqj.cn/post/0028-ifream-encode/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0028-ifream-encode/</guid>
+      <description>背景介绍 encode 浏览器在对url解析时自动进行解码 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中</description>
+    </item>
+    
+    <item>
+      <title>Aspose &#43; PDFObject</title>
+      <link>https://wangqj.cn/post/0027-aspose/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0027-aspose/</guid>
+      <description>背景介绍 Aspose office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。 最近系统中想做个页面的展示和下载的功能，正好公司购买了</description>
+    </item>
+    
+    <item>
+      <title>可重复执行的脚本</title>
+      <link>https://wangqj.cn/post/0026-oracle-script/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0026-oracle-script/</guid>
+      <description>背景介绍 数据库脚本 是包含不属于数据库架构定义的Transact-SQL(T-SQL)语句或实用工具（如 SQLCMD）的附加文件。可以将数据库</description>
+    </item>
+    
+    <item>
+      <title>mysql到sqlite数据传输</title>
+      <link>https://wangqj.cn/post/0025-mysql-sqlite/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0025-mysql-sqlite/</guid>
+      <description>背景介绍 mysql和sqlite 是两种常用的数据库，在日常使用中也是需要进行数据的交换。 在实际的工作中需要将mysql数据库表中的数据同步到</description>
+    </item>
+    
+    <item>
+      <title>oracle存储过程</title>
+      <link>https://wangqj.cn/post/0024-oracle-mysql/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0024-oracle-mysql/</guid>
+      <description>知识背景 存储过程 是在大型数据库系统中，一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户通过指定存储过程的名字并</description>
+    </item>
+    
+    <item>
+      <title>oracle备份</title>
+      <link>https://wangqj.cn/post/0023-oracle-back/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0023-oracle-back/</guid>
+      <description>背景介绍 oracle 是一种重要的关系型数据库，日常工作中需要对其进行备份和恢复。 ​ 在日常开发中，需要及时对数据库进行备份和还原，以oracle为例，两</description>
+    </item>
+    
+    <item>
+      <title>Github上搭建个人博客</title>
+      <link>https://wangqj.cn/post/0005-createblog/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0005-createblog/</guid>
+      <description>背景介绍 在家休息的时候，学习一下在Github上搭建个人的博客，网上查阅资料发现，github提供了访问的地址，只需要将你自己账号下的仓库稍</description>
+    </item>
+    
+    <item>
+      <title>PowderDesigner连接mysql本地数据库</title>
+      <link>https://wangqj.cn/post/0021-powderdesigner/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0021-powderdesigner/</guid>
+      <description>背景介绍 最近有个需求是画数据库各表结构的关联关系，而本地数据库有相应的表，为了在软件中获取对应的表结构。网上查询两种方式：第一种是将直接将P</description>
+    </item>
+    
+    <item>
+      <title>JeDate日期控件</title>
+      <link>https://wangqj.cn/post/0020-jedate/</link>
+      <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0020-jedate/</guid>
+      <description>背景介绍 最近在接手的项目中遇到JeDate时间控件，点击未选择日时出现undefined，赶紧查看API，发现原有控件没有对日期选中处理，这</description>
+    </item>
+    
+    <item>
+      <title>Navicat数据同步报错</title>
+      <link>https://wangqj.cn/post/0019-navicat-error/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0019-navicat-error/</guid>
+      <description>背景介绍 最近在用Navicat的同步工具做mysql数据库的同步时，中间出现报错：1153 - Got apacket bigger than &amp;lsquo;max_allowed_packet&amp;rsquo; bytes，导致数据库同步中断，网上查</description>
+    </item>
+    
+    <item>
+      <title>Java中将汉字转换为拼音</title>
+      <link>https://wangqj.cn/post/0018-java-p%C4%ABny%C4%ABn/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0018-java-p%C4%ABny%C4%ABn/</guid>
+      <description>背景介绍 近来有个需求是从前台输入的文本框的汉字串，到后台要将其处理成首字母的串，存放到数据库中。网上查找了方法，这里记录下来，方便查看。Ja</description>
+    </item>
+    
+    <item>
+      <title>Pattern.compile函数提取字符串中指定的字符</title>
+      <link>https://wangqj.cn/post/0017-java-pattern/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0017-java-pattern/</guid>
+      <description>背景介绍 最近有个需求是要提取一段字符串中特定范围内的内容，查找资料后，使用的是Java中的Pattern.compile函数来实现对指定字符</description>
+    </item>
+    
+    <item>
+      <title>Java读取excel</title>
+      <link>https://wangqj.cn/post/0016-java-excel/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0016-java-excel/</guid>
+      <description>背景介绍 JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。 ​ 最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个</description>
+    </item>
+    
+    <item>
+      <title>Linux环境部署Kettle</title>
+      <link>https://wangqj.cn/post/0015-linux-kettle/</link>
+      <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0015-linux-kettle/</guid>
+      <description>背景介绍 最近遇到了需要在linux上部署kettle实现数据库的同步，源库是oracle，目标库是mysql，下面记录kettle部署的步骤</description>
+    </item>
+    
+    <item>
+      <title>putty连接数据库</title>
+      <link>https://wangqj.cn/post/0014-linux-putty/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0014-linux-putty/</guid>
+      <description>背景介绍 PuTTY 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和</description>
+    </item>
+    
+    <item>
+      <title>Ext监听</title>
+      <link>https://wangqj.cn/post/0013-ext-linster/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0013-ext-linster/</guid>
+      <description>知识了解 EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是</description>
+    </item>
+    
+    <item>
+      <title>Navicat实现excel数据入库</title>
+      <link>https://wangqj.cn/post/0012-navicat-input/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0012-navicat-input/</guid>
+      <description>背景介绍 最近的需求是把excel模板中的数据导入到数据库对应表中，采用Navicat工具的导入功能，下面记录一下处理的过程，以备查看。 第一步</description>
+    </item>
+    
+    <item>
+      <title>linux部署nginx</title>
+      <link>https://wangqj.cn/post/0011-linux-nginx/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0011-linux-nginx/</guid>
+      <description>背景介绍 nginx 是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行，占有内存少，并</description>
+    </item>
+    
+    <item>
+      <title>Java实现 用Aspose.Cells导出excel模板数据</title>
+      <link>https://wangqj.cn/post/0010-aspose-cells/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0010-aspose-cells/</guid>
+      <description>背景介绍 最近有个需求是将数据库查询出来的数据，写入到用户提供的指定的模板中。查询一番，java方面的有jxl和poi两种插件，考虑到本次模板</description>
+    </item>
+    
+    <item>
+      <title>虚拟机配置联网</title>
+      <link>https://wangqj.cn/post/0009-vm-network/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0009-vm-network/</guid>
+      <description>背景介绍 在本地安装上VMware软件，无法连接上网络，发现时没有配置网络，网上搜索一番，记录下来，方便以后查看。 一、虚拟机上网络配置 虚拟机版</description>
+    </item>
+    
+    <item>
+      <title>oracle局域网共享</title>
+      <link>https://wangqj.cn/post/0008-oracle-share/</link>
+      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0008-oracle-share/</guid>
+      <description>背景介绍 oracle 是性能较好的数据库，如何让其他电脑在局域网下访问同一台机器上的数据库呢？ ​ 最近需要解决的问题：同一局域网下，想让其他计算机访问本地</description>
+    </item>
+    
+    <item>
+      <title>Oracle数据库常见问题</title>
+      <link>https://wangqj.cn/post/0007-oracle-error/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0007-oracle-error/</guid>
+      <description>背景介绍 在数据库使用中，遇到一些错误，记录下来解决的过程，方便备查。 错误代码：ORA-01017 想登录本地的Oracle数据库，进行数据库的</description>
+    </item>
+    
+    <item>
+      <title>Java项目部署</title>
+      <link>https://wangqj.cn/post/0006-java-deploy/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0006-java-deploy/</guid>
+      <description>问题描述 Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？ ​ 最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Ja</description>
+    </item>
+    
+    <item>
+      <title>kettle 数据库迁移</title>
+      <link>https://wangqj.cn/post/0004-kettle/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0004-kettle/</guid>
+      <description>背景介绍 最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下</description>
+    </item>
+    
+    <item>
+      <title>英文引号处理</title>
+      <link>https://wangqj.cn/post/0003-sign/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0003-sign/</guid>
+      <description>背景介绍 最近遇到了一个英文引号引起的问题，后台读取数据库字段，传递给前台一直无法正确解析，如str=my&amp;rsquo;s book，中间英文的</description>
+    </item>
+    
+    <item>
+      <title>print page</title>
+      <link>https://wangqj.cn/post/0002-page-print/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0002-page-print/</guid>
+      <description>背景介绍 页面打印 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印 第一种方式、添加代码打印 添加代码打印就是在需要</description>
+    </item>
+    
+    <item>
+      <title>Oracle存储过程常见问题及解决方法</title>
+      <link>https://wangqj.cn/post/0001-oracle-procedure/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0001-oracle-procedure/</guid>
+      <description>背景介绍 存储过程是为完成特定功能的SQL集。目前工作中用到的存储过程就是对数据库中的字段进行批量的更新。 最近在写存储过程中遇到了一些问题，查</description>
+    </item>
+    
+    <item>
+      <title>计算机网络</title>
+      <link>https://wangqj.cn/interview/network/</link>
+      <pubDate>Wed, 07 Jun 2017 15:36:00 +0530</pubDate>
+      
+      <guid>https://wangqj.cn/interview/network/</guid>
+      <description>跨域请求 跨域指浏览器在发起网路请求，会检查协议，端口 绕过 1、在response 添加header respsetHeader(&amp;ldquo;Access-Controller-Allow-Origin&amp;rdquo;,&amp;quot;*&amp;quot;) 可以访问所有网站，不受是否同源限制 2、jso</description>
+    </item>
+    
+    <item>
+      <title>优美句子</title>
+      <link>https://wangqj.cn/reading/0003-thinking/</link>
+      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0003-thinking/</guid>
+      <description>读书 旅行 总有一个在路上 一个人的书单 亦是一个人的人生目录 我相信，人生没有白走的路，每一步都算数。人生总有起起落落，总是先苦后甜。喝下三杯酒，一</description>
+    </item>
+    
+    <item>
+      <title>读书</title>
+      <link>https://wangqj.cn/reading/0002-reading/</link>
+      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/reading/0002-reading/</guid>
+      <description>有些鸟儿天生就是关不住的，它们的羽毛太鲜明，歌声太甜美、也太狂野了，所以你只能放它们走，否则哪天你打开笼子喂它们时，它们也会想办法扬长而去。</description>
+    </item>
+    
+    <item>
+      <title>first</title>
+      <link>https://wangqj.cn/post/first/</link>
+      <pubDate>Sun, 20 Mar 2016 23:28:02 +0800</pubDate>
+      
+      <guid>https://wangqj.cn/post/first/</guid>
+      <description>主题概况 Balalalalala&amp;hellip; Balalalalala&amp;hellip; 安装指南 aaaaaaa bbbbbbb ccccccc 安装 bold 启用 print(&#39;hello world!&#39;) 更新 Blockquotes are very handy in email to emulate reply text. This line is part of the same quote. 配置指南 Tables Are Cool col 3 is right-aligned $1600 col 2 is centered $12 zebra stripes are neat $1 属性 说明 First ordered list item</description>
+    </item>
+    
+    <item>
+      <title>ext-button</title>
+      <link>https://wangqj.cn/post/0034-ext-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0034-ext-button/</guid>
+      <description>背景介绍 ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效</description>
+    </item>
+    
+    <item>
+      <title>hello hugo</title>
+      <link>https://wangqj.cn/post/hello-hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/hello-hugo/</guid>
+      <description>Hello Hugo Balalala&amp;hellip; Balalala&amp;hellip; Balalala&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>oracle数据库中blob照片存放到本地</title>
+      <link>https://wangqj.cn/post/0022-oracle-photo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0022-oracle-photo/</guid>
+      <description>背景介绍 最近有个需求是将oracle数据库中存放的blob类型的二进制流照片，下载到本地，写了一个照片导出的方法，方便备查。 第一步：查询数据</description>
+    </item>
+    
+  </channel>
+</rss>

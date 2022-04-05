@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>selenium on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/selenium/</link>
+    <description>Recent content in selenium on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/selenium/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自动化测试之selenium小试牛刀</title>
+      <link>https://wangqj.cn/post/0072-selenium-test/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0072-selenium-test/</guid>
+      <description>背景介绍 最近在学习python的时候，看到大佬的博客，动手跟着尝试，记录下来，方便查看。selenium 由于web应用程序的自动化测试工具，</description>
+    </item>
+    
+  </channel>
+</rss>

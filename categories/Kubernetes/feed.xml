@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/kubernetes/</link>
+    <description>Recent content in Kubernetes on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/kubernetes/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初探Kubernetes&#43;Docker 分布式应用部署（上）</title>
+      <link>https://wangqj.cn/post/0048-kubernetes-docker/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0048-kubernetes-docker/</guid>
+      <description>背景介绍 疫情原因，本着不给国家添乱，不出门，在家跟着教程搭建K8s集群环境，在本地的虚拟机上实现，以下是搭建过程，记录下来，方便备查。 Dubernetes 简称</description>
+    </item>
+    
+  </channel>
+</rss>

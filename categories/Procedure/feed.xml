@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Procedure on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/procedure/</link>
+    <description>Recent content in Procedure on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/procedure/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Oracle存储过程常见问题及解决方法</title>
+      <link>https://wangqj.cn/post/0001-oracle-procedure/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0001-oracle-procedure/</guid>
+      <description>背景介绍 存储过程是为完成特定功能的SQL集。目前工作中用到的存储过程就是对数据库中的字段进行批量的更新。 最近在写存储过程中遇到了一些问题，查</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>excel on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/excel/</link>
+    <description>Recent content in excel on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/excel/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Excel/CSV 表格中被转换的E &#43; 如何恢复</title>
+      <link>https://wangqj.cn/post/0069-excel-import/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0069-excel-import/</guid>
+      <description>背景介绍 最近在给用户导出csv文件，出现乱码和格式被转换，无法显示出原来的数据，网上查找未解决，自己捣鼓，记录下来，方便备查。 问题描述： 1、</description>
+    </item>
+    
+    <item>
+      <title>excel数据验证</title>
+      <link>https://wangqj.cn/post/0033-excel-out/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0033-excel-out/</guid>
+      <description>背景介绍 excel 作为强大的办公软件，在数据处理、维护方面具有强大的生命力，在输入中可以通过数据验证来设置可选区域，减少数据录入时出错的概率。 在定制</description>
+    </item>
+    
+    <item>
+      <title>Java读取excel</title>
+      <link>https://wangqj.cn/post/0016-java-excel/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0016-java-excel/</guid>
+      <description>背景介绍 JAVA 实现批量读取excel文件，将文件中的内容写入到数据库。 ​ 最近有个需求是做个数据导入的接口，对方入到进来若干个excel文档，每个</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/docker/</link>
+    <description>Recent content in docker on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/docker/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://wangqj.cn/post/0063-docker-learn/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0063-docker-learn/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲</description>
+    </item>
+    
+    <item>
+      <title>Docker 学习笔记</title>
+      <link>https://wangqj.cn/post/0047-docker/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0047-docker/</guid>
+      <description>背景介绍 Docker 作为轻量级容器，具有速度快、运行应用隔离，维护方便等优点，在实际应用的范围不断扩大，最近在B站上正好看到Docker教程看了看，讲</description>
+    </item>
+    
+  </channel>
+</rss>

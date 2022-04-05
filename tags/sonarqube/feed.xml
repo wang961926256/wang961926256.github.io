@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sonarqube on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/sonarqube/</link>
+    <description>Recent content in sonarqube on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/sonarqube/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos安装部署sonarqube</title>
+      <link>https://wangqj.cn/post/0077-linux-sonarqube/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0077-linux-sonarqube/</guid>
+      <description>背景介绍 sonarqube作为重要的代码分析平台，可持续分析和评测源代码的质量。下面记录安装过程，方便查看。 第一步、安装 官网下载 最新地址 历史</description>
+    </item>
+    
+  </channel>
+</rss>

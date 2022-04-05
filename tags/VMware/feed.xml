@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMware on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/vmware/</link>
+    <description>Recent content in VMware on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/vmware/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VMware workstation 12 无法远程连接</title>
+      <link>https://wangqj.cn/post/0080-wmware-workstation/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0080-wmware-workstation/</guid>
+      <description>背景介绍 突然发现个人电脑无法连接本地的虚拟机，回想最近没有更改配置，直接就连接不上，没法进行练习，一步步排查原因，记录下来，方便备查。 原环境</description>
+    </item>
+    
+  </channel>
+</rss>

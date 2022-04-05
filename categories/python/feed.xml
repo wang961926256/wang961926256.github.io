@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/python/</link>
+    <description>Recent content in python on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 31 Dec 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/python/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python 实现使用163邮箱发送有图片的邮件</title>
+      <link>https://wangqj.cn/post/0085-python-email/</link>
+      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0085-python-email/</guid>
+      <description>背景介绍 周末温习下python，正好最近在做监控，想着 给163邮箱发邮件，记录下来，方便备查。 邮件发送必须要知道邮件的 传输协议 SMTP SMTP （Simp</description>
+    </item>
+    
+  </channel>
+</rss>

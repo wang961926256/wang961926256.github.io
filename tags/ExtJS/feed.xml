@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ExtJs on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/extjs/</link>
+    <description>Recent content in ExtJs on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 25 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/extjs/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ext tree 节点的新增和移除</title>
+      <link>https://wangqj.cn/post/0030-exttree/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0030-exttree/</guid>
+      <description>背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增</description>
+    </item>
+    
+    <item>
+      <title>Ext监听</title>
+      <link>https://wangqj.cn/post/0013-ext-linster/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0013-ext-linster/</guid>
+      <description>知识了解 EXT 是一种用JavaScript编写的功能强大的Ajax框架，可用于开发绚丽多彩的富客户端Ajax应用。天生拥有绚丽的外表，它的优点是</description>
+    </item>
+    
+    <item>
+      <title>ext-button</title>
+      <link>https://wangqj.cn/post/0034-ext-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0034-ext-button/</guid>
+      <description>背景介绍 ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效</description>
+    </item>
+    
+  </channel>
+</rss>

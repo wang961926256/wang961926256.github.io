@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitlab on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/gitlab/</link>
+    <description>Recent content in Gitlab on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/gitlab/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos下安装Maven和Tomcat记录</title>
+      <link>https://wangqj.cn/post/0074-linux-tomcat/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0074-linux-tomcat/</guid>
+      <description>背景介绍 接上篇，在本地虚拟机搭建环境，本篇安装 Maven和 Tomcat 特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Maven 1、软件下载 通过w</description>
+    </item>
+    
+    <item>
+      <title>Centos下安装Gitlab 和 Jenkins 记录</title>
+      <link>https://wangqj.cn/post/0073-linux-gitlab/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0073-linux-gitlab/</guid>
+      <description>背景介绍 最近想走一遍自动化部署流程，在本地虚拟机搭建环境，特记录下来，方便备查。 本地环境 Centos 7：内存2G 一、安装Gitlab 1、安装相关依赖 //</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/java/</link>
+    <description>Recent content in Java on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/java/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eclipse编译器常见问题处理方式</title>
+      <link>https://wangqj.cn/post/0067-eclipse-skill/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0067-eclipse-skill/</guid>
+      <description>背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置</description>
+    </item>
+    
+    <item>
+      <title>Maven的pom.xml文件报错排查处理</title>
+      <link>https://wangqj.cn/post/0066-java-maven/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0066-java-maven/</guid>
+      <description>背景介绍 新年刚上班，公司给配的电脑突然蓝屏了，居然重装也没成功，一夜回到解放前。只能先拿自己的电脑down代码，搭环境。本来是简单的过程，出</description>
+    </item>
+    
+    <item>
+      <title>bat 文件快速配置Java开发环境</title>
+      <link>https://wangqj.cn/post/0054-java-env/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0054-java-env/</guid>
+      <description>背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，</description>
+    </item>
+    
+    <item>
+      <title>Eclipse编译器常见问题处理方式</title>
+      <link>https://wangqj.cn/post/0051-eclipse/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0051-eclipse/</guid>
+      <description>背景介绍 Java开发常用的eclipse编译器，使用中遇到些问题，参考网上的博客解决，特此记录，方便备查。 1、删除多余的工作空间 方法一、配置</description>
+    </item>
+    
+    <item>
+      <title>Maven的pom.xml文件报错排查处理</title>
+      <link>https://wangqj.cn/post/0050-maven-warn/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0050-maven-warn/</guid>
+      <description>背景介绍 导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。 处理方案 环境配置可以从以下步骤，逐步定位问题。</description>
+    </item>
+    
+    <item>
+      <title>bat配置Java开发环境</title>
+      <link>https://wangqj.cn/post/0038-java-jdk/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0038-java-jdk/</guid>
+      <description>背景介绍 最近入职了几个新同事，需要协助安装Java的开发环境，jdk、maven、Tomcat等安装起来重复性太高，还比较耽误时间，想了想，</description>
+    </item>
+    
+    <item>
+      <title>Java 程序打包zip</title>
+      <link>https://wangqj.cn/post/0029-javatozip/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0029-javatozip/</guid>
+      <description>背景介绍 最近工作中需要将指定文件夹下的文件，挑选出来，并打包下载。网上查询后，使用zipFile实现压缩，这里记录下来，方便备查。 //引入Z</description>
+    </item>
+    
+    <item>
+      <title>Java中将汉字转换为拼音</title>
+      <link>https://wangqj.cn/post/0018-java-p%C4%ABny%C4%ABn/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0018-java-p%C4%ABny%C4%ABn/</guid>
+      <description>背景介绍 近来有个需求是从前台输入的文本框的汉字串，到后台要将其处理成首字母的串，存放到数据库中。网上查找了方法，这里记录下来，方便查看。Ja</description>
+    </item>
+    
+    <item>
+      <title>Pattern.compile函数提取字符串中指定的字符</title>
+      <link>https://wangqj.cn/post/0017-java-pattern/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0017-java-pattern/</guid>
+      <description>背景介绍 最近有个需求是要提取一段字符串中特定范围内的内容，查找资料后，使用的是Java中的Pattern.compile函数来实现对指定字符</description>
+    </item>
+    
+    <item>
+      <title>Java项目部署</title>
+      <link>https://wangqj.cn/post/0006-java-deploy/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0006-java-deploy/</guid>
+      <description>问题描述 Java 项目如何部署到centos服务器上，需要经过那几个步骤呢？ ​ 最近需要自己去服务器上部署程序，学习了一下部署的流程，主要接触的是Ja</description>
+    </item>
+    
+  </channel>
+</rss>

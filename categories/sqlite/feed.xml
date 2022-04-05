@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sqlite on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/sqlite/</link>
+    <description>Recent content in sqlite on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/sqlite/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql到sqlite数据传输</title>
+      <link>https://wangqj.cn/post/0025-mysql-sqlite/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0025-mysql-sqlite/</guid>
+      <description>背景介绍 mysql和sqlite 是两种常用的数据库，在日常使用中也是需要进行数据的交换。 在实际的工作中需要将mysql数据库表中的数据同步到</description>
+    </item>
+    
+  </channel>
+</rss>

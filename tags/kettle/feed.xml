@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kettle on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/kettle/</link>
+    <description>Recent content in kettle on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 11 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/kettle/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux环境部署Kettle</title>
+      <link>https://wangqj.cn/post/0015-linux-kettle/</link>
+      <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0015-linux-kettle/</guid>
+      <description>背景介绍 最近遇到了需要在linux上部署kettle实现数据库的同步，源库是oracle，目标库是mysql，下面记录kettle部署的步骤</description>
+    </item>
+    
+    <item>
+      <title>kettle 数据库迁移</title>
+      <link>https://wangqj.cn/post/0004-kettle/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0004-kettle/</guid>
+      <description>背景介绍 最近需要oracle数据库迁移数据到mysql数据库，用到了kettle spoon 工具，发现工具真的是很强大，好用，单表，多表都可以迁移，下</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>encode on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/encode/</link>
+    <description>Recent content in encode on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/encode/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ifream 绑定PDF出错</title>
+      <link>https://wangqj.cn/post/0028-ifream-encode/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0028-ifream-encode/</guid>
+      <description>背景介绍 encode 浏览器在对url解析时自动进行解码 背景：前端ext框架，定义Container，html上添加ifream，对其src属性指定非中</description>
+    </item>
+    
+  </channel>
+</rss>

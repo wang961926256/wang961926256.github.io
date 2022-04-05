@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Navicat on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/navicat/</link>
+    <description>Recent content in Navicat on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/navicat/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Navicat数据同步报错</title>
+      <link>https://wangqj.cn/post/0019-navicat-error/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0019-navicat-error/</guid>
+      <description>背景介绍 最近在用Navicat的同步工具做mysql数据库的同步时，中间出现报错：1153 - Got apacket bigger than &amp;lsquo;max_allowed_packet&amp;rsquo; bytes，导致数据库同步中断，网上查</description>
+    </item>
+    
+    <item>
+      <title>Navicat实现excel数据入库</title>
+      <link>https://wangqj.cn/post/0012-navicat-input/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0012-navicat-input/</guid>
+      <description>背景介绍 最近的需求是把excel模板中的数据导入到数据库对应表中，采用Navicat工具的导入功能，下面记录一下处理的过程，以备查看。 第一步</description>
+    </item>
+    
+  </channel>
+</rss>

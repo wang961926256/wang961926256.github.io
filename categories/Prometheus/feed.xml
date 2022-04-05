@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prometheus on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/prometheus/</link>
+    <description>Recent content in Prometheus on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/prometheus/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初探 Prometheus安装配置篇</title>
+      <link>https://wangqj.cn/post/0075-linux-prometheus/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0075-linux-prometheus/</guid>
+      <description>背景介绍 周末在家搭建普罗米修斯监控，记录下来，以备查看。 知识学习 Prometheus 作为一个开源的服务监控系统和时间序列数据库，开源真好。 特点： 1）多维度数据</description>
+    </item>
+    
+  </channel>
+</rss>

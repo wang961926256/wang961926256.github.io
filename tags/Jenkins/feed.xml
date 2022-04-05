@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/jenkins/</link>
+    <description>Recent content in Jenkins on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 02 May 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/jenkins/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初试本地安装Jenkins软件</title>
+      <link>https://wangqj.cn/post/0057-jenkins-up/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0057-jenkins-up/</guid>
+      <description>背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与</description>
+    </item>
+    
+    <item>
+      <title>初试本地安装Jenkins软件</title>
+      <link>https://wangqj.cn/post/0041-jenkins/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0041-jenkins/</guid>
+      <description>背景介绍 公司用的是Jenkins自动化部署和发布项目，减少了手动更新程序包的工作量。周末休息的时候，在本地尝试搭建下，熟悉下这个工具的安装与</description>
+    </item>
+    
+  </channel>
+</rss>

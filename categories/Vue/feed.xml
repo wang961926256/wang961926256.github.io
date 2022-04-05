@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/vue/</link>
+    <description>Recent content in Vue on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 06 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/vue/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初探 Element 页面弹窗效果实现</title>
+      <link>https://wangqj.cn/post/0068-vue-dialog/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0068-vue-dialog/</guid>
+      <description>背景介绍 最近空闲的时候在B站看Element的前端项目，动手跟着敲敲，下面学习笔记，方便备查。 一、环境准备 1）使用编译器VScode开发，可</description>
+    </item>
+    
+    <item>
+      <title>oracle 数据库  ORA-28000错误的原因及解决办法</title>
+      <link>https://wangqj.cn/post/0053-oracle-lock/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0053-oracle-lock/</guid>
+      <description>背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错</description>
+    </item>
+    
+    <item>
+      <title>vue项目编译与运行</title>
+      <link>https://wangqj.cn/post/0052-vue-run/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0052-vue-run/</guid>
+      <description>背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭</description>
+    </item>
+    
+    <item>
+      <title>oracle 数据库锁库</title>
+      <link>https://wangqj.cn/post/0037-oracle-lock/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0037-oracle-lock/</guid>
+      <description>背景介绍 在最近使用oracle11g 数据库时，出现报错为ORA-28000：the account is locked的错误，翻译一下：用户被锁了，网上查找报错</description>
+    </item>
+    
+    <item>
+      <title>vue项目编译与运行</title>
+      <link>https://wangqj.cn/post/0036-vue-run/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0036-vue-run/</guid>
+      <description>背景介绍 vue作为一种前端框架，在当前项目中具有很大的应用场景。那么从码云或github上下载的vue项目在本地如何看效果呢，这里记录一下搭</description>
+    </item>
+    
+  </channel>
+</rss>

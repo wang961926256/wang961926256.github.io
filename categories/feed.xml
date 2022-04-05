@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/</link>
+    <description>Recent content in Categories on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FineReport</title>
+      <link>https://wangqj.cn/categories/finereport/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/finereport/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://wangqj.cn/categories/python/</link>
+      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>https://wangqj.cn/categories/wsl/</link>
+      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://wangqj.cn/categories/leetcode/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>https://wangqj.cn/categories/elasticsearch/</link>
+      <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java8</title>
+      <link>https://wangqj.cn/categories/java8/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/java8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://wangqj.cn/categories/vmware/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fiddler</title>
+      <link>https://wangqj.cn/categories/fiddler/</link>
+      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/fiddler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sonarqube</title>
+      <link>https://wangqj.cn/categories/sonarqube/</link>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/sonarqube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nacos</title>
+      <link>https://wangqj.cn/categories/nacos/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/nacos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prometheus</title>
+      <link>https://wangqj.cn/categories/prometheus/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/prometheus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tomcat</title>
+      <link>https://wangqj.cn/categories/tomcat/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/tomcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://wangqj.cn/categories/jenkins/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://wangqj.cn/categories/git/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>selenium</title>
+      <link>https://wangqj.cn/categories/selenium/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/selenium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Excel</title>
+      <link>https://wangqj.cn/categories/excel/</link>
+      <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/excel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://wangqj.cn/categories/vue/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://wangqj.cn/categories/java/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://wangqj.cn/categories/go/</link>
+      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://wangqj.cn/categories/k8s/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://wangqj.cn/categories/docker/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ODPS</title>
+      <link>https://wangqj.cn/categories/odps/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/odps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://wangqj.cn/categories/mysql/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://wangqj.cn/categories/rabbitmq/</link>
+      <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/rabbitmq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eclipse</title>
+      <link>https://wangqj.cn/categories/eclipse/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/eclipse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://wangqj.cn/categories/golang/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://wangqj.cn/categories/kubernetes/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technology</title>
+      <link>https://wangqj.cn/categories/technology/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oracle</title>
+      <link>https://wangqj.cn/categories/oracle/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/oracle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ExtJs</title>
+      <link>https://wangqj.cn/categories/extjs/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/extjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encode</title>
+      <link>https://wangqj.cn/categories/encode/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/encode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aspose</title>
+      <link>https://wangqj.cn/categories/aspose/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/aspose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sqlite</title>
+      <link>https://wangqj.cn/categories/sqlite/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/sqlite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://wangqj.cn/categories/blog/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>putty</title>
+      <link>https://wangqj.cn/categories/putty/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/putty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JeDate</title>
+      <link>https://wangqj.cn/categories/jedate/</link>
+      <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/jedate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Navicat</title>
+      <link>https://wangqj.cn/categories/navicat/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/navicat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kettle</title>
+      <link>https://wangqj.cn/categories/kettle/</link>
+      <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/kettle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://wangqj.cn/categories/nginx/</link>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://wangqj.cn/categories/network/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sign</title>
+      <link>https://wangqj.cn/categories/sign/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/sign/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>page</title>
+      <link>https://wangqj.cn/categories/page/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/page/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Procedure</title>
+      <link>https://wangqj.cn/categories/procedure/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/procedure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技术文章</title>
+      <link>https://wangqj.cn/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Sun, 20 Mar 2016 23:28:02 +0800</pubDate>
+      
+      <guid>https://wangqj.cn/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>思考感悟</title>
+      <link>https://wangqj.cn/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

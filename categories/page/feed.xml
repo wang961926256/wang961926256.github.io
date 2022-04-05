@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>page on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/page/</link>
+    <description>Recent content in page on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/page/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>print page</title>
+      <link>https://wangqj.cn/post/0002-page-print/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0002-page-print/</guid>
+      <description>背景介绍 页面打印 是将页面特定区域的内容作为输出，主要有两种方式：添加打印代码和借助控件实现打印 第一种方式、添加代码打印 添加代码打印就是在需要</description>
+    </item>
+    
+  </channel>
+</rss>

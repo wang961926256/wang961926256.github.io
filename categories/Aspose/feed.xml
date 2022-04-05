@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aspose on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/aspose/</link>
+    <description>Recent content in Aspose on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/aspose/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aspose &#43; PDFObject</title>
+      <link>https://wangqj.cn/post/0027-aspose/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0027-aspose/</guid>
+      <description>背景介绍 Aspose office文档处理软件,需要付费，网上也有破解的java包，使用比较方便。 最近系统中想做个页面的展示和下载的功能，正好公司购买了</description>
+    </item>
+    
+    <item>
+      <title>Java实现 用Aspose.Cells导出excel模板数据</title>
+      <link>https://wangqj.cn/post/0010-aspose-cells/</link>
+      <pubDate>Sat, 18 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0010-aspose-cells/</guid>
+      <description>背景介绍 最近有个需求是将数据库查询出来的数据，写入到用户提供的指定的模板中。查询一番，java方面的有jxl和poi两种插件，考虑到本次模板</description>
+    </item>
+    
+  </channel>
+</rss>

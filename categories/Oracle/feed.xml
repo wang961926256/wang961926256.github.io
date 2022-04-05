@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/oracle/</link>
+    <description>Recent content in Oracle on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/oracle/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>oracle迁移到mysql</title>
+      <link>https://wangqj.cn/post/0032-oracletomysql/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0032-oracletomysql/</guid>
+      <description>背景介绍 oracle和mysql 作为常用的数据库，在实际生产中，两种数据库都具有很广的应用场景。 最近项目使用的数据库需要从oracle转到m</description>
+    </item>
+    
+    <item>
+      <title>oracle数据库空表处理</title>
+      <link>https://wangqj.cn/post/0031-emptytable/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0031-emptytable/</guid>
+      <description>背景介绍 ExtTree 树是一种比较紧密的数据类型，上下级节点之间具有联系。 最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查</description>
+    </item>
+    
+    <item>
+      <title>可重复执行的脚本</title>
+      <link>https://wangqj.cn/post/0026-oracle-script/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0026-oracle-script/</guid>
+      <description>背景介绍 数据库脚本 是包含不属于数据库架构定义的Transact-SQL(T-SQL)语句或实用工具（如 SQLCMD）的附加文件。可以将数据库</description>
+    </item>
+    
+    <item>
+      <title>oracle存储过程</title>
+      <link>https://wangqj.cn/post/0024-oracle-mysql/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0024-oracle-mysql/</guid>
+      <description>知识背景 存储过程 是在大型数据库系统中，一组为了完成特定功能的SQL 语句集，它存储在数据库中，一次编译后永久有效，用户通过指定存储过程的名字并</description>
+    </item>
+    
+    <item>
+      <title>oracle备份</title>
+      <link>https://wangqj.cn/post/0023-oracle-back/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0023-oracle-back/</guid>
+      <description>背景介绍 oracle 是一种重要的关系型数据库，日常工作中需要对其进行备份和恢复。 ​ 在日常开发中，需要及时对数据库进行备份和还原，以oracle为例，两</description>
+    </item>
+    
+    <item>
+      <title>oracle局域网共享</title>
+      <link>https://wangqj.cn/post/0008-oracle-share/</link>
+      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0008-oracle-share/</guid>
+      <description>背景介绍 oracle 是性能较好的数据库，如何让其他电脑在局域网下访问同一台机器上的数据库呢？ ​ 最近需要解决的问题：同一局域网下，想让其他计算机访问本地</description>
+    </item>
+    
+    <item>
+      <title>Oracle数据库常见问题</title>
+      <link>https://wangqj.cn/post/0007-oracle-error/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0007-oracle-error/</guid>
+      <description>背景介绍 在数据库使用中，遇到一些错误，记录下来解决的过程，方便备查。 错误代码：ORA-01017 想登录本地的Oracle数据库，进行数据库的</description>
+    </item>
+    
+    <item>
+      <title>oracle数据库中blob照片存放到本地</title>
+      <link>https://wangqj.cn/post/0022-oracle-photo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0022-oracle-photo/</guid>
+      <description>背景介绍 最近有个需求是将oracle数据库中存放的blob类型的二进制流照片，下载到本地，写了一个照片导出的方法，方便备查。 第一步：查询数据</description>
+    </item>
+    
+  </channel>
+</rss>

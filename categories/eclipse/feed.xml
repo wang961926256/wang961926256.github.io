@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eclipse on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/categories/eclipse/</link>
+    <description>Recent content in eclipse on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/categories/eclipse/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>eclipse 快速实现查看源码的方法</title>
+      <link>https://wangqj.cn/post/0056-eclipse-show/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0056-eclipse-show/</guid>
+      <description>背景介绍 在日常的开发中，调用一些jar里面的方法，但点击进去看不到具体的方法，了解不到底层是怎么实现对开发而言还是不好。网上查询查看源码的方</description>
+    </item>
+    
+    <item>
+      <title>eclipse 中高亮显示</title>
+      <link>https://wangqj.cn/post/0035-eclipse-highlight/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0035-eclipse-highlight/</guid>
+      <description>背景介绍 在使用eclipse编译器时，需要对变量进行高亮显示，方便快速的去看代码 1、文件内容的高亮显示 在 菜单栏的 window &amp;mdash;&amp;gt; preference &amp;mdash;&amp;ndash;&amp;gt; Content type &amp;mdash;&amp;ndash;&amp;gt; Text &amp;mdash;-&amp;gt; Html &amp;mdash;&amp;gt; Add 弹出</description>
+    </item>
+    
+  </channel>
+</rss>
