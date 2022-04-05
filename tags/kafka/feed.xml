@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kafka on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/kafka/</link>
+    <description>Recent content in Kafka on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/kafka/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos 安装部署 Kafka 并测试</title>
+      <link>https://wangqj.cn/post/0087-centos-kafka/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0087-centos-kafka/</guid>
+      <description>背景介绍 临近年底，最近在本地虚拟机部署Kafka，并通过命令方式来测试生产者和消费者，这里记录下来，方便查看。 环境前置：JDK 环境 一、搭建 Zookeeper</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://wangqj.cn/tags/kafka/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/tags/kafka/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>FineReport</title>
@@ -386,33 +395,6 @@
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/tags/procedure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bar</title>
-      <link>https://wangqj.cn/tags/bar/</link>
-      <pubDate>Sun, 20 Mar 2016 23:28:02 +0800</pubDate>
-      
-      <guid>https://wangqj.cn/tags/bar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Foo</title>
-      <link>https://wangqj.cn/tags/foo/</link>
-      <pubDate>Sun, 20 Mar 2016 23:28:02 +0800</pubDate>
-      
-      <guid>https://wangqj.cn/tags/foo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://wangqj.cn/tags/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/tags/test/</guid>
       <description></description>
     </item>
     

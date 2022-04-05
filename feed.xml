@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos 安装部署 Kafka 并测试</title>
+      <link>https://wangqj.cn/post/0087-centos-kafka/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0087-centos-kafka/</guid>
+      <description>背景介绍 临近年底，最近在本地虚拟机部署Kafka，并通过命令方式来测试生产者和消费者，这里记录下来，方便查看。 环境前置：JDK 环境 一、搭建 Zookeeper</description>
+    </item>
     
     <item>
       <title>帆软 FineReport 动态列如何设置</title>
@@ -894,30 +903,12 @@
     </item>
     
     <item>
-      <title>first</title>
-      <link>https://wangqj.cn/post/first/</link>
-      <pubDate>Sun, 20 Mar 2016 23:28:02 +0800</pubDate>
-      
-      <guid>https://wangqj.cn/post/first/</guid>
-      <description>主题概况 Balalalalala&amp;hellip; Balalalalala&amp;hellip; 安装指南 aaaaaaa bbbbbbb ccccccc 安装 bold 启用 print(&#39;hello world!&#39;) 更新 Blockquotes are very handy in email to emulate reply text. This line is part of the same quote. 配置指南 Tables Are Cool col 3 is right-aligned $1600 col 2 is centered $12 zebra stripes are neat $1 属性 说明 First ordered list item</description>
-    </item>
-    
-    <item>
       <title>ext-button</title>
       <link>https://wangqj.cn/post/0034-ext-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/post/0034-ext-button/</guid>
       <description>背景介绍 ext button 按钮是页面常用的控件，利用ext的自带的按钮可以直接引用。 最近在使用Ext按钮样式的风格，发现其提供了几种按钮样式的写法，显示效</description>
-    </item>
-    
-    <item>
-      <title>hello hugo</title>
-      <link>https://wangqj.cn/post/hello-hugo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/post/hello-hugo/</guid>
-      <description>Hello Hugo Balalala&amp;hellip; Balalala&amp;hellip; Balalala&amp;hellip;</description>
     </item>
     
     <item>

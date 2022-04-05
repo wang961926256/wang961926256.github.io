@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://wangqj.cn/categories/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/0087-centos-kafka/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/kafka/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/categories/kafka/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +48,7 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/post/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/post/0086-finereport/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/</loc>
     <lastmod>2022-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -953,43 +968,11 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/tags/bar/</loc>
-    <lastmod>2016-03-20T23:28:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/post/first/</loc>
-    <lastmod>2016-03-20T23:28:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/foo/</loc>
-    <lastmod>2016-03-20T23:28:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2016-03-20T23:28:02+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/post/0034-ext-button/</loc>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/post/hello-hugo/</loc>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/post/0022-oracle-photo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/test/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/categories/%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F/</loc>
   </url>
   
 </urlset>
