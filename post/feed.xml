@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/post/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vue表单控件的联动实现</title>
+      <link>https://wangqj.cn/post/0088-vue-from/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0088-vue-from/</guid>
+      <description>背景介绍 临近过年，假期前两天，用 Vue Element 写后台管理页面，记录下来，方便查看。 需求：实现联动效果，重跑类型 选择 按任务ID -&amp;gt; TaskId 文本框显示；选择 按任务</description>
+    </item>
     
     <item>
       <title>Centos 安装部署 Kafka 并测试</title>
