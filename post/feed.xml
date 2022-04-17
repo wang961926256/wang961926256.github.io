@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/post/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>帆软 FineReport 绘制折线图</title>
+      <link>https://wangqj.cn/post/0090-finereport-charts/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0090-finereport-charts/</guid>
+      <description>背景介绍 最近有个页面展示的需求，公司采购的有帆软FineReport，于是用这个绘制，记录下来，方便备查。 第一步、页面布局 绘制表格。新建数据</description>
+    </item>
     
     <item>
       <title>Centos 命令行替换工具</title>

@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Maven的pom.xml文件报错排查处理 - 梦幻通灵的个人博客</title>
+  <title>帆软 FineReport 绘制折线图 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="迁移">
+  <meta name="description" content="Centos">
   
-  <meta itemprop="name" content="Maven的pom.xml文件报错排查处理 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="迁移">
+  <meta itemprop="name" content="帆软 FineReport 绘制折线图 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Centos">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="迁移" />
+  <meta name="twitter:description" content="Centos" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0066-java-maven/" title="Maven的pom.xml文件报错排查处理" itemprop="url">Maven的pom.xml文件报错排查处理</a>
+      <a href="https://wangqj.cn/post/0090-finereport-charts/" title="帆软 FineReport 绘制折线图" itemprop="url">帆软 FineReport 绘制折线图</a>
   </h1>
   <p class="article-author">By
     
@@ -69,46 +69,53 @@
     
   </p>
   <p class="article-time">
-    <time date="2021-07-20 00:00:00 &#43;0000 UTC">2021-07-20 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-02-22 00:00:00 &#43;0000 UTC">2022-02-22 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>新年刚上班，公司给配的电脑突然蓝屏了，居然重装也没成功，一夜回到解放前。只能先拿自己的电脑down代码，搭环境。本来是简单的过程，出现问题，下面记录下来，方便查看。</p>
-<h2 id="问题描述">问题描述</h2>
-<p>导入项目包后，pom文件一直爆红，里面内容没报错，只是在预览会显示缺包，缺依赖关系等。
-<img src="https://img-blog.csdnimg.cn/20210222224527642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="处理方案">处理方案</h2>
-<p>环境配置可以从以下步骤，逐步定位问题。
-<strong>第一步、检查Java环境是否安装成功</strong>
-快捷键 win + R ，输入 cmd 进入命令行，查看 Jdk 版本。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// jdk 版本
-</span><span class="c1"></span><span class="o">&gt;&gt;</span> <span class="nx">java</span> <span class="o">-</span><span class="nx">version</span>
-</code></pre></div><p>这里安装的是Java1.8版本
-<img src="https://img-blog.csdnimg.cn/20210222224706331.png" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>注：若显示不出jdk版本，则需要检查 环境变量中 JAVA_HOME，CLASSPATH，path 等配置的是否正确。</p>
-</blockquote>
-<p><strong>第二步、检查maven仓库配置是否正确</strong>
-点击编辑栏 windows &ndash;&gt; preferences &ndash;&gt; Maven
-<img src="https://img-blog.csdnimg.cn/20210222230242738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-<strong>第三步、编译器的jdk指向是否正确</strong>
-点击编辑栏 windows &ndash;&gt; preferences &ndash;&gt; Java
-<img src="https://img-blog.csdnimg.cn/20210222225629745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-<strong>第四步、删除错误对应包下lastUpdated结尾文件</strong>
-在repository仓库下对应包，展开并删除 下载不完整的文件。
-<img src="https://img-blog.csdnimg.cn/2021022223212365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-<strong>第五步、强制更新仓库</strong>
-右键项目&ndash;&gt; Maven &ndash;&gt; update project
-<img src="https://img-blog.csdnimg.cn/20210222232425672.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>注：项目可能还需要在host文件添加相应的配置，记得检查确认。
-<strong>host 文件路径</strong>  C:\Windows\System32\drivers\etc</p>
-</blockquote>
-<h2 id="博客参考">博客参考</h2>
-<p>【1】https://blog.csdn.net/bt850644309/article/details/52470000</p>
+<p>最近有个页面展示的需求，公司采购的有帆软FineReport，于是用这个绘制，记录下来，方便备查。</p>
+<h6 id="第一步页面布局">第一步、页面布局</h6>
+<p><strong>绘制表格</strong>。新建数据查询，调整表格布局并进行数据绑定，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/0fcf16bb94c84c70aaee1467437f487e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+<strong>绘制折线图</strong>。在A1单元格右键&ndash;&gt; 单元格元素，选择 插入图表，在下拉列表中选择 折线图（新特性），选择喜欢的样式。
+<img src="https://img-blog.csdnimg.cn/4a280d1cce41443992e28d5de97e8e01.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_10,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+选中区域，与报表的表格等宽，合并单元格即可，效果如下所示。
+<img src="https://img-blog.csdnimg.cn/84c421623ee24a29b1deb565af19f926.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h6 id="第二步数据绑定">第二步、数据绑定</h6>
+<p>在 <strong>数据编辑</strong>栏，数据来源-单元格数据，来源=A17，即按照时间来统计，折线图从下面的报表中取值，这里统计三个指标，即三个系列，设置对应的关系，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/f67d4f9fddf8462282f131960b813703.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_10,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+在<strong>样式编辑栏</strong>，==标题页签==，设置标题名，字体样式等，注意要勾选 标题可见。
+<img src="https://img-blog.csdnimg.cn/3fc36b3ef3f44586b9cdd354ca4c274d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_10,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+在==坐标轴页签==下，默认有 X轴 和 Y轴，坐标轴可以手动增加。
+<img src="https://img-blog.csdnimg.cn/6b737f7e89244778919a4256653714c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_10,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+设置完成后，初步预览样式如下图所示。注：数据为展示效果模拟的测试数据。
+<img src="https://img-blog.csdnimg.cn/32e05c40f40c4349b23c61cf30f097bd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h6 id="第三步调整样式">第三步、调整样式</h6>
+<p>1）图上三个指标只有一个Y轴，页面显示的效果不明显，起始的坐标是负数开头的，要以0开头。
+操作：在Y轴的值定义，勾选自定义最小值为0，同时设置轴线的样式。
+<img src="https://img-blog.csdnimg.cn/908d785c487c419cbe89af74fbb7ae58.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_10,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+展示效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/7d6b00ad97cb469787ea84ed85f1aff6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+三个指标数据差别较大，页面显示的不美观，再加一条Y轴看看效果。
+<img src="https://img-blog.csdnimg.cn/ffed82bc2f644f0b95b468d7f1bcfabd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_10,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+同时在 系列页签中设置堆积与坐标轴关系，Y轴2对应2，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/f70fa6653af54f1fa1bfa3720d9b0e7f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+页面渲染如下图所示。
+<img src="https://img-blog.csdnimg.cn/872a44866cfc4b9d9e692db7afb96834.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+2）最下面的指标（独立访问用户数）还是挺低，再加一条Y坐标轴，同时给各自加上单位。
+操作：在Y轴的值定义，勾选自定义最小值为0，同时设置轴线的样式。
+<img src="https://img-blog.csdnimg.cn/6ccf44607d134b4f96b450b8bdc53e70.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+同时在 ==系列页签== 中设置堆积与坐标轴关系，Y轴3对应3，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/ef6ba4dc0a7b463d8fe4110deb44f354.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+==Y轴添加单位==，选择 <strong>数字</strong>，手动输入 万
+<img src="https://img-blog.csdnimg.cn/f4ed1bf4b3e74841baee884245ee2c9d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+展示效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/6e1d38566fdb482a92ea357550d036a3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h6 id="参考文档">参考文档</h6>
+<p>【1】https://help.fanruan.com/finereport/doc-view-1681.html</p>
 
     
 	</div>
@@ -118,7 +125,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/java">Java</a>
+  <a href="https://wangqj.cn/tags/finereport">FineReport</a>
   
 </div>
 
@@ -129,14 +136,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/java">Java</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/finereport">FineReport</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0066-java-maven/" data-title="Maven的pom.xml文件报错排查处理" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0090-finereport-charts/" data-title="帆软 FineReport 绘制折线图" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>

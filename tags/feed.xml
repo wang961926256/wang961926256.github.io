@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FineReport</title>
+      <link>https://wangqj.cn/tags/finereport/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/tags/finereport/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Centos</title>
@@ -35,15 +44,6 @@
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/tags/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FineReport</title>
-      <link>https://wangqj.cn/tags/finereport/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/tags/finereport/</guid>
       <description></description>
     </item>
     
