@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Ext tree 节点的新增和移除 - 梦幻通灵的个人博客</title>
+  <title>ODPS 数据全量/增量同步方案 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="ExtTree">
+  <meta name="description" content="Centos">
   
-  <meta itemprop="name" content="Ext tree 节点的新增和移除 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="ExtTree">
+  <meta itemprop="name" content="ODPS 数据全量/增量同步方案 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Centos">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="ExtTree" />
+  <meta name="twitter:description" content="Centos" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -65,7 +65,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0030-exttree/" title="Ext tree 节点的新增和移除" itemprop="url">Ext tree 节点的新增和移除</a>
+      <a href="https://wangqj.cn/post/0091-odps-trun/" title="ODPS 数据全量/增量同步方案" itemprop="url">ODPS 数据全量/增量同步方案</a>
   </h1>
   <p class="article-author">By
     
@@ -73,95 +73,52 @@
     
   </p>
   <p class="article-time">
-    <time date="2020-04-25 00:00:00 &#43;0000 UTC">2020-04-25 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-03-02 00:00:00 &#43;0000 UTC">2022-03-02 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p><strong>ExtTree</strong> 树是一种比较紧密的数据类型，上下级节点之间具有联系。</p>
-<p>最近在用Extjs树，实现了机构下面挂人，现在需要对选中人员可以进行移除和新增操作。查询API发现，获取父级节点，调用   <strong>removeChild</strong> 和 <strong>appendChild</strong>方法可以实现增删，这里记录下来，方便备查。
-<strong>Ext</strong> 树创建的js程序代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Ext</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s2">&#34;Ext.Demo.Panel&#34;</span><span class="p">,</span> <span class="p">{</span>
-	<span class="nx">extend</span> <span class="o">:</span> <span class="s2">&#34;Ext.tree.Panel&#34;</span><span class="p">,</span>
-	<span class="nx">rootVisible</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-	<span class="nx">urlSrc</span> <span class="o">:</span> <span class="s2">&#34;/rygl/syd/load?theme=none&#34;</span><span class="p">,</span>
-	<span class="nx">initComponent</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-		<span class="kd">var</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createTreeStore</span><span class="p">(</span><span class="nx">urlsrc</span><span class="p">);</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">store</span> <span class="o">=</span> <span class="nx">store</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">callParent</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
-	<span class="p">},</span>
-	<span class="c1">//创建树节点的store
-</span><span class="c1"></span>	<span class="nx">createTreeStore</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">urlstr</span><span class="p">)</span> <span class="p">{</span>
-		<span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-		<span class="kd">var</span> <span class="nx">treeStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.data.TreeStore&#39;</span><span class="p">,</span> <span class="p">{</span>
-			<span class="c1">//autoLoad : true,
-</span><span class="c1"></span>			<span class="nx">fields</span> <span class="o">:</span> <span class="p">[</span><span class="c1">//叶子model属性，可扩展
-</span><span class="c1"></span>			<span class="p">{</span>
-				<span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;id&#39;</span>
-			<span class="p">},</span> <span class="p">{</span>
-				<span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;text&#39;</span> 
-			<span class="p">},</span> <span class="p">{</span>
-				<span class="nx">name</span> <span class="o">:</span> <span class="s1">&#39;leaf&#39;</span>
-			<span class="p">},</span>
-			<span class="nx">proxy</span> <span class="o">:</span> <span class="p">{</span>
-				<span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;ajax&#39;</span><span class="p">,</span>
-				<span class="nx">url</span> <span class="o">:</span> <span class="nx">urlstr</span><span class="p">,</span>
-				<span class="nx">reader</span> <span class="o">:</span> <span class="p">{</span>
-					<span class="nx">type</span> <span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-					<span class="nx">root</span> <span class="o">:</span> <span class="s1">&#39;DT&#39;</span>
-				<span class="p">}</span>
-			<span class="p">},</span>
-			<span class="nx">sorters</span> <span class="o">:</span> <span class="p">[{</span>
-				<span class="nx">property</span> <span class="o">:</span> <span class="s1">&#39;pindex&#39;</span><span class="p">,</span>
-				<span class="nx">direction</span> <span class="o">:</span> <span class="s1">&#39;ASC&#39;</span>
-			<span class="p">}],</span>
-			<span class="nx">root</span> <span class="o">:</span> <span class="p">{</span>
-				<span class="nx">nodeType</span> <span class="o">:</span> <span class="s1">&#39;async&#39;</span><span class="p">,</span>
-				<span class="nx">text</span> <span class="o">:</span> <span class="nx">me</span><span class="p">.</span><span class="nx">paraText</span><span class="p">,</span>
-				<span class="nx">expanded</span> <span class="o">:</span> <span class="kc">true</span>
-			<span class="p">}</span>
-		<span class="p">});</span>
-		<span class="k">return</span> <span class="nx">treeStore</span><span class="p">;</span>
-	<span class="p">},</span>
-	<span class="c1">//渲染
-</span><span class="c1"></span>	<span class="nx">onRender</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ct</span><span class="p">,</span> <span class="nx">position</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">callParent</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
-	<span class="p">}</span>
-</code></pre></div><p>对树上节点的新增和删除，都需要获取父级节点，调用   <strong>removeChild</strong> 和 <strong>appendChild</strong> 方法来实现。</p>
-<h2 id="移除">移除</h2>
-<p>1、获取选中的节点</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">checkedRecords</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSelectionModel</span><span class="p">().</span><span class="nx">getSelection</span><span class="p">();</span>
-</code></pre></div><p>2、获取选中节点的父节点</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">parentNode</span> <span class="o">=</span> <span class="nx">checkedRecords</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">parentNode</span><span class="err">；</span>
-</code></pre></div><p>3、removeChild 方法直接移除</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">checkedRecords</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="err">；</span>
-</code></pre></div><h2 id="新增">新增</h2>
-<p>1、 新增加节点对象</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">newNode</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.data.NodeInterface&#39;</span><span class="p">,{</span>
-	<span class="nx">leaf</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">});</span>
-</code></pre></div><p>2、获取选中的节点</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">checkedRecords</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSelectionModel</span><span class="p">().</span><span class="nx">getSelection</span><span class="p">();</span>
-<span class="c1">//当前选中节点的父ID 
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">parentId</span> <span class="o">=</span> <span class="nx">records</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
-</code></pre></div><p>3、根据parentId获取父节点</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">parentNode</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getStore</span><span class="p">().</span><span class="nx">getNodeById</span><span class="p">(</span><span class="nx">parentId</span><span class="p">);</span>
-</code></pre></div><p>4、创建节点  并对应节点的信息</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">newNode</span> <span class="o">=</span> <span class="nx">parentNode</span><span class="p">.</span><span class="nx">createNode</span><span class="p">(</span><span class="nx">newNode</span><span class="p">);</span>
-<span class="nx">newNode</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&#34;parentId&#34;</span><span class="p">,</span><span class="nx">parentId</span><span class="p">);</span>
-<span class="nx">newNode</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">,</span><span class="nx">records</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-<span class="nx">newNode</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&#34;checked&#34;</span><span class="p">,</span><span class="s2">&#34;true&#34;</span><span class="p">);</span>
-<span class="nx">newNode</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&#34;leaf&#34;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
-</code></pre></div><p>5、将节点插入到对应的位置</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">parentNode</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newNode</span><span class="p">);</span>
-</code></pre></div><p>构建的机构树如下图所示：
-<img src="https://img-blog.csdnimg.cn/20200425164522173.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="博客来源">博客来源</h2>
-<p>【1】https://blog.csdn.net/littlechang/article/details/7771453</p>
+<p>随着业务量增加，原采用的mysql 对大量业务数据的处理效率降低，公司采购的ODPS（MaxCompute） 阿里数据处理平台，进行数据的处理。</p>
+<h6 id="一源数据库---odps">一、源数据库 -&gt; ODPS</h6>
+<p>全量同步，直接同步即可，这里主要介绍下增量过程，分为以下三步。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 第一步、覆盖基表 插入非 变更/新增 的数据
+</span><span class="c1"></span><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">table</span> <span class="nx">tb_order_summary_odps</span>
+<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">middle_tb_order_summary_odps</span> 
+<span class="nx">where</span> <span class="nx">id</span> <span class="nx">not</span> <span class="k">in</span> <span class="p">(</span><span class="nx">select</span> <span class="nx">id</span> <span class="nx">from</span> <span class="nx">trans_tb_order_summary_odps</span><span class="p">);</span>
 
+<span class="c1">// 第二步、插入基表 插入 变更/新增 的数据
+</span><span class="c1"></span><span class="nx">insert</span> <span class="nx">into</span> <span class="nx">tb_order_summary_odps</span> 
+<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">trans_tb_order_summary_odps</span><span class="p">;</span>
+
+<span class="c1">// 第三步、插入中间表，基表数据覆盖插入中间表
+</span><span class="c1"></span><span class="nx">insert</span> <span class="nx">OVERWRITE</span> <span class="nx">table</span> <span class="nx">middle_tb_order_summary_odps</span> 
+<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">tb_order_summary_odps</span><span class="p">;</span>
+</code></pre></div><h6 id="二odps---源数据库">二、ODPS -&gt; 源数据库</h6>
+<p><strong>手动全量数据同步</strong>
+基本思想：将指定时间之前的数据与昨天数据汇总，作为最新的数据集，<em>${bizdate}</em>  获取指定日期。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">TABLE</span> <span class="nx">tb_order_summary</span>
+<span class="nx">SELECT</span>  <span class="o">*</span>
+<span class="nx">FROM</span>    <span class="nx">tb_order_summary</span>
+<span class="nx">WHERE</span>   <span class="nx">business_date</span> <span class="o">&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bizdate</span><span class="p">}</span>
+<span class="nx">UNION</span> <span class="nx">ALL</span>
+<span class="nx">SELECT</span> <span class="o">*</span>
+<span class="nx">from</span> <span class="nx">tb_order</span>
+<span class="nx">WHERE</span>
+<span class="nx">created_time</span> <span class="o">&lt;=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bizdate</span><span class="p">}</span>
+</code></pre></div><p><strong>定时增量同步前一天数据</strong>
+基本思想：将昨天之前数据与昨天数据汇总，作为最新的数据集，运用 <em>${bdp.system.bizdate}</em>  动态获取昨天。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">TABLE</span> <span class="nx">tb_order_summary</span>
+<span class="nx">SELECT</span>  <span class="o">*</span>
+<span class="nx">FROM</span>    <span class="nx">tb_order_summary</span>
+<span class="nx">WHERE</span>   <span class="nx">business_date</span> <span class="o">!=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bdp</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">bizdate</span><span class="p">}</span>
+<span class="nx">UNION</span> <span class="nx">ALL</span>
+<span class="nx">SELECT</span> <span class="o">*</span>
+<span class="nx">FROM</span> <span class="nx">tb_order</span>
+<span class="nx">WHERE</span> 
+<span class="nx">created_time</span> <span class="o">=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bdp</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">bizdate</span><span class="p">}</span>
+</code></pre></div>
     
 	</div>
   <footer class="article-footer clearfix">
@@ -170,7 +127,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/extjs">ExtJs</a>
+  <a href="https://wangqj.cn/tags/odps">ODPS</a>
   
 </div>
 
@@ -181,14 +138,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/extjs">ExtJs</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/odps">ODPS</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0030-exttree/" data-title="Ext tree 节点的新增和移除" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0091-odps-trun/" data-title="ODPS 数据全量/增量同步方案" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
