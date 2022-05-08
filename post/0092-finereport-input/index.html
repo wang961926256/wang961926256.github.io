@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Java 程序打包zip - 梦幻通灵的个人博客</title>
+  <title>ODPS 数据全量/增量同步方案 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="ExtTree">
+  <meta name="description" content="Centos">
   
-  <meta itemprop="name" content="Java 程序打包zip - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="ExtTree">
+  <meta itemprop="name" content="ODPS 数据全量/增量同步方案 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Centos">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="ExtTree" />
+  <meta name="twitter:description" content="Centos" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0029-javatozip/" title="Java 程序打包zip" itemprop="url">Java 程序打包zip</a>
+      <a href="https://wangqj.cn/post/0092-finereport-input/" title="ODPS 数据全量/增量同步方案" itemprop="url">ODPS 数据全量/增量同步方案</a>
   </h1>
   <p class="article-author">By
     
@@ -69,67 +69,52 @@
     
   </p>
   <p class="article-time">
-    <time date="2020-04-25 00:00:00 &#43;0000 UTC">2020-04-25 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-03-02 00:00:00 &#43;0000 UTC">2022-03-02 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>最近工作中需要将指定文件夹下的文件，挑选出来，并打包下载。网上查询后，使用zipFile实现压缩，这里记录下来，方便备查。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//引入ZipFile的包
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">net</span><span class="p">.</span><span class="nx">lingala</span><span class="p">.</span><span class="nx">zip4j</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">ZipFile</span><span class="p">;</span>
-<span class="cm">/**
-</span><span class="cm"> * 文件的压缩
-</span><span class="cm"> * @param mapList 人员列表
-</span><span class="cm"> * @param dest 压缩包路径
-</span><span class="cm"> * @throws Exception
-</span><span class="cm"> */</span>
-<span class="kr">public</span> <span class="k">void</span> <span class="nx">fileCompact</span><span class="p">(</span><span class="nx">List</span><span class="o">&lt;</span><span class="nx">Map</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nb">Object</span><span class="o">&gt;&gt;</span> <span class="nx">mapList</span><span class="p">,</span><span class="nb">String</span> <span class="nx">dest</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">Exception</span><span class="p">{</span>
-		<span class="c1">//定义临时文件tempFile 
-</span><span class="c1"></span>		<span class="nx">File</span> <span class="nx">tempFile</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-		<span class="k">try</span> <span class="p">{</span>
-			<span class="c1">//报表文件夹
-</span><span class="c1"></span>			<span class="nx">File</span> <span class="nx">reportDir</span> <span class="o">=</span> <span class="s2">&#34;D:\\report&#34;</span><span class="p">);</span>
-			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">reportDir</span><span class="p">.</span><span class="nx">exists</span><span class="p">())</span> <span class="p">{</span>
-				<span class="nx">reportDir</span><span class="p">.</span><span class="nx">mkdirs</span><span class="p">();</span>
-			<span class="p">}</span>
-			<span class="nx">File</span> <span class="nx">endDirection</span><span class="o">=</span><span class="k">new</span> <span class="nx">File</span><span class="p">(</span><span class="nx">dest</span><span class="p">);</span>
-			<span class="c1">//判断是否已经存在文件，有 则执行删除文件操作
-</span><span class="c1"></span>			<span class="k">if</span> <span class="p">(</span><span class="nx">endDirection</span><span class="p">.</span><span class="nx">exists</span><span class="p">())</span> <span class="p">{</span>
-				<span class="nx">endDirection</span><span class="p">.</span><span class="k">delete</span><span class="p">();</span>
-			<span class="p">}</span>
-			<span class="c1">//初始化 ZipParameters 为空 
-</span><span class="c1"></span>			<span class="nx">ZipParameters</span> <span class="nx">parameters</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-			<span class="nb">String</span> <span class="nx">name</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-			<span class="c1">//遍历人员list集合
-</span><span class="c1"></span>			<span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">mapList</span><span class="p">.</span><span class="nx">size</span><span class="p">();</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-				<span class="c1">//dest 为输出的zip的路径  D:\\data.zip
-</span><span class="c1"></span>				<span class="nx">ZipFile</span> <span class="nx">zipFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZipFile</span><span class="p">(</span><span class="nx">dest</span><span class="p">);</span>
-				<span class="c1">//获取人员的名称
-</span><span class="c1"></span>				<span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">+</span> <span class="nx">mapList</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">);</span> 
-				<span class="nx">parameters</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ZipParameters</span><span class="p">();</span>
-				<span class="nx">parameters</span><span class="p">.</span><span class="nx">setCompressionMethod</span><span class="p">(</span><span class="nx">Zip4jConstants</span><span class="p">.</span><span class="nx">COMP_DEFLATE</span><span class="p">);</span>
-				<span class="nx">parameters</span><span class="p">.</span><span class="nx">setCompressionLevel</span><span class="p">(</span><span class="nx">Zip4jConstants</span><span class="p">.</span><span class="nx">DEFLATE_LEVEL_NORMAL</span><span class="p">);</span>
-				<span class="c1">//读取report文件夹的人员的文件  如 tom.doc
-</span><span class="c1"></span>				<span class="nx">tempFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">File</span><span class="p">(</span><span class="nx">reportDir</span><span class="p">,</span> <span class="nx">name</span> <span class="o">+</span><span class="s2">&#34;.doc&#34;</span><span class="p">);</span>
-				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">tempFile</span><span class="p">.</span><span class="nx">exists</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 没有报表文件则继续
-</span><span class="c1"></span>					<span class="k">continue</span><span class="p">;</span>
-				<span class="p">}</span>
-				<span class="c1">//将遍历出来的报表文件放到压缩文件中
-</span><span class="c1"></span>				<span class="nx">zipFile</span><span class="p">.</span><span class="nx">addFile</span><span class="p">(</span><span class="nx">tempFile</span><span class="p">,</span> <span class="nx">parameters</span><span class="p">);</span>
-				<span class="c1">// 将文件夹直接添加到压缩文件
-</span><span class="c1"></span>				<span class="nx">zipFile</span><span class="p">.</span><span class="nx">addFolder</span><span class="p">(</span><span class="nx">reportDir</span><span class="p">,</span><span class="nx">parameters</span><span class="p">);</span>
-			<span class="p">}</span>
-		<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s2">&#34;文件压缩失败!&#34;</span><span class="p">);</span>
-		<span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-			
-		<span class="p">}</span>
-	<span class="p">}</span>
-</code></pre></div><h2 id="博客参考">博客参考</h2>
-<p>【1】https://blog.csdn.net/zhanghui3239619/article/details/78956357</p>
+<p>随着业务量增加，原采用的mysql 对大量业务数据的处理效率降低，公司采购的ODPS（MaxCompute） 阿里数据处理平台，进行数据的处理。</p>
+<h6 id="一源数据库---odps">一、源数据库 -&gt; ODPS</h6>
+<p>全量同步，直接同步即可，这里主要介绍下增量过程，分为以下三步。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 第一步、覆盖基表 插入非 变更/新增 的数据
+</span><span class="c1"></span><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">table</span> <span class="nx">tb_order_summary_odps</span>
+<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">middle_tb_order_summary_odps</span> 
+<span class="nx">where</span> <span class="nx">id</span> <span class="nx">not</span> <span class="k">in</span> <span class="p">(</span><span class="nx">select</span> <span class="nx">id</span> <span class="nx">from</span> <span class="nx">trans_tb_order_summary_odps</span><span class="p">);</span>
 
+<span class="c1">// 第二步、插入基表 插入 变更/新增 的数据
+</span><span class="c1"></span><span class="nx">insert</span> <span class="nx">into</span> <span class="nx">tb_order_summary_odps</span> 
+<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">trans_tb_order_summary_odps</span><span class="p">;</span>
+
+<span class="c1">// 第三步、插入中间表，基表数据覆盖插入中间表
+</span><span class="c1"></span><span class="nx">insert</span> <span class="nx">OVERWRITE</span> <span class="nx">table</span> <span class="nx">middle_tb_order_summary_odps</span> 
+<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">tb_order_summary_odps</span><span class="p">;</span>
+</code></pre></div><h6 id="二odps---源数据库">二、ODPS -&gt; 源数据库</h6>
+<p><strong>手动全量数据同步</strong>
+基本思想：将指定时间之前的数据与昨天数据汇总，作为最新的数据集，<em>${bizdate}</em>  获取指定日期。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">TABLE</span> <span class="nx">tb_order_summary</span>
+<span class="nx">SELECT</span>  <span class="o">*</span>
+<span class="nx">FROM</span>    <span class="nx">tb_order_summary</span>
+<span class="nx">WHERE</span>   <span class="nx">business_date</span> <span class="o">&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bizdate</span><span class="p">}</span>
+<span class="nx">UNION</span> <span class="nx">ALL</span>
+<span class="nx">SELECT</span> <span class="o">*</span>
+<span class="nx">from</span> <span class="nx">tb_order</span>
+<span class="nx">WHERE</span>
+<span class="nx">created_time</span> <span class="o">&lt;=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bizdate</span><span class="p">}</span>
+</code></pre></div><p><strong>定时增量同步前一天数据</strong>
+基本思想：将昨天之前数据与昨天数据汇总，作为最新的数据集，运用 <em>${bdp.system.bizdate}</em>  动态获取昨天。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">TABLE</span> <span class="nx">tb_order_summary</span>
+<span class="nx">SELECT</span>  <span class="o">*</span>
+<span class="nx">FROM</span>    <span class="nx">tb_order_summary</span>
+<span class="nx">WHERE</span>   <span class="nx">business_date</span> <span class="o">!=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bdp</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">bizdate</span><span class="p">}</span>
+<span class="nx">UNION</span> <span class="nx">ALL</span>
+<span class="nx">SELECT</span> <span class="o">*</span>
+<span class="nx">FROM</span> <span class="nx">tb_order</span>
+<span class="nx">WHERE</span> 
+<span class="nx">created_time</span> <span class="o">=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bdp</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">bizdate</span><span class="p">}</span>
+</code></pre></div>
     
 	</div>
   <footer class="article-footer clearfix">
@@ -138,7 +123,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/java">Java</a>
+  <a href="https://wangqj.cn/tags/odps">ODPS</a>
   
 </div>
 
@@ -149,14 +134,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/java">Java</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/odps">ODPS</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0029-javatozip/" data-title="Java 程序打包zip" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0092-finereport-input/" data-title="ODPS 数据全量/增量同步方案" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>

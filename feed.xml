@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>ODPS 数据全量/增量同步方案</title>
+      <link>https://wangqj.cn/post/0092-finereport-input/</link>
+      <pubDate>Wed, 02 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0092-finereport-input/</guid>
+      <description>背景介绍 随着业务量增加，原采用的mysql 对大量业务数据的处理效率降低，公司采购的ODPS（MaxCompute） 阿里数据处理平台，进行数据</description>
+    </item>
+    
+    <item>
       <title>帆软 FineReport 绘制折线图</title>
       <link>https://wangqj.cn/post/0090-finereport-charts/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
