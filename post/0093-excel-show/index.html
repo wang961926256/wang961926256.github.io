@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Github上搭建个人博客 - 梦幻通灵的个人博客</title>
+  <title>Excel 设置下拉框-显示中文而实际数字 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="This is meta description.">
+  <meta name="description" content="Excel">
   
-  <meta itemprop="name" content="Github上搭建个人博客 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="This is meta description.">
+  <meta itemprop="name" content="Excel 设置下拉框-显示中文而实际数字 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Excel">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="This is meta description." />
+  <meta name="twitter:description" content="Excel" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -65,7 +65,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0005-createblog/" title="Github上搭建个人博客" itemprop="url">Github上搭建个人博客</a>
+      <a href="https://wangqj.cn/post/0093-excel-show/" title="Excel 设置下拉框-显示中文而实际数字" itemprop="url">Excel 设置下拉框-显示中文而实际数字</a>
   </h1>
   <p class="article-author">By
     
@@ -73,125 +73,41 @@
     
   </p>
   <p class="article-time">
-    <time date="2019-12-22 00:00:00 &#43;0000 UTC">2019-12-22 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-04-08 00:00:00 &#43;0000 UTC">2022-04-08 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>在家休息的时候，学习一下在Github上搭建个人的博客，网上查阅资料发现，github提供了访问的地址，只需要将你自己账号下的仓库稍作修改就可以通过浏览器访问。下面记录自己搭建的过程，方便备查。</p>
-<h2 id="准备工作">准备工作</h2>
-<p>在个人博客搭建之前需要准备好：
-（1）域名
-（2）github账号</p>
-<h2 id="第一步建立仓库">第一步、建立仓库</h2>
-<p>1、首先在个人gethub上建立个人的仓库，用于存放博客的相关信息。
-<img src="https://img-blog.csdnimg.cn/20191201221851442.png" alt="在这里插入图片描述">
-命名规则：<strong>你的用户名.github.io</strong>
-eg：你的GitHub账号是apple.github.io，则可以通过<strong><a href="http://apple.github.io">http://apple.github.io</a></strong>访问你的网站
-2、在本地D盘新建了一个文件blog，用于存放仓库的内容。
-按住shift，同时右键，选择在此处打开powershell命令，将文件夹或其中的内容提交到GitHub上博客仓库。
-文件夹下新建两个文件：
-1、<strong>index.html</strong>   直接输入hello word 用于测试页面显示
-2、<strong>CNAME</strong> 用于存放域名，如 apple.com ，注意不用加www
-在本地文件提交到Github上提示需要输入github的账号和密码，如实填写即可！</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//git的初始化 会在blog文件夹下生成.git文件
-</span><span class="c1"></span><span class="o">&gt;&gt;</span> <span class="nx">git</span> <span class="nx">init</span>
-<span class="nx">Initialized</span> <span class="nx">empty</span> <span class="nx">Git</span> <span class="nx">repository</span> <span class="k">in</span> <span class="nx">D</span><span class="o">:</span><span class="sr">/blog/</span><span class="p">.</span><span class="nx">git</span><span class="o">/</span>
-<span class="c1">//添加
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">add</span> <span class="p">.</span>
-<span class="c1">//提交
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">commit</span> <span class="s2">&#34;first commit&#34;</span>
-<span class="c1">//访问github上地址
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">remote</span> <span class="nx">add</span> <span class="nx">origin</span> <span class="nx">git</span><span class="err">@</span><span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">:</span><span class="nx">账号</span><span class="o">/</span><span class="nx">账号</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">io</span><span class="p">.</span><span class="nx">git</span>
-<span class="c1">//将本地的master分支推送到origin主机，同时指定origin为默认主机
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">push</span> <span class="o">-</span><span class="nx">u</span> <span class="nx">origin</span> <span class="nx">master</span>
-<span class="c1">//提交成功 控制台会打印出以下的内容，供参考
-</span><span class="c1"></span><span class="nx">Enumerating</span> <span class="nx">objects</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">done</span><span class="p">.</span>
-<span class="nx">Counting</span> <span class="nx">objects</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="nx">done</span><span class="p">.</span>
-<span class="nx">Writing</span> <span class="nx">objects</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">221</span> <span class="nx">bytes</span> <span class="o">|</span> <span class="mf">221.00</span> <span class="nx">KiB</span><span class="o">/</span><span class="nx">s</span><span class="p">,</span> <span class="nx">done</span><span class="p">.</span>
-<span class="nx">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="nx">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="nx">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="nx">delta</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nx">To</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/wang961926256/wang961926256.github.io.git
-</span><span class="c1"></span> <span class="o">*</span> <span class="p">[</span><span class="k">new</span> <span class="nx">branch</span><span class="p">]</span>      <span class="nx">master</span> <span class="o">-&gt;</span> <span class="nx">master</span>
-<span class="nx">Branch</span> <span class="s1">&#39;master&#39;</span> <span class="nx">set</span> <span class="nx">up</span> <span class="nx">to</span> <span class="nx">track</span> <span class="nx">remote</span> <span class="nx">branch</span> <span class="s1">&#39;master&#39;</span> <span class="nx">from</span> 
-<span class="s1">&#39;origin&#39;</span><span class="p">.</span>
-<span class="c1">//Git文件提交  (注意是master分支）
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">pull</span> <span class="nx">origin</span> <span class="nx">master</span>
-<span class="c1">//提交
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">push</span> <span class="nx">origin</span> <span class="nx">master</span>
-</code></pre></div><p>之后对博客的更新操作都可以在<strong>本地blog</strong>文件下进行更改，再提交到远程仓库发布。</p>
-<h2 id="第二步访问地址">第二步、访问地址</h2>
-<p>在浏览器上输入你的建立的仓库，如<strong>apple.github.io</strong>,页面显示出来 hello word，以上就是github提供的博客的地址来访问资源。</p>
-<h2 id="第三步在域名管理添加地址">第三步、在域名管理添加地址</h2>
-<p>个人申请的是腾讯云的域名，因此进入到腾讯云的管理的控制台，添加对应的信息
-<img src="https://img-blog.csdnimg.cn/20191201234116484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-注意：如果是初次申请的域名，是需要进行审核的（上传身份证的照片）
-接下来输入域名，看页面上是否跳转到 <strong>index.html</strong> 页面，显示hello word
-以上三步操作，说明配置成功！博客的发布和渲染还需要接下来的操作。</p>
-<h2 id="第四步选择合适的主题">第四步、选择合适的主题</h2>
-<p>本文选用的是hugo，还可选择hexo，以下介绍hugo配置的过程</p>
-<h6 id="1下载安装hugo">1、下载安装hugo</h6>
-<p><strong>仓库地址</strong>：https://github.com/gohugoio/hugo/releases
-本文选用的是在window上操作，使用的是 hugo_0.40.3_Windows-64bit.zip 这个版本。下载解压后添加到 Windows 的系统环境变量的 PATH 中即可，不需安装。</p>
-<h5 id="2配置hugo">2、配置hugo</h5>
-<p>cmd进入blog文件夹下，执行hugo命令，具体可以参考hugo官方网站快速指南 链接：https://gohugo.io/getting-started/quick-start/</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//创建站点
-</span><span class="c1"></span><span class="nx">hugo</span> <span class="k">new</span> <span class="nx">site</span> <span class="nx">blog</span>
-</code></pre></div><p>执行创建站点命令，会在指定目录下生成blog文件，同时文件夹下默认生成hugo需要的各类文件，如下图所示
-<img src="https://img-blog.csdnimg.cn/2019122211522619.png" alt="在这里插入图片描述">
-<strong>content 文件夹</strong> 存放主要的内容 如博客
-<strong>static 文件夹</strong> 存放image照片等
-<strong>themes 文件夹</strong> 存在下载的主题
-<strong>config.toml</strong> 是博客的配置文件</p>
-<h4 id="3下载主题">3、下载主题</h4>
-<p>将下载的主题放到theme文件夹下，便于接下来的解析。下载地址：<strong><a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></strong>，选择自己喜欢的类型。在主题文件下有<strong>exampleSite</strong>是个简单的demo，可以参考其进行配置自己的博客，祝好！
-<img src="https://img-blog.csdnimg.cn/20191222124856898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-cmd 进入blog文件下，执行本地编译命令，编译成功可以在<strong>http://localhost:1313/</strong> 查看效果</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//本地渲染命令
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="p">.</span><span class="err">\</span><span class="nx">hugo</span> <span class="nx">server</span> <span class="o">-</span><span class="nx">D</span>
-<span class="nx">Building</span> <span class="nx">sites</span> <span class="err">…</span> 
-                   <span class="o">|</span> <span class="nx">EN</span>  
-<span class="o">+------------------+----+</span>
-  <span class="nx">Pages</span>            <span class="o">|</span> <span class="mi">57</span>  
-  <span class="nx">Paginator</span> <span class="nx">pages</span>  <span class="o">|</span>  <span class="mi">0</span>  
-  <span class="nx">Non</span><span class="o">-</span><span class="nx">page</span> <span class="nx">files</span>   <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Static</span> <span class="nx">files</span>     <span class="o">|</span> <span class="mi">75</span>
-  <span class="nx">Processed</span> <span class="nx">images</span> <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Aliases</span>          <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Sitemaps</span>         <span class="o">|</span>  <span class="mi">1</span>
-  <span class="nx">Cleaned</span>          <span class="o">|</span>  <span class="mi">0</span>
-
-<span class="nx">Built</span> <span class="k">in</span> <span class="mi">243</span> <span class="nx">ms</span>
-<span class="nx">Watching</span> <span class="k">for</span> <span class="nx">changes</span> <span class="k">in</span> <span class="nx">D</span><span class="o">:</span><span class="err">\</span><span class="nx">blog</span><span class="err">\</span><span class="nx">wqjblog</span><span class="err">\</span><span class="p">{</span><span class="nx">archetypes</span><span class="p">,</span><span class="nx">content</span><span class="p">,</span><span class="nx">data</span><span class="p">,</span><span class="nx">layouts</span><span class="p">,</span><span class="kr">static</span><span class="p">,</span><span class="nx">themes</span><span class="p">}</span>
-<span class="nx">Watching</span> <span class="k">for</span> <span class="nx">config</span> <span class="nx">changes</span> <span class="k">in</span> <span class="nx">D</span><span class="o">:</span><span class="err">\</span><span class="nx">blog</span><span class="err">\</span><span class="nx">wqjblog</span><span class="err">\</span><span class="nx">config</span><span class="p">.</span><span class="nx">toml</span>
-<span class="nx">Environment</span><span class="o">:</span> <span class="s2">&#34;development&#34;</span>
-<span class="nx">Serving</span> <span class="nx">pages</span> <span class="nx">from</span> <span class="nx">memory</span>
-<span class="nx">Running</span> <span class="k">in</span> <span class="nx">Fast</span> <span class="nx">Render</span> <span class="nx">Mode</span><span class="p">.</span> <span class="nx">For</span> <span class="nx">full</span> <span class="nx">rebuilds</span> <span class="nx">on</span> <span class="nx">change</span><span class="o">:</span> <span class="nx">hugo</span> <span class="nx">server</span> <span class="o">--</span><span class="nx">disableFastRender</span>
-<span class="nx">Web</span> <span class="nx">Server</span> <span class="nx">is</span> <span class="nx">available</span> <span class="nx">at</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//localhost:1313/ (bind address 127.0.0.1)
-</span><span class="c1"></span><span class="nx">Press</span> <span class="nx">Ctrl</span><span class="o">+</span><span class="nx">C</span> <span class="nx">to</span> <span class="nx">stop</span>
-<span class="c1">//发布博客命令
-</span><span class="c1"></span><span class="o">&gt;</span> <span class="p">.</span><span class="err">\</span><span class="nx">hugo</span> <span class="o">-</span><span class="nx">D</span>
-<span class="nx">Building</span> <span class="nx">sites</span> <span class="err">…</span>
-                   <span class="o">|</span> <span class="nx">EN</span>
-<span class="o">+------------------+----+</span>
-  <span class="nx">Pages</span>            <span class="o">|</span> <span class="mi">57</span>
-  <span class="nx">Paginator</span> <span class="nx">pages</span>  <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Non</span><span class="o">-</span><span class="nx">page</span> <span class="nx">files</span>   <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Static</span> <span class="nx">files</span>     <span class="o">|</span> <span class="mi">75</span>
-  <span class="nx">Processed</span> <span class="nx">images</span> <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Aliases</span>          <span class="o">|</span>  <span class="mi">0</span>
-  <span class="nx">Sitemaps</span>         <span class="o">|</span>  <span class="mi">1</span>
-  <span class="nx">Cleaned</span>          <span class="o">|</span>  <span class="mi">0</span>
-
-<span class="nx">Total</span> <span class="k">in</span> <span class="mi">723</span> <span class="nx">ms</span>
-</code></pre></div><p>执行完发布博客命令（<strong>.\hugo -D</strong>）在blog文件夹下回生成一个 <strong>public</strong> 文件，里面是渲染出来的各类文件，只需要将该文件发布到github指定的仓库，即可通过域名进行访问。
-<img src="https://img-blog.csdnimg.cn/20191222130523444.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-运行模板主题效果如下图所示：
-<img src="https://img-blog.csdnimg.cn/20191222125010358.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-总结：参考网上搭建的步骤，一步步操作，直到最后出来页面，很兴奋，接下来就要好好管理自己的博客，多做总结！</p>
-<h2 id="博客来源">博客来源</h2>
-<p>【1】https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93</p>
+<p>最近在用excel做数据的导入，显示的值和数据库存放值有所差别，需要进行翻译，这里运用excel自带的功能来实现，显示中文，实际数字。
+Excel 版本：2019</p>
+<h6 id="第一步设置下来框显示">第一步、设置下来框显示</h6>
+<p>在excel模板中有个字段，是否有效 1-有效，0-无效，直接输入无法明白什么意思，先将其设置为下拉框形式。
+选择列，数据 - ==数据验证==
+<img src="https://img-blog.csdnimg.cn/4abf0e0be53242999ca95ff91665a48a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+在弹出对话框，设置-允许选择 ==序列==，数据默认介于，在来源框中数据下拉框的内容，<strong>注意英文逗号分隔，每个代表一项</strong>。
+<img src="https://img-blog.csdnimg.cn/135edeb5c9104c76861215148ae6dee0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+设置完成，该列就具有下拉的效果，如下图所示。
+<img src="https://img-blog.csdnimg.cn/5ac667cdb87e47e59d57eed9059d2b27.png" alt="在这里插入图片描述"></p>
+<h6 id="第二步输入数字自动转化成文字">第二步、输入数字自动转化成文字</h6>
+<p>实现效果可以运用自定义，选中该列，右键-==设置单元格格式==
+<img src="https://img-blog.csdnimg.cn/305381d2aa374b50aafe9e241d75374e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+在弹出的对话框，选择<strong>自定义</strong>，定义公式  ==[=1]有效;[=0]无效== 。
+<img src="https://img-blog.csdnimg.cn/def83fbd1a4c44fb973b31ab9d2b6318.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<blockquote>
+<p><strong>知识学习</strong>
+<em>1）小写数字转大写汉字(两种形式)</em>
+公式：形式一：&quot;[DBNum1][$-804]G/通用格式&rdquo; ;  形式二：[DBNum2][$-804]G/通用格式
+demo：形式一：“1” 页面转化显示为 “一”;   形式二：“1” 页面转化显示为 “壹”
+<em>2）日期格式转换</em>
+公式： “0000-00-00”
+demo：“20220330” 页面转化显示为 “2022-03-30”</p>
+</blockquote>
+<p>设置完毕，在列输入1，移开鼠标会自动转化翻译为有效，输入0，自动转化翻译为无效，==注意输入其他值无效==。</p>
+<p><img src="https://img-blog.csdnimg.cn/b5c23c6d405841a88962ccf20bf07945.png" alt="在这里插入图片描述"></p>
+<h6 id="参考文档">参考文档</h6>
+<p>【1】https://www.cnblogs.com/byx1024/p/13092220.html</p>
 
     
 	</div>
@@ -201,7 +117,7 @@ cmd 进入blog文件下，执行本地编译命令，编译成功可以在<stron
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/blog">Blog</a>
+  <a href="https://wangqj.cn/tags/excel">Excel</a>
   
 </div>
 
@@ -212,14 +128,14 @@ cmd 进入blog文件下，执行本地编译命令，编译成功可以在<stron
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/blog">Blog</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/excel">Excel</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0005-createblog/" data-title="Github上搭建个人博客" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0093-excel-show/" data-title="Excel 设置下拉框-显示中文而实际数字" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
