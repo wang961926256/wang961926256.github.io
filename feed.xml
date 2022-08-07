@@ -6,10 +6,28 @@
     <description>Recent content on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java 程序生成阿里ADS数据库递增主键ID</title>
+      <link>https://wangqj.cn/post/0095-java-ads/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0095-java-ads/</guid>
+      <description>背景介绍 最近在压测，想生成带有userId的的两万条用户数据，将userId控制在八位即可，运用存储过程实现，记录过程，方便查看。 第一步、创</description>
+    </item>
+    
+    <item>
+      <title>mysql 批量造2万条测试数据</title>
+      <link>https://wangqj.cn/post/0094-mysql-test-data/</link>
+      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0094-mysql-test-data/</guid>
+      <description>背景介绍 最近在压测，想生成带有userId的的两万条用户数据，将userId控制在八位即可，运用存储过程实现，记录过程，方便查看。 第一步、创</description>
+    </item>
     
     <item>
       <title>Excel 设置下拉框-显示中文而实际数字</title>
@@ -21,20 +39,20 @@
     </item>
     
     <item>
+      <title>帆软 FineReport 绘制填报报表</title>
+      <link>https://wangqj.cn/post/0092-finereport-input/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0092-finereport-input/</guid>
+      <description>背景介绍 最近有个需求想实现对活动与产品关系表的维护，单独做个页面似乎没那么必要，正好用下帆软填报的功能，这里记录下来，方便查询。 第一步、页面</description>
+    </item>
+    
+    <item>
       <title>ODPS 数据全量/增量同步方案</title>
       <link>https://wangqj.cn/post/0091-odps-trun/</link>
       <pubDate>Wed, 02 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/post/0091-odps-trun/</guid>
-      <description>背景介绍 随着业务量增加，原采用的mysql 对大量业务数据的处理效率降低，公司采购的ODPS（MaxCompute） 阿里数据处理平台，进行数据</description>
-    </item>
-    
-    <item>
-      <title>ODPS 数据全量/增量同步方案</title>
-      <link>https://wangqj.cn/post/0092-finereport-input/</link>
-      <pubDate>Wed, 02 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/post/0092-finereport-input/</guid>
       <description>背景介绍 随着业务量增加，原采用的mysql 对大量业务数据的处理效率降低，公司采购的ODPS（MaxCompute） 阿里数据处理平台，进行数据</description>
     </item>
     

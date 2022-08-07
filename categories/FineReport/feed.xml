@@ -6,10 +6,19 @@
     <description>Recent content in FineReport on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/categories/finereport/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>帆软 FineReport 绘制填报报表</title>
+      <link>https://wangqj.cn/post/0092-finereport-input/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0092-finereport-input/</guid>
+      <description>背景介绍 最近有个需求想实现对活动与产品关系表的维护，单独做个页面似乎没那么必要，正好用下帆软填报的功能，这里记录下来，方便查询。 第一步、页面</description>
+    </item>
     
     <item>
       <title>帆软 FineReport 绘制折线图</title>

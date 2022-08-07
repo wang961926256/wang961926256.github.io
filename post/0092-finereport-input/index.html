@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>ODPS 数据全量/增量同步方案 - 梦幻通灵的个人博客</title>
+  <title>帆软 FineReport 绘制填报报表 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="Centos">
+  <meta name="description" content="FineReport">
   
-  <meta itemprop="name" content="ODPS 数据全量/增量同步方案 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="Centos">
+  <meta itemprop="name" content="帆软 FineReport 绘制填报报表 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="FineReport">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="Centos" />
+  <meta name="twitter:description" content="FineReport" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -41,11 +41,7 @@
     <ul>
       
       
-      <li><a href="/program/">软考</a></li>
-      
-      <li><a href="/reading/">读书</a></li>
-      
-      <li><a href="/interview/">面试</a></li>
+      <li><a href="/post/">首页</a></li>
       
       
       <li>
@@ -65,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0092-finereport-input/" title="ODPS 数据全量/增量同步方案" itemprop="url">ODPS 数据全量/增量同步方案</a>
+      <a href="https://wangqj.cn/post/0092-finereport-input/" title="帆软 FineReport 绘制填报报表" itemprop="url">帆软 FineReport 绘制填报报表</a>
   </h1>
   <p class="article-author">By
     
@@ -73,52 +69,62 @@
     
   </p>
   <p class="article-time">
-    <time date="2022-03-02 00:00:00 &#43;0000 UTC">2022-03-02 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-03-22 00:00:00 &#43;0000 UTC">2022-03-22 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>随着业务量增加，原采用的mysql 对大量业务数据的处理效率降低，公司采购的ODPS（MaxCompute） 阿里数据处理平台，进行数据的处理。</p>
-<h6 id="一源数据库---odps">一、源数据库 -&gt; ODPS</h6>
-<p>全量同步，直接同步即可，这里主要介绍下增量过程，分为以下三步。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 第一步、覆盖基表 插入非 变更/新增 的数据
-</span><span class="c1"></span><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">table</span> <span class="nx">tb_order_summary_odps</span>
-<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">middle_tb_order_summary_odps</span> 
-<span class="nx">where</span> <span class="nx">id</span> <span class="nx">not</span> <span class="k">in</span> <span class="p">(</span><span class="nx">select</span> <span class="nx">id</span> <span class="nx">from</span> <span class="nx">trans_tb_order_summary_odps</span><span class="p">);</span>
+<p>最近有个需求想实现对活动与产品关系表的维护，单独做个页面似乎没那么必要，正好用下帆软填报的功能，这里记录下来，方便查询。</p>
+<h6 id="第一步页面绘制与绑定">第一步、页面绘制与绑定</h6>
+<p>绘制页面完成后，将查询的列与单元格绑定，可参考前面博文，这里不再细说，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/17a21c766c3946df8261666b036f4740.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h6 id="第二步设置列的控件样式">第二步、设置列的控件样式</h6>
+<p>由于是要填报，则需要设置每个单元格的控件样式，比如活动ID和活动名称是文本类型的，是否有效是下拉选项。以活动ID设置为 ==文本控件==，这里不允许为空，设置提示信息，如下图所示。
+<img src="https://img-blog.csdnimg.cn/af841e7959c04492a4b3975fa5eae3a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+是否有效 设置为 ==下拉框控件==，自定义-设置选择的内容，1表示有效。
+<img src="https://img-blog.csdnimg.cn/a6e2af4189264474a7d80303cab28e3f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+根据需要设置完控件属性后，可以在看到设置后每个单元格右下角样式，文本，日期等。
+<img src="https://img-blog.csdnimg.cn/301a819a9425414f80d1229ec0821545.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+点击 ==填报预览==，在页面查看预览效果。此时的填报报表可以进行编辑和保存。
+<img src="https://img-blog.csdnimg.cn/cc54d04a8ef349afaf2aa0afe2d3fbf4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>注意：url 拼接参数 <strong>&amp;op=write</strong>，若不带此参数，则为普通预览模式。</p>
+</blockquote>
+<h6 id="第三步绑定单元格与数据库字段关系">第三步、绑定单元格与数据库字段关系</h6>
+<p>编辑栏，模板 - ==报表填报属性== - 选择 ==内置SQL==，数据库表，添加字段。设置如下图所示。
+<img src="https://img-blog.csdnimg.cn/8056829e3ec64a9fa320c13a93e89ecc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+将单元格与数据库字段一一对应，这样页面字段变化，数据库里字段也跟着变化。
+<img src="https://img-blog.csdnimg.cn/275facf975e84d3786420813c13fd7f1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+完成以上步骤，即可实现对现有数据的维护，==那要新增和删除记录要怎么做呢==？请看下面</p>
+<h6 id="第四步设置列新增和列删除">第四步、设置列新增和列删除</h6>
+<p>编辑栏，模板- ==模板web属性==，选择 ==填报页面设置==，下来选择 ==为该模板单独设置==。双击添加 插入记录和删除记录按钮，页面如下图所示。
+<img src="https://img-blog.csdnimg.cn/7593f19763824bdfb31b4af33fd37f8e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+刷新页面，按钮添加成功。先选中行，新增记录，填写相应的信息，点击 提交即可。
+<img src="https://img-blog.csdnimg.cn/6bca043cb0e1427096c758a82dba9caa.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+完成以上步骤，即可完成对关系的增删查，==但如何批量进行新增呢？==</p>
+<h6 id="第四步批量新增">第四步、批量新增</h6>
+<p>添加 导入excel按钮
+<img src="https://img-blog.csdnimg.cn/3a9e6cddfce94156b321e1c4f964ee43.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+刷新页面，导入Excel 按钮即添加成功。
+<img src="https://img-blog.csdnimg.cn/d2196c221ea1408e9d7b385d90631cf1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+<strong>维护 excel 模板</strong>，里面的列要与页面的列对应，选择模板，校验保存即可。
+<img src="https://img-blog.csdnimg.cn/bf3205d0c61046dea747bb4a5019c496.png" alt="在这里插入图片描述">
+点击校验保存后，数据库中相应的添加成功三条记录。
+<img src="https://img-blog.csdnimg.cn/bb3c363b818046debc87fca208ce908f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+刷新页面，列表中共有6条记录，新增的3条均存在，注意导入过程是要做数据的校验。
+<img src="https://img-blog.csdnimg.cn/0b966745394b4a479ba449afec56d889.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
+<strong>数据校验</strong>。编辑栏，模板 - 报表填报属性，新增内置校验，根据需要设置不同的条件。
+<img src="https://img-blog.csdnimg.cn/c133d65d36bb4a2aaa64b1e166de39d4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h6 id="问题处理">问题处理</h6>
+<p><strong>1、中文入库后变成问号</strong>
+处理方案：在数据库连接后指定字符编码，如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// JDBC url
+</span><span class="c1"></span><span class="nx">jdbc</span><span class="o">:</span><span class="nx">mysql</span><span class="o">:</span><span class="c1">//127.0.0.1:3306/localhost_rpt?useUnicode=true&amp;characterEncoding=utf8
+</span></code></pre></div><h6 id="参考文档">参考文档</h6>
+<p>【1】https://help.fanruan.com/finereport/doc-view-2129.html</p>
 
-<span class="c1">// 第二步、插入基表 插入 变更/新增 的数据
-</span><span class="c1"></span><span class="nx">insert</span> <span class="nx">into</span> <span class="nx">tb_order_summary_odps</span> 
-<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">trans_tb_order_summary_odps</span><span class="p">;</span>
-
-<span class="c1">// 第三步、插入中间表，基表数据覆盖插入中间表
-</span><span class="c1"></span><span class="nx">insert</span> <span class="nx">OVERWRITE</span> <span class="nx">table</span> <span class="nx">middle_tb_order_summary_odps</span> 
-<span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">tb_order_summary_odps</span><span class="p">;</span>
-</code></pre></div><h6 id="二odps---源数据库">二、ODPS -&gt; 源数据库</h6>
-<p><strong>手动全量数据同步</strong>
-基本思想：将指定时间之前的数据与昨天数据汇总，作为最新的数据集，<em>${bizdate}</em>  获取指定日期。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">TABLE</span> <span class="nx">tb_order_summary</span>
-<span class="nx">SELECT</span>  <span class="o">*</span>
-<span class="nx">FROM</span>    <span class="nx">tb_order_summary</span>
-<span class="nx">WHERE</span>   <span class="nx">business_date</span> <span class="o">&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bizdate</span><span class="p">}</span>
-<span class="nx">UNION</span> <span class="nx">ALL</span>
-<span class="nx">SELECT</span> <span class="o">*</span>
-<span class="nx">from</span> <span class="nx">tb_order</span>
-<span class="nx">WHERE</span>
-<span class="nx">created_time</span> <span class="o">&lt;=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bizdate</span><span class="p">}</span>
-</code></pre></div><p><strong>定时增量同步前一天数据</strong>
-基本思想：将昨天之前数据与昨天数据汇总，作为最新的数据集，运用 <em>${bdp.system.bizdate}</em>  动态获取昨天。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">INSERT</span> <span class="nx">OVERWRITE</span> <span class="nx">TABLE</span> <span class="nx">tb_order_summary</span>
-<span class="nx">SELECT</span>  <span class="o">*</span>
-<span class="nx">FROM</span>    <span class="nx">tb_order_summary</span>
-<span class="nx">WHERE</span>   <span class="nx">business_date</span> <span class="o">!=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bdp</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">bizdate</span><span class="p">}</span>
-<span class="nx">UNION</span> <span class="nx">ALL</span>
-<span class="nx">SELECT</span> <span class="o">*</span>
-<span class="nx">FROM</span> <span class="nx">tb_order</span>
-<span class="nx">WHERE</span> 
-<span class="nx">created_time</span> <span class="o">=</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bdp</span><span class="p">.</span><span class="nx">system</span><span class="p">.</span><span class="nx">bizdate</span><span class="p">}</span>
-</code></pre></div>
     
 	</div>
   <footer class="article-footer clearfix">
@@ -127,7 +133,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/odps">ODPS</a>
+  <a href="https://wangqj.cn/tags/finereport">FineReport</a>
   
 </div>
 
@@ -138,14 +144,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/odps">ODPS</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/finereport">FineReport</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0092-finereport-input/" data-title="ODPS 数据全量/增量同步方案" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0092-finereport-input/" data-title="帆软 FineReport 绘制填报报表" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -167,6 +173,8 @@
   <p class="asidetitle">分类</p>
   <ul>
     
+    <li><a href="https://wangqj.cn/categories/ads" title="ads">ads<sup>1</sup></a></li>
+    
     <li><a href="https://wangqj.cn/categories/aspose" title="aspose">aspose<sup>2</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/blog" title="blog">blog<sup>1</sup></a></li>
@@ -187,7 +195,7 @@
     
     <li><a href="https://wangqj.cn/categories/fiddler" title="fiddler">fiddler<sup>1</sup></a></li>
     
-    <li><a href="https://wangqj.cn/categories/finereport" title="finereport">finereport<sup>2</sup></a></li>
+    <li><a href="https://wangqj.cn/categories/finereport" title="finereport">finereport<sup>3</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/git" title="git">git<sup>4</sup></a></li>
     
@@ -213,7 +221,7 @@
     
     <li><a href="https://wangqj.cn/categories/leetcode" title="leetcode">leetcode<sup>1</sup></a></li>
     
-    <li><a href="https://wangqj.cn/categories/mysql" title="mysql">mysql<sup>5</sup></a></li>
+    <li><a href="https://wangqj.cn/categories/mysql" title="mysql">mysql<sup>6</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/nacos" title="nacos">nacos<sup>1</sup></a></li>
     
@@ -223,7 +231,7 @@
     
     <li><a href="https://wangqj.cn/categories/nginx" title="nginx">nginx<sup>1</sup></a></li>
     
-    <li><a href="https://wangqj.cn/categories/odps" title="odps">odps<sup>4</sup></a></li>
+    <li><a href="https://wangqj.cn/categories/odps" title="odps">odps<sup>3</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/oracle" title="oracle">oracle<sup>8</sup></a></li>
     
@@ -268,6 +276,8 @@
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
       
+			<li><a href="https://wangqj.cn/tags/ads" title="ads">ads<sup>1</sup></a></li>
+      
 			<li><a href="https://wangqj.cn/tags/aspose" title="aspose">aspose<sup>2</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/blog" title="blog">blog<sup>1</sup></a></li>
@@ -286,7 +296,7 @@
       
 			<li><a href="https://wangqj.cn/tags/fiddler" title="fiddler">fiddler<sup>1</sup></a></li>
       
-			<li><a href="https://wangqj.cn/tags/finereport" title="finereport">finereport<sup>2</sup></a></li>
+			<li><a href="https://wangqj.cn/tags/finereport" title="finereport">finereport<sup>3</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/git" title="git">git<sup>4</sup></a></li>
       
@@ -314,7 +324,7 @@
       
 			<li><a href="https://wangqj.cn/tags/linux" title="linux">linux<sup>1</sup></a></li>
       
-			<li><a href="https://wangqj.cn/tags/mysql" title="mysql">mysql<sup>4</sup></a></li>
+			<li><a href="https://wangqj.cn/tags/mysql" title="mysql">mysql<sup>5</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/nacos" title="nacos">nacos<sup>1</sup></a></li>
       
@@ -324,7 +334,7 @@
       
 			<li><a href="https://wangqj.cn/tags/nginx" title="nginx">nginx<sup>1</sup></a></li>
       
-			<li><a href="https://wangqj.cn/tags/odps" title="odps">odps<sup>4</sup></a></li>
+			<li><a href="https://wangqj.cn/tags/odps" title="odps">odps<sup>3</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/oracle" title="oracle">oracle<sup>8</sup></a></li>
       
@@ -551,6 +561,8 @@
 <div class="tagcloudlist">
   <p class="asidetitle">标签云</p>
   <div class="tagcloudlist clearfix">
+    
+    <a href="https://wangqj.cn/tags/ads" style="font-size: 12px;">ads</a>
     
     <a href="https://wangqj.cn/tags/aspose" style="font-size: 12px;">aspose</a>
     

@@ -6,10 +6,19 @@
     <description>Recent content in mysql on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/categories/mysql/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql 批量造2万条测试数据</title>
+      <link>https://wangqj.cn/post/0094-mysql-test-data/</link>
+      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0094-mysql-test-data/</guid>
+      <description>背景介绍 最近在压测，想生成带有userId的的两万条用户数据，将userId控制在八位即可，运用存储过程实现，记录过程，方便查看。 第一步、创</description>
+    </item>
     
     <item>
       <title>全库查询某个指定的值或字段（mysql oracle）</title>
