@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Java实现 用Aspose.Cells导出excel模板数据 - 梦幻通灵的个人博客</title>
+  <title>Java的两种分页实现 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="Aspose.Cells">
+  <meta name="description" content="Java">
   
-  <meta itemprop="name" content="Java实现 用Aspose.Cells导出excel模板数据 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="Aspose.Cells">
+  <meta itemprop="name" content="Java的两种分页实现 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Java">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="Aspose.Cells" />
+  <meta name="twitter:description" content="Java" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0010-aspose-cells/" title="Java实现 用Aspose.Cells导出excel模板数据" itemprop="url">Java实现 用Aspose.Cells导出excel模板数据</a>
+      <a href="https://wangqj.cn/post/0096-java-page/" title="Java的两种分页实现" itemprop="url">Java的两种分页实现</a>
   </h1>
   <p class="article-author">By
     
@@ -69,68 +69,73 @@
     
   </p>
   <p class="article-time">
-    <time date="2019-05-18 00:00:00 &#43;0000 UTC">2019-05-18 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-05-22 00:00:00 &#43;0000 UTC">2022-05-22 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>最近有个需求是将数据库查询出来的数据，写入到用户提供的指定的模板中。查询一番，java方面的有jxl和poi两种插件，考虑到本次模板有多个页签，只是简单的数据查询，便选择Aspose.Cells。记录下来实现的过程，方便之后的查看。
-　　Aspose.Cell控件支持多种参数变量的绑定操作，如支持DataSet、Datatable、IList集合，实体类集合、类对象。下面是实现的过程。
-<strong>第一步</strong>、需要给用户提供的模板文件中的每个字段添加引用，作用是将程序查询出来的结果集，对应到数据列。实现效果如下图所示。
-<img src="https://img-blog.csdnimg.cn/20190517224531388.png" alt="在这里插入图片描述">
-　　模板中的列名要与数据库查询出来的列对应，绑定两者之间的关系，这里通过**&amp;=**来连接，从而建立两者之间的关系。</p>
-<blockquote>
-<p><strong>知识点</strong>
-通过&amp;= 来引用对象的结果的集合，如&amp;=a.姓名，即引用a表中的性名列。
-模板中不同页签也能根据&amp;= 实现数据的对应关系。</p>
-</blockquote>
-<p><strong>第二步</strong>、查询数据库获取结果模板所需字段的数据集，本例子利用jdbcOperations.queryForList来实现查询，将结果放到HashMapDataTable中。
-主要实现的步骤：读取模板文件&ndash;查询数据&ndash;往模板中写数据。程序代码实现：</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 读取模板文件，FilePath为文件的路径
-</span><span class="c1"></span><span class="nx">InputStream</span> <span class="k">in</span><span class="o">=</span><span class="k">new</span> <span class="nx">FileInputStream</span><span class="p">(</span><span class="k">new</span> <span class="nx">File</span><span class="p">(</span><span class="nx">FilePath</span><span class="p">));</span>
-<span class="c1">//读取工作簿
-</span><span class="c1"></span><span class="nx">Workbook</span> <span class="nx">wb</span><span class="o">=</span> <span class="k">new</span> <span class="nx">Workbook</span><span class="p">(</span><span class="k">in</span><span class="p">);</span>
-<span class="c1">//记得关闭输入流
-</span><span class="c1"></span><span class="k">in</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span> 
-<span class="c1">//创建Aspose.Cells WorkbookDesigner 的对象
-</span><span class="c1"></span><span class="nx">WorkbookDesigner</span> <span class="nx">designer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkbookDesigner</span><span class="p">();</span>
-<span class="nx">designer</span><span class="p">.</span><span class="nx">setWorkbook</span><span class="p">(</span><span class="nx">wb</span><span class="p">);</span>
-<span class="c1">//创建StringBuffer 存放查询的SQL
-</span><span class="c1"></span><span class="nx">StringBuffer</span> <span class="nx">sql</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StringBuffer</span><span class="p">();</span>
-<span class="nx">sql</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="err">“</span><span class="nx">select</span> <span class="nx">name</span> <span class="nx">as</span> <span class="nx">姓名</span><span class="err">，</span><span class="nx">sex</span> <span class="nx">as</span> <span class="nx">性别</span><span class="err">，</span><span class="nx">sfzh</span> <span class="nx">as</span> <span class="nx">身份证号</span> <span class="nx">FROM</span> <span class="nx">a</span><span class="err">”）</span><span class="p">;</span>
-<span class="c1">//将查询结果存放到list中
-</span><span class="c1"></span><span class="nx">List</span><span class="o">&lt;</span><span class="nx">Map</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nb">Object</span><span class="o">&gt;&gt;</span> <span class="nx">dataList</span> <span class="o">=</span> <span class="nx">jdbcOperations</span><span class="p">.</span><span class="nx">queryForList</span><span class="p">(</span><span class="nx">sql</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
-<span class="c1">//设置DataTable对象
-</span><span class="c1"></span><span class="nx">designer</span><span class="p">.</span><span class="nx">setDataSource</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">HashMapDataTable</span><span class="p">(</span><span class="nx">dataList</span><span class="p">));</span>
-<span class="c1">//根据数据源处理生成报表内容
-</span><span class="c1"></span><span class="nx">designer</span><span class="p">.</span><span class="nx">process</span><span class="p">();</span>
-<span class="c1">//输出流，写入到文件中
-</span><span class="c1"></span><span class="nx">OutputStream</span> <span class="nx">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileOutputStream</span><span class="p">(</span><span class="nx">logPath</span><span class="o">+</span><span class="nx">File</span><span class="p">.</span><span class="nx">separator</span><span class="o">+</span><span class="s2">&#34;导出数据.xls&#34;</span><span class="p">);</span>
-<span class="c1">//将查询数据写入到文件中
-</span><span class="c1"></span><span class="nx">wb</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">wb</span><span class="p">.</span><span class="nx">getFileFormat</span><span class="p">());</span>
+<p>在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。
+分页，处理好分页的参数：totalCount、pageSize 和 pageNo</p>
+<h6 id="1方法一">1、方法一</h6>
+<p>拼接 PageData 数据结构所需参数，包括 总数 totalCount 、页码pageNo 、页大小 pageSize 、开始页 beginIndex 和 结束页 endIndex。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm">* @param result
+</span><span class="cm">* @param query
+</span><span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">PageData</span> <span class="nf">listToPageData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">,</span> <span class="n">Query</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">PageData</span> <span class="n">pageData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageData</span><span class="o">();</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span> <span class="o">{</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setTotalCount</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setPageNo</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setItems</span><span class="o">(</span><span class="n">Collections</span><span class="o">.</span><span class="na">emptyList</span><span class="o">());</span>
+		<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="c1">// 分页各参数
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">totalCount</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+	<span class="kt">int</span> <span class="n">pageNo</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">();</span>
+	<span class="kt">int</span> <span class="n">pageSize</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">();</span>
+	<span class="kt">int</span> <span class="n">beginIndex</span> <span class="o">=</span> <span class="o">(</span><span class="n">pageNo</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">*</span> <span class="n">pageSize</span><span class="o">;</span>
+	<span class="kt">int</span> <span class="n">endIndex</span> <span class="o">=</span> <span class="n">pageNo</span> <span class="o">*</span> <span class="n">pageSize</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+	<span class="c1">// 赋值
+</span><span class="c1"></span>	<span class="n">pageData</span><span class="o">.</span><span class="na">setTotalCount</span><span class="o">(</span><span class="n">totalCount</span><span class="o">);</span>
+	<span class="n">pageData</span><span class="o">.</span><span class="na">setPageNo</span><span class="o">(</span><span class="n">pageNo</span><span class="o">);</span>
+	<span class="n">pageData</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">pageSize</span><span class="o">);</span>
+			
+	<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">sublist</span><span class="o">;</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">beginIndex</span> <span class="o">&gt;=</span> <span class="n">totalCount</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">sublist</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">emptyList</span><span class="o">();</span>
+	<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">endIndex</span> <span class="o">&lt;</span> <span class="n">totalCount</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">sublist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">beginIndex</span><span class="o">,</span> <span class="n">endIndex</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
+	<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+		<span class="n">sublist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">beginIndex</span><span class="o">,</span> <span class="n">totalCount</span><span class="o">);</span>			
+	<span class="o">}</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setItems</span><span class="o">(</span><span class="n">sublist</span><span class="o">);</span>		
+		<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>	
+	<span class="o">}</span>
+</code></pre></div><h6 id="2方法二">2、方法二</h6>
+<p>利用 <strong>java.util.List</strong> 的 ==subList== 方法，从0开始，含头不含尾。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 本质上是返回原来list的从[fromIndex, toIndex)之间的视图
+</span><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">subList</span><span class="o">(</span><span class="kt">int</span> <span class="n">fromIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">toIndex</span><span class="o">);</span>
+<span class="c1">// 若list大小改变，则可以通过clear方法来恢复
+</span><span class="c1"></span><span class="n">list</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">fromIndex</span><span class="o">,</span> <span class="n">toIndex</span><span class="o">).</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></div><p>分页实现的代码如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"> <span class="cm">/**
+</span><span class="cm">* @param result
+</span><span class="cm">* @param query
+</span><span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">PageData</span> <span class="nf">listToPageData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">,</span> <span class="n">Query</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">),</span>
+		<span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">?</span>
+		<span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">:</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+	<span class="n">PageData</span> <span class="n">pageData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageData</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">(),</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">(),</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+	<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>
+<span class="o">}</span>
 </code></pre></div><blockquote>
-<p><strong>知识点</strong>
-designer.setDataSource 设置对象之间的引用关系。
-<strong>合并单元格 cells.Merge</strong>
-如cells.Merge(1, 0, 3, 1) 参数1代表当前行，参数0代表当前行当前列即第一行第一列，参数3合并的行数，参数4合并的列数</p>
+<p>任何对子列表的操作最终都会反映到原列表中，即list的大小可能会变化。</p>
 </blockquote>
-<p>　 模板输出的两种方式：</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 第一种方式：模板数据输出
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">filename</span> <span class="o">=</span> <span class="nx">HttpUtility</span><span class="p">.</span><span class="nx">UrlEncode</span><span class="p">(</span><span class="s2">&#34;数据导出&#34;</span><span class="p">,</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Encoding</span><span class="p">.</span><span class="nx">UTF8</span><span class="p">)</span> <span class="o">+</span><span class="nx">DateTime</span><span class="p">.</span><span class="nx">Now</span><span class="p">.</span><span class="nx">ToString</span><span class="p">(</span><span class="s2">&#34;yyyyMMddhhmmss&#34;</span><span class="p">)</span><span class="o">+</span> <span class="s2">&#34;.xls&#34;</span>
-<span class="c1">//第二种方式：模板输出
-</span><span class="c1"></span><span class="nx">OutputStream</span> <span class="nx">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileOutputStream</span><span class="p">(</span><span class="nx">logPath</span><span class="o">+</span><span class="nx">File</span><span class="p">.</span><span class="nx">separator</span><span class="o">+</span><span class="s2">&#34;导出数据.xls&#34;</span><span class="p">);</span>
-</code></pre></div><p>如果输出的是中文的文件名，需要添加  HttpUtility.UrlEncode() 防止出现乱码。若采用http请求直接在浏览器下载生成的文件，则需要获取response.getOutputStream()输出流。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 浏览器上输出文件
-</span><span class="c1"></span><span class="nx">wb</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">getOutputStream</span><span class="p">(),</span> <span class="nx">wb</span><span class="p">.</span><span class="nx">getFileFormat</span><span class="p">());</span>
-</code></pre></div><p><strong>第三步</strong>、测试导出程序
-经过测试，能够将查询出来的结果写入到对应的模板中。
-<img src="https://img-blog.csdnimg.cn/20190518222350870.png" alt="在这里插入图片描述"></p>
-<h2 id="博客参考">博客参考</h2>
-<p>【1】https://blog.csdn.net/kongwei521/article/details/41647747
-【2】https://www.cnblogs.com/wuhuacong/archive/2011/02/23/1962147.html
-【３】https://blog.csdn.net/a363722188/article/details/81202295</p>
 
     
 	</div>
@@ -140,7 +145,7 @@ designer.setDataSource 设置对象之间的引用关系。
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/aspose">Aspose</a>
+  <a href="https://wangqj.cn/tags/page">Page</a>
   
 </div>
 
@@ -151,14 +156,14 @@ designer.setDataSource 设置对象之间的引用关系。
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/aspose">Aspose</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/page">Page</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0010-aspose-cells/" data-title="Java实现 用Aspose.Cells导出excel模板数据" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0096-java-page/" data-title="Java的两种分页实现" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>

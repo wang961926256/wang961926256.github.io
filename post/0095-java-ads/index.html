@@ -76,85 +76,50 @@
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>最近在压测，想生成带有userId的的两万条用户数据，将userId控制在八位即可，运用存储过程实现，记录过程，方便查看。</p>
-<h6 id="第一步创建简单的用户表">第一步、创建简单的用户表</h6>
-<p>创建表脚本如下所示。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">//</span> <span class="err">存在则删除</span>
-<span class="k">DROP</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">t_user_info</span><span class="o">`</span><span class="p">;</span>
-<span class="o">//</span> <span class="err">创建表</span><span class="n">t_user_info脚本</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">t_user_info</span><span class="o">`</span>  <span class="p">(</span>
-    <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">COMMENT</span> <span class="s1">&#39;主键&#39;</span><span class="p">,</span> 
-    <span class="o">`</span><span class="n">user_id</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;用户ID&#39;</span><span class="p">,</span>
-    <span class="o">`</span><span class="n">user_type</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;用户说明&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">address</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;地址&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">mobile</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;手机号&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed1</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段1&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed2</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段2&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed3</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段3&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed4</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段4&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed5</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段5&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed6</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段6&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed7</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段7&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed8</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段8&#39;</span><span class="p">,</span>
-    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span> <span class="k">USING</span> <span class="n">BTREE</span>
-<span class="p">)</span> <span class="n">ENGINE</span> <span class="o">=</span> <span class="n">InnoDB</span> 
-<span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="o">=</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="o">=</span> <span class="n">utf8mb4_general_ci</span> <span class="p">;</span>
-</code></pre></div><h6 id="第二步创建存储过程">第二步、创建存储过程</h6>
-<p>mysql 中循环可用存储过程实现，具体可参考以下脚本。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- 开始标识
-</span><span class="c1"></span><span class="k">DELIMITER</span> <span class="p">;;</span>
-<span class="c1">-- 存储过程存在则删除 DROP PROCEDURE
-</span><span class="c1"></span><span class="k">drop</span> <span class="k">PROCEDURE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">batch_insert_user_info</span> <span class="p">;</span> 
-<span class="c1">-- 创建存储过程 - batch_insert_user_info 
-</span><span class="c1"></span><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">batch_insert_user_info</span><span class="p">(</span><span class="n">num</span> <span class="nb">int</span><span class="p">)</span>
-<span class="k">BEGIN</span>
-<span class="k">DECLARE</span> <span class="n">i</span> <span class="nb">INT</span> <span class="k">DEFAULT</span> <span class="mi">1</span> <span class="p">;</span>
-<span class="c1">-- 初始化userId为八位
-</span><span class="c1"></span><span class="k">DECLARE</span> <span class="n">userId</span> <span class="nb">INT</span> <span class="k">DEFAULT</span> <span class="mi">10000000</span> <span class="p">;</span>
-<span class="c1">-- 构造插入的SQL
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">execSql</span> <span class="o">=</span> <span class="s1">&#39;INSERT INTO `t_user_info`(`user_id`, `user_type`, `address`,`mobile`,`filed1`, `filed2`, 
-</span><span class="s1">`filed3`,`filed4`, `filed5`, `filed6`, `filed7`, `filed8`) VALUES&#39;</span> <span class="p">;</span>
-<span class="c1">-- 定义待之行SQL变量
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="p">;</span>
-<span class="c1">-- 循环
-</span><span class="c1"></span><span class="n">WHILE</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="k">DO</span>
-<span class="c1">-- 定义变量
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">address</span> <span class="o">=</span> <span class="s2">&#34;&#39;地址为北京市海淀区中关村大街&#39;&#34;</span> <span class="p">;</span>
-<span class="k">SET</span> <span class="o">@</span><span class="n">mobile</span> <span class="o">=</span> <span class="s2">&#34;&#39;15012345678&#39;&#34;</span> <span class="p">;</span>
-<span class="k">SET</span> <span class="o">@</span><span class="n">filed</span> <span class="o">=</span> <span class="s2">&#34;&#39;春天到了,阳光正好,适合出去踏青游玩！&#39;&#34;</span> <span class="p">;</span>
-<span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="o">@</span><span class="n">execData</span><span class="p">,</span><span class="s2">&#34;(&#34;</span><span class="p">,</span><span class="n">userId</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span><span class="s2">&#34;, &#39;注册用户&#39;&#34;</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">address</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">mobile</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span>
-<span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;)&#34;</span>
-<span class="p">)</span> <span class="p">;</span>
-<span class="k">IF</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">THEN</span>
-<span class="c1">-- 拼接SQL
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">stmtSql</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="o">@</span><span class="n">execSql</span><span class="p">,</span> <span class="o">@</span><span class="n">execData</span><span class="p">,</span> <span class="s2">&#34;;&#34;</span><span class="p">)</span> <span class="p">;</span> 
-<span class="k">PREPARE</span> <span class="n">stmt</span>
-<span class="k">FROM</span>
-	<span class="o">@</span><span class="n">stmtSql</span> <span class="p">;</span> 
-<span class="c1">-- 执行
-</span><span class="c1"></span><span class="k">EXECUTE</span> <span class="n">stmt</span> <span class="p">;</span> 
-<span class="c1">-- 引用预处理
-</span><span class="c1"></span><span class="k">DEALLOCATE</span> <span class="k">PREPARE</span> <span class="n">stmt</span> <span class="p">;</span> 
-<span class="k">COMMIT</span> <span class="p">;</span>
-	<span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="p">;</span>
-<span class="k">ELSE</span>
-	<span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="o">@</span><span class="n">execSQL</span><span class="p">,</span> <span class="s2">&#34;,&#34;</span><span class="p">)</span> <span class="p">;</span>
-<span class="k">END</span>
-<span class="k">IF</span> <span class="p">;</span>
-	<span class="k">SET</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">;</span>
-<span class="k">END</span>
-	<span class="n">WHILE</span> <span class="p">;</span>
-<span class="k">END</span><span class="p">;;</span>
-<span class="k">DELIMITER</span> <span class="p">;</span>
-</code></pre></div><h6 id="第三步执行存储过程并查看">第三步、执行存储过程并查看</h6>
-<p>调用存储过程，用 ==call 命令==，入参是要生成的条数。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql">
-<span class="k">call</span> <span class="n">batch_insert_user_info</span> <span class="p">(</span><span class="mi">20000</span><span class="p">)</span>
-</code></pre></div><p>两万条执行时间11.4秒，速度还是挺快的。
-<img src="https://img-blog.csdnimg.cn/aa067e26736049edb803176a35e94021.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-这样数据就构建成功了，查看表中数据。
-<img src="https://img-blog.csdnimg.cn/2cdaee20635041e4b10655feb2eba944.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-以上只是简单的demo，可根据实际需要改写，祝好！</p>
+<p>在工作中切换数据库从mysql切换到阿里ads分析型数据库，其支持生成uuid，但主键递增如何用程序实现呢？
+在mysql中建表时可指定 ==AUTO_INCREMENT== 自增id即可。
+答：借助序列来实现，主要代码如下所示。</p>
+<h6 id="service-层">Service 层</h6>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 定义 单向链表实现的阻塞队列，先进先出的顺序
+</span><span class="c1"></span><span class="kd">private</span> <span class="kd">static</span> <span class="n">LinkedBlockingQueue</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">concurrentLinkedQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedBlockingQueue</span><span class="o">&lt;&gt;(</span><span class="n">8192</span><span class="o">);</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">SEQ_COUNT</span> <span class="o">=</span> <span class="n">256</span><span class="o">;</span>
+<span class="c1">// 获取自增Id
+</span><span class="c1"></span><span class="nd">@SneakyThrows</span>
+<span class="kd">private</span> <span class="n">Long</span> <span class="nf">getSequenceId</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">concurrentLinkedQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+		<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;unchecked&#34;</span><span class="o">)</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">seqIdList</span> <span class="o">=</span> <span class="n">logDao</span><span class="o">.</span><span class="na">getSequenceId</span><span class="o">(</span><span class="n">SEQ_COUNT</span><span class="o">);</span>
+		<span class="n">concurrentLinkedQueue</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">seqIdList</span><span class="o">);</span>
+		<span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&#34;concurrentLinkedQueue&#34;</span> <span class="o">+</span> <span class="n">concurrentLinkedQueue</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">concurrentLinkedQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p><strong>数据库设置递增序列</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 创建序列
+</span><span class="c1"></span><span class="n">create</span> <span class="n">sequence</span> <span class="n">user_log_id_seq</span><span class="o">;</span>
+<span class="c1">// 查询
+</span><span class="c1"></span><span class="n">select</span> <span class="n">user_log_id_seq</span><span class="o">.</span><span class="na">nextval</span><span class="o">;</span>
+</code></pre></div><h6 id="dao层">Dao层</h6>
+<p>对应的 logDao，数据库查询</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="nf">getSequenceId</span><span class="o">(</span><span class="kt">int</span> <span class="n">count</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// 定义查询序列SQL
+</span><span class="c1"></span>		<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&#34;select user_log_id_seq.nextval where count = ?&#34;</span><span class="o">;</span>
+		<span class="c1">// 封装方法，调用执行SQL，返回list&lt;Map&lt;&gt;&gt;
+</span><span class="c1"></span>		<span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;&gt;</span> <span class="n">listMap</span> <span class="o">=</span> <span class="n">CorDbo</span><span class="o">.</span><span class="na">findRecordsWithFieldName</span><span class="o">(</span><span class="n">CorDbc</span><span class="o">.</span><span class="na">getDefaultDbc</span><span class="o">(),</span> <span class="n">sql</span><span class="o">,</span>
+				<span class="n">Collections</span><span class="o">.</span><span class="na">singletonList</span><span class="o">(</span><span class="n">count</span><span class="o">));</span>
+		<span class="c1">// 定义list
+</span><span class="c1"></span>		<span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">longList</span> <span class="o">=</span> <span class="n">Lists</span><span class="o">.</span><span class="na">newArrayList</span><span class="o">();</span>
+		<span class="c1">// 遍历
+</span><span class="c1"></span>		<span class="n">listMap</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">o</span> <span class="o">-&gt;</span> <span class="n">o</span><span class="o">.</span><span class="na">forEach</span><span class="o">((</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">longList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">toString</span><span class="o">()))));</span>
+		<span class="k">return</span> <span class="n">longList</span><span class="o">;</span>
+	<span class="o">}</span>
+</code></pre></div><blockquote>
+<p><strong>知识回顾</strong>
+user_log_id_seq.nextval 用来获取序列号的下一个squence的值
+java.util.Collections.singletonList 返回不可变列表，减少内存空间。</p>
+</blockquote>
+<h6 id="参考文档">参考文档</h6>
+<p>【1】https://help.aliyun.com/document_detail/93776.html</p>
 
     
 	</div>
@@ -266,7 +231,7 @@
     
     <li><a href="https://wangqj.cn/categories/oracle" title="oracle">oracle<sup>8</sup></a></li>
     
-    <li><a href="https://wangqj.cn/categories/page" title="page">page<sup>1</sup></a></li>
+    <li><a href="https://wangqj.cn/categories/page" title="page">page<sup>2</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/procedure" title="procedure">procedure<sup>1</sup></a></li>
     
@@ -369,7 +334,7 @@
       
 			<li><a href="https://wangqj.cn/tags/oracle" title="oracle">oracle<sup>8</sup></a></li>
       
-			<li><a href="https://wangqj.cn/tags/page" title="page">page<sup>1</sup></a></li>
+			<li><a href="https://wangqj.cn/tags/page" title="page">page<sup>2</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/procedure" title="procedure">procedure<sup>1</sup></a></li>
       

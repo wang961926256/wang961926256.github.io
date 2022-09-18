@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>page</title>
+      <link>https://wangqj.cn/tags/page/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/tags/page/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ADS</title>
@@ -395,15 +404,6 @@
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/tags/sign/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>page</title>
-      <link>https://wangqj.cn/tags/page/</link>
-      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/tags/page/</guid>
       <description></description>
     </item>
     

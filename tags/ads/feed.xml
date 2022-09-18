@@ -17,7 +17,7 @@
       <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/post/0095-java-ads/</guid>
-      <description>背景介绍 最近在压测，想生成带有userId的的两万条用户数据，将userId控制在八位即可，运用存储过程实现，记录过程，方便查看。 第一步、创</description>
+      <description>背景介绍 在工作中切换数据库从mysql切换到阿里ads分析型数据库，其支持生成uuid，但主键递增如何用程序实现呢？ 在mysql中建表时可指</description>
     </item>
     
   </channel>

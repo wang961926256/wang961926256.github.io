@@ -6,10 +6,19 @@
     <description>Recent content in page on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/tags/page/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java的两种分页实现</title>
+      <link>https://wangqj.cn/post/0096-java-page/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0096-java-page/</guid>
+      <description>背景介绍 在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。 分页，处理好分</description>
+    </item>
     
     <item>
       <title>print page</title>
