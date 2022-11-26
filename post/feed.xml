@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Java的两种分页实现</title>
+      <link>https://wangqj.cn/post/0097-java-shorturl/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0097-java-shorturl/</guid>
+      <description>背景介绍 在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。 分页，处理好分</description>
+    </item>
+    
+    <item>
       <title>Java 程序生成阿里ADS数据库递增主键ID</title>
       <link>https://wangqj.cn/post/0095-java-ads/</link>
       <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>

@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>oracle数据库空表处理 - 梦幻通灵的个人博客</title>
+  <title>Java的两种分页实现 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="EmptyTablecd">
+  <meta name="description" content="Java">
   
-  <meta itemprop="name" content="oracle数据库空表处理 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="EmptyTablecd">
+  <meta itemprop="name" content="Java的两种分页实现 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Java">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="EmptyTablecd" />
+  <meta name="twitter:description" content="Java" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0031-emptytable/" title="oracle数据库空表处理" itemprop="url">oracle数据库空表处理</a>
+      <a href="https://wangqj.cn/post/0097-java-shorturl/" title="Java的两种分页实现" itemprop="url">Java的两种分页实现</a>
   </h1>
   <p class="article-author">By
     
@@ -69,37 +69,73 @@
     
   </p>
   <p class="article-time">
-    <time date="2020-04-30 00:00:00 &#43;0000 UTC">2020-04-30 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-05-22 00:00:00 &#43;0000 UTC">2022-05-22 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p><strong>ExtTree</strong> 树是一种比较紧密的数据类型，上下级节点之间具有联系。</p>
-<p>最近在oracle数据库还原时，出现好多表没有导入成功，这是因为什么呢，网上查阅资料，导库前需要进行数据库的空表处理。这里记录下来，方便备查。</p>
-<p><strong>数据库版本</strong>：oracle 11g</p>
-<h2 id="第一步设置-延迟段创建">第一步、设置 延迟段创建</h2>
-<p>deferred_segment_creation 延迟段创建(Oracle 11g的新特性)</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">alter</span> <span class="nx">system</span> <span class="nx">set</span> <span class="nx">deferred_segment_creation</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+<p>在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。
+分页，处理好分页的参数：totalCount、pageSize 和 pageNo</p>
+<h6 id="1方法一">1、方法一</h6>
+<p>拼接 PageData 数据结构所需参数，包括 总数 totalCount 、页码pageNo 、页大小 pageSize 、开始页 beginIndex 和 结束页 endIndex。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm">* @param result
+</span><span class="cm">* @param query
+</span><span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">PageData</span> <span class="nf">listToPageData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">,</span> <span class="n">Query</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">PageData</span> <span class="n">pageData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageData</span><span class="o">();</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span> <span class="o">{</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setTotalCount</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setPageNo</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setItems</span><span class="o">(</span><span class="n">Collections</span><span class="o">.</span><span class="na">emptyList</span><span class="o">());</span>
+		<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="c1">// 分页各参数
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">totalCount</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+	<span class="kt">int</span> <span class="n">pageNo</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">();</span>
+	<span class="kt">int</span> <span class="n">pageSize</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">();</span>
+	<span class="kt">int</span> <span class="n">beginIndex</span> <span class="o">=</span> <span class="o">(</span><span class="n">pageNo</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">*</span> <span class="n">pageSize</span><span class="o">;</span>
+	<span class="kt">int</span> <span class="n">endIndex</span> <span class="o">=</span> <span class="n">pageNo</span> <span class="o">*</span> <span class="n">pageSize</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+	<span class="c1">// 赋值
+</span><span class="c1"></span>	<span class="n">pageData</span><span class="o">.</span><span class="na">setTotalCount</span><span class="o">(</span><span class="n">totalCount</span><span class="o">);</span>
+	<span class="n">pageData</span><span class="o">.</span><span class="na">setPageNo</span><span class="o">(</span><span class="n">pageNo</span><span class="o">);</span>
+	<span class="n">pageData</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">pageSize</span><span class="o">);</span>
+			
+	<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">sublist</span><span class="o">;</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">beginIndex</span> <span class="o">&gt;=</span> <span class="n">totalCount</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">sublist</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">emptyList</span><span class="o">();</span>
+	<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">endIndex</span> <span class="o">&lt;</span> <span class="n">totalCount</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">sublist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">beginIndex</span><span class="o">,</span> <span class="n">endIndex</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
+	<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+		<span class="n">sublist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">beginIndex</span><span class="o">,</span> <span class="n">totalCount</span><span class="o">);</span>			
+	<span class="o">}</span>
+		<span class="n">pageData</span><span class="o">.</span><span class="na">setItems</span><span class="o">(</span><span class="n">sublist</span><span class="o">);</span>		
+		<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>	
+	<span class="o">}</span>
+</code></pre></div><h6 id="2方法二">2、方法二</h6>
+<p>利用 <strong>java.util.List</strong> 的 ==subList== 方法，从0开始，含头不含尾。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 本质上是返回原来list的从[fromIndex, toIndex)之间的视图
+</span><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">subList</span><span class="o">(</span><span class="kt">int</span> <span class="n">fromIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">toIndex</span><span class="o">);</span>
+<span class="c1">// 若list大小改变，则可以通过clear方法来恢复
+</span><span class="c1"></span><span class="n">list</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">fromIndex</span><span class="o">,</span> <span class="n">toIndex</span><span class="o">).</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></div><p>分页实现的代码如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"> <span class="cm">/**
+</span><span class="cm">* @param result
+</span><span class="cm">* @param query
+</span><span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">PageData</span> <span class="nf">listToPageData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">,</span> <span class="n">Query</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">),</span>
+		<span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">?</span>
+		<span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">:</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+	<span class="n">PageData</span> <span class="n">pageData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageData</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">(),</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">(),</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+	<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>
+<span class="o">}</span>
 </code></pre></div><blockquote>
-<p>设置为 <strong>true</strong>，即创建一个表时，不分配空间，只有插入第一条数据时才分配空间。
-优点：加快建表速度，节约空间
-缺点：export导出是不会导出空表</p>
+<p>任何对子列表的操作最终都会反映到原列表中，即list的大小可能会变化。</p>
 </blockquote>
-<h2 id="第二步查询当前用户下所有空表">第二步、查询当前用户下所有空表</h2>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Select</span> <span class="s1">&#39;alter table &#39;</span><span class="o">||</span><span class="nx">table_name</span><span class="o">||</span><span class="s1">&#39; allocate extent;&#39;</span> <span class="nx">from</span> <span class="nx">user_tables</span> <span class="nx">where</span> <span class="nx">num_rows</span><span class="o">=</span><span class="mi">0</span> <span class="nx">or</span> <span class="nx">num_rows</span> <span class="nx">is</span> <span class="kc">null</span><span class="p">;</span>
-</code></pre></div><p>执行SQL后，会生成若干可执行的语句，即空表的更改语句  <strong>修改表extent</strong>。如下图所示
-<img src="https://img-blog.csdnimg.cn/20200430235335356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="第三步执行生成的语句">第三步、执行生成的语句</h2>
-<p>生成出来的语句就是空表的压缩空间的语句，复制出来执行即可！</p>
-<h2 id="第四步执行数据库导出的脚本">第四步、执行数据库导出的脚本</h2>
-<p>创建用户：gzgl ，密码：gzgl ，默认工作空间：DATA</p>
-<p>在windows的cmd窗口下执行数据导入命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">imp</span> <span class="nx">gzgl</span><span class="o">/</span><span class="nx">gzgl</span> <span class="err">@</span><span class="nx">orcl</span> <span class="nx">full</span><span class="o">=</span><span class="nx">y</span> <span class="nx">file</span><span class="o">=</span><span class="nx">D</span><span class="o">:</span><span class="err">/20191231.dmp log=D:/20191231.dmp.log</span>
-</code></pre></div><p>空表处理后，数据库的导入就会好很多。</p>
-<h2 id="博客来源">博客来源：</h2>
-<p>【1】https://www.cnblogs.com/guazixing/p/7600327.html</p>
 
     
 	</div>
@@ -109,7 +145,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/oracle">Oracle</a>
+  <a href="https://wangqj.cn/tags/page">Page</a>
   
 </div>
 
@@ -120,14 +156,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/oracle">Oracle</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/page">Page</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0031-emptytable/" data-title="oracle数据库空表处理" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0097-java-shorturl/" data-title="Java的两种分页实现" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
