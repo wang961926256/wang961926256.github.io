@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shorturl on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/shorturl/</link>
+    <description>Recent content in shorturl on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/shorturl/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 实现长链转短链 与 生成二维码</title>
+      <link>https://wangqj.cn/post/0097-java-shorturl/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0097-java-shorturl/</guid>
+      <description>背景介绍 最近有个分享的需求，将分享的长链接转化为短链接，并生成二维码，便于扫码分享。 本方案采用建立长链和短链的对应关系，即生成短链后存放数据</description>
+    </item>
+    
+    <item>
+      <title>Java 实现长链转短链 与 生成二维码</title>
+      <link>https://wangqj.cn/post/0098-linux-cut/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0098-linux-cut/</guid>
+      <description>背景介绍 最近有个分享的需求，将分享的长链接转化为短链接，并生成二维码，便于扫码分享。 本方案采用建立长链和短链的对应关系，即生成短链后存放数据</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,16 +4,46 @@
   
   <url>
     <loc>https://wangqj.cn/categories/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wangqj.cn/post/0096-java-page/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
+    <loc>https://wangqj.cn/categories/java/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://wangqj.cn/post/0097-java-shorturl/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/0098-linux-cut/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/shorturl/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/</loc>
+    <lastmod>2022-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/0096-java-page/</loc>
     <lastmod>2022-05-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -24,21 +54,6 @@
   
   <url>
     <loc>https://wangqj.cn/categories/page/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/post/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/</loc>
     <lastmod>2022-05-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -424,11 +439,6 @@
   
   <url>
     <loc>https://wangqj.cn/tags/java/</loc>
-    <lastmod>2021-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/categories/java/</loc>
     <lastmod>2021-07-28T00:00:00+00:00</lastmod>
   </url>
   

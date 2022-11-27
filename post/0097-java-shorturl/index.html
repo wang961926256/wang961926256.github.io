@@ -2,12 +2,12 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Java的两种分页实现 - 梦幻通灵的个人博客</title>
+  <title>Java 实现长链转短链 与 生成二维码 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
   <meta name="description" content="Java">
   
-  <meta itemprop="name" content="Java的两种分页实现 - 梦幻通灵的个人博客">
+  <meta itemprop="name" content="Java 实现长链转短链 与 生成二维码 - 梦幻通灵的个人博客">
   <meta itemprop="description" content="Java">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
@@ -41,7 +41,11 @@
     <ul>
       
       
-      <li><a href="/post/">首页</a></li>
+      <li><a href="/program/">软考</a></li>
+      
+      <li><a href="/reading/">读书</a></li>
+      
+      <li><a href="/interview/">面试</a></li>
       
       
       <li>
@@ -61,7 +65,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0097-java-shorturl/" title="Java的两种分页实现" itemprop="url">Java的两种分页实现</a>
+      <a href="https://wangqj.cn/post/0097-java-shorturl/" title="Java 实现长链转短链 与 生成二维码" itemprop="url">Java 实现长链转短链 与 生成二维码</a>
   </h1>
   <p class="article-author">By
     
@@ -69,73 +73,147 @@
     
   </p>
   <p class="article-time">
-    <time date="2022-05-22 00:00:00 &#43;0000 UTC">2022-05-22 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-06-05 00:00:00 &#43;0000 UTC">2022-06-05 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。
-分页，处理好分页的参数：totalCount、pageSize 和 pageNo</p>
-<h6 id="1方法一">1、方法一</h6>
-<p>拼接 PageData 数据结构所需参数，包括 总数 totalCount 、页码pageNo 、页大小 pageSize 、开始页 beginIndex 和 结束页 endIndex。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
-</span><span class="cm">* @param result
-</span><span class="cm">* @param query
+<p>最近有个分享的需求，将分享的长链接转化为短链接，并生成二维码，便于扫码分享。
+本方案采用建立长链和短链的对应关系，即生成短链后存放数据库，使用的时候读取的方式，记录下来，方便备查。</p>
+<h5 id="1生成短链">1、生成短链</h5>
+<h6 id="转换原理">转换原理</h6>
+<p>1）取mysql数据表的序列号（主键）作为唯一的待转码值；
+2）将序列号转换成 62 进制的短码；
+3）前缀+短码，拼接短链；
+4）获取长链接，并生成MD5，入库，同时存放到缓存中，供前端调用。
+实现的核心代码如下所示，注 <strong>DAO 层代码这里省略</strong>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 指定前缀
+</span><span class="c1"></span><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">baseUrl</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">t</span><span class="o">.</span><span class="na">wang</span><span class="o">.</span><span class="na">cn</span><span class="o">/</span><span class="err">&#39;</span><span class="o">;</span>
+<span class="c1">// 获取数据表的序列号（查询SQL下面有列出）
+</span><span class="c1"></span><span class="n">String</span> <span class="n">findShortUrlInfoSEQ</span> <span class="o">=</span> <span class="n">shortUrlInfoDao</span><span class="o">.</span><span class="na">findShotUrlInfoSEQ</span><span class="o">();</span>
+<span class="c1">// 生成对应的短码
+</span><span class="c1"></span><span class="n">String</span> <span class="n">shotCode</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="na">convertTo</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">findShortUrlInfoSEQ</span><span class="o">),</span> <span class="n">62</span><span class="o">);</span>
+<span class="c1">// 拼接链接
+</span><span class="c1"></span><span class="n">String</span> <span class="n">shotUrl</span> <span class="o">=</span> <span class="n">baseUrl</span> <span class="o">+</span> <span class="n">shotCode</span><span class="o">;</span>
+<span class="c1">// 获取长链接
+</span><span class="c1"></span><span class="n">String</span> <span class="n">fullUrl</span> <span class="o">=</span> <span class="n">shotUrlInfo</span><span class="o">.</span><span class="na">getFullUrl</span><span class="o">();</span>
+<span class="c1">// 生成对应的md5值
+</span><span class="c1"></span><span class="n">String</span> <span class="n">genFullUrlMd5</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="na">genFullUrlMd5</span><span class="o">(</span><span class="n">fullUrl</span><span class="o">);</span>
+
+<span class="c1">// 数据入库
+</span><span class="c1"></span><span class="n">ShortUrlInfo</span> <span class="n">su</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ShortUrlInfo</span><span class="o">();</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">findShotUrlInfoSEQ</span><span class="o">));</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setBaseUrl</span><span class="o">(</span><span class="n">baseUrl</span><span class="o">);</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setCreateTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setFullUrl</span><span class="o">(</span><span class="n">fullUrl</span><span class="o">);</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setFullUrlMd5</span><span class="o">(</span><span class="n">genFullUrlMd5</span><span class="o">);</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setIsEffect</span><span class="o">(</span><span class="s">&#34;1&#34;</span><span class="o">);</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setShotUrl</span><span class="o">(</span><span class="n">shotUrl</span><span class="o">);</span>
+<span class="n">su</span><span class="o">.</span><span class="na">setShotCode</span><span class="o">(</span><span class="n">shotCode</span><span class="o">);</span>
+<span class="n">shotUrlInfoDao</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">suli</span><span class="o">);</span>
+</code></pre></div><p>查询数据表递增主键的SQL如下所示，==Table_Schema== 为数据库名，==table_name== 为数据表名。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">AUTO_INCREMENT</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="o">`</span><span class="n">TABLES</span><span class="o">`</span>
+<span class="k">WHERE</span> <span class="n">Table_Schema</span> <span class="o">=</span> <span class="s1">&#39;cloud-order&#39;</span> <span class="k">AND</span> <span class="k">table_name</span> <span class="o">=</span> <span class="s1">&#39;tb_short_url_info&#39;</span><span class="p">;</span>
+</code></pre></div><p>转化封装工具类-Util 类如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"> <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">ALGORITHM</span> <span class="o">=</span> <span class="s">&#34;MD5&#34;</span><span class="o">;</span>
+<span class="cm">/**
+</span><span class="cm">* 在进制表示中的字符集合，0-Z分别用于表示最大为62进制的符号表示
 </span><span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">PageData</span> <span class="nf">listToPageData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">,</span> <span class="n">Query</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
-	<span class="n">PageData</span> <span class="n">pageData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageData</span><span class="o">();</span>
-	<span class="k">if</span> <span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span> <span class="o">{</span>
-		<span class="n">pageData</span><span class="o">.</span><span class="na">setTotalCount</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
-		<span class="n">pageData</span><span class="o">.</span><span class="na">setPageNo</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
-		<span class="n">pageData</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
-		<span class="n">pageData</span><span class="o">.</span><span class="na">setItems</span><span class="o">(</span><span class="n">Collections</span><span class="o">.</span><span class="na">emptyList</span><span class="o">());</span>
-		<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>
+ <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">DIGITS</span> <span class="o">=</span> <span class="o">{</span><span class="sc">&#39;0&#39;</span><span class="o">,</span> <span class="sc">&#39;1&#39;</span><span class="o">,</span> <span class="sc">&#39;2&#39;</span><span class="o">,</span> <span class="sc">&#39;3&#39;</span><span class="o">,</span> <span class="sc">&#39;4&#39;</span><span class="o">,</span> <span class="sc">&#39;5&#39;</span><span class="o">,</span> <span class="sc">&#39;6&#39;</span><span class="o">,</span> <span class="sc">&#39;7&#39;</span><span class="o">,</span> <span class="sc">&#39;8&#39;</span><span class="o">,</span> <span class="sc">&#39;9&#39;</span><span class="o">,</span>
+  <span class="sc">&#39;a&#39;</span><span class="o">,</span> <span class="sc">&#39;b&#39;</span><span class="o">,</span> <span class="sc">&#39;c&#39;</span><span class="o">,</span> <span class="sc">&#39;d&#39;</span><span class="o">,</span> <span class="sc">&#39;e&#39;</span><span class="o">,</span> <span class="sc">&#39;f&#39;</span><span class="o">,</span> <span class="sc">&#39;g&#39;</span><span class="o">,</span> <span class="sc">&#39;h&#39;</span><span class="o">,</span> <span class="sc">&#39;i&#39;</span><span class="o">,</span> <span class="sc">&#39;j&#39;</span><span class="o">,</span> <span class="sc">&#39;k&#39;</span><span class="o">,</span> <span class="sc">&#39;l&#39;</span><span class="o">,</span> <span class="sc">&#39;m&#39;</span><span class="o">,</span>
+  <span class="sc">&#39;n&#39;</span><span class="o">,</span> <span class="sc">&#39;o&#39;</span><span class="o">,</span> <span class="sc">&#39;p&#39;</span><span class="o">,</span> <span class="sc">&#39;q&#39;</span><span class="o">,</span> <span class="sc">&#39;r&#39;</span><span class="o">,</span> <span class="sc">&#39;s&#39;</span><span class="o">,</span> <span class="sc">&#39;t&#39;</span><span class="o">,</span> <span class="sc">&#39;u&#39;</span><span class="o">,</span> <span class="sc">&#39;v&#39;</span><span class="o">,</span> <span class="sc">&#39;w&#39;</span><span class="o">,</span> <span class="sc">&#39;x&#39;</span><span class="o">,</span> <span class="sc">&#39;y&#39;</span><span class="o">,</span> <span class="sc">&#39;z&#39;</span><span class="o">,</span>
+  <span class="sc">&#39;A&#39;</span><span class="o">,</span> <span class="sc">&#39;B&#39;</span><span class="o">,</span> <span class="sc">&#39;C&#39;</span><span class="o">,</span> <span class="sc">&#39;D&#39;</span><span class="o">,</span> <span class="sc">&#39;E&#39;</span><span class="o">,</span> <span class="sc">&#39;F&#39;</span><span class="o">,</span> <span class="sc">&#39;G&#39;</span><span class="o">,</span> <span class="sc">&#39;H&#39;</span><span class="o">,</span> <span class="sc">&#39;I&#39;</span><span class="o">,</span> <span class="sc">&#39;J&#39;</span><span class="o">,</span> <span class="sc">&#39;K&#39;</span><span class="o">,</span> <span class="sc">&#39;L&#39;</span><span class="o">,</span> <span class="sc">&#39;M&#39;</span><span class="o">,</span>
+  <span class="sc">&#39;N&#39;</span><span class="o">,</span> <span class="sc">&#39;O&#39;</span><span class="o">,</span> <span class="sc">&#39;P&#39;</span><span class="o">,</span> <span class="sc">&#39;Q&#39;</span><span class="o">,</span> <span class="sc">&#39;R&#39;</span><span class="o">,</span> <span class="sc">&#39;S&#39;</span><span class="o">,</span> <span class="sc">&#39;T&#39;</span><span class="o">,</span> <span class="sc">&#39;U&#39;</span><span class="o">,</span> <span class="sc">&#39;V&#39;</span><span class="o">,</span> <span class="sc">&#39;W&#39;</span><span class="o">,</span> <span class="sc">&#39;X&#39;</span><span class="o">,</span> <span class="sc">&#39;Y&#39;</span><span class="o">,</span> <span class="sc">&#39;Z&#39;</span><span class="o">};</span>
+  
+   <span class="cm">/**
+</span><span class="cm">   * 将十进制的数字转换为指定进制的字符串
+</span><span class="cm">   * @param number 十进制的数字
+</span><span class="cm">   * @param seed   指定的进制
+</span><span class="cm">   * @return 指定进制的字符串
+</span><span class="cm">   */</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">convertTo</span><span class="o">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">,</span> <span class="kt">int</span> <span class="n">seed</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">number</span> <span class="o">=</span> <span class="o">((</span><span class="kt">long</span><span class="o">)</span> <span class="n">2</span> <span class="o">*</span> <span class="n">0x7fffffff</span><span class="o">)</span> <span class="o">+</span> <span class="n">number</span> <span class="o">+</span> <span class="n">2</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="kt">char</span><span class="o">[]</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">32</span><span class="o">];</span>
+      <span class="kt">int</span> <span class="n">charPos</span> <span class="o">=</span> <span class="n">32</span><span class="o">;</span>
+      <span class="k">while</span> <span class="o">((</span><span class="n">number</span> <span class="o">/</span> <span class="n">seed</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">buf</span><span class="o">[--</span><span class="n">charPos</span><span class="o">]</span> <span class="o">=</span> <span class="n">DIGITS</span><span class="o">[(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="n">seed</span><span class="o">)];</span>
+          <span class="n">number</span> <span class="o">/=</span> <span class="n">seed</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">buf</span><span class="o">[--</span><span class="n">charPos</span><span class="o">]</span> <span class="o">=</span> <span class="n">DIGITS</span><span class="o">[(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="n">seed</span><span class="o">)];</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="n">charPos</span><span class="o">,</span> <span class="o">(</span><span class="n">32</span> <span class="o">-</span> <span class="n">charPos</span><span class="o">));</span>
+  <span class="o">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * 返回多个relKey值
+</span><span class="cm"> * @param list
+</span><span class="cm"> * @return
+</span><span class="cm"> */</span>
+ <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">genFullUrlMd5</span><span class="o">(</span><span class="n">String</span> <span class="n">fullUrl</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">String</span> <span class="n">relKey</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+	<span class="k">try</span> <span class="o">{</span>
+		<span class="n">relKey</span> <span class="o">=</span> <span class="n">MD5Utils</span><span class="o">.</span><span class="na">digestHex</span><span class="o">(</span><span class="n">fullUrl</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+	<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NoSuchAlgorithmException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
 	<span class="o">}</span>
-	<span class="c1">// 分页各参数
-</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">totalCount</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
-	<span class="kt">int</span> <span class="n">pageNo</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">();</span>
-	<span class="kt">int</span> <span class="n">pageSize</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">();</span>
-	<span class="kt">int</span> <span class="n">beginIndex</span> <span class="o">=</span> <span class="o">(</span><span class="n">pageNo</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">*</span> <span class="n">pageSize</span><span class="o">;</span>
-	<span class="kt">int</span> <span class="n">endIndex</span> <span class="o">=</span> <span class="n">pageNo</span> <span class="o">*</span> <span class="n">pageSize</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
-	<span class="c1">// 赋值
-</span><span class="c1"></span>	<span class="n">pageData</span><span class="o">.</span><span class="na">setTotalCount</span><span class="o">(</span><span class="n">totalCount</span><span class="o">);</span>
-	<span class="n">pageData</span><span class="o">.</span><span class="na">setPageNo</span><span class="o">(</span><span class="n">pageNo</span><span class="o">);</span>
-	<span class="n">pageData</span><span class="o">.</span><span class="na">setPageSize</span><span class="o">(</span><span class="n">pageSize</span><span class="o">);</span>
-			
-	<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">sublist</span><span class="o">;</span>
-	<span class="k">if</span> <span class="o">(</span><span class="n">beginIndex</span> <span class="o">&gt;=</span> <span class="n">totalCount</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">sublist</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">emptyList</span><span class="o">();</span>
-	<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">endIndex</span> <span class="o">&lt;</span> <span class="n">totalCount</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">sublist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">beginIndex</span><span class="o">,</span> <span class="n">endIndex</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
-	<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-		<span class="n">sublist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">beginIndex</span><span class="o">,</span> <span class="n">totalCount</span><span class="o">);</span>			
+		<span class="k">return</span> <span class="n">relKey</span><span class="o">;</span>
+ <span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">digestHex</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">content</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchAlgorithmException</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">Encodes</span><span class="o">.</span><span class="na">encodeHex</span><span class="o">(</span><span class="n">digest</span><span class="o">(</span><span class="n">content</span><span class="o">));</span>
 	<span class="o">}</span>
-		<span class="n">pageData</span><span class="o">.</span><span class="na">setItems</span><span class="o">(</span><span class="n">sublist</span><span class="o">);</span>		
-		<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>	
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">digestBase64</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">content</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchAlgorithmException</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">Encodes</span><span class="o">.</span><span class="na">encodeBase64</span><span class="o">(</span><span class="n">digest</span><span class="o">(</span><span class="n">content</span><span class="o">));</span>
 	<span class="o">}</span>
-</code></pre></div><h6 id="2方法二">2、方法二</h6>
-<p>利用 <strong>java.util.List</strong> 的 ==subList== 方法，从0开始，含头不含尾。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 本质上是返回原来list的从[fromIndex, toIndex)之间的视图
-</span><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">subList</span><span class="o">(</span><span class="kt">int</span> <span class="n">fromIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">toIndex</span><span class="o">);</span>
-<span class="c1">// 若list大小改变，则可以通过clear方法来恢复
-</span><span class="c1"></span><span class="n">list</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">fromIndex</span><span class="o">,</span> <span class="n">toIndex</span><span class="o">).</span><span class="na">clear</span><span class="o">();</span>
-</code></pre></div><p>分页实现的代码如下所示。</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"> <span class="cm">/**
-</span><span class="cm">* @param result
-</span><span class="cm">* @param query
-</span><span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">PageData</span> <span class="nf">listToPageData</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">,</span> <span class="n">Query</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">),</span>
-		<span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">?</span>
-		<span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">()</span> <span class="o">*</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">()</span> <span class="o">:</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
-	<span class="n">PageData</span> <span class="n">pageData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageData</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="n">result</span><span class="o">.</span><span class="na">size</span><span class="o">(),</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageNo</span><span class="o">(),</span> <span class="n">query</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
-	<span class="k">return</span> <span class="n">pageData</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div><blockquote>
-<p>任何对子列表的操作最终都会反映到原列表中，即list的大小可能会变化。</p>
-</blockquote>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">digest</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">content</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NoSuchAlgorithmException</span> <span class="o">{</span>
+		<span class="n">MessageDigest</span> <span class="n">digest</span> <span class="o">=</span> <span class="n">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;MD5&#34;</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">digest</span><span class="o">.</span><span class="na">digest</span><span class="o">(</span><span class="n">content</span><span class="o">);</span>
+	<span class="o">}</span>
+</code></pre></div><p>数据库表结构如下所示，初始递增主键设置的为 200000。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">tb_short_url_info</span><span class="o">`</span> <span class="p">(</span>
+	<span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">BIGINT</span> <span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">COMMENT</span> <span class="s1">&#39;自增主键&#39;</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">base_url</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;域名&#39;</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">shot_url</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;链接短码&#39;</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">full_url</span><span class="o">`</span> <span class="nb">text</span> <span class="k">COMMENT</span> <span class="s1">&#39;完整链接&#39;</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">full_url_md5</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;长连接md5加密值&#39;</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">shot_code</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">remarks</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">is_effect</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">maker</span><span class="o">`</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+	<span class="o">`</span><span class="n">create_time</span><span class="o">`</span> <span class="n">datetime</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;创建时间&#39;</span><span class="p">,</span>
+	<span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">),</span>
+	<span class="k">KEY</span> <span class="o">`</span><span class="n">dwz_create_time</span><span class="o">`</span> <span class="p">(</span><span class="o">`</span><span class="n">create_time</span><span class="o">`</span><span class="p">),</span>
+	<span class="k">KEY</span> <span class="o">`</span><span class="n">shot_code</span><span class="o">`</span> <span class="p">(</span><span class="o">`</span><span class="n">shot_code</span><span class="o">`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span> <span class="o">=</span> <span class="n">INNODB</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">200000</span> 
+<span class="k">DEFAULT</span> <span class="n">CHARSET</span> <span class="o">=</span> <span class="n">utf8</span> <span class="k">COMMENT</span> <span class="o">=</span> <span class="s1">&#39;短链接网址信息表&#39;</span><span class="p">;</span>
+</code></pre></div><p>数据库存放结果如下所示。
+<img src="https://img-blog.csdnimg.cn/d68d5bb3cb5049e4a0a94d3eb7a9fece.png" alt="在这里插入图片描述"></p>
+<h5 id="2绘制二维码">2、绘制二维码</h5>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Color</span> <span class="n">WHITE</span> <span class="o">=</span> <span class="n">white</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">375</span><span class="o">*</span><span class="n">2</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">675</span><span class="o">*</span><span class="n">2</span><span class="o">;</span>
+<span class="n">BufferedImage</span> <span class="n">qrcodeImg</span> <span class="o">=</span> <span class="n">QrCodeUtil</span><span class="o">.</span><span class="na">getBufferImage</span><span class="o">(</span><span class="n">qrurl</span><span class="o">,</span> <span class="n">280</span><span class="o">*</span><span class="n">2</span><span class="o">,</span> <span class="n">280</span><span class="o">*</span><span class="n">2</span><span class="o">);</span>
+<span class="c1">// Graphics可以对图像进行绘画等操作
+</span><span class="c1"></span><span class="n">Graphics2D</span> <span class="n">graphics</span> <span class="o">=</span> <span class="n">sourceImg</span><span class="o">.</span><span class="na">createGraphics</span><span class="o">();</span>
+<span class="n">graphics</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">WHITE</span><span class="o">);</span>	
+<span class="n">graphics</span><span class="o">.</span><span class="na">fillRect</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">);</span>
+<span class="c1">// 绘制二维码
+</span><span class="c1"></span><span class="n">graphics</span><span class="o">.</span><span class="na">drawImage</span><span class="o">(</span><span class="n">qrcodeImg</span><span class="o">,</span> <span class="n">5</span><span class="o">*</span><span class="n">2</span><span class="o">,</span> <span class="n">goodHeight</span> <span class="o">+</span> <span class="n">5</span><span class="o">*</span><span class="n">2</span><span class="o">,</span> <span class="n">qrcodeWidth</span><span class="o">,</span> <span class="n">qrcodeHeight</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="n">graphics</span><span class="o">.</span><span class="na">setRenderingHint</span><span class="o">(</span><span class="n">RenderingHints</span><span class="o">.</span><span class="na">KEY_TEXT_ANTIALIASING</span><span class="o">,</span> <span class="n">RenderingHints</span><span class="o">.</span><span class="na">VALUE_TEXT_ANTIALIAS_LCD_HRGB</span><span class="o">);</span>
+<span class="c1">// 绘制描述
+</span><span class="c1"></span><span class="n">Font</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Font</span><span class="o">(</span><span class="s">&#34;黑体&#34;</span><span class="o">,</span> <span class="n">Font</span><span class="o">.</span><span class="na">PLAIN</span><span class="o">,</span> <span class="n">40</span><span class="o">);</span>
+<span class="n">graphics</span><span class="o">.</span><span class="na">setPaint</span><span class="o">(</span><span class="k">new</span> <span class="n">Color</span><span class="o">(</span><span class="n">37</span><span class="o">,</span> <span class="n">39</span><span class="o">,</span> <span class="n">55</span><span class="o">));</span>
+<span class="n">graphics</span><span class="o">.</span><span class="na">setFont</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">textInfo</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">欢迎访问商品</span><span class="err">&#39;</span><span class="o">;</span>
+<span class="n">graphics</span><span class="o">.</span><span class="na">drawString</span><span class="o">(</span><span class="n">textInfo</span><span class="o">,</span> <span class="n">170</span><span class="o">*</span><span class="n">2</span><span class="o">,</span> <span class="n">450</span><span class="o">*</span><span class="n">2</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">tipbottom</span> <span class="o">=</span> <span class="s">&#34;长按保存图片并识别二维码&#34;</span><span class="o">;</span>
+<span class="n">graphics</span><span class="o">.</span><span class="na">drawString</span><span class="o">(</span><span class="n">tipbottom</span><span class="o">,</span> <span class="n">80</span><span class="o">*</span><span class="n">2</span><span class="o">,</span> <span class="n">660</span><span class="o">*</span><span class="n">2</span><span class="o">);</span>
+</code></pre></div><p>百度公开长短链转换地址 <a href="https://dwz.cn/console/operation">网站</a></p>
+<h5 id="参考博客">参考博客</h5>
+<p>【1】https://blog.csdn.net/Macky_He/article/details/105795604</p>
 
     
 	</div>
@@ -145,7 +223,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/page">Page</a>
+  <a href="https://wangqj.cn/tags/shorturl">shorturl</a>
   
 </div>
 
@@ -156,14 +234,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/page">Page</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/java">Java</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0097-java-shorturl/" data-title="Java的两种分页实现" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0097-java-shorturl/" data-title="Java 实现长链转短链 与 生成二维码" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -215,7 +293,7 @@
     
     <li><a href="https://wangqj.cn/categories/golang" title="golang">golang<sup>1</sup></a></li>
     
-    <li><a href="https://wangqj.cn/categories/java" title="java">java<sup>10</sup></a></li>
+    <li><a href="https://wangqj.cn/categories/java" title="java">java<sup>12</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/java8" title="java8">java8<sup>1</sup></a></li>
     
@@ -247,7 +325,7 @@
     
     <li><a href="https://wangqj.cn/categories/oracle" title="oracle">oracle<sup>8</sup></a></li>
     
-    <li><a href="https://wangqj.cn/categories/page" title="page">page<sup>3</sup></a></li>
+    <li><a href="https://wangqj.cn/categories/page" title="page">page<sup>2</sup></a></li>
     
     <li><a href="https://wangqj.cn/categories/procedure" title="procedure">procedure<sup>1</sup></a></li>
     
@@ -350,7 +428,7 @@
       
 			<li><a href="https://wangqj.cn/tags/oracle" title="oracle">oracle<sup>8</sup></a></li>
       
-			<li><a href="https://wangqj.cn/tags/page" title="page">page<sup>3</sup></a></li>
+			<li><a href="https://wangqj.cn/tags/page" title="page">page<sup>2</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/procedure" title="procedure">procedure<sup>1</sup></a></li>
       
@@ -361,6 +439,8 @@
 			<li><a href="https://wangqj.cn/tags/rabbitmq" title="rabbitmq">rabbitmq<sup>4</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/selenium" title="selenium">selenium<sup>1</sup></a></li>
+      
+			<li><a href="https://wangqj.cn/tags/shorturl" title="shorturl">shorturl<sup>2</sup></a></li>
       
 			<li><a href="https://wangqj.cn/tags/sign" title="sign">sign<sup>1</sup></a></li>
       
@@ -647,6 +727,8 @@
     <a href="https://wangqj.cn/tags/rabbitmq" style="font-size: 12px;">rabbitmq</a>
     
     <a href="https://wangqj.cn/tags/selenium" style="font-size: 12px;">selenium</a>
+    
+    <a href="https://wangqj.cn/tags/shorturl" style="font-size: 12px;">shorturl</a>
     
     <a href="https://wangqj.cn/tags/sign" style="font-size: 12px;">sign</a>
     

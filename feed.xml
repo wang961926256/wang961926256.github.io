@@ -6,10 +6,28 @@
     <description>Recent content on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java 实现长链转短链 与 生成二维码</title>
+      <link>https://wangqj.cn/post/0097-java-shorturl/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0097-java-shorturl/</guid>
+      <description>背景介绍 最近有个分享的需求，将分享的长链接转化为短链接，并生成二维码，便于扫码分享。 本方案采用建立长链和短链的对应关系，即生成短链后存放数据</description>
+    </item>
+    
+    <item>
+      <title>Java 实现长链转短链 与 生成二维码</title>
+      <link>https://wangqj.cn/post/0098-linux-cut/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0098-linux-cut/</guid>
+      <description>背景介绍 最近有个分享的需求，将分享的长链接转化为短链接，并生成二维码，便于扫码分享。 本方案采用建立长链和短链的对应关系，即生成短链后存放数据</description>
+    </item>
     
     <item>
       <title>Java的两种分页实现</title>
@@ -17,15 +35,6 @@
       <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://wangqj.cn/post/0096-java-page/</guid>
-      <description>背景介绍 在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。 分页，处理好分</description>
-    </item>
-    
-    <item>
-      <title>Java的两种分页实现</title>
-      <link>https://wangqj.cn/post/0097-java-shorturl/</link>
-      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://wangqj.cn/post/0097-java-shorturl/</guid>
       <description>背景介绍 在后端开发时，查询结果返回的是list集合，而前端是要分页进行展示，这里就需要进行分页处理，以下介绍两种方法，供参考。 分页，处理好分</description>
     </item>
     
