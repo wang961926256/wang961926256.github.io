@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on 梦幻通灵的个人博客</title>
+    <link>https://wangqj.cn/tags/shell/</link>
+    <description>Recent content in Shell on 梦幻通灵的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wangqj.cn/tags/shell/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shell 实现文件基本操作（sed-编辑、awk-匹配、wc-统计）</title>
+      <link>https://wangqj.cn/post/0099-linux-sed/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0099-linux-sed/</guid>
+      <description>背景介绍 使用Shell 自带的工具，实现对文本类文件的操作，满足日常数据处理的需求。 一、命令 sed -编辑工具 ==sed== 是一款功能强大的非交互流式文本编辑器</description>
+    </item>
+    
+  </channel>
+</rss>

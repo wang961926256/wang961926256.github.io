@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/categories/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shell</title>
+      <link>https://wangqj.cn/categories/shell/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/categories/shell/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Java</title>
