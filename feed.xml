@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Centos 下安装 Redis 及命令行操作</title>
+      <link>https://wangqj.cn/post/0100-linux-redis/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0100-linux-redis/</guid>
+      <description>背景介绍 最近在生产环直接修改 Redis值的时候，发现有些命令生疏，这里回顾 redis 命令行操作，记录下来，方便备查。 一、Redis 安装 在虚拟机 Centos7 环境</description>
+    </item>
+    
+    <item>
       <title>Shell 实现文件基本操作（sed-编辑、awk-匹配、wc-统计）</title>
       <link>https://wangqj.cn/post/0099-linux-sed/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
