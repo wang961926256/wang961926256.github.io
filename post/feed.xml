@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/post/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL 字符串操作（substr-截取、locate-instr-position子父串判断）</title>
+      <link>https://wangqj.cn/post/0101-mysql-substr/</link>
+      <pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0101-mysql-substr/</guid>
+      <description>背景介绍 在日常项目写MySQL语句的时，常用到的函数，如对字符串截取，子父串关系的匹配等，这里记录下来，方便备查。 一、字符串截取 1、函数-s</description>
+    </item>
     
     <item>
       <title>Centos 下安装 Redis 及命令行操作</title>
