@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>MySQL 字符串操作（substr-截取、locate-instr-position子父串判断）</title>
+      <link>https://wangqj.cn/post/0102-linux-seq/</link>
+      <pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0102-linux-seq/</guid>
+      <description>背景介绍 在日常项目写MySQL语句的时，常用到的函数，如对字符串截取，子父串关系的匹配等，这里记录下来，方便备查。 一、字符串截取 1、函数-s</description>
+    </item>
+    
+    <item>
       <title>mysql 批量造2万条测试数据</title>
       <link>https://wangqj.cn/post/0094-mysql-test-data/</link>
       <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>

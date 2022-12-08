@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>用 Fiddler 来抓取手机包 - 梦幻通灵的个人博客</title>
+  <title>MySQL 字符串操作（substr-截取、locate-instr-position子父串判断） - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="Fiddler">
+  <meta name="description" content="MySQL">
   
-  <meta itemprop="name" content="用 Fiddler 来抓取手机包 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="Fiddler">
+  <meta itemprop="name" content="MySQL 字符串操作（substr-截取、locate-instr-position子父串判断） - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="MySQL">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="Fiddler" />
+  <meta name="twitter:description" content="MySQL" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -65,7 +65,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0079-phone-fiddler/" title="用 Fiddler 来抓取手机包" itemprop="url">用 Fiddler 来抓取手机包</a>
+      <a href="https://wangqj.cn/post/0102-linux-seq/" title="MySQL 字符串操作（substr-截取、locate-instr-position子父串判断）" itemprop="url">MySQL 字符串操作（substr-截取、locate-instr-position子父串判断）</a>
   </h1>
   <p class="article-author">By
     
@@ -73,57 +73,102 @@
     
   </p>
   <p class="article-time">
-    <time date="2021-11-06 00:00:00 &#43;0000 UTC">2021-11-06 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-07-02 00:00:00 &#43;0000 UTC">2022-07-02 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>中秋假期，项目组内想帮忙抓取手机数据包，跟着网上教程操作一遍，遇到的坑，记录下来，方便备查。
-工具：fiddler <a href="https://www.telerik.com/download/fiddler">官网下载</a>
-目的：抓取和查看手机端的HTTPS请求
-==<strong>注意：手机和电脑要处于同一局域网下</strong>。==
-主要分为两大步骤</p>
-<h6 id="第一步电脑端设置">第一步、电脑端设置</h6>
-<p><strong>1、查看本地ip地址</strong>
-在 cmd 下输入命令 ipconfig -all，复制出 IPV4地址
-<img src="https://img-blog.csdnimg.cn/ce439b77e5a049fb829b5d4b0df4e739.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-<strong>2、在Fiddler中设置</strong>
-在菜单栏的 <strong>Tools</strong> 选择 Options，弹出设置窗口。在 Connections 中勾选设置，允许远程访问，默认端口等，可参考下图。
-<img src="https://img-blog.csdnimg.cn/dd5fc514f7e0499883029a1c5dc1009f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-在 HTTPS 选项下，勾选 对 HTTPS解密，选择所有请求等，可参考下图。
-<img src="https://img-blog.csdnimg.cn/0cbca31461664c958e1950b8cde97a2b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-==注：设置完成后，要重启Fiddler才能生效。==</p>
-<h6 id="第二步手机端设置">第二步、手机端设置</h6>
-<p><strong>1、设置代理</strong>
-要求手机和电脑在同一局域网下，长按 局域网的那个网络，右键 修改网络，
-勾选高级选项，代理选择手动，服务器主机名称输入第一步电脑的ip地址（192.168.0.104），端口是默认的8888，可参考下图。
-<img src="https://img-blog.csdnimg.cn/58f6d96003214c8589aebeaefba72a8c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_13,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-<strong>2、下载安装证书</strong>
-在手机浏览器输入 ip:8888，加载页面并点击 <strong>FiddlerRoot certificate</strong>下载证书文件 FiddlerRoot.cer 。
-<img src="https://img-blog.csdnimg.cn/1911758979ff49d09eecda5de9d66d19.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-<strong>3、安装证书</strong>
-找到下载的证书文件FiddlerRoot.cer，安装即可。
-<img src="https://img-blog.csdnimg.cn/1da8cab8e2a549d093626eeef27c90f7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-完成以上设置，电脑端的fiddler就可以捕捉到手机上的请求，实现抓包的目的。页面如下所示。
-<img src="https://img-blog.csdnimg.cn/2d1c7faf5f0e4f0d8eb5ca9fb86c35d2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<h6 id="常见问题">常见问题</h6>
-<p><strong>1、手机无法获取页面</strong>
-处理方案：1、检查电脑的防火墙是否关闭，如打开则请关闭；2、确认ip地址是否一致。</p>
-<p><strong>2、华为手机如何删除用户凭据</strong>
-可能安装多个用户凭据，如何删除用户凭据呢？
-处理方案：在 设置 &ndash;&gt; 安全和隐私 &ndash;&gt; 更多安全设置 &ndash;&gt; 加密和凭据 &ndash;&gt; 删除所有凭据 即可。
-注：删除的是用户的凭据，对于系统的凭据是不受影响的。</p>
-<p><strong>3、Fiddler会话在显示后消失</strong>
-在抓包的中发现，有些请求会话在列表中显示出来，加载完成后又消失了，以为是有拦截，反复装了好几次，最后发现 选择的是 Web Browsers !
-处理方案：将筛选条件设置为All Processes
-<img src="https://img-blog.csdnimg.cn/45d782ace9004ed3a14d1cf76efb5a3d.png" alt="在这里插入图片描述">
-<strong>4、检查捕获功能是否开启</strong>
-在Fiddler 右下角，两个状态标志 一定要确认是否都开启，否则可能是抓不到请求。
-<img src="https://img-blog.csdnimg.cn/61606af23ee447a383857139a7c6a611.png" alt="在这里插入图片描述"></p>
-<h6 id="博客参考">博客参考</h6>
-<p>【1】https://blog.csdn.net/yu1014745867/article/details/79108495</p>
+<p>在日常项目写MySQL语句的时，常用到的函数，如对字符串截取，子父串关系的匹配等，这里记录下来，方便备查。</p>
+<h5 id="一字符串截取">一、字符串截取</h5>
+<h6 id="1函数-substr">1、函数-substr</h6>
+<p><strong>==substr==</strong> 是MySQL 自带的字符串截取函数。
+<strong>基本语法</strong>是 ==**substr [str, num, length]**==</p>
+<h6 id="11-选项参数">1.1 选项参数</h6>
+<p><strong>str</strong>  目标字符串；
+<strong>num</strong>  截取的起始位置，从 ==1== 开始；
+<strong>length</strong>  待截取的长度，省略则表示字符串的长度。</p>
+<h6 id="12-demo演示">1.2 demo演示</h6>
+<p>1）省略第三个参数，则表示展示目标字符串全部
+<img src="https://img-blog.csdnimg.cn/abe37eb417914519bd8598225857f6df.png" alt="在这里插入图片描述">
+2）起始位置 为 0，不生效，查询结果为空
+<img src="https://img-blog.csdnimg.cn/3006e19a0fdb4fad992eb0602e7e18b5.png" alt="在这里插入图片描述">
+3）指定起始位置 和 长度，效果如下所示。
+<img src="https://img-blog.csdnimg.cn/c48ef052360d4f9b9ed4c470cdd12a5d.png" alt="在这里插入图片描述"></p>
+<h6 id="2函数-substring_index">2、函数-substring_index</h6>
+<p><strong>==substring_index==</strong> 是MySQL 自带的字符串截取函数，将目标字符串以分隔符来分段，计数count来取第几个。
+<strong>基本语法</strong>是 ==**substring_index [str, delim,count]**==</p>
+<h6 id="21-选项参数">2.1 选项参数</h6>
+<p><strong>str</strong>  目标字符串；
+<strong>delim</strong>  分隔符；
+<strong>count</strong>  计数，为正时，从左往右；为负时，从右往左。</p>
+<h6 id="22-demo演示">2.2 demo演示</h6>
+<p>1）取 前一部分，即 www，如下图所示。
+<img src="https://img-blog.csdnimg.cn/2aadec434c4349518f13a66040ceed0c.png" alt="在这里插入图片描述">
+2）取 域名后缀，如下图所示。
+<img src="https://img-blog.csdnimg.cn/6e3324c44837451385f040beefe840e4.png" alt="在这里插入图片描述">
+3）取中间部分，即 <strong>双层嵌套</strong>，如下图所示。
+<img src="https://img-blog.csdnimg.cn/fb6f1defe5a84719b85a624abc28e266.png" alt="在这里插入图片描述"></p>
+<h5 id="二子父串包含判断">二、子父串包含判断</h5>
+<h6 id="1函数-locate">1、函数-locate</h6>
+<p><strong>==locate==</strong> 是MySQL 自带的字符串函数，判断一个字符串是否包含另一个字符串，返回出现的位置。
+<strong>基本语法</strong>是 ==**locate [substr, str，num]**==</p>
+<h6 id="11-选项参数-1">1.1 选项参数</h6>
+<p><strong>str</strong>  目标字符串；
+<strong>substr</strong>  子字符串。
+<strong>num</strong>  起始位置，默认为1，可以省略。</p>
+<h6 id="12-demo演示-1">1.2 demo演示</h6>
+<p>1）子串存在于父串，则显示 www 第一次出现的位置，查询结果为 1。
+<img src="https://img-blog.csdnimg.cn/bdea7dbbc4cd484cb3ed76646b83f0b4.png" alt="在这里插入图片描述">
+删除前面的www，再次查询则显示第二个匹配到的子串的位置，为11。
+<img src="https://img-blog.csdnimg.cn/9a42f7d2a8aa4ff395fb2121e59969dc.png" alt="在这里插入图片描述">
+2）子串不存在于父串，则显示查询结果为 0。
+<img src="https://img-blog.csdnimg.cn/97d86b4d5b4e40e982d8c5ba8d301a0f.png" alt="在这里插入图片描述">
+父串是否包含子串的判断，除了 locate 函数，还有 <strong>position 函数</strong> 和 <strong>instr 函数</strong></p>
+<h6 id="2函数-position">2、函数-position</h6>
+<p><strong>==position==</strong> 是MySQL 自带的字符串函数，返回子串第一次出现在父串出现的位置，不区分大小写。
+<strong>基本语法</strong>是 ==**position [substr in str]**==</p>
+<h6 id="21-选项参数-1">2.1 选项参数</h6>
+<p><strong>str</strong>  目标字符串；
+<strong>substr</strong>  子字符串。</p>
+<h6 id="22-demo演示-1">2.2 demo演示</h6>
+<p>1）子串存在于父串，则显示 www 第一次出现的位置，查询结果为 1。
+<img src="https://img-blog.csdnimg.cn/53eb6e3ec76e4189a024aa4d8359f05a.png" alt="在这里插入图片描述">
+删除前面的www，再次查询则显示第二个匹配到的子串的位置，为11。
+<img src="https://img-blog.csdnimg.cn/6be707daf84c4e2586982d88a1622f8b.png" alt="在这里插入图片描述">
+2）子串不存在于父串，则显示查询结果为 0。
+<img src="https://img-blog.csdnimg.cn/d831ca2b7ef74806bdc54039ada73dd3.png" alt="在这里插入图片描述"></p>
+<h6 id="3函数-instr">3、函数-instr</h6>
+<p><strong>==instr==</strong> 是MySQL 自带的字符串函数，返回子串首次出现在父串出现的位置，不区分大小写。
+<strong>基本语法</strong>是 ==**instr  [str , substr ]**==</p>
+<h6 id="31-选项参数">3.1 选项参数</h6>
+<p><strong>str</strong>  目标字符串；
+<strong>substr</strong>  子字符串。</p>
+<h6 id="32-demo演示">3.2 demo演示</h6>
+<p>1）子串存在于父串，则显示 www 首次出现的位置，查询结果为 1。
+<img src="https://img-blog.csdnimg.cn/f8de3542b7ab4ea9a3f0bfe86b24aeca.png" alt="在这里插入图片描述">
+删除前面的www，再次查询则显示第二个匹配到的子串的位置，为11。
+<img src="https://img-blog.csdnimg.cn/c61a2e6795ff42228fa3fe97f54410f9.png" alt="在这里插入图片描述">
+2）子串不存在于父串，则显示查询结果为 0。
+<img src="https://img-blog.csdnimg.cn/e1cc4701442e4e298c035ca7ff410a8a.png" alt="在这里插入图片描述"></p>
+<h6 id="4函数-find_in_set">4、函数-find_in_set</h6>
+<p><strong>==find_in_set==</strong> 是MySQL 自带的字符串函数，返回子串在list中的位置，其中list中元素以逗号分隔。
+<strong>基本语法</strong>是 ==**find_in_set [str , strlist ]**==</p>
+<h6 id="41-选项参数">4.1 选项参数</h6>
+<p><strong>str</strong>  子字符串；
+**strlist **  字符串list集合，以逗号分隔。</p>
+<h6 id="42-demo演示">4.2 demo演示</h6>
+<p>1）子串存在于list，则显示 www 出现的位置，查询结果为 1。
+<img src="https://img-blog.csdnimg.cn/841dc888a7eb465d92aeeaa76b4dfe7b.png" alt="在这里插入图片描述">
+删除前面的www，再次查询则显示匹配到的 按逗号分隔的子串的位置，为4。
+<img src="https://img-blog.csdnimg.cn/aa4fe1830ff941c2961d418ab812fe1b.png" alt="在这里插入图片描述">
+2）子串不存在于父串，则显示查询结果为 0。
+<img src="https://img-blog.csdnimg.cn/5f1c3c0b1e59415083e9aef6609a292b.png" alt="在这里插入图片描述"></p>
+<h5 id="总结">总结</h5>
+<p>1）==locate函数==、==position函数== 和 ==instr 函数== 的异同
+<strong>相同之处</strong>：子串与父串的匹配过程，匹配成功则返回 <strong>子串在父串中第一次匹配到的位置</strong>，未匹配到则返回0。
+<strong>不同之处</strong>： 参数的顺序不同，<strong>locate 入参是三个变量，可指定开始位置（可省略）</strong>。</p>
 
     
 	</div>
@@ -133,7 +178,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/fiddler">Fiddler</a>
+  <a href="https://wangqj.cn/tags/mysql">MySQL</a>
   
 </div>
 
@@ -144,14 +189,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/fiddler">Fiddler</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/mysql">MySQL</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0079-phone-fiddler/" data-title="用 Fiddler 来抓取手机包" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0102-linux-seq/" data-title="MySQL 字符串操作（substr-截取、locate-instr-position子父串判断）" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
