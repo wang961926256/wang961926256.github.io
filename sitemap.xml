@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://wangqj.cn/categories/</loc>
-    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/shell/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/categories/shell/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/0103-vue-vnm/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -28,21 +58,6 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/post/</loc>
-    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/</loc>
-    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/</loc>
-    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/post/0100-linux-redis/</loc>
     <lastmod>2022-06-20T00:00:00+00:00</lastmod>
   </url>
@@ -54,16 +69,6 @@
   
   <url>
     <loc>https://wangqj.cn/categories/redis/</loc>
-    <lastmod>2022-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/shell/</loc>
-    <lastmod>2022-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/categories/shell/</loc>
     <lastmod>2022-06-20T00:00:00+00:00</lastmod>
   </url>
   

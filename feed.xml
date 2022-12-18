@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>初探Vue3环境搭建与nvm使用</title>
+      <link>https://wangqj.cn/post/0103-vue-vnm/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0103-vue-vnm/</guid>
+      <description>背景介绍 周末在家，想着学点前端的Vue3，初试环境搭建，毕竟不是专业的，记录下来，方便备查。 第一步、安装 NodeJs 管理工具 由于之前安装的有12版本的</description>
+    </item>
     
     <item>
       <title>MySQL 字符串操作（substr-截取、locate-instr-position子父串判断）</title>
