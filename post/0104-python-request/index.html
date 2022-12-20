@@ -2,18 +2,17 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>sonarqube - 梦幻通灵的个人博客</title>
+  <title>初探Vue3环境搭建与nvm使用 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="sonarqube">
+  <meta name="description" content="Shell">
   
-  <meta itemprop="name" content="sonarqube - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="sonarqube">
+  <meta itemprop="name" content="初探Vue3环境搭建与nvm使用 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="Shell">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
+  <meta name="twitter:description" content="Shell" />
   
-  <meta name="twitter:description" content="">
-  <link rel="alternate" href="https://wangqj.cn/feed.xml" title="梦幻通灵的个人博客" type="application/rss+xml"/>
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
   <link rel="apple-touch-icon-precomposed" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -62,21 +61,125 @@
 
   </header>
   <div id="container">
-    <div id="main">
-      
-      <h2 id="2021-10">2021-10</h2>
-      
-      <section class="post" itemscope itemprop="blogPost">
-    <a href="https://wangqj.cn/post/0077-linux-sonarqube/" title="Centos安装部署sonarqube" itemprop="url">
-    <h1 itemprop="name">Centos安装部署sonarqube</h1>
-    <p itemprop="description">背景介绍 sonarqube作为重要的代码分析平台，可持续分析和评测源代码的质量。下面记录安装过程，方便查看。 第一步、安装 官网下载 最新地址 历史</p>
-    <time date="2021-10-22 00:00:00 &#43;0000 UTC" >2021-10-22 00:00:00 &#43;0000 UTC</time>
-  </a>
-</section>
+    <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+      <a href="https://wangqj.cn/post/0104-python-request/" title="初探Vue3环境搭建与nvm使用" itemprop="url">初探Vue3环境搭建与nvm使用</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://wangqj.cn/" title="">you</a>
+    
+  </p>
+  <p class="article-time">
+    <time date="2022-07-20 00:00:00 &#43;0000 UTC">2022-07-20 00:00:00 &#43;0000 UTC</time>
+  </p>
+</header>
 
-      
-      
+	<div class="article-content">
+    
+    <h2 id="背景介绍">背景介绍</h2>
+<p>周末在家，想着学点前端的Vue3，初试环境搭建，毕竟不是专业的，记录下来，方便备查。</p>
+<h5 id="第一步安装-nodejs-管理工具">第一步、安装 NodeJs 管理工具</h5>
+<p>由于之前安装的有12版本的NodeJS，Vue3 要求14版本以上，就需要多个版本并存。
+为了简单，直接用 nvm 来管理多个 NodeJs 版本。
+下载地址：<a href="https://github.com/coreybutler/nvm-windows/releases">github-nvm</a>
+本次在Windows环境下操作，下载 exe 或 zip 解压安装即可，如下图。
+<img src="https://img-blog.csdnimg.cn/0395feb9af4d43728690499077cec459.png" alt="在这里插入图片描述">
+默认安装是C盘，可指定到其他盘符，安装成功后，文件夹如下。
+<img src="https://img-blog.csdnimg.cn/1ee4592f940841b38124766393c57a67.png" alt="在这里插入图片描述">
+为提高依赖下载的速度，在 <strong>setting.xml</strong> 文件中添加 ==淘宝镜像==，如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">nvm</span> <span class="n">node_mirror</span> <span class="n">https</span><span class="o">:</span><span class="c1">//npm.taobao.org/mirrors/node/
+</span><span class="c1"></span><span class="n">nvm</span> <span class="n">npm_mirror</span> <span class="n">https</span><span class="o">:</span><span class="c1">//npm.taobao.org/mirrors/npm/
+</span></code></pre></div><p><strong>vnm 常用命令如下</strong>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 查看当前安装的版本
+</span><span class="c1"></span><span class="n">nvm</span> <span class="n">ls</span>
+<span class="c1">// 查看nvm 安装的位置
+</span><span class="c1"></span><span class="n">nvm</span> <span class="n">root</span>
+<span class="c1">// 查看服务器上可安装的版本
+</span><span class="c1"></span><span class="n">nvm</span> <span class="n">list</span> <span class="n">available</span>
+<span class="c1">// 下载指定NodeJs 版本
+</span><span class="c1"></span><span class="n">nvm</span> <span class="n">install</span> <span class="n">14</span><span class="o">.</span><span class="na">18</span><span class="o">.</span><span class="na">0</span>
+<span class="c1">// 指定使用 node 的版本
+</span><span class="c1"></span><span class="n">nvm</span> <span class="n">use</span> <span class="n">14</span><span class="o">.</span><span class="na">18</span><span class="o">.</span><span class="na">0</span>
+</code></pre></div><p>执行效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/06499212fc894ab7a73759b3bd818d9d.png" alt="在这里插入图片描述"></p>
+<h5 id="第二步vite-项目搭建与运行">第二步、vite 项目搭建与运行</h5>
+<p>1）初始化。执行命令 ==npm init vite@latest==
+2）命名。给项目起名称，默认是 ==vite-project==
+3）选择模板。本次选择 vue 项目，2秒直接构建成功。
+<img src="https://img-blog.csdnimg.cn/b8b5eff894b14167adc03c94620fe8cc.png" alt="在这里插入图片描述">
+构建成功的项目目录如下所示。
+<img src="https://img-blog.csdnimg.cn/d2997c1f156945fa8198c6d566b7d6a2.png" alt="在这里插入图片描述">
+用 VsCode 打开，安装依赖，命令 ==npm install==，安装完成后，执行 ==npm run dev== 启动项目，如下图所示。
+<img src="https://img-blog.csdnimg.cn/4c42941107c04f5bb051ff09702f8f0a.png" alt="在这里插入图片描述">
+在浏览器中 访问 ==http://127.0.0.1:5173/==，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/96cec092ed8e4f49b6cfb7d50d4e7124.png" alt="在这里插入图片描述">
+以上就是项目的构建过程，用vite 启动速度很快！</p>
+<blockquote>
+<p><strong>知识学习</strong>
+vite 种新型前端构建工具。冷服务 默认构建目标浏览器能在 script 标签上支持原生 ESM 和 原生ESM动态导入。</p>
+</blockquote>
+<h5 id="面试题启动命令-npm-run-dev-执行的流程">面试题：启动命令 npm run dev 执行的流程</h5>
+<p>首先读取 ==package.json== 文件，查找 scripts 下dev 的配置，在当前 <strong>node_modules</strong> 下查询待执行的js文件，若存在，则执行；
+若不存在，则到 全局npm -g 的 <strong>node_modules</strong> 下查找；
+若再找不到，则会到环境变量中查找。</p>
+<p>当前项目中的 package.json 中 dev 配置的 vite。
+<img src="https://img-blog.csdnimg.cn/fa6821e862464589a8c243faed8889c8.png" alt="在这里插入图片描述">
+在 vite 源码中 package.json 中配置了<strong>软链接</strong>，即 ==bin/vite.js==
+<img src="https://img-blog.csdnimg.cn/828fdd6670064d3897b811d949602181.png" alt="在这里插入图片描述">
+在 bin 目录下
+<img src="https://img-blog.csdnimg.cn/064f78adf9a64166b936ea63e07d8af1.png" alt="在这里插入图片描述"></p>
+<h5 id="异常处理">异常处理</h5>
+<p><strong>1）在 nvm use 切换时出现 乱码问题。</strong>
+处理方案：
+第一、检查安装路径是否有问题
+第二、确认下==权限==，可以使用 Windows powershell（管理员方式）
+<strong>2）在 npm list vue 显示 empty，不显示版本信息</strong>
+处理方案：
+第一步、全局查看，执行命令 ==npm list vue -g==
+第二步、若上一步仍不显示版本号，则安装 cnpm，执行命令 ==npm install cnpm -g==
+第三步、安装 vue，执行命令 ==cnpm install vue==</p>
+
+    
+	</div>
+  <footer class="article-footer clearfix">
+  
+
+<div class="article-tags">
+  <span></span>
+  
+  <a href="https://wangqj.cn/tags/shell">Shell</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="https://wangqj.cn/categories/shell">Shell</a>
+  
+</div>
+
+
+
+  <div class="article-share" id="share">
+    <div data-url="https://wangqj.cn/post/0104-python-request/" data-title="初探Vue3环境搭建与nvm使用" data-tsina="123" class="share clearfix">
     </div>
+  </div>
+</footer>
+
+	</article>
+  
+
+
+
+</div>
+
     <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -588,10 +691,6 @@
 
 
   
-<div class="rsspart">
-  <a rel="nofollow" href="https://wangqj.cn/feed.xml" type="application/rss+xml" target="_blank">RSS 订阅</a>
-</div>
-
 
 </aside>
 </div>
@@ -677,6 +776,38 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -699,6 +830,27 @@ $(document).ready(function(){
 });
 </script>
 
+
+<link rel="stylesheet" href="https://wangqj.cn/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="https://wangqj.cn/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
 
 
 
