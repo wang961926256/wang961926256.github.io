@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>mysql 批量造2万条测试数据 - 梦幻通灵的个人博客</title>
+  <title>帆软 FineReport 报表展示设置 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="mysql">
+  <meta name="description" content="FineReport">
   
-  <meta itemprop="name" content="mysql 批量造2万条测试数据 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="mysql">
+  <meta itemprop="name" content="帆软 FineReport 报表展示设置 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="FineReport">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="mysql" />
+  <meta name="twitter:description" content="FineReport" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -65,7 +65,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0094-mysql-test-data/" title="mysql 批量造2万条测试数据" itemprop="url">mysql 批量造2万条测试数据</a>
+      <a href="https://wangqj.cn/post/0105-finereport-show/" title="帆软 FineReport 报表展示设置" itemprop="url">帆软 FineReport 报表展示设置</a>
   </h1>
   <p class="article-author">By
     
@@ -73,92 +73,53 @@
     
   </p>
   <p class="article-time">
-    <time date="2022-04-28 00:00:00 &#43;0000 UTC">2022-04-28 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-08-10 00:00:00 &#43;0000 UTC">2022-08-10 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p>最近在压测，想生成带有userId的的两万条用户数据，将userId控制在八位即可，运用存储过程实现，记录过程，方便查看。</p>
-<h6 id="第一步创建简单的用户表">第一步、创建简单的用户表</h6>
-<p>创建表脚本如下所示。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">//</span> <span class="err">存在则删除</span>
-<span class="k">DROP</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">t_user_info</span><span class="o">`</span><span class="p">;</span>
-<span class="o">//</span> <span class="err">创建表</span><span class="n">t_user_info脚本</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">t_user_info</span><span class="o">`</span>  <span class="p">(</span>
-    <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span> <span class="k">COMMENT</span> <span class="s1">&#39;主键&#39;</span><span class="p">,</span> 
-    <span class="o">`</span><span class="n">user_id</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;用户ID&#39;</span><span class="p">,</span>
-    <span class="o">`</span><span class="n">user_type</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;用户说明&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">address</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;地址&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">mobile</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;手机号&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed1</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段1&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed2</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段2&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed3</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段3&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed4</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段4&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed5</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段5&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed6</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段6&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed7</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段7&#39;</span><span class="p">,</span>  
-    <span class="o">`</span><span class="n">filed8</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">&#39;字段8&#39;</span><span class="p">,</span>
-    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span> <span class="k">USING</span> <span class="n">BTREE</span>
-<span class="p">)</span> <span class="n">ENGINE</span> <span class="o">=</span> <span class="n">InnoDB</span> 
-<span class="nb">CHARACTER</span> <span class="k">SET</span> <span class="o">=</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="o">=</span> <span class="n">utf8mb4_general_ci</span> <span class="p">;</span>
-</code></pre></div><h6 id="第二步创建存储过程">第二步、创建存储过程</h6>
-<p>mysql 中循环可用存储过程实现，具体可参考以下脚本。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- 开始标识
-</span><span class="c1"></span><span class="k">DELIMITER</span> <span class="p">;;</span>
-<span class="c1">-- 存储过程存在则删除 DROP PROCEDURE
-</span><span class="c1"></span><span class="k">drop</span> <span class="k">PROCEDURE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">batch_insert_user_info</span> <span class="p">;</span> 
-<span class="c1">-- 创建存储过程 - batch_insert_user_info 
-</span><span class="c1"></span><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">batch_insert_user_info</span><span class="p">(</span><span class="n">num</span> <span class="nb">int</span><span class="p">)</span>
-<span class="k">BEGIN</span>
-<span class="k">DECLARE</span> <span class="n">i</span> <span class="nb">INT</span> <span class="k">DEFAULT</span> <span class="mi">1</span> <span class="p">;</span>
-<span class="c1">-- 初始化userId为八位
-</span><span class="c1"></span><span class="k">DECLARE</span> <span class="n">userId</span> <span class="nb">INT</span> <span class="k">DEFAULT</span> <span class="mi">10000000</span> <span class="p">;</span>
-<span class="c1">-- 构造插入的SQL
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">execSql</span> <span class="o">=</span> <span class="s1">&#39;INSERT INTO `t_user_info`(`user_id`, `user_type`, `address`,`mobile`,`filed1`, `filed2`, 
-</span><span class="s1">`filed3`,`filed4`, `filed5`, `filed6`, `filed7`, `filed8`) VALUES&#39;</span> <span class="p">;</span>
-<span class="c1">-- 定义待之行SQL变量
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="p">;</span>
-<span class="c1">-- 循环
-</span><span class="c1"></span><span class="n">WHILE</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="k">DO</span>
-<span class="c1">-- 定义变量
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">address</span> <span class="o">=</span> <span class="s2">&#34;&#39;地址为北京市海淀区中关村大街&#39;&#34;</span> <span class="p">;</span>
-<span class="k">SET</span> <span class="o">@</span><span class="n">mobile</span> <span class="o">=</span> <span class="s2">&#34;&#39;15012345678&#39;&#34;</span> <span class="p">;</span>
-<span class="k">SET</span> <span class="o">@</span><span class="n">filed</span> <span class="o">=</span> <span class="s2">&#34;&#39;春天到了,阳光正好,适合出去踏青游玩！&#39;&#34;</span> <span class="p">;</span>
-<span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="o">@</span><span class="n">execData</span><span class="p">,</span><span class="s2">&#34;(&#34;</span><span class="p">,</span><span class="n">userId</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span><span class="s2">&#34;, &#39;注册用户&#39;&#34;</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">address</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">mobile</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span>
-<span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;,&#34;</span><span class="p">,</span><span class="o">@</span><span class="n">filed</span><span class="p">,</span><span class="s2">&#34;)&#34;</span>
-<span class="p">)</span> <span class="p">;</span>
-<span class="k">IF</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">THEN</span>
-<span class="c1">-- 拼接SQL
-</span><span class="c1"></span><span class="k">SET</span> <span class="o">@</span><span class="n">stmtSql</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="o">@</span><span class="n">execSql</span><span class="p">,</span> <span class="o">@</span><span class="n">execData</span><span class="p">,</span> <span class="s2">&#34;;&#34;</span><span class="p">)</span> <span class="p">;</span> 
-<span class="k">PREPARE</span> <span class="n">stmt</span>
-<span class="k">FROM</span>
-	<span class="o">@</span><span class="n">stmtSql</span> <span class="p">;</span> 
-<span class="c1">-- 执行
-</span><span class="c1"></span><span class="k">EXECUTE</span> <span class="n">stmt</span> <span class="p">;</span> 
-<span class="c1">-- 引用预处理
-</span><span class="c1"></span><span class="k">DEALLOCATE</span> <span class="k">PREPARE</span> <span class="n">stmt</span> <span class="p">;</span> 
-<span class="k">COMMIT</span> <span class="p">;</span>
-	<span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="p">;</span>
-<span class="k">ELSE</span>
-	<span class="k">SET</span> <span class="o">@</span><span class="n">execSQL</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="o">@</span><span class="n">execSQL</span><span class="p">,</span> <span class="s2">&#34;,&#34;</span><span class="p">)</span> <span class="p">;</span>
-<span class="k">END</span>
-<span class="k">IF</span> <span class="p">;</span>
-	<span class="k">SET</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">;</span>
-<span class="k">END</span>
-	<span class="n">WHILE</span> <span class="p">;</span>
-<span class="k">END</span><span class="p">;;</span>
-<span class="k">DELIMITER</span> <span class="p">;</span>
-</code></pre></div><h6 id="第三步执行存储过程并查看">第三步、执行存储过程并查看</h6>
-<p>调用存储过程，用 ==call 命令==，入参是要生成的条数。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql">
-<span class="k">call</span> <span class="n">batch_insert_user_info</span> <span class="p">(</span><span class="mi">20000</span><span class="p">)</span>
-</code></pre></div><p>两万条执行时间11.4秒，速度还是挺快的。
-<img src="https://img-blog.csdnimg.cn/aa067e26736049edb803176a35e94021.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-这样数据就构建成功了，查看表中数据。
-<img src="https://img-blog.csdnimg.cn/2cdaee20635041e4b10655feb2eba944.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qKm5bm76YCa54G1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">
-以上只是简单的demo，可根据实际需要改写，祝好！</p>
+<p>在用帆软FineReport绘制报表时，会用到一些设置，记录下来方便查看。</p>
+<h5 id="1金额单位转换分转元">1、金额单位转换（分转元）</h5>
+<p>对于数据库存放金额的单位是分，但在页面金额显示是元或者万元。
+<img src="https://img-blog.csdnimg.cn/1f4f87a016a24c69a5222e50e2180c2f.png" alt="在这里插入图片描述">
+以分转元为例，第一步、在 <strong>高级</strong> -&gt; 显示值后 除于100，即单位换算。
+<img src="https://img-blog.csdnimg.cn/4705dbca24dc4ca88c3dc8724eaa9813.png" alt="在这里插入图片描述">
+第二步、在 <strong>样式</strong>  -&gt; 格式下拉框中，选择 ==数字==，并选择显示的样式，这里保留两位小数。
+<img src="https://img-blog.csdnimg.cn/87eb96d5afca44798efe2f6dfb4b8049.png" alt="在这里插入图片描述">
+设置完成后，效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/adc27e693d884566ad2351dc6a239963.png" alt="在这里插入图片描述"></p>
+<h5 id="2表头固定">2、表头固定</h5>
+<p>当数据量大，会多次翻页时，把列头固定的效果会更好。
+选择 ==模板== -&gt; ==重复与冻结设置==，在弹出的对话框中设置。
+<img src="https://img-blog.csdnimg.cn/c0a2e24c834b4bb7a5412ac53d18c8ca.png" alt="在这里插入图片描述">
+比如这里设置前两行为固定行，翻页时不动。
+<img src="https://img-blog.csdnimg.cn/30da74d36e67423cba450c7b2c710a7c.png" alt="在这里插入图片描述"></p>
+<h5 id="3长段文字省略显示">3、长段文字省略显示</h5>
+<p>主要有两种方式，推荐使用第二种。
+<strong>第一种、设置显示的字数</strong>
+对于长段的文件，全部显示在报表上，间距会很大，也可能会报错，原始显示效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/4b67231bd6cd4c21af84205d3ae338b1.png" alt="在这里插入图片描述">
+==双击单元格==，弹出框选择高级，在自定义显示，公式设置中输入下图中内容（大于20字则省略显示）。
+<img src="https://img-blog.csdnimg.cn/b14f2564a14c49528f543cbdc6895521.png" alt="在这里插入图片描述">
+运用 ==<strong>length 函数</strong>==，根据字数来对页面显示字数进行判断。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// 字符串的拼接，当字数大于20字时，只显示前20位
+</span><span class="c1"></span><span class="k">if</span><span class="p">(</span><span class="nx">len</span><span class="p">(</span><span class="nx">$$$</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">,</span><span class="nx">left</span><span class="p">(</span><span class="nx">$$$</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;...&#39;</span><span class="p">,</span><span class="nx">$$$</span><span class="p">)</span>
+</code></pre></div><p>实现效果如下图是所示。
+<img src="https://img-blog.csdnimg.cn/fa55da13db314cb0bce5b2aaf0fff5ac.png" alt="在这里插入图片描述">
+注：有个缺点是，数据导出可能显示不完整。
+<strong>方法二、合并行显示全部</strong>
+第一步、合并两行，即第3行和第4行
+第二步、选中 商品简介 ==单元格==，在右侧的 ==其他== 编辑页面，取消 分页时可以断开 和 分页断开时值可以重复显示 复选框。
+<img src="https://img-blog.csdnimg.cn/d4e8e2e734b046729a07b6f1f635fe5b.png" alt="在这里插入图片描述">
+显示效果如下图所示。
+<img src="https://img-blog.csdnimg.cn/de6d0050ba234efcb9f275458ec9c677.png" alt="在这里插入图片描述"></p>
+<h5 id="4编辑栏-居左对齐">4、编辑栏 居左对齐</h5>
+<p>在空白位置点击，在右侧的 ==控件显示位置==，居左对齐即可。
+<img src="https://img-blog.csdnimg.cn/fda724e59b584afdbc8bf16a9b95eadf.png" alt="在这里插入图片描述"></p>
+<h5 id="参考文档">参考文档</h5>
+<p>【1】https://help.fanruan.com/finereport/doc-view-2129.html</p>
 
     
 	</div>
@@ -168,7 +129,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/mysql">mysql</a>
+  <a href="https://wangqj.cn/tags/finereport">FineReport</a>
   
 </div>
 
@@ -179,14 +140,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/mysql">mysql</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/finereport">FineReport</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0094-mysql-test-data/" data-title="mysql 批量造2万条测试数据" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0105-finereport-show/" data-title="帆软 FineReport 报表展示设置" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
