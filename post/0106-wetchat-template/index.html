@@ -2,16 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>putty连接数据库 - 梦幻通灵的个人博客</title>
+  <title>初试微信模板消息推送 - 梦幻通灵的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="putty">
+  <meta name="description" content="FineReport">
   
-  <meta itemprop="name" content="putty连接数据库 - 梦幻通灵的个人博客">
-  <meta itemprop="description" content="putty">
+  <meta itemprop="name" content="初试微信模板消息推送 - 梦幻通灵的个人博客">
+  <meta itemprop="description" content="FineReport">
   <meta itemprop="image" content="https://wangqj.cn/img/author.jpg">
   
-  <meta name="twitter:description" content="putty" />
+  <meta name="twitter:description" content="FineReport" />
   
   <link rel="shortcut icon" href="https://wangqj.cn/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="https://wangqj.cn/apple-touch-icon.png" />
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="https://wangqj.cn/post/0014-linux-putty/" title="putty连接数据库" itemprop="url">putty连接数据库</a>
+      <a href="https://wangqj.cn/post/0106-wetchat-template/" title="初试微信模板消息推送" itemprop="url">初试微信模板消息推送</a>
   </h1>
   <p class="article-author">By
     
@@ -69,42 +69,161 @@
     
   </p>
   <p class="article-time">
-    <time date="2019-08-04 00:00:00 &#43;0000 UTC">2019-08-04 00:00:00 &#43;0000 UTC</time>
+    <time date="2022-08-21 00:00:00 &#43;0000 UTC">2022-08-21 00:00:00 &#43;0000 UTC</time>
   </p>
 </header>
 
 	<div class="article-content">
     
     <h2 id="背景介绍">背景介绍</h2>
-<p><strong>PuTTY</strong> 是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件，免费的、Windows x86平台下的Telnet、SSH和rlogin客户端。</p>
-<p>     目前需求是通过ssh连接linux上的mysql数据库，实现利用kettle来同步数据。由于无法利用Navicat直接连接，这里选用putty软件来进行ssh的连接，从而管理linux。</p>
-<h2 id="第一步软件准备">第一步、软件准备</h2>
-<p>     首先到官网上下载putty软件，<strong>下载地址</strong>：https://www.putty.org/。
-下面选择的是64bit版本安装。</p>
-<h2 id="第二步安装">第二步、安装</h2>
-<p>     软件的安装比较常规，选择安装路径，一路next，到最后完成即可，这里不再细说。
-<img src="https://img-blog.csdnimg.cn/20190804202033746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="第三步配置连接">第三步、配置连接</h4>
-<h6 id="1配置域名端口">1、配置域名端口</h6>
-<p>     软件安装成功后，点击左侧，SSH&ndash;Tunnels，配置连接域名端口等信息，Source port输入自定义的端口，最好使用未被占用的端口，Destination输入域名+端口号信息，点击Add，则会在蓝色方框内显示配置的信息。
-<img src="https://img-blog.csdnimg.cn/20190804171358772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-<strong>注意</strong>：不要忘记输入端口号。否则就会报错：You need to specify a destiation adress in the form &ldquo;host.name:port&rdquo;
-<img src="https://img-blog.csdnimg.cn/20190804224859407.png" alt="在这里插入图片描述"></p>
-<h6 id="2配置连接数">2、配置连接数</h6>
-<p>     左侧树，点击Connection，设置允许连接数，根据实际需要填写。这里设置的连接数是3，勾选允许TCP连接的选项。
-<img src="https://img-blog.csdnimg.cn/20190804172049952.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h6 id="3设置主机连接">3、设置主机连接</h6>
-<p>     左侧树，点击Sessions，在Host Name 输入主机名或IP地址，默认的端口，在Save Sessions输入别名，保存配置信息，方便下次的使用。点击open即可登录页面。
-<img src="https://img-blog.csdnimg.cn/20190804173753339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-输入账号和密码，即可建立ssh连接，管理linux。<strong>注意不要关闭窗口</strong>。
-<img src="https://img-blog.csdnimg.cn/201908042307413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h6 id="4设置主机连接">4、设置主机连接</h6>
-<p>     配置kettle连接（可参考博客1）：主机名称可以填写localhost或者127.0.0.1，端口号填写第一步中自定义的端口，数据库账号和密码根据实际情况填写。
-<img src="https://img-blog.csdnimg.cn/20190804225801348.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTIxOTAzODg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
-通过以上四步，就可以实现kettle连接linux上的mysql数据库。</p>
-<h2 id="博客参考">博客参考</h2>
-<p>【1】https://blog.csdn.net/u012190388/article/details/86679856
-【2】https://jingyan.baidu.com/article/d5a880ebab3f3113f147cc00.html</p>
+<p>最近有个需要是给用户推送微信模板消息，当订单发货时，提醒用户。周末在家，在Gitee上下载个demo，在本地环境做了运行，记录下来，方便备查。</p>
+<h5 id="第一步申请微信接口测试号">第一步、申请微信接口测试号</h5>
+<p>在 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">微信公众平台接口测试帐号申请</a> 扫码登录，获取测试号信息。
+<img src="https://img-blog.csdnimg.cn/583db583bd81465c8074a90aae558da8.png" alt="在这里插入图片描述">
+扫码登录成功，会生成AppId和私钥，即==appID== 和 ==appsecret==。
+<img src="https://img-blog.csdnimg.cn/62a913e645f94e7db0dfb863971dce93.png" alt="在这里插入图片描述"></p>
+<h5 id="第二步设置模板并关注账号">第二步、设置模板并关注账号</h5>
+<p>定义微信模板格式信息，可参考以下样式。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">今天是</span><span class="p">{{</span><span class="nx">date</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span>
+<span class="p">{{</span><span class="nx">remark</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span>
+<span class="p">{{</span><span class="nx">city</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span><span class="nx">的天气</span><span class="o">:</span> <span class="p">{{</span><span class="nx">weather</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span>
+<span class="nx">最低气温</span><span class="o">:</span> <span class="p">{{</span><span class="nx">low</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span><span class="nx">度</span>
+<span class="nx">最高气温</span><span class="o">:</span> <span class="p">{{</span><span class="nx">high</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span><span class="nx">度</span>
+<span class="nx">今天是我们相识的第</span><span class="p">{{</span><span class="nx">loveDays</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span><span class="nx">天</span>
+<span class="nx">距离您的生日还有</span><span class="p">{{</span><span class="nx">birthdays</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span><span class="nx">天</span>
+<span class="nx">美句欣赏</span><span class="o">:</span><span class="p">{{</span><span class="nx">sentence</span><span class="p">.</span><span class="nx">DATA</span><span class="p">}}</span>
+</code></pre></div><p>添加成功，会生成模板ID，即template
+<img src="https://img-blog.csdnimg.cn/17ce0839b73d401482795eb8934f1bd2.png" alt="在这里插入图片描述"></p>
+<h6 id="关注测试公众号">关注测试公众号</h6>
+<p>用微信扫码关注测试公众号后，会展示微信号，即==userId==，通过userId给用户发送消息。
+<img src="https://img-blog.csdnimg.cn/03a4b964dc524b90aff747f30d7def7f.png" alt="在这里插入图片描述"></p>
+<h5 id="第三步创建定位应用">第三步、创建定位应用</h5>
+<p>使用百度地图，登录<a href="https://lbsyun.baidu.com/apiconsole/key#/home">百度地图开放平台</a>，右侧菜单，应用管理-&gt;创建应用-&gt;服务端。
+<img src="https://img-blog.csdnimg.cn/c4ebf3466bc44e1da78ff12deec75290.png" alt="在这里插入图片描述">
+选择 ==IP白名单校验==，白名单可不拦截，即 0.0.0.0/0，复制生成的 ==AK==。
+<img src="https://img-blog.csdnimg.cn/474c0bd85476401284d1057bc109c280.png" alt="在这里插入图片描述">
+在 <a href="https://lbs.baidu.com/index.php?title=webapi/weather">行政区划文档</a>中查找需要获取地区的行政区划代码（district_id），本次选择区域是河南信阳，即411500。
+调用参考代码如下。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">Weather</span> <span class="nf">getWeather</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">RestTemplate</span> <span class="n">restTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RestTemplate</span><span class="o">();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;district_id&#34;</span><span class="o">,</span> <span class="n">PushConfigure</span><span class="o">.</span><span class="na">getDistrict_id</span><span class="o">());</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;ak&#34;</span><span class="o">,</span> <span class="n">PushConfigure</span><span class="o">.</span><span class="na">getAk</span><span class="o">());</span>
+        <span class="n">String</span> <span class="n">res</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s">&#34;https://api.map.baidu.com/weather/v1/?district_id={district_id}&amp;data_type=all&amp;ak={ak}&#34;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">map</span><span class="o">);</span>
+        <span class="n">JSONObject</span> <span class="n">json</span> <span class="o">=</span> <span class="n">JSONObject</span><span class="o">.</span><span class="na">parseObject</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+        <span class="c1">// 判空处理
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">json</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">JSONArray</span> <span class="n">forecasts</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="s">&#34;result&#34;</span><span class="o">).</span><span class="na">getJSONArray</span><span class="o">(</span><span class="s">&#34;forecasts&#34;</span><span class="o">);</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Weather</span><span class="o">&gt;</span> <span class="n">weathers</span> <span class="o">=</span> <span class="n">forecasts</span><span class="o">.</span><span class="na">toJavaList</span><span class="o">(</span><span class="n">Weather</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">Weather</span> <span class="n">weather</span> <span class="o">=</span> <span class="n">weathers</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+        <span class="n">JSONObject</span> <span class="n">now</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="s">&#34;result&#34;</span><span class="o">).</span><span class="na">getJSONObject</span><span class="o">(</span><span class="s">&#34;now&#34;</span><span class="o">);</span>
+        <span class="n">JSONObject</span> <span class="n">location</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="s">&#34;result&#34;</span><span class="o">).</span><span class="na">getJSONObject</span><span class="o">(</span><span class="s">&#34;location&#34;</span><span class="o">);</span>
+        <span class="n">weather</span><span class="o">.</span><span class="na">setText_now</span><span class="o">(</span><span class="n">now</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;text&#34;</span><span class="o">));</span>
+        <span class="n">weather</span><span class="o">.</span><span class="na">setTemp</span><span class="o">(</span><span class="n">now</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;temp&#34;</span><span class="o">));</span>
+        <span class="n">weather</span><span class="o">.</span><span class="na">setCity</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;city&#34;</span><span class="o">));</span>
+        <span class="k">return</span> <span class="n">weather</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div><h5 id="第四步天行数据-获取精美句子">第四步、天行数据-获取精美句子</h5>
+<p>本次使用的是注册和使用 <a href="https://www.tianapi.com/">天行数据官网</a>的免费接口，即<a href="https://www.tianapi.com/apiview/53">免费精美句子接口</a>，每日可免费调用100次。
+<img src="https://img-blog.csdnimg.cn/18d9219941204539bf45c648cc76889b.png" alt="在这里插入图片描述">
+调用参考代码如下。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//java环境中文传值时，需特别注意字符编码问题
+</span><span class="c1"></span><span class="n">String</span> <span class="n">httpUrl</span> <span class="o">=</span> <span class="s">&#34;http://api.tianapi.com/sentence/index?key=你的APIKEY&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">jsonResult</span> <span class="o">=</span> <span class="n">request</span><span class="o">(</span><span class="n">httpUrl</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">jsonResult</span><span class="o">);</span>
+
+<span class="cm">/**
+</span><span class="cm"> * @param urlAll  请求接口
+</span><span class="cm"> * @param httpArg  参数
+</span><span class="cm"> * @return 返回结果
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">request</span><span class="o">(</span><span class="n">String</span> <span class="n">httpUrl</span><span class="o">,</span> <span class="n">String</span> <span class="n">httpArg</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">BufferedReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">StringBuffer</span> <span class="n">sbf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+    <span class="n">httpUrl</span> <span class="o">=</span> <span class="n">httpUrl</span> <span class="o">+</span> <span class="s">&#34;?&#34;</span> <span class="o">+</span> <span class="n">httpArg</span><span class="o">;</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="n">httpUrl</span><span class="o">);</span>
+        <span class="n">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">url</span>
+                <span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+        <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">&#34;GET&#34;</span><span class="o">);</span>
+        <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">is</span><span class="o">,</span> <span class="s">&#34;UTF-8&#34;</span><span class="o">));</span>
+        <span class="n">String</span> <span class="n">strRead</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">((</span><span class="n">strRead</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sbf</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">strRead</span><span class="o">);</span>
+            <span class="n">sbf</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;\r\n&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">reader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">sbf</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h5 id="第五步模板消息发送">第五步、模板消息发送</h5>
+<p>根据定义的模板消息，拼接数据，并发送。核心业务代码如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">APP_ID</span> <span class="o">=</span> <span class="s">&#34;wxf382f5c165******&#34;</span><span class="o">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">APP_SECRET</span> <span class="o">=</span> <span class="s">&#34;41c4bbccff80cf71e29954bc********&#34;</span><span class="o">;</span>
+<span class="c1">// 关注测试公众号的用户ID
+</span><span class="c1"></span><span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">USER_ID</span> <span class="o">=</span> <span class="s">&#34;odq6K5hPvDO9jV5LNpcr********&#34;</span><span class="o">;</span>
+<span class="c1">// 模板ID
+</span><span class="c1"></span><span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">TEMPLATE_ID</span><span class="o">=</span> <span class="s">&#34;odq6K5hPvDO9jV5LNpcr********&#34;</span><span class="o">;</span>
+
+<span class="c1">// 1、拼接微信storage基础数据
+</span><span class="c1"></span><span class="n">WxMpInMemoryConfigStorage</span> <span class="n">wxStorage</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WxMpInMemoryConfigStorage</span><span class="o">();</span>
+<span class="n">wxStorage</span><span class="o">.</span><span class="na">setAppId</span><span class="o">(</span><span class="n">APP_ID</span><span class="o">);</span>
+<span class="n">wxStorage</span><span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="n">APP_SECRET</span><span class="o">);</span>
+<span class="n">WxMpService</span> <span class="n">wxMpService</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WxMpServiceImpl</span><span class="o">();</span>
+<span class="n">wxMpService</span><span class="o">.</span><span class="na">setWxMpConfigStorage</span><span class="o">(</span><span class="n">wxStorage</span><span class="o">);</span>
+<span class="c1">// 2、推送消息方法
+</span><span class="c1"></span><span class="n">WxMpTemplateMessage</span> <span class="n">templateMessage</span> <span class="o">=</span> <span class="n">WxMpTemplateMessage</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+     <span class="o">.</span><span class="na">toUser</span><span class="o">(</span><span class="n">USER_ID</span><span class="o">)</span>
+     <span class="o">.</span><span class="na">templateId</span><span class="o">(</span><span class="n">TEMPLATE_ID</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+<span class="n">Weather</span> <span class="n">weather</span> <span class="o">=</span> <span class="n">WeatherUtil</span><span class="o">.</span><span class="na">getWeather</span><span class="o">();</span>
+<span class="c1">// 3、拼接模板数据
+</span><span class="c1"></span><span class="k">if</span> <span class="o">(</span><span class="n">weather</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;weather&#34;</span><span class="o">,</span> <span class="s">&#34;***&#34;</span><span class="o">,</span> <span class="s">&#34;#00FFFF&#34;</span><span class="o">));</span>
+   <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;date&#34;</span><span class="o">,</span> <span class="n">weather</span><span class="o">.</span><span class="na">getDate</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;  &#34;</span> <span class="o">+</span> <span class="n">weather</span><span class="o">.</span><span class="na">getWeek</span><span class="o">(),</span> <span class="s">&#34;#00BFFF&#34;</span><span class="o">));</span>
+    <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;weather&#34;</span><span class="o">,</span> <span class="n">weather</span><span class="o">.</span><span class="na">getText_now</span><span class="o">(),</span> <span class="s">&#34;#00FFFF&#34;</span><span class="o">));</span>
+    <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;low&#34;</span><span class="o">,</span> <span class="n">weather</span><span class="o">.</span><span class="na">getLow</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;#173177&#34;</span><span class="o">));</span>
+    <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;high&#34;</span><span class="o">,</span> <span class="n">weather</span><span class="o">.</span><span class="na">getHigh</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;#FF6347&#34;</span><span class="o">));</span>
+    <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;city&#34;</span><span class="o">,</span> <span class="n">weather</span><span class="o">.</span><span class="na">getCity</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;#173177&#34;</span><span class="o">));</span>
+<span class="o">}</span>
+
+   <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;loveDays&#34;</span><span class="o">,</span> <span class="s">&#34;12&#34;</span><span class="o">,</span> <span class="s">&#34;#FF1493&#34;</span><span class="o">));</span>
+   <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;birthdays&#34;</span><span class="o">,</span> <span class="s">&#34;30&#34;</span><span class="o">,</span> <span class="s">&#34;#FFA500&#34;</span><span class="o">));</span>
+
+   <span class="n">String</span> <span class="n">remark</span> <span class="o">=</span> <span class="s">&#34;海到无边天作岸，山登绝顶我为峰！ =^_^= &#34;</span><span class="o">;</span>
+   <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;remark&#34;</span><span class="o">,</span> <span class="n">remark</span><span class="o">,</span> <span class="s">&#34;#FF1493&#34;</span><span class="o">));</span>
+   <span class="c1">// 调用接口返回美句
+</span><span class="c1"></span>   <span class="n">templateMessage</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="k">new</span> <span class="n">WxMpTemplateData</span><span class="o">(</span><span class="s">&#34;sentence&#34;</span><span class="o">,</span> <span class="n">RainbowUtil</span><span class="o">.</span><span class="na">getRainbow</span><span class="o">(),</span> <span class="s">&#34;#FF69B4&#34;</span><span class="o">));</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">templateMessage</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span>
+   <span class="k">try</span> <span class="o">{</span>
+        <span class="c1">// 4、发送消息
+</span><span class="c1"></span>        <span class="n">wxMpService</span><span class="o">.</span><span class="na">getTemplateMsgService</span><span class="o">().</span><span class="na">sendTemplateMsg</span><span class="o">(</span><span class="n">templateMessage</span><span class="o">);</span>
+       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;推送失败：&#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="k">return</span> <span class="s">&#34;微信模板消息推送失败：&#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
+       <span class="o">}</span>
+        <span class="k">return</span> <span class="s">&#34;微信模板消息推送成功!&#34;</span><span class="o">;</span>
+ <span class="o">}</span>
+</code></pre></div><p>pom 中需要引入微信模板依赖，如下所示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">binarywang</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">weixin</span><span class="o">-</span><span class="n">java</span><span class="o">-</span><span class="n">mp</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="n">3</span><span class="o">.</span><span class="na">3</span><span class="o">.</span><span class="na">0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</code></pre></div><p>推送结果如下图所示。
+<img src="https://img-blog.csdnimg.cn/369cf02dfdc5461f976e51d82491b8ec.jpeg" alt="在这里插入图片描述">
+以上是配置和运行的过程，具体可查看参考资料（gitee上有完整可运行的代码）。</p>
+<h5 id="参考资料">参考资料</h5>
+<p>【1】https://gitee.com/love_c/wechatPush</p>
 
     
 	</div>
@@ -114,7 +233,7 @@
 <div class="article-tags">
   <span></span>
   
-  <a href="https://wangqj.cn/tags/putty">putty</a>
+  <a href="https://wangqj.cn/tags/finereport">FineReport</a>
   
 </div>
 
@@ -125,14 +244,14 @@
 <div class="article-categories">
   <span></span>
   
-  <a class="article-category-link" href="https://wangqj.cn/categories/putty">putty</a>
+  <a class="article-category-link" href="https://wangqj.cn/categories/finereport">FineReport</a>
   
 </div>
 
 
 
   <div class="article-share" id="share">
-    <div data-url="https://wangqj.cn/post/0014-linux-putty/" data-title="putty连接数据库" data-tsina="123" class="share clearfix">
+    <div data-url="https://wangqj.cn/post/0106-wetchat-template/" data-title="初试微信模板消息推送" data-tsina="123" class="share clearfix">
     </div>
   </div>
 </footer>
