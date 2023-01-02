@@ -6,10 +6,19 @@
     <description>Recent content on 梦幻通灵的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 21 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Sep 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://wangqj.cn/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MaxCompute 与 AnalyticDB MySQL 数据处理与转换</title>
+      <link>https://wangqj.cn/post/0107-odps-ads/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://wangqj.cn/post/0107-odps-ads/</guid>
+      <description>背景介绍 AnalyticDB MySQL （简称ads）与 MaxCompute（简称odps） 进行数据转换时，个别语法有差别，记录下来，方便备查。 1、行转列函数 odps 中行转列</description>
+    </item>
     
     <item>
       <title>初试微信模板消息推送</title>

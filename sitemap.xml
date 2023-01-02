@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wangqj.cn/categories/analyticdb/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wangqj.cn/categories/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/maxcompute/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/0107-odps-ads/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/post/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/tags/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wangqj.cn/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +48,7 @@
   </url>
   
   <url>
-    <loc>https://wangqj.cn/post/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/tags/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wangqj.cn/post/0106-wetchat-template/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wangqj.cn/</loc>
     <lastmod>2022-08-21T00:00:00+00:00</lastmod>
   </url>
   
